@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Cover</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  background: linear-gradient(160deg, #1A2A2B 0%, #0D3B3E 40%, #1A4A4E 100%);
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Glow shapes */
+.glow-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(46,171,176,0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: 1;
+}
+.glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: 100px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(46,171,176,0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: 1;
+}
+
+/* Doodles */
+.doodle-cap {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  opacity: 0.7;
+  z-index: 2;
+}
+.doodle-question {
+  position: absolute;
+  top: 140px;
+  right: 120px;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 180px 100px 160px;
+  height: 100%;
+}
+
+.title {
+  font-size: 100px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 50px;
+}
+
+.keyword {
+  color: #2EABB0;
+  position: relative;
+}
+.keyword::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: 40%;
+  background: rgba(46,171,176,0.3);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.subtitle {
+  font-size: 48px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<div class="glow-1"></div>
+<div class="glow-2"></div>
+
+<!-- Graduation cap doodle -->
+<svg class="doodle-cap" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 18L8 34L40 50L72 34L40 18Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 42V58C60 58 52 66 40 66C28 66 20 58 20 58V42" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M68 35V55" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="68" cy="57" r="3" stroke="white" stroke-width="2.5"/>
+</svg>
+
+<!-- Question mark doodle -->
+<svg class="doodle-question" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M24 22C24 14 32 10 38 10C44 10 50 14 50 22C50 30 42 30 42 38V42" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="42" cy="54" r="3.5" stroke="white" stroke-width="3"/>
+</svg>
+
+<div class="content">
+  <div class="title">
+    没有PhD<br>
+    怎么在美国大学<br>
+    做<span class="keyword">讲师</span>
+  </div>
+  <div class="subtitle">一个没有博士学位的人的真实经历</div>
+</div>
+
+</body>
+</html>

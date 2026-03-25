@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1440px; overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .card {
+    width: 1080px; height: 1440px; position: relative;
+    background: #FFF9F5;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 100px;
+  }
+  .bg-shape {
+    position: absolute; border-radius: 50%; filter: blur(120px);
+  }
+  .bg-shape-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%);
+    top: -80px; right: -60px;
+  }
+  .bg-shape-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,180,100,0.06) 0%, transparent 70%);
+    bottom: -60px; left: -60px;
+  }
+  .grain {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.03; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+  .content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column; gap: 44px;
+    max-width: 880px;
+    text-align: center;
+    align-items: center;
+  }
+  .golden {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 52px; font-weight: 900;
+    color: #1A1A1A;
+    line-height: 1.5;
+    letter-spacing: 2px;
+  }
+  .golden .highlight {
+    color: #FF6B35; font-weight: 900;
+  }
+  .divider {
+    display: flex; align-items: center; gap: 16px; width: 300px;
+  }
+  .divider-line {
+    flex: 1; height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(26,26,26,0.15), transparent);
+  }
+  .divider-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #FF6B35; opacity: 0.5;
+  }
+  .solution-label {
+    display: inline-block;
+    background: rgba(255,107,53,0.1);
+    color: #FF6B35;
+    font-size: 30px; font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+  }
+  .body-text {
+    font-size: 40px; font-weight: 400; color: #444;
+    line-height: 1.75; letter-spacing: 1px;
+    text-align: center;
+  }
+  .body-text .highlight {
+    color: #FF6B35; font-weight: 700;
+  }
+  .page-num {
+    position: absolute; bottom: 50px; right: 60px;
+    font-size: 28px; color: #BBBBBB; font-weight: 400;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bg-shape bg-shape-1"></div>
+  <div class="bg-shape bg-shape-2"></div>
+  <div class="grain"></div>
+  <div class="content">
+    <p class="golden">
+      AI解放的是<span class="highlight">执行力</span><br>
+      但没解放你的<br>
+      <span class="highlight">注意力</span>和<span class="highlight">判断力</span>
+    </p>
+    <p class="body-text" style="font-size: 38px; color: #666;">
+      后面这两样<br>才是真正让人累的
+    </p>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+    <span class="solution-label">我的做法</span>
+    <p class="body-text">
+      把工作<span class="highlight">workflow化</span><br>
+      让AI去跑<br>
+      但别让自己变成它的监工
+    </p>
+    <p class="body-text">
+      filter掉多余的东西<br>
+      把注意力留给<br>
+      真正需要你<span class="highlight">做决定</span>的地方
+    </p>
+  </div>
+  <div class="page-num">7 / 8</div>
+</div>
+</body>
+</html>

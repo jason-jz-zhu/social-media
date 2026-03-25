@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Inter', sans-serif; background: #FAFAF8; position: relative; }
+
+  .page {
+    width: 1080px; height: 1080px;
+    background: #FAFAF8;
+    background-image:
+      linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,200,200,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid;
+  }
+
+  /* Schedule */
+  .schedule .section-title { color: #3B82F6; border-color: #3B82F6; }
+  .schedule-list { list-style: none; }
+  .schedule-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 8px 0;
+    font-size: 26px; color: #333;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .schedule-check {
+    width: 26px; height: 26px; border-radius: 6px;
+    border: 2px solid #ccc; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .schedule-check.done { background: #3B82F6; border-color: #3B82F6; }
+  .schedule-check.done::after { content: '✓'; color: white; font-size: 16px; font-weight: 700; }
+  .schedule-time {
+    font-family: 'Caveat', cursive;
+    font-size: 30px; color: #3B82F6; font-weight: 600;
+    width: 80px; flex-shrink: 0;
+  }
+  .schedule-task { color: #333; }
+  .schedule-task.struck { text-decoration: line-through; color: #aaa; }
+
+  /* Goals */
+  .goals .section-title { color: #FF6B6B; border-color: #FF6B6B; }
+  .goal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .goal-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 24px; color: #444; padding: 5px 0;
+  }
+  .goal-num {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(255,107,107,0.1); color: #FF6B6B;
+    font-size: 18px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Motivation */
+  .motivation { margin-top: 20px; }
+  .motivation .section-title { color: #F59E0B; border-color: #F59E0B; }
+  .motivation-text {
+    font-family: 'Caveat', cursive;
+    font-size: 36px; font-weight: 600; color: #C05621;
+    line-height: 1.5; margin: 16px 0;
+    font-style: italic;
+  }
+
+  /* Badge */
+  .badge {
+    position: absolute;
+    top: 40px; right: 50px;
+    background: rgba(255,107,107,0.1);
+    color: #FF6B6B;
+    font-size: 24px; font-weight: 700;
+    padding: 8px 22px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,107,107,0.2);
+  }
+
+  /* Annotation */
+  .annotation {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    font-size: 26px;
+    color: #999;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- Schedule -->
+  <div class="schedule">
+    <div class="section-title">Daily Schedule</div>
+    <ul class="schedule-list">
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">6:00</span>
+        <span class="schedule-task struck">Wake up</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">7:30</span>
+        <span class="schedule-task struck">Standup</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">9:00</span>
+        <span class="schedule-task struck">Project Review</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">9:30</span>
+        <span class="schedule-task struck">Risk Assessment</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">10:00</span>
+        <span class="schedule-task struck">Tech Design</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">12:00</span>
+        <span class="schedule-task struck">AI Tool Research</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">1:00</span>
+        <span class="schedule-task struck">Client Call</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">2:00</span>
+        <span class="schedule-task struck">Code Sync</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check"></div>
+        <span class="schedule-time">3:00</span>
+        <span class="schedule-task">Data Analysis</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check"></div>
+        <span class="schedule-time">4:00</span>
+        <span class="schedule-task">Documentation</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check"></div>
+        <span class="schedule-time">5:00</span>
+        <span class="schedule-task">Weekly Report</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Goals -->
+  <div class="goals">
+    <div class="section-title">Weekly Goals</div>
+    <div class="goal-grid">
+      <div class="goal-item"><div class="goal-num">1</div>Side Project</div>
+      <div class="goal-item"><div class="goal-num">2</div>Content Creation</div>
+      <div class="goal-item"><div class="goal-num">3</div>Tech Learning</div>
+      <div class="goal-item"><div class="goal-num">4</div>Reading</div>
+      <div class="goal-item"><div class="goal-num">5</div>Exercise</div>
+      <div class="goal-item"><div class="goal-num">6</div>Family Time</div>
+      <div class="goal-item"><div class="goal-num">7</div>Social Media</div>
+      <div class="goal-item"><div class="goal-num">8</div>Financial Plan</div>
+    </div>
+
+    <!-- Motivation -->
+    <div class="motivation">
+      <div class="section-title">Motivation</div>
+      <p class="motivation-text">"Anxiety is infinite.<br>Your to-do list is not."</p>
+      <p class="motivation-text" style="font-size: 28px; color: #888; margin-top: 10px;">Break it down. Write it down.<br>Cross it off. Repeat.</p>
+    </div>
+  </div>
+</div>
+
+<div class="badge">7 years and counting ✓</div>
+<div class="annotation">Write it down → Break it down → Cross it off → Positive loop</div>
+</body>
+</html>

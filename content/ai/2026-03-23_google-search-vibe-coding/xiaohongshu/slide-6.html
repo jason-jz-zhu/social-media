@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  padding: 120px 100px;
+  max-width: 920px;
+  text-align: left;
+  width: 100%;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 40px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 16px 0;
+  border-bottom: 2px solid #EEE;
+  margin-bottom: 8px;
+}
+
+.table-header span {
+  font-size: 30px;
+  font-weight: 700;
+  color: #999;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 18px 0;
+  border-bottom: 1px solid #F0F0F0;
+  align-items: center;
+}
+
+.table-row .dim {
+  font-size: 32px;
+  font-weight: 700;
+  color: #555;
+}
+
+.table-row .google {
+  font-size: 34px;
+  color: #888;
+}
+
+.table-row .ai {
+  font-size: 34px;
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.result-box {
+  background: rgba(255, 107, 107, 0.05);
+  border-left: 4px solid rgba(255, 107, 107, 0.3);
+  border-radius: 12px;
+  padding: 24px 28px;
+  font-size: 34px;
+  color: #888;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="section-title">Google时代 vs AI时代</div>
+
+  <div class="table">
+    <div class="table-header">
+      <span>维度</span>
+      <span>Google时代</span>
+      <span>AI时代</span>
+    </div>
+    <div class="table-row">
+      <span class="dim">颠覆对象</span>
+      <span class="google">传统行业</span>
+      <span class="ai">传统+科技行业</span>
+    </div>
+    <div class="table-row">
+      <span class="dim">消灭的中间商</span>
+      <span class="google">信息中间商</span>
+      <span class="ai">技能中间商</span>
+    </div>
+    <div class="table-row">
+      <span class="dim">核心技能</span>
+      <span class="google">会搜索</span>
+      <span class="ai">会prompt</span>
+    </div>
+    <div class="table-row">
+      <span class="dim">普通人的机会</span>
+      <span class="google">获取信息平等</span>
+      <span class="ai">创造产品平等</span>
+    </div>
+    <div class="table-row">
+      <span class="dim">关键差距</span>
+      <span class="google">搜索能力10x</span>
+      <span class="ai">prompt能力10x</span>
+    </div>
+  </div>
+
+  <div class="result-box">本质都一样：与时俱进的人，从不吃亏</div>
+</div>
+<div class="page-number">6 / 7</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 2 - Computer Use是什么</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1440px;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 60px;
+  }
+
+  .title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #FF6B6B;
+    margin-top: 20px;
+    border-radius: 2px;
+  }
+
+  .content-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    flex: 1;
+  }
+
+  .content-list li {
+    font-size: 42px;
+    color: #333;
+    line-height: 1.75;
+    padding-left: 28px;
+    position: relative;
+  }
+
+  .content-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 8px;
+    height: 8px;
+    background: #FF6B6B;
+    border-radius: 50%;
+  }
+
+  .highlight {
+    color: #FF6B6B;
+    font-weight: 700;
+  }
+
+  .hook {
+    font-size: 42px;
+    color: #FF6B6B;
+    font-weight: 700;
+    margin-top: 48px;
+    text-align: center;
+    padding: 24px 0;
+    letter-spacing: 2px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1 class="title">Computer Use是什么</h1>
+
+  <ul class="content-list">
+    <li>Claude现在能<span class="highlight">直接控制你的电脑</span></li>
+    <li>点鼠标、敲键盘、打开应用、浏览网页</li>
+    <li>用自然语言告诉它你要干嘛</li>
+    <li>它自己看屏幕，自己操作</li>
+  </ul>
+
+  <div class="hook">不用写一行代码</div>
+
+  <span class="page-number">2 / 7</span>
+</div>
+</body>
+</html>

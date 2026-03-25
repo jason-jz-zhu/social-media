@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Caveat:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; overflow: hidden; font-family: 'Noto Sans SC', sans-serif; background: #FAFAF8; position: relative; }
+
+  .page {
+    width: 1080px; height: 1440px;
+    background: #FAFAF8;
+    background-image:
+      linear-gradient(rgba(200,200,200,0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,200,200,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+  }
+
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid;
+  }
+
+  /* Schedule */
+  .schedule .section-title { color: #3B82F6; border-color: #3B82F6; }
+  .schedule-list { list-style: none; }
+  .schedule-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 10px 0;
+    font-size: 30px; color: #333;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .schedule-check {
+    width: 28px; height: 28px; border-radius: 6px;
+    border: 2px solid #ccc; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .schedule-check.done {
+    background: #3B82F6; border-color: #3B82F6;
+  }
+  .schedule-check.done::after {
+    content: '✓'; color: white; font-size: 18px; font-weight: 700;
+  }
+  .schedule-time {
+    font-family: 'Caveat', cursive;
+    font-size: 32px; color: #3B82F6; font-weight: 600;
+    width: 90px; flex-shrink: 0;
+  }
+  .schedule-task { color: #333; }
+  .schedule-task.struck { text-decoration: line-through; color: #aaa; }
+
+  /* Goals */
+  .goals .section-title { color: #FF6B6B; border-color: #FF6B6B; }
+  .goal-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .goal-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 28px; color: #444; padding: 6px 0;
+  }
+  .goal-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,107,107,0.1); color: #FF6B6B;
+    font-size: 20px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Motivation */
+  .motivation {
+    grid-column: 2;
+    margin-top: 20px;
+  }
+  .motivation .section-title { color: #F59E0B; border-color: #F59E0B; }
+  .motivation-text {
+    font-size: 44px; font-weight: 700; color: #C05621;
+    line-height: 1.6; margin: 20px 0;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  /* Badge */
+  .badge {
+    position: absolute;
+    top: 50px; right: 60px;
+    background: rgba(255,107,107,0.1);
+    color: #FF6B6B;
+    font-size: 26px; font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,107,107,0.2);
+  }
+
+  /* Annotation */
+  .annotation {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    text-align: center;
+    font-size: 30px;
+    color: #999;
+    font-style: italic;
+  }
+
+  .page-num {
+    position: absolute; bottom: 60px; right: 80px;
+    font-size: 28px; color: #CCC;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- Schedule -->
+  <div class="schedule">
+    <div class="section-title">Schedule</div>
+    <ul class="schedule-list">
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">6:00</span>
+        <span class="schedule-task struck">起床</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">7:30</span>
+        <span class="schedule-task struck">晨会</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">9:00</span>
+        <span class="schedule-task struck">项目Review</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">9:30</span>
+        <span class="schedule-task struck">风险评估</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">10:00</span>
+        <span class="schedule-task struck">技术方案</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">12:00</span>
+        <span class="schedule-task struck">AI工具调研</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">1:00</span>
+        <span class="schedule-task struck">客户沟通</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check done"></div>
+        <span class="schedule-time">2:00</span>
+        <span class="schedule-task struck">代码同步</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check"></div>
+        <span class="schedule-time">3:00</span>
+        <span class="schedule-task">数据分析</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check"></div>
+        <span class="schedule-time">4:00</span>
+        <span class="schedule-task">文档整理</span>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-check"></div>
+        <span class="schedule-time">5:00</span>
+        <span class="schedule-task">周报</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Goals -->
+  <div class="goals">
+    <div class="section-title">Goals</div>
+    <div class="goal-grid">
+      <div class="goal-item"><div class="goal-num">1</div>副业项目</div>
+      <div class="goal-item"><div class="goal-num">2</div>内容创作</div>
+      <div class="goal-item"><div class="goal-num">3</div>技术学习</div>
+      <div class="goal-item"><div class="goal-num">4</div>读书计划</div>
+      <div class="goal-item"><div class="goal-num">5</div>健身运动</div>
+      <div class="goal-item"><div class="goal-num">6</div>家庭时间</div>
+      <div class="goal-item"><div class="goal-num">7</div>社交媒体</div>
+      <div class="goal-item"><div class="goal-num">8</div>理财规划</div>
+    </div>
+
+    <!-- Motivation -->
+    <div class="motivation">
+      <div class="section-title">Motivation</div>
+      <p class="motivation-text">安而不忘危。<br>福地福人居，<br>福人居福地。</p>
+    </div>
+  </div>
+</div>
+
+<div class="badge">坚持了7年 ✓</div>
+<div class="annotation">每天写下来、拆解、完成、划掉 — 这就是我的方法</div>
+</body>
+</html>

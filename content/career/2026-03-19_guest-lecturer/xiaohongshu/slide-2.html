@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 100px;
+  height: 100%;
+  max-width: 920px;
+}
+
+.body-text {
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.body-text:last-of-type {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: #2EABB0;
+  font-weight: 700;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+
+<div class="content">
+  <p class="body-text">第一次走进教室的时候，我站在讲台上，底下坐着一排硕士生。有人叫了一声"Professor"。</p>
+  <p class="body-text">那一刻挺恍惚的——<span class="highlight">我连博士都没读过。</span></p>
+  <p class="body-text">说起来这个机会也挺偶然的。朋友在一所大学教CS相关的课，知道我有行业经验，就问我有没有兴趣来做客座讲师。</p>
+  <p class="body-text">我想了想，试试呗。</p>
+</div>
+
+<div class="page-number">2 / 7</div>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px;
+    height: 100%;
+  }
+
+  .quote {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #1A1A1A;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .highlight {
+    color: #2EABB0;
+    font-weight: 900;
+  }
+
+  .sub-text {
+    font-size: 38px;
+    color: #888;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 56px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 56px;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(46, 171, 176, 0.4));
+  }
+
+  .divider-line:last-child {
+    background: linear-gradient(90deg, rgba(46, 171, 176, 0.4), transparent);
+  }
+
+  .divider-dot {
+    width: 8px;
+    height: 8px;
+    background: #2EABB0;
+    opacity: 0.5;
+    border-radius: 50%;
+    margin: 0 12px;
+    flex-shrink: 0;
+  }
+
+  .cta {
+    font-size: 40px;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 52px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .tag {
+    font-size: 28px;
+    font-weight: 500;
+    color: #888;
+    background: rgba(46, 171, 176, 0.06);
+    border: 1px solid rgba(46, 171, 176, 0.12);
+    padding: 10px 28px;
+    border-radius: 24px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="quote">10个月，无数简历<br><span class="highlight">3个offer</span></div>
+    <div class="sub-text">每一步都不容易<br>但回头看都有收获</div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="cta">你最近在找工作吗？<br>什么阶段了？评论区聊聊</div>
+    <div class="tags">
+      <span class="tag">#找工作</span>
+      <span class="tag">#求职</span>
+      <span class="tag">#offer</span>
+      <span class="tag">#北美职场</span>
+    </div>
+  </div>
+  <div class="page-number">7 / 7</div>
+</body>
+</html>

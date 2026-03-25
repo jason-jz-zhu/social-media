@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 7</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  padding: 100px;
+  text-align: center;
+}
+
+.quote-line {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #1A1A1A;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.highlight {
+  color: #FF6B6B;
+}
+
+.highlight2 {
+  color: #2EABB0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin: 40px auto;
+  gap: 12px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 2px;
+}
+
+.divider-line-left {
+  background: linear-gradient(to right, transparent, #FF6B6B);
+}
+
+.divider-line-right {
+  background: linear-gradient(to left, transparent, #FF6B6B);
+}
+
+.divider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF6B6B;
+  flex-shrink: 0;
+}
+
+.cta {
+  font-size: 38px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.tags span {
+  font-size: 28px;
+  font-weight: 500;
+  color: #888;
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.12);
+  padding: 10px 28px;
+  border-radius: 24px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="quote-line">每次技术变革</div>
+  <div class="quote-line"><span class="highlight">慌</span>的人在等答案</div>
+  <div class="quote-line"><span class="highlight2">发</span>的人已经在用了</div>
+
+  <div class="divider">
+    <div class="divider-line divider-line-left"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line divider-line-right"></div>
+  </div>
+
+  <div class="cta">你觉得AI时代<br>什么样的人最容易"发"？</div>
+
+  <div class="tags">
+    <span>#AI时代</span>
+    <span>#技术变革</span>
+    <span>#与时俱进</span>
+    <span>#VibeCoding</span>
+  </div>
+</div>
+<div class="page-number">7 / 7</div>
+</body>
+</html>

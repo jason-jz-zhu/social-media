@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #FFF9F5;
+    position: relative;
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 100px;
+    max-width: 880px;
+    gap: 48px;
+  }
+
+  .label {
+    display: inline-block;
+    background: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 20px;
+  }
+
+  .point-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .content p {
+    font-size: 42px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.75;
+  }
+
+  .highlight {
+    color: #FF6B6B;
+    font-weight: 700;
+  }
+
+  .page-num {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.25);
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="label">趋势一</div>
+    <div class="point-title">AI正在变成"水电"</div>
+    <p>黄仁勋说未来每个工程师<br>除了工资，还会有<br>一笔"AI使用预算"</p>
+    <p>用多少算多少<br>就像交电费一样</p>
+    <p><span class="highlight">AI的成本会越来越低<br>越来越日常</span></p>
+  </div>
+  <div class="page-num">3 / 8</div>
+  <div class="grain"></div>
+</body>
+</html>

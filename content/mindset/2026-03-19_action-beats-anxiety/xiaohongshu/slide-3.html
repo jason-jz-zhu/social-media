@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.container {
+  padding: 120px 100px;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 36px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 0;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.step-number {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: rgba(255, 107, 107, 0.12);
+  color: #FF6B6B;
+  font-weight: 700;
+  font-size: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.step-text {
+  font-size: 40px;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.closing {
+  font-size: 40px;
+  color: #555555;
+  margin-top: 36px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCCCCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="section-title">后来我摸索出一个方法</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-text">想清楚自己到底要什么</div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-text">把目标拆成每天能做的小事，<span class="highlight">写下来</span></div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-text">去完成，每做完一件就<span class="highlight">划掉</span></div>
+    </div>
+  </div>
+
+  <div class="closing">说出来特别简单——<span class="highlight">动起来</span>。</div>
+</div>
+
+<div class="page-number">3 / 6</div>
+
+</body>
+</html>

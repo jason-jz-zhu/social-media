@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 8</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFF9F5;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .bg-shape-1 {
+    position: absolute;
+    width: 600px; height: 600px;
+    top: -100px; right: -150px;
+    background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 70%);
+    filter: blur(120px);
+    border-radius: 50%;
+  }
+
+  .bg-shape-2 {
+    position: absolute;
+    width: 500px; height: 500px;
+    bottom: -50px; left: -100px;
+    background: radial-gradient(circle, rgba(255,107,107,0.06) 0%, transparent 70%);
+    filter: blur(120px);
+    border-radius: 50%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 100px;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .golden-text {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #1A1A1A;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .sub-text {
+    font-size: 38px;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    gap: 0;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(255,107,107,0.3));
+  }
+
+  .divider-line:last-child {
+    background: linear-gradient(90deg, rgba(255,107,107,0.3), transparent);
+  }
+
+  .divider-dot {
+    width: 8px;
+    height: 8px;
+    background: #FF6B6B;
+    opacity: 0.5;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: 0 8px;
+  }
+
+  .cta-text {
+    font-size: 40px;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .tag {
+    font-size: 28px;
+    font-weight: 500;
+    color: #888;
+    background: rgba(255,107,107,0.06);
+    border: 1px solid rgba(255,107,107,0.12);
+    padding: 10px 28px;
+    border-radius: 24px;
+  }
+
+  .highlight {
+    color: #FF6B6B;
+    font-weight: 900;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    font-size: 28px;
+    color: #BBB;
+    letter-spacing: 2px;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<svg class="grain" xmlns="http://www.w3.org/2000/svg">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+</svg>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
+
+<div class="content">
+  <div class="golden-text">不是所有人<br>都会被<span class="highlight">淘汰</span></div>
+  <div class="sub-text">但完全不关注的人<br>可能会错过一些机会</div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="cta-text">你觉得AI真的会<br>像水电一样走进生活吗？</div>
+
+  <div class="tags">
+    <div class="tag">#黄仁勋</div>
+    <div class="tag">#GTC2026</div>
+    <div class="tag">#英伟达</div>
+    <div class="tag">#AI趋势</div>
+    <div class="tag">#AI界春晚</div>
+  </div>
+</div>
+
+<div class="page-number">8 / 8</div>
+
+</body>
+</html>

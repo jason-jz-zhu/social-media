@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: #FFFFFF;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 100px;
+  position: relative;
+}
+
+.inner {
+  max-width: 920px;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 48px;
+}
+
+.item {
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.footer-text {
+  font-size: 38px;
+  color: #666;
+  line-height: 1.7;
+  margin-top: 36px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="inner">
+    <div class="section-title">连上之后能做什么？</div>
+
+    <p class="item">📱 <span class="highlight">给AI派任务</span> — 手机上打字描述你要做的事</p>
+    <p class="item">👀 <span class="highlight">看代码</span> — 实时看它在电脑上写了什么</p>
+    <p class="item">✅ <span class="highlight">点同意</span> — 它问你要不要执行，手机上一点就行</p>
+    <p class="item">📋 <span class="highlight">看结果</span> — 跑完了结果直接出来</p>
+
+    <p class="footer-text">跟坐在电脑前操作完全一样，只是换了个屏幕。</p>
+  </div>
+  <div class="page-number">5 / 8</div>
+</div>
+</body>
+</html>

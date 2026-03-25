@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 80px;
+  }
+
+  .comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 80px;
+  }
+
+  .comp-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .comp-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .comp-icon {
+    font-size: 48px;
+    font-weight: 900;
+    color: #7C3AED;
+    line-height: 1;
+  }
+
+  .comp-text-bad {
+    font-size: 40px;
+    color: #888;
+    font-weight: 400;
+  }
+
+  .comp-text-good {
+    font-size: 40px;
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .bar-wide {
+    width: 750px;
+    height: 40px;
+    background: #E5E5E5;
+    border-radius: 8px;
+  }
+
+  .bar-narrow {
+    width: 280px;
+    height: 100px;
+    background: #7C3AED;
+    border-radius: 8px;
+  }
+
+  .bottom-text {
+    margin-top: auto;
+    margin-bottom: 40px;
+  }
+
+  .bottom-text p {
+    font-size: 36px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .bottom-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div><span class="badge">6点起床学创业 Day 1</span></div>
+
+    <h1 class="title">做100人爱的产品</h1>
+
+    <div class="comparison">
+      <div class="comp-item">
+        <div class="comp-header">
+          <span class="comp-icon">✗</span>
+          <span class="comp-text-bad">10000人觉得还行</span>
+        </div>
+        <div class="bar-wide"></div>
+      </div>
+
+      <div class="comp-item">
+        <div class="comp-header">
+          <span class="comp-icon">✓</span>
+          <span class="comp-text-good">100人超级爱</span>
+        </div>
+        <div class="bar-narrow"></div>
+      </div>
+    </div>
+
+    <div class="bottom-text">
+      <p>从小众狂热扩展到大众喜爱，容易</p>
+      <p class="purple">反过来，几乎不可能</p>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

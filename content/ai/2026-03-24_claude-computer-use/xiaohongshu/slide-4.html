@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4 - 3步开启Computer Use</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Fira+Code:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1440px;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 50px;
+  }
+
+  .title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #FF6B6B;
+    margin-top: 20px;
+    border-radius: 2px;
+  }
+
+  .main-content {
+    display: flex;
+    gap: 48px;
+    flex: 1;
+  }
+
+  .left-steps {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .step-label {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF6B6B;
+  }
+
+  .step-text {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .right-terminal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .terminal-window {
+    background: #1E1E2E;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .terminal-bar {
+    background: #2A2A3E;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot-red { background: #FF5F57; }
+  .dot-yellow { background: #FEBC2E; }
+  .dot-green { background: #28C840; }
+
+  .terminal-title {
+    font-size: 14px;
+    color: #888;
+    margin-left: 8px;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .terminal-body {
+    padding: 24px 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 22px;
+    line-height: 2;
+    flex: 1;
+  }
+
+  .terminal-body .user-label {
+    color: #FEBC2E;
+  }
+
+  .terminal-body .user-msg {
+    color: #CDD6F4;
+  }
+
+  .terminal-body .claude-label {
+    color: #89B4FA;
+  }
+
+  .terminal-body .action {
+    color: #89B4FA;
+  }
+
+  .terminal-body .success {
+    color: #A6E3A1;
+  }
+
+  .terminal-body .indent {
+    padding-left: 56px;
+    display: block;
+  }
+
+  .note {
+    font-size: 30px;
+    color: #888;
+    line-height: 1.6;
+    margin-top: 36px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1 class="title">3步开启Computer Use</h1>
+
+  <div class="main-content">
+    <div class="left-steps">
+      <div class="step">
+        <span class="step-label">Step 1</span>
+        <p class="step-text">下载Claude桌面端App</p>
+      </div>
+
+      <div class="step">
+        <span class="step-label">Step 2</span>
+        <p class="step-text">设置里开启Computer Use</p>
+      </div>
+
+      <div class="step">
+        <span class="step-label">Step 3</span>
+        <p class="step-text">对话框输入任务，Claude开始操作</p>
+      </div>
+    </div>
+
+    <div class="right-terminal">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">Claude Desktop</span>
+        </div>
+        <div class="terminal-body">
+          <div>
+            <span class="user-label">你:</span>
+            <span class="user-msg"> 帮我打开Safari，</span>
+          </div>
+          <div>
+            <span class="user-msg indent">搜索"今天天气"</span>
+          </div>
+          <br>
+          <div>
+            <span class="claude-label">Claude:</span>
+          </div>
+          <div>
+            <span class="action indent">正在打开Safari...</span>
+          </div>
+          <div>
+            <span class="action indent">正在输入搜索内容...</span>
+          </div>
+          <div>
+            <span class="success indent">&#10003; 搜索完成</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">需要 Claude Pro($20/月) 或 Max 订阅，目前只支持 Mac</p>
+
+  <span class="page-number">4 / 7</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: #FFFFFF;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 100px;
+  position: relative;
+}
+
+.inner {
+  max-width: 920px;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 36px;
+}
+
+.body-text {
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="inner">
+    <div class="section-title">Remote Control是什么？</div>
+    <p class="body-text">简单说：<span class="highlight">用手机遥控电脑写代码</span>。</p>
+    <p class="body-text">代码在你电脑上跑，手机只是个遥控器。</p>
+    <p class="body-text">就像用手机遥控家里的电视一样——手机发指令，电脑干活，结果实时同步到手机上。</p>
+  </div>
+  <div class="page-number">2 / 8</div>
+</div>
+</body>
+</html>

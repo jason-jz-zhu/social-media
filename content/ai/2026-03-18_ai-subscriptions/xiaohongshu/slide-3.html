@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; overflow: hidden; font-family: 'Noto Sans SC', sans-serif; background: #FFFFFF; position: relative; display: flex; align-items: center; }
+  .content { padding: 120px 100px; max-width: 920px; }
+  .body-text { font-size: 40px; font-weight: 400; color: #1A1A1A; line-height: 1.75; margin-bottom: 16px; }
+  .tool-name { font-family: 'Noto Serif SC', serif; font-size: 46px; font-weight: 700; color: #1A1A1A; margin-bottom: 6px; }
+  .tool-price { font-size: 32px; color: #FF6B6B; font-weight: 700; margin-bottom: 16px; }
+  .tool-desc { font-size: 38px; font-weight: 400; color: #444; line-height: 1.7; margin-bottom: 8px; }
+  .highlight { color: #FF6B6B; font-weight: 700; }
+  .divider { width: 60px; height: 3px; background: #F0F0F0; margin: 28px 0; }
+  .sub-tool { font-size: 34px; color: #888; line-height: 1.6; margin-top: 4px; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 28px; color: #CCC; }
+</style>
+</head>
+<body>
+  <div class="content">
+    <p class="body-text">折腾了半年，就留了三个：</p>
+    <div class="divider"></div>
+    <p class="tool-name">ChatGPT</p>
+    <p class="tool-price">$200/月</p>
+    <p class="tool-desc">日常用得最多，想到什么先问它，是我的<span class="highlight">第一反应</span>。</p>
+    <div class="divider"></div>
+    <p class="tool-name">Claude</p>
+    <p class="tool-price">$200/月</p>
+    <p class="tool-desc">深度思考、长文分析用它。</p>
+    <p class="sub-tool">Claude Code — 包含在订阅里，帮我写代码、做工具，<span class="highlight">很多事都靠它</span>。</p>
+    <div class="divider"></div>
+    <p class="tool-name">Genspark</p>
+    <p class="tool-price">$50/月</p>
+    <p class="tool-desc">做PPT用的，开会前一句话生成一套，<span class="highlight">救过我好几次命</span>。</p>
+  </div>
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

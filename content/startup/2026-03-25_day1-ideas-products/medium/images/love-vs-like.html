@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Noto Sans', sans-serif;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1A1A1A;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .comparison {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+  }
+
+  .side-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    margin-bottom: 24px;
+  }
+
+  .wide-bar {
+    width: 500px;
+    height: 30px;
+    background: #E0E0E0;
+    border-radius: 4px;
+  }
+
+  .tall-bar {
+    width: 80px;
+    height: 150px;
+    background: #7C3AED;
+    border-radius: 4px;
+  }
+
+  .desc {
+    font-size: 16px;
+    color: #888888;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .desc-bold {
+    font-size: 16px;
+    font-weight: 700;
+    color: #7C3AED;
+    text-align: center;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Build for Love, Not Scale</h1>
+    <div class="comparison">
+      <div class="side">
+        <div class="side-label">&#10060; 10,000 users who think it's fine</div>
+        <div class="bar-container">
+          <div class="wide-bar"></div>
+        </div>
+        <div class="desc">Looks good on paper</div>
+        <div class="desc">But can't expand into love</div>
+      </div>
+      <div class="side">
+        <div class="side-label">&#9989; 100 users who LOVE it</div>
+        <div class="bar-container">
+          <div class="tall-bar"></div>
+        </div>
+        <div class="desc">Feels small at first</div>
+        <div class="desc-bold">But love scales. Like doesn't.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

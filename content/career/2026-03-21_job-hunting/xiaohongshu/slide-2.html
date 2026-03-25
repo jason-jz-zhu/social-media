@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .container {
+    padding: 120px 100px;
+    max-width: 920px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 36px;
+  }
+
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .funnel-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .funnel-number {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #2EABB0;
+    min-width: 80px;
+  }
+
+  .funnel-desc {
+    font-size: 40px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.4;
+  }
+
+  .body-text {
+    font-size: 38px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.8;
+  }
+
+  .highlight {
+    color: #2EABB0;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCCCCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="section-title">我的找工作漏斗</div>
+
+    <div class="funnel">
+      <div class="funnel-row">
+        <div class="funnel-number">∞</div>
+        <div class="funnel-desc">份简历投出去</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-number">10</div>
+        <div class="funnel-desc">次猎头主动联系</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-number">5</div>
+        <div class="funnel-desc">个走到最终轮面试</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-number">3</div>
+        <div class="funnel-desc">个offer拿到手</div>
+      </div>
+    </div>
+
+    <div class="body-text">边工作边找了10个月</div>
+  </div>
+
+  <div class="page-number">2 / 7</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3 - 能帮你做什么</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1440px;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 60px;
+  }
+
+  .title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #FF6B6B;
+    margin-top: 20px;
+    border-radius: 2px;
+  }
+
+  .use-cases {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    flex: 1;
+  }
+
+  .use-case {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .label-pill {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: #FF6B6B;
+    padding: 6px 24px;
+    border-radius: 20px;
+    align-self: flex-start;
+  }
+
+  .use-case-text {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.75;
+    padding-left: 4px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1 class="title">能帮你做什么</h1>
+
+  <div class="use-cases">
+    <div class="use-case">
+      <span class="label-pill">场景一</span>
+      <p class="use-case-text">打开浏览器批量查资料，整理成表格</p>
+    </div>
+
+    <div class="use-case">
+      <span class="label-pill">场景二</span>
+      <p class="use-case-text">整理桌面文件，按类型分到文件夹</p>
+    </div>
+
+    <div class="use-case">
+      <span class="label-pill">场景三</span>
+      <p class="use-case-text">批量重命名截图、处理图片</p>
+    </div>
+
+    <div class="use-case">
+      <span class="label-pill">场景四</span>
+      <p class="use-case-text">跑测试、提交代码PR</p>
+    </div>
+  </div>
+
+  <span class="page-number">3 / 7</span>
+</div>
+</body>
+</html>

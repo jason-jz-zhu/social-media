@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFF9F5;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bg-shape-1 {
+  position: absolute;
+  width: 600px; height: 600px;
+  top: -150px; right: -100px;
+  background: radial-gradient(circle, rgba(255,107,107,0.07) 0%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+.bg-shape-2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  bottom: -100px; left: -80px;
+  background: radial-gradient(circle, rgba(255,107,107,0.06) 0%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  max-width: 880px;
+  gap: 48px;
+}
+
+.body-text {
+  font-size: 42px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.75;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  font-size: 28px;
+  color: #BBB;
+  z-index: 5;
+}
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+</svg>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
+
+<div class="content">
+  <p class="body-text">你有没有过这种感觉</p>
+  <p class="body-text">脑子里突然冒出一个想法<br>兴奋到睡不着</p>
+  <p class="body-text">早上6点自己就醒了<br>不是闹钟叫的</p>
+  <p class="body-text"><span class="highlight">是被自己的念头叫醒的</span></p>
+</div>
+
+<div class="page-number">2 / 8</div>
+
+</body>
+</html>

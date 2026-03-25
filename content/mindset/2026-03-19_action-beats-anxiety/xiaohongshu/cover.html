@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1.0">
+<title>Cover</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  background: linear-gradient(160deg, #FF6B35 0%, #FF8E53 40%, #FFC371 100%);
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Glow shapes */
+.glow-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.glow-2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: -150px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Doodles */
+.doodle-checkbox {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  opacity: 0.7;
+}
+
+.doodle-pen {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+  opacity: 0.7;
+}
+
+/* Content */
+.content {
+  position: absolute;
+  bottom: 200px;
+  left: 100px;
+  right: 100px;
+  z-index: 5;
+}
+
+.title {
+  font-size: 100px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.keyword {
+  position: relative;
+}
+
+.keyword::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: 40%;
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.subtitle {
+  font-size: 48px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+</style>
+</head>
+<body>
+
+<div class="glow-1"></div>
+<div class="glow-2"></div>
+
+<!-- Checkbox doodle -->
+<svg class="doodle-checkbox" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="54" height="54" rx="8" stroke="white" stroke-width="3.5"/>
+  <path d="M20 36 L30 46 L52 22" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<!-- Pen doodle -->
+<svg class="doodle-pen" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 8 L52 20 L22 50 L8 54 L12 40 Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 12 L48 24" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
+
+<div class="content">
+  <div class="title">
+    四月又要抽签了<br>
+    聊聊我怎么<br>
+    熬过<span class="keyword">焦虑</span>的
+  </div>
+  <div class="subtitle">一个坚持了7年的方法</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFF9F5;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .bg-shape-1 {
+    position: absolute;
+    width: 600px; height: 600px;
+    top: -100px; right: -150px;
+    background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 70%);
+    filter: blur(120px);
+    border-radius: 50%;
+  }
+
+  .bg-shape-2 {
+    position: absolute;
+    width: 500px; height: 500px;
+    bottom: -50px; left: -100px;
+    background: radial-gradient(circle, rgba(255,107,107,0.06) 0%, transparent 70%);
+    filter: blur(120px);
+    border-radius: 50%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 100px;
+    max-width: 880px;
+    gap: 48px;
+  }
+
+  .label {
+    display: inline-block;
+    background: #FF6B6B;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 20px;
+  }
+
+  .point-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .body-text {
+    font-size: 42px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.75;
+  }
+
+  .body-text p {
+    margin-bottom: 32px;
+  }
+
+  .body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .highlight {
+    color: #FF6B6B;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    font-size: 28px;
+    color: #BBB;
+    letter-spacing: 2px;
+    z-index: 5;
+  }
+</style>
+</head>
+<body>
+  <svg class="grain" width="100%" height="100%">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+  </svg>
+
+  <div class="bg-shape-1"></div>
+  <div class="bg-shape-2"></div>
+
+  <div class="content">
+    <span class="label">天花板三</span>
+    <h1 class="point-title">时间</h1>
+    <div class="body-text">
+      <p>一天就24小时</p>
+      <p>AI可以帮你同时做很多事<br>但你的注意力和判断力<br>是有限的</p>
+      <p>就算AI再快<br><span class="highlight">最终还是需要人来拍板</span></p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 8</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: linear-gradient(160deg, #FF6B35 0%, #FF8E53 40%, #FFC371 100%);
+    position: relative;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Glow shapes */
+  .glow-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(100px);
+    top: -100px;
+    right: -80px;
+    z-index: 1;
+  }
+
+  .glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(100px);
+    bottom: 100px;
+    left: -120px;
+    z-index: 1;
+  }
+
+  /* Doodle: magnifying glass top-left */
+  .doodle-magnify {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    opacity: 0.7;
+    z-index: 2;
+  }
+
+  /* Doodle: lightning bolt top-right */
+  .doodle-lightning {
+    position: absolute;
+    top: 90px;
+    right: 100px;
+    opacity: 0.7;
+    z-index: 2;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    right: 100px;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+
+  .title {
+    font-size: 90px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.25;
+    margin-bottom: 48px;
+  }
+
+  .keyword {
+    position: relative;
+    z-index: 1;
+  }
+
+  .keyword::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: calc(100% + 12px);
+    height: 40%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .subtitle {
+    font-size: 44px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-1"></div>
+<div class="glow-2"></div>
+
+<!-- Magnifying glass -->
+<svg class="doodle-magnify" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="28" cy="28" r="20" stroke="white" stroke-width="3.5"/>
+  <line x1="43" y1="43" x2="62" y2="62" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+</svg>
+
+<!-- Lightning bolt -->
+<svg class="doodle-lightning" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polyline points="35,4 15,30 30,30 22,56 48,24 32,24 40,4" stroke="white" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
+
+<div class="content">
+  <div class="title">
+    谷歌颠覆旅行社那年<br>
+    有人<span class="keyword">慌</span>了<br>
+    有人<span class="keyword">发</span>了
+  </div>
+  <div class="subtitle">每次技术变革，本质都一样</div>
+</div>
+
+</body>
+</html>

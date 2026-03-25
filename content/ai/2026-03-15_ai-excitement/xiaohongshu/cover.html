@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Cover</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFF9F5;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bg-shape-1 {
+  position: absolute;
+  width: 600px; height: 600px;
+  top: -100px; right: -150px;
+  background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+.bg-shape-2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  bottom: -50px; left: -100px;
+  background: radial-gradient(circle, rgba(255,107,107,0.06) 0%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  text-align: center;
+}
+
+.top-icon svg {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 60px;
+}
+
+.headline {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 96px;
+  font-weight: 900;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.headline .accent {
+  color: #FF6B6B;
+  position: relative;
+}
+
+.headline .accent::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 4px;
+  width: 100%;
+  height: 14px;
+  background: rgba(255,107,107,0.15);
+  border-radius: 7px;
+  z-index: -1;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.divider-line {
+  width: 80px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+}
+
+.divider-dot {
+  width: 10px;
+  height: 10px;
+  background: #FF6B6B;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+.subtitle {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.tags {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 32px;
+  color: #666;
+  background: rgba(255,107,107,0.08);
+  border: 1px solid rgba(255,107,107,0.15);
+  padding: 10px 24px;
+  border-radius: 30px;
+}
+
+.bottom-art {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+</svg>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
+
+<div class="content">
+  <div class="top-icon">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 5 L58 38 L95 38 L64 58 L73 92 L50 72 L27 92 L36 58 L5 38 L42 38 Z" stroke="#FF6B6B" stroke-width="2.5" fill="none" opacity="0.5"/>
+      <path d="M50 20 L55 40 L78 40 L60 54 L66 76 L50 64 L34 76 L40 54 L22 40 L45 40 Z" stroke="#FF6B6B" stroke-width="2" fill="none" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <h1 class="headline">AI让我<span class="accent">兴奋</span>到<br>失眠，不是焦虑</h1>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <p class="subtitle">一个人，一个周末<br>一个能用的产品</p>
+
+  <div class="tags">
+    <span class="tag">#AI创业</span>
+    <span class="tag">#兴奋到失眠</span>
+    <span class="tag">#从小做起</span>
+  </div>
+</div>
+
+<div class="bottom-art">
+  <svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="4" stroke="#FF6B6B" stroke-width="1.5" fill="none"/>
+    <line x1="32" y1="20" x2="88" y2="20" stroke="#FF6B6B" stroke-width="1" opacity="0.5"/>
+    <circle cx="100" cy="20" r="6" stroke="#FF6B6B" stroke-width="1.5" fill="none"/>
+    <line x1="112" y1="20" x2="168" y2="20" stroke="#FF6B6B" stroke-width="1" opacity="0.5"/>
+    <circle cx="180" cy="20" r="4" stroke="#FF6B6B" stroke-width="1.5" fill="none"/>
+  </svg>
+</div>
+
+</body>
+</html>

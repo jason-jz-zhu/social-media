@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; overflow: hidden; font-family: 'Noto Sans SC', sans-serif; }
+  .card {
+    width: 1080px; height: 1440px; position: relative; background: #FFF9F5;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 100px;
+  }
+  .bg-shape { position: absolute; border-radius: 50%; filter: blur(120px); }
+  .bg-shape-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(46,171,176,0.06) 0%, transparent 70%); top: -60px; right: -40px; }
+  .bg-shape-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(46,171,176,0.04) 0%, transparent 70%); bottom: -40px; left: -40px; }
+  .grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 256px 256px; }
+  .content { position: relative; z-index: 10; display: flex; flex-direction: column; gap: 48px; max-width: 880px; }
+  .label { display: inline-block; background: #2EABB0; color: #FFF; font-size: 32px; font-weight: 700; padding: 10px 28px; border-radius: 20px; letter-spacing: 2px; align-self: flex-start; }
+  .point-title { font-family: 'Noto Serif SC', serif; font-size: 52px; font-weight: 700; color: #1A1A1A; }
+  .body-text { font-size: 42px; font-weight: 400; color: #333; line-height: 1.75; letter-spacing: 1px; }
+  .highlight { color: #2EABB0; font-weight: 700; }
+  .page-num { position: absolute; bottom: 50px; right: 60px; font-size: 28px; color: #BBB; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bg-shape bg-shape-1"></div>
+  <div class="bg-shape bg-shape-2"></div>
+  <div class="grain"></div>
+  <div class="content">
+    <span class="label">我的出口</span>
+    <p class="point-title">分享</p>
+    <p class="body-text">把学到的、感受到的<br>想明白的东西说出来<br>和大家聊一聊</p>
+    <p class="body-text">当你把脑子里乱七八糟的想法<br>整理成文字分享出来的时候</p>
+    <p class="body-text"><span class="highlight">你反而会更了解自己在想什么</span></p>
+  </div>
+  <div class="page-num">5 / 8</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; overflow: hidden; font-family: 'Noto Sans SC', sans-serif; background: #FFFFFF; position: relative; display: flex; align-items: center; justify-content: center; }
+  .content { padding: 100px; max-width: 920px; text-align: center; }
+  .golden { font-family: 'Noto Serif SC', serif; font-size: 52px; font-weight: 900; color: #1A1A1A; line-height: 1.5; margin-bottom: 40px; }
+  .highlight { color: #FF6B6B; font-weight: 900; }
+  .sub { font-size: 40px; color: #888; line-height: 1.6; margin-bottom: 48px; }
+  .divider { display: flex; align-items: center; gap: 16px; width: 300px; margin: 0 auto 48px; }
+  .divider-line { flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(26,26,26,0.12), transparent); }
+  .divider-dot { width: 8px; height: 8px; border-radius: 50%; background: #FF6B6B; opacity: 0.5; }
+  .cta { font-size: 40px; font-weight: 500; color: #555; line-height: 1.5; margin-bottom: 40px; }
+  .tags { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .tag { padding: 10px 28px; border-radius: 24px; font-size: 28px; font-weight: 500; color: #888; background: rgba(255,107,107,0.06); border: 1px solid rgba(255,107,107,0.12); }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 28px; color: #CCC; }
+</style>
+</head>
+<body>
+  <div class="content">
+    <p class="golden">贵不贵不看价格<br>看你用它<span class="highlight">做出了什么</span></p>
+    <p class="sub">工具不在多，用顺手的就够了<br>关键不是你订阅了多少AI<br>而是你让它们怎么配合</p>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+    <p class="cta">你们每个月在AI上花多少钱？<br>觉得值吗？</p>
+    <div class="tags">
+      <span class="tag">#AI工具</span>
+      <span class="tag">#AI订阅</span>
+      <span class="tag">#ChatGPT</span>
+      <span class="tag">#Claude</span>
+    </div>
+  </div>
+  <div class="page-number">7 / 7</div>
+</body>
+</html>

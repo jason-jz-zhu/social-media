@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  .quote {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #1A1A1A;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .quote .highlight {
+    color: #2EABB0;
+    font-weight: 900;
+  }
+
+  .sub-quote {
+    font-size: 38px;
+    color: #888;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 48px;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(46, 171, 176, 0.4));
+  }
+
+  .divider-line:last-child {
+    background: linear-gradient(90deg, rgba(46, 171, 176, 0.4), transparent);
+  }
+
+  .divider-dot {
+    width: 8px;
+    height: 8px;
+    background: #2EABB0;
+    opacity: 0.5;
+    border-radius: 50%;
+    margin: 0 12px;
+    flex-shrink: 0;
+  }
+
+  .cta {
+    font-size: 40px;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .tag {
+    font-size: 28px;
+    font-weight: 500;
+    color: #888;
+    background: rgba(46, 171, 176, 0.06);
+    border: 1px solid rgba(46, 171, 176, 0.12);
+    padding: 10px 28px;
+    border-radius: 24px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="quote">有时候最有价值的东西<br>不在<span class="highlight">工资单</span>上</div>
+    <div class="sub-quote">人脉、品牌、成长、享受<br>这些才是真正赚到的</div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="cta">你身边有做客座的朋友吗？<br>你有没有想过去试试？</div>
+    <div class="tags">
+      <span class="tag">#北美职场</span>
+      <span class="tag">#客座教授</span>
+      <span class="tag">#没有PhD</span>
+      <span class="tag">#行业经验</span>
+    </div>
+  </div>
+  <div class="page-number">7 / 7</div>
+</body>
+</html>

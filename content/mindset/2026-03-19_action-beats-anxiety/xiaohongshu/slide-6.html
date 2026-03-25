@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 100px;
+  text-align: center;
+}
+
+.quote {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: #1A1A1A;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.sub-quote {
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 900;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin: 40px auto;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, rgba(255, 107, 107, 0.3));
+}
+
+.divider-line:last-child {
+  background: linear-gradient(to left, transparent, rgba(255, 107, 107, 0.3));
+}
+
+.divider-dot {
+  width: 8px;
+  height: 8px;
+  background: #FF6B6B;
+  opacity: 0.5;
+  border-radius: 50%;
+  margin: 0 12px;
+  flex-shrink: 0;
+}
+
+.cta {
+  font-size: 38px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.tag {
+  font-size: 28px;
+  font-weight: 500;
+  color: #888;
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.12);
+  padding: 10px 28px;
+  border-radius: 24px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="quote">焦虑这东西<br>想是想不完的</div>
+  <div class="sub-quote">但手上有事做的时候<br><span class="highlight">脑子就没空焦虑了</span></div>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+  <div class="cta">你焦虑的时候，一般怎么缓解？</div>
+  <div class="tags">
+    <span class="tag">#H1B</span>
+    <span class="tag">#焦虑</span>
+    <span class="tag">#行动力</span>
+    <span class="tag">#蔡格尼克效应</span>
+  </div>
+</div>
+<div class="page-number">6 / 6</div>
+</body>
+</html>

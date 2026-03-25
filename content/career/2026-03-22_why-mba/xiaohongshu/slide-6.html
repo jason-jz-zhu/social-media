@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1A1A1A;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 120px 100px;
+    max-width: 920px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .comparison {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  .col-left {
+    border-right: 2px solid #E8E8E8;
+    padding-right: 40px;
+  }
+
+  .col-right {
+    padding-left: 0;
+  }
+
+  .col-header {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .col-header.gave { color: #2EABB0; }
+  .col-header.not-gave { color: #FF6B6B; }
+
+  .col-item {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.8;
+    padding: 4px 0;
+  }
+
+  .col-item::before {
+    content: '—  ';
+    color: #CCC;
+  }
+
+  .result-box {
+    background: rgba(46, 171, 176, 0.05);
+    border-left: 4px solid rgba(46, 171, 176, 0.3);
+    border-radius: 12px;
+    padding: 24px 28px;
+    font-size: 34px;
+    color: #888;
+  }
+
+  .highlight {
+    color: #2EABB0;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="section-title">MBA给了什么 vs 没给什么</div>
+
+    <div class="comparison">
+      <div class="col col-left">
+        <div class="col-header gave">给了</div>
+        <div class="col-item">沟通和表达能力</div>
+        <div class="col-item">不同行业的视角</div>
+        <div class="col-item">任何机会都去争取的心态</div>
+        <div class="col-item">一个有意思的圈子</div>
+      </div>
+      <div class="col col-right">
+        <div class="col-header not-gave">没给</div>
+        <div class="col-item">方向感</div>
+        <div class="col-item">取舍的能力</div>
+        <div class="col-item">知道自己到底想要什么</div>
+      </div>
+    </div>
+
+    <div class="result-box">
+      得到了想要的，反而更迷茫了——这可能才是成长的开始
+    </div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</body>
+</html>

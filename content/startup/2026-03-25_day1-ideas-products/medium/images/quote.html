@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote Card</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #E0E0E0;
+}
+
+.card {
+  width: 1200px;
+  height: 630px;
+  background: #F8F5FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.open-quote {
+  font-size: 120px;
+  color: #7C3AED;
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.quote-text {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 900px;
+  padding: 0 60px;
+}
+
+.quote-text .highlight {
+  color: #7C3AED;
+}
+
+.divider {
+  width: 100px;
+  height: 1px;
+  background: #E0E0E0;
+  margin: 32px 0;
+}
+
+.attribution {
+  font-size: 18px;
+  color: #888888;
+  text-align: center;
+  font-weight: 400;
+}
+
+.source {
+  font-size: 14px;
+  color: #BBBBBB;
+  text-align: center;
+  position: absolute;
+  bottom: 36px;
+  font-weight: 400;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="open-quote">&ldquo;</div>
+  <p class="quote-text">
+    &ldquo;The only good reason to start a startup is that you <span class="highlight">can&rsquo;t NOT do it</span>.&rdquo;
+  </p>
+  <div class="divider"></div>
+  <p class="attribution">&mdash; Dustin Moskovitz, Co-founder of Facebook &amp; Asana</p>
+  <p class="source">YC Lecture 1 &middot; CS183B Stanford</p>
+</div>
+</body>
+</html>

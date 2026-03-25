@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1A1A1A;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px;
+    text-align: center;
+  }
+
+  .quote {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #1A1A1A;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .sub-quote {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .highlight {
+    color: #2EABB0;
+    font-weight: 700;
+  }
+
+  .highlight2 {
+    color: #FF6B6B;
+    font-weight: 900;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 40px auto;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(to right, transparent, #2EABB0);
+  }
+
+  .divider-line:last-child {
+    background: linear-gradient(to left, transparent, #2EABB0);
+  }
+
+  .divider-dot {
+    width: 8px;
+    height: 8px;
+    background: #2EABB0;
+    opacity: 0.5;
+    border-radius: 50%;
+    margin: 0 12px;
+  }
+
+  .cta {
+    font-size: 38px;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .tag {
+    font-size: 28px;
+    font-weight: 500;
+    color: #888;
+    background: rgba(46, 171, 176, 0.06);
+    border: 1px solid rgba(46, 171, 176, 0.12);
+    padding: 10px 28px;
+    border-radius: 24px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="quote">MBA教会我<br>追求每一个<span class="highlight">机会</span></div>
+    <div class="sub-quote">但没教我<br>该<span class="highlight2">放弃</span>哪些</div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="cta">在考虑读MBA的<br>可以评论区问我<br>两年踩过的坑都告诉你</div>
+
+    <div class="tags">
+      <span class="tag">#MBA</span>
+      <span class="tag">#NYUStern</span>
+      <span class="tag">#职场转型</span>
+      <span class="tag">#迷茫</span>
+    </div>
+  </div>
+  <div class="page-number">7 / 7</div>
+</body>
+</html>

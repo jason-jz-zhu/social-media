@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6 - 收藏：使用指南</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1440px;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 60px;
+  }
+
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .section-header {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #FF6B6B;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(255, 107, 107, 0.15);
+  }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-left: 8px;
+  }
+
+  .check-list li {
+    font-size: 34px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .check-list li .icon {
+    font-size: 34px;
+    font-weight: 700;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+  }
+
+  .icon-check {
+    color: #4CAF50;
+  }
+
+  .icon-cross {
+    color: #FF6B6B;
+  }
+
+  .compare-box {
+    margin-top: 10px;
+    padding: 28px 36px;
+    background: #FFF5F5;
+    border-radius: 16px;
+    border-left: 5px solid #FF6B6B;
+  }
+
+  .compare-box p {
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .compare-box span.label {
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .compare-box span.sep {
+    color: #CCC;
+    margin: 0 12px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="title">收藏：使用指南</h1>
+
+    <div class="section">
+      <h2 class="section-header">适合的场景</h2>
+      <ul class="check-list">
+        <li><span class="icon icon-check">&#10003;</span>批量查资料整理表格</li>
+        <li><span class="icon icon-check">&#10003;</span>文件整理和重命名</li>
+        <li><span class="icon icon-check">&#10003;</span>网页操作自动化</li>
+        <li><span class="icon icon-check">&#10003;</span>代码测试和提交</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-header">注意事项</h2>
+      <ul class="check-list">
+        <li><span class="icon icon-cross">&#10007;</span>目前只支持 Mac</li>
+        <li><span class="icon icon-cross">&#10007;</span>密码 / 银行操作别让它碰</li>
+        <li><span class="icon icon-cross">&#10007;</span>复杂任务可能需要重试</li>
+        <li><span class="icon icon-cross">&#10007;</span>新应用需要手动授权</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="compare-box">
+        <p>
+          <span class="label">Computer Use</span> = 操控桌面
+          <span class="sep">|</span>
+          <span class="label">Remote Control</span> = 遥控写代码
+        </p>
+      </div>
+    </div>
+
+    <div class="page-number">6 / 7</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFF9F5;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bg-shape-1 {
+  position: absolute;
+  width: 550px; height: 550px;
+  top: -100px; right: -120px;
+  background: radial-gradient(circle, rgba(255,107,107,0.07) 0%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+.bg-shape-2 {
+  position: absolute;
+  width: 480px; height: 480px;
+  bottom: -60px; left: -100px;
+  background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  gap: 48px;
+}
+
+.label {
+  display: inline-block;
+  background: #FF6B6B;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+
+.point-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+}
+
+.body-text {
+  font-size: 42px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.75;
+}
+
+.highlight {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  font-size: 28px;
+  color: #BBB;
+  z-index: 5;
+}
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+</svg>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
+
+<div class="content">
+  <span class="label">上瘾</span>
+  <h2 class="point-title">我靠，这也行？</h2>
+  <p class="body-text">试着把想法描述给AI<br>来回调了几轮</p>
+  <p class="body-text">一两个小时<br>居然就跑起来了</p>
+  <p class="body-text"><span class="highlight">这种感觉，真的上瘾</span></p>
+</div>
+
+<div class="page-number">4 / 8</div>
+
+</body>
+</html>

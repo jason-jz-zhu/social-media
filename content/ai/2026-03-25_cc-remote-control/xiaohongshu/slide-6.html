@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 5</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  padding: 120px 100px;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 36px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.circle {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  background: #FF6B6B;
+  color: #FFFFFF;
+  font-size: 44px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.item-text {
+  font-size: 42px;
+  font-weight: 400;
+  color: #1A1A1A;
+  line-height: 1.8;
+}
+
+.tip-box {
+  background: rgba(255,107,107,0.05);
+  border-left: 4px solid rgba(255,107,107,0.3);
+  border-radius: 12px;
+  padding: 24px 28px;
+  font-size: 34px;
+  color: #888;
+  margin-top: 20px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+}
+
+.highlight { color: #FF6B6B; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="section-title">3个实用技巧</div>
+
+  <div class="item">
+    <div class="circle">1</div>
+    <div class="item-text">开bypass permissions模式<br><span style="font-size:36px;color:#666">它自己跑，不用你一直点同意</span></div>
+  </div>
+
+  <div class="item">
+    <div class="circle">2</div>
+    <div class="item-text">用plan mode先规划<br><span style="font-size:36px;color:#666">让AI先出方案，你approve之后再执行</span></div>
+  </div>
+
+  <div class="item">
+    <div class="circle">3</div>
+    <div class="item-text">多项目并行<br><span style="font-size:36px;color:#666">同时开几个任务，手机上切着看进度</span></div>
+  </div>
+
+  <div class="tip-box">最爽的：给它一个大任务然后出门，回来发现已经写完了</div>
+</div>
+<div class="page-number">6 / 8</div>
+</body>
+</html>

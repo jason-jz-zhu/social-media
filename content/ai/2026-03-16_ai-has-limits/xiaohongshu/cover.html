@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>AI替代人，什么时候是个头？</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFF9F5;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.bg-shape-1 {
+  width: 600px; height: 600px;
+  top: -100px; right: -150px;
+  background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 70%);
+}
+
+.bg-shape-2 {
+  width: 500px; height: 500px;
+  bottom: -80px; left: -100px;
+  background: radial-gradient(circle, rgba(255,107,107,0.06) 0%, transparent 70%);
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  padding: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.top-icon {
+  margin-bottom: 60px;
+}
+
+.headline {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 96px;
+  font-weight: 900;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin-bottom: 48px;
+}
+
+.headline .accent {
+  color: #FF6B6B;
+  position: relative;
+}
+
+.headline .accent::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: rgba(255,107,107,0.15);
+  border-radius: 7px;
+  z-index: -1;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.divider-line {
+  width: 80px;
+  height: 2px;
+  background: rgba(255,107,107,0.3);
+}
+
+.divider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF6B6B;
+  opacity: 0.5;
+}
+
+.subtitle {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 56px;
+}
+
+.tags {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.tag {
+  font-size: 32px;
+  padding: 10px 24px;
+  background: rgba(255,107,107,0.08);
+  border: 1px solid rgba(255,107,107,0.15);
+  border-radius: 40px;
+  color: #666;
+}
+
+.bottom-art {
+  margin-top: auto;
+}
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+</svg>
+
+<div class="bg-shape bg-shape-1"></div>
+<div class="bg-shape bg-shape-2"></div>
+
+<div class="content">
+  <div class="top-icon">
+    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+      <line x1="15" y1="25" x2="85" y2="25" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+      <line x1="50" y1="80" x2="50" y2="30" stroke="#FF6B6B" stroke-width="3.5" stroke-linecap="round" opacity="0.4"/>
+      <polyline points="38,42 50,30 62,42" stroke="#FF6B6B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <h1 class="headline">
+    <span class="accent">AI</span>替代人，<br>什么时候是个头？
+  </h1>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <p class="subtitle">三个天花板<br>一个平衡点</p>
+
+  <div class="tags">
+    <span class="tag">#AI上限</span>
+    <span class="tag">#三个天花板</span>
+    <span class="tag">#理性看AI</span>
+  </div>
+
+  <div class="bottom-art">
+    <svg width="120" height="80" viewBox="0 0 120 80" fill="none" opacity="0.4">
+      <line x1="60" y1="10" x2="60" y2="50" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="8" r="5" stroke="#FF6B6B" stroke-width="2.5" fill="none"/>
+      <line x1="20" y1="42" x2="100" y2="42" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
+      <line x1="20" y1="42" x2="10" y2="62" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="100" y1="42" x2="110" y2="62" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="2" y1="62" x2="18" y2="62" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="102" y1="62" x2="118" y2="62" stroke="#FF6B6B" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="50" y="50" width="20" height="6" rx="3" fill="#FF6B6B" opacity="0.3"/>
+    </svg>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Noto Sans', sans-serif;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1A1A1A;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .columns {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .column {
+    flex: 1;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .column:not(:last-child) {
+    border-right: 1px solid #E0E0E0;
+  }
+
+  .company-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .company-desc {
+    font-size: 20px;
+    color: #7C3AED;
+    font-weight: 500;
+  }
+
+  .company-quote {
+    font-size: 16px;
+    color: #888888;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .bottom-bar {
+    background: #7C3AED;
+    padding: 18px 50px;
+    text-align: center;
+  }
+
+  .bottom-bar p {
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">The Best Ideas Look Terrible at First</h1>
+    <div class="columns">
+      <div class="column">
+        <div class="company-name">Google</div>
+        <div class="company-desc">The 13th search engine</div>
+        <div class="company-quote">Search is done. Nobody needs another one.</div>
+      </div>
+      <div class="column">
+        <div class="company-name">Facebook</div>
+        <div class="company-desc">Only for college students</div>
+        <div class="company-quote">MySpace already won. Students have no money.</div>
+      </div>
+      <div class="column">
+        <div class="company-name">Airbnb</div>
+        <div class="company-desc">Sleep on a stranger's couch</div>
+        <div class="company-quote">Sounds terrible in every way.</div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <p>If your idea sounds obviously good, you're already too late.</p>
+  </div>
+</body>
+</html>

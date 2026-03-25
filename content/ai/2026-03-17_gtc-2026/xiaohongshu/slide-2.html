@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #FFF9F5;
+    position: relative;
+  }
+
+  /* Grain overlay */
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 100px;
+    max-width: 880px;
+    gap: 48px;
+  }
+
+  .content p {
+    font-size: 42px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.75;
+  }
+
+  .highlight {
+    color: #FF6B6B;
+    font-weight: 700;
+  }
+
+  .page-num {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.25);
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <p>AI界的<span class="highlight">"春晚"</span>昨天下午又开了</p>
+    <p>英伟达CEO黄仁勋<br>在GTC大会上讲了整整2小时</p>
+    <p>技术细节太多了</p>
+    <p><span class="highlight">我帮你翻译成人话</span></p>
+  </div>
+  <div class="page-num">2 / 8</div>
+  <div class="grain"></div>
+</body>
+</html>

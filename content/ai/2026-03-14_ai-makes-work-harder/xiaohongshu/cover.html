@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1440px;
+    position: relative;
+    background: #FFF9F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Subtle warm background shapes */
+  .bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+  }
+
+  .bg-shape-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+    top: -60px; right: -80px;
+  }
+
+  .bg-shape-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 180, 100, 0.06) 0%, transparent 70%);
+    bottom: -40px; left: -60px;
+  }
+
+  /* Grain texture */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  /* Content area */
+  .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* Top icon */
+  .top-icon {
+    margin-bottom: 10px;
+  }
+
+  .top-icon svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Headline */
+  .headline {
+    font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1.35;
+    color: #1A1A1A;
+    letter-spacing: 4px;
+  }
+
+  .headline .accent {
+    color: #FF6B35;
+    position: relative;
+    display: inline-block;
+  }
+
+  .headline .accent::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: 14px;
+    background: rgba(255, 107, 53, 0.15);
+    border-radius: 7px;
+    z-index: -1;
+  }
+
+  .headline .accent2 {
+    color: #FF6B35;
+  }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 360px;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(26, 26, 26, 0.15), transparent);
+  }
+
+  .divider-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #FF6B35;
+    opacity: 0.5;
+  }
+
+  /* Subtitle */
+  .subtitle {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: 4px;
+    line-height: 1.5;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .tag {
+    padding: 12px 32px;
+    border-radius: 24px;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #666666;
+    background: rgba(255, 107, 53, 0.08);
+    border: 1px solid rgba(255, 107, 53, 0.15);
+  }
+
+  /* Bottom art */
+  .bottom-art {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.4;
+  }
+
+  .bottom-art svg {
+    width: 44px;
+    height: 44px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- Background shapes -->
+  <div class="bg-shape bg-shape-1"></div>
+  <div class="bg-shape bg-shape-2"></div>
+
+  <!-- Grain -->
+  <div class="grain"></div>
+
+  <!-- Main content -->
+  <div class="content">
+    <!-- Top icon - brain with lightning -->
+    <div class="top-icon">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 65 C18 62, 12 50, 15 38 C18 26, 30 20, 38 23 C41 14, 52 10, 58 16 C62 10, 74 12, 76 20 C84 17, 92 26, 88 38 C92 46, 84 58, 72 62" stroke="#1A1A1A" stroke-width="2" fill="none" opacity="0.2"/>
+        <path d="M52 18 L52 65" stroke="#FF6B35" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <path d="M10 38 L4 34" stroke="#FF6B35" stroke-width="2" fill="none" opacity="0.35" stroke-linecap="round"/>
+        <path d="M8 44 L2 40" stroke="#FF6B35" stroke-width="2" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M90 38 L96 34" stroke="#FF6B35" stroke-width="2" fill="none" opacity="0.35" stroke-linecap="round"/>
+        <path d="M92 44 L98 40" stroke="#FF6B35" stroke-width="2" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <circle cx="36" cy="42" r="3" fill="#FF6B35" opacity="0.3"/>
+        <circle cx="68" cy="42" r="3" fill="#FF6B35" opacity="0.3"/>
+        <circle cx="52" cy="42" r="3.5" fill="#FF6B35" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="headline">
+      有了<span class="accent">AI</span>，<br>
+      上班更<span class="accent2">累</span>了？
+    </h1>
+
+    <!-- Divider -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="subtitle">
+      效率提高了<br>
+      但注意力透支了
+    </p>
+
+    <!-- Tags -->
+    <div class="tags">
+      <span class="tag">#效率陷阱</span>
+      <span class="tag">#打工人</span>
+      <span class="tag">#AI时代</span>
+    </div>
+  </div>
+
+  <!-- Bottom art - pause -->
+  <div class="bottom-art">
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="16" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
+      <rect x="16" y="14" width="4" height="16" rx="1.5" fill="#FF6B35" opacity="0.6"/>
+      <rect x="24" y="14" width="4" height="16" rx="1.5" fill="#FF6B35" opacity="0.6"/>
+    </svg>
+  </div>
+</div>
+</body>
+</html>

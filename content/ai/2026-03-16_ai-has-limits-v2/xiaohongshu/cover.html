@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  .card {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    background: linear-gradient(160deg, #FF6B35 0%, #FF8E53 40%, #FFC371 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Glow shapes */
+  .glow-1 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .glow-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    bottom: 100px;
+    left: -80px;
+    background: radial-gradient(circle, rgba(255,200,100,0.3) 0%, transparent 70%);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Grain texture */
+  .grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* Content */
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 80px;
+    text-align: center;
+  }
+
+  /* SVG doodle */
+  .doodle {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 40px;
+  }
+
+  /* Title */
+  .title {
+    font-size: 120px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.2;
+    letter-spacing: 2px;
+  }
+
+  .title .line {
+    display: block;
+  }
+
+  .highlight {
+    position: relative;
+    display: inline;
+  }
+
+  .highlight::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: 0;
+    height: 40%;
+    background: rgba(26, 26, 26, 0.3);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  /* Subtitle */
+  .subtitle {
+    margin-top: 40px;
+    font-size: 52px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+    <div class="grain"></div>
+
+    <div class="content">
+      <!-- Ceiling/limit doodle -->
+      <svg class="doodle" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ceiling line -->
+        <path d="M 20 50 Q 50 48, 100 50 Q 150 52, 180 50" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.8" />
+        <!-- Small cracks/impact marks at ceiling -->
+        <path d="M 95 52 L 90 58" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+        <path d="M 105 52 L 110 58" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+        <path d="M 100 50 L 100 55" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+        <!-- Arrow going up and hitting ceiling -->
+        <path d="M 100 170 L 100 60" stroke="white" stroke-width="4.5" stroke-linecap="round" opacity="0.8" />
+        <!-- Arrowhead -->
+        <path d="M 90 75 L 100 58 L 110 75" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+        <!-- Bounce-back arrow (deflected to the right) -->
+        <path d="M 100 60 Q 115 70, 130 95" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.6" stroke-dasharray="8 6" />
+        <!-- Bounce arrowhead -->
+        <path d="M 122 82 L 131 96 L 118 95" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+      </svg>
+
+      <div class="title">
+        <span class="line">AI<span class="highlight">替代</span>人</span>
+        <span class="line">什么时候是个头？</span>
+      </div>
+
+      <div class="subtitle">三个天花板，一个平衡点</div>
+    </div>
+  </div>
+</body>
+</html>

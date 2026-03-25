@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFF9F5;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .bg-shape-1 {
+    position: absolute;
+    width: 600px; height: 600px;
+    top: -100px; right: -150px;
+    background: radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 70%);
+    filter: blur(120px);
+    border-radius: 50%;
+  }
+
+  .bg-shape-2 {
+    position: absolute;
+    width: 500px; height: 500px;
+    bottom: -50px; left: -100px;
+    background: radial-gradient(circle, rgba(255,107,107,0.06) 0%, transparent 70%);
+    filter: blur(120px);
+    border-radius: 50%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 100px;
+    max-width: 880px;
+    gap: 40px;
+  }
+
+  .label-pill {
+    background: #FF6B6B;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .point-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .comparison-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+  }
+
+  .comparison-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .before-box {
+    background: #f0f0f0;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 34px;
+    color: #888;
+  }
+
+  .arrow {
+    font-size: 30px;
+    color: #BBB;
+    flex-shrink: 0;
+  }
+
+  .after-box {
+    background: rgba(255,107,107,0.1);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 34px;
+    color: #FF6B6B;
+    font-weight: 700;
+  }
+
+  .result-box {
+    background: rgba(255,107,107,0.05);
+    border-radius: 16px;
+    border-left: 4px solid rgba(255,107,107,0.3);
+    padding: 20px 28px;
+    font-size: 34px;
+    color: #888;
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    font-size: 28px;
+    color: #BBB;
+    letter-spacing: 2px;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<svg class="grain" xmlns="http://www.w3.org/2000/svg">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain)" opacity="0.03"/>
+</svg>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
+
+<div class="content">
+  <div class="label-pill">普通人该怎么看</div>
+  <div class="point-title">三个变化，一个趋势</div>
+
+  <div class="comparison-rows">
+    <div class="comparison-row">
+      <div class="before-box">AI很贵</div>
+      <div class="arrow">&rarr;</div>
+      <div class="after-box">正在变便宜</div>
+    </div>
+    <div class="comparison-row">
+      <div class="before-box">只能在云端</div>
+      <div class="arrow">&rarr;</div>
+      <div class="after-box">可以在桌上跑</div>
+    </div>
+    <div class="comparison-row">
+      <div class="before-box">要团队才能做</div>
+      <div class="arrow">&rarr;</div>
+      <div class="after-box">一个人几天就行</div>
+    </div>
+  </div>
+
+  <div class="result-box">趋势：AI离普通人越来越近</div>
+</div>
+
+<div class="page-number">7 / 8</div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 120px 100px;
+    max-width: 920px;
+    height: 100%;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 52px;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin-bottom: 52px;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .item-number {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: rgba(46, 171, 176, 0.12);
+    color: #2EABB0;
+    font-weight: 700;
+    font-size: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .item-text {
+    font-size: 38px;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .result-box {
+    background: rgba(46, 171, 176, 0.05);
+    border-left: 4px solid rgba(46, 171, 176, 0.3);
+    border-radius: 12px;
+    padding: 24px 28px;
+    font-size: 34px;
+    color: #888;
+  }
+
+  .highlight {
+    color: #2EABB0;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="section-title">找工作4个心得</div>
+    <div class="items">
+      <div class="item">
+        <div class="item-number">1</div>
+        <div class="item-text">Refer不像以前管用，主动出击更有效</div>
+      </div>
+      <div class="item">
+        <div class="item-number">2</div>
+        <div class="item-text">直接联系猎头/HM，80%拿到第一轮</div>
+      </div>
+      <div class="item">
+        <div class="item-number">3</div>
+        <div class="item-text">多投，没回应不代表被拒绝</div>
+      </div>
+      <div class="item">
+        <div class="item-number">4</div>
+        <div class="item-text">Mock很重要，题库有限可能碰原题，交流比答案更影响结果</div>
+      </div>
+    </div>
+    <div class="result-box">找工作这件事，方法比努力重要</div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</body>
+</html>
