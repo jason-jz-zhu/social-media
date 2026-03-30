@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* HR checklist */
+  .hr-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .hr-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hr-card {
+    flex: 0 0 calc(50% - 6px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 16px;
+    border: 2px solid rgba(124, 58, 237, 0.15);
+  }
+
+  .hr-icon {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .hr-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .hr-desc {
+    font-size: 20px;
+    color: #888;
+    line-height: 1.4;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* Productivity section */
+  .prod-box {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .prod-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .prod-title .purple {
+    color: #B794F4;
+  }
+
+  .prod-formula {
+    font-size: 48px;
+    font-weight: 900;
+    color: #7C3AED;
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .prod-explain {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .prod-test {
+    background: rgba(124, 58, 237, 0.15);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+
+  .prod-test-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .prod-test-text .purple {
+    color: #B794F4;
+  }
+
+  /* Write it down */
+  .write-box {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+    border-radius: 14px;
+    padding: 24px 24px;
+  }
+
+  .write-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .write-content {
+    display: flex;
+    gap: 16px;
+  }
+
+  .write-item {
+    flex: 1;
+    text-align: center;
+  }
+
+  .write-label {
+    font-size: 36px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 6px;
+  }
+
+  .write-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 20</div>
+
+    <h1 class="title">HR系统 + 生产力法则</h1>
+
+    <div class="section-label">HR四件事必须做</div>
+
+    <div class="hr-box">
+      <div class="hr-grid">
+        <div class="hr-card">
+          <div class="hr-icon">01</div>
+          <div class="hr-title">Performance Feedback</div>
+          <div class="hr-desc">定期、明确、有标准</div>
+        </div>
+        <div class="hr-card">
+          <div class="hr-icon">02</div>
+          <div class="hr-title">薪酬Bands</div>
+          <div class="hr-desc">透明区间，避免内耗</div>
+        </div>
+        <div class="hr-card">
+          <div class="hr-icon">03</div>
+          <div class="hr-title">持续给Equity</div>
+          <div class="hr-desc">年3-5%，留住核心人</div>
+        </div>
+        <div class="hr-card">
+          <div class="hr-icon">04</div>
+          <div class="hr-title">Refresher Grants</div>
+          <div class="hr-desc">长期激励，防止流失</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">生产力随人数平方下降</div>
+
+    <div class="prod-box">
+      <div class="prod-title">生产力 <span class="purple">vs</span> 人数</div>
+      <div class="prod-formula">Productivity ~ 1/N&sup2;</div>
+      <div class="prod-explain">人越多，沟通成本越高<br>核心不是效率，是Alignment</div>
+      <div class="prod-test">
+        <div class="prod-test-text"><span class="purple">10个员工</span> 就是测试<br>如果10人都对不齐，100人更没戏</div>
+      </div>
+    </div>
+
+    <div class="write-box">
+      <div class="write-title">写下 How 和 Why</div>
+      <div class="write-content">
+        <div class="write-item">
+          <div class="write-label">How</div>
+          <div class="write-desc">怎么做事<br>流程和标准</div>
+        </div>
+        <div class="write-item">
+          <div class="write-label">Why</div>
+          <div class="write-desc">为什么做<br>使命和价值观</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 44px 80px;
+  width: 100%;
+  position: relative;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 40px;
+}
+
+.hill {
+  position: relative;
+  height: 340px;
+  width: 100%;
+}
+
+/* The slope line */
+.slope {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  width: 960px;
+  height: 240px;
+  border-bottom: 4px solid #D0C8E8;
+  border-left: 4px solid #D0C8E8;
+  background: linear-gradient(to top right, rgba(124,58,237,0.06) 0%, transparent 100%);
+  clip-path: polygon(0% 100%, 0% 80%, 15% 55%, 35% 35%, 60% 18%, 100% 5%, 100% 100%);
+}
+
+/* Milestone markers along the curve */
+.milestone {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.milestone .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7C3AED;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.milestone .dot.hollow {
+  background: #fff;
+  border: 3px solid #7C3AED;
+}
+
+.milestone .count {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1A2E;
+}
+
+.milestone .effort {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  white-space: nowrap;
+}
+
+.milestone .effort-bar {
+  width: 6px;
+  background: linear-gradient(to top, #7C3AED, rgba(124,58,237,0.3));
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+/* Position milestones along the curve */
+.m1 { left: 70px; bottom: 100px; }
+.m1 .effort-bar { height: 100px; }
+
+.m2 { left: 230px; bottom: 140px; }
+.m2 .effort-bar { height: 70px; }
+
+.m3 { left: 440px; bottom: 185px; }
+.m3 .effort-bar { height: 50px; }
+
+.m4 { left: 680px; bottom: 220px; }
+.m4 .effort-bar { height: 35px; }
+
+.m5 { left: 900px; bottom: 252px; }
+.m5 .effort-bar { height: 20px; }
+
+/* Boulder */
+.boulder {
+  position: absolute;
+  left: 55px;
+  bottom: 210px;
+  width: 56px;
+  height: 56px;
+  background: #1A1A2E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Steepest label */
+.steep-label {
+  position: absolute;
+  left: 60px;
+  bottom: 280px;
+  background: #7C3AED;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* Axis labels */
+.axis-label {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  color: #AAA;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.y-label {
+  left: 0px;
+  bottom: 180px;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+}
+
+.x-label {
+  right: 40px;
+  bottom: 38px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Walker Williams' Metaphor</div>
+  <div class="title">Pushing the Boulder: Early Traction Is the Steepest Climb</div>
+  <div class="hill">
+    <div class="slope"></div>
+
+    <div class="axis-label y-label">Effort per User</div>
+    <div class="axis-label x-label">Total Users</div>
+
+    <div class="milestone m1">
+      <div class="count">10</div>
+      <div class="effort">Days of meetings</div>
+      <div class="effort-bar"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="milestone m2">
+      <div class="count">50</div>
+      <div class="effort">In-person sales</div>
+      <div class="effort-bar"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="milestone m3">
+      <div class="count">500</div>
+      <div class="effort">Email outreach</div>
+      <div class="effort-bar"></div>
+      <div class="dot hollow"></div>
+    </div>
+
+    <div class="milestone m4">
+      <div class="count">5K</div>
+      <div class="effort">Word of mouth</div>
+      <div class="effort-bar"></div>
+      <div class="dot hollow"></div>
+    </div>
+
+    <div class="milestone m5">
+      <div class="count">50K+</div>
+      <div class="effort">Organic growth</div>
+      <div class="effort-bar"></div>
+      <div class="dot hollow"></div>
+    </div>
+
+    <div class="boulder">YOU</div>
+    <div class="steep-label">Steepest at the start</div>
+  </div>
+</div>
+</body>
+</html>

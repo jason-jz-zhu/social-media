@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobAgent Operator Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">JA</div>
+        <span class="sidebar-title">JobAgent</span>
+      </div>
+      <div class="sidebar-nav">
+        <div class="nav-item active" data-page="dashboard" onclick="navigateTo('dashboard')">
+          <span class="nav-icon">&#9632;</span>
+          <span class="nav-label">Dashboard</span>
+        </div>
+        <div class="nav-item" data-page="clients" onclick="navigateTo('clients')">
+          <span class="nav-icon">&#9775;</span>
+          <span class="nav-label">Clients</span>
+        </div>
+        <div class="nav-item" data-page="pipeline" onclick="navigateTo('pipeline')">
+          <span class="nav-icon">&#9881;</span>
+          <span class="nav-label">Pipeline</span>
+        </div>
+        <div class="nav-item" data-page="calendar" onclick="navigateTo('calendar')">
+          <span class="nav-icon">&#9716;</span>
+          <span class="nav-label">Calendar</span>
+        </div>
+        <div class="nav-item" data-page="documents" onclick="navigateTo('documents')">
+          <span class="nav-icon">&#9997;</span>
+          <span class="nav-label">Documents</span>
+        </div>
+        <div class="nav-item" data-page="ai-tools" onclick="navigateTo('ai-tools')">
+          <span class="nav-icon">&#9733;</span>
+          <span class="nav-label">AI Tools</span>
+        </div>
+        <div class="nav-item" data-page="revenue" onclick="navigateTo('revenue')">
+          <span class="nav-icon">&#9830;</span>
+          <span class="nav-label">Revenue</span>
+        </div>
+        <div class="nav-item" data-page="messaging" onclick="navigateTo('messaging')">
+          <span class="nav-icon">&#9993;</span>
+          <span class="nav-label">Messaging</span>
+        </div>
+        <div class="nav-item" data-page="analytics" onclick="navigateTo('analytics')">
+          <span class="nav-icon">&#9733;</span>
+          <span class="nav-label">Analytics</span>
+        </div>
+        <div class="nav-item" data-page="settings" onclick="navigateTo('settings')">
+          <span class="nav-icon">&#9881;</span>
+          <span class="nav-label">Settings</span>
+        </div>
+      </div>
+      <div class="sidebar-toggle" onclick="toggleSidebar()">
+        <span id="sidebar-toggle-icon">&#9664;</span>
+      </div>
+    </nav>
+
+    <div class="mobile-overlay" onclick="closeMobileSidebar()"></div>
+
+    <!-- MAIN -->
+    <div class="main-wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="hamburger" onclick="toggleMobileSidebar()">&#9776;</div>
+        <div class="header-title" id="header-title">Dashboard</div>
+        <div class="header-search">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Search clients, documents, events..." id="global-search-input" onfocus="openSearch()" readonly>
+          <span class="search-shortcut">Ctrl+K</span>
+        </div>
+        <div class="header-right">
+          <div class="notification-bell" onclick="toggleNotifications()">
+            &#128276;
+            <span class="notification-badge" id="notif-badge">5</span>
+          </div>
+          <div class="header-avatar">
+            <div class="avatar">SC</div>
+            <span class="header-name">Sarah Chen</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <div class="content-inner">
+
+          <!-- DASHBOARD PAGE -->
+          <div class="page active" id="page-dashboard"></div>
+
+          <!-- CLIENTS PAGE -->
+          <div class="page" id="page-clients"></div>
+
+          <!-- CLIENT DETAIL PAGE -->
+          <div class="page" id="page-client-detail"></div>
+
+          <!-- PIPELINE PAGE -->
+          <div class="page" id="page-pipeline"></div>
+
+          <!-- CALENDAR PAGE -->
+          <div class="page" id="page-calendar"></div>
+
+          <!-- DOCUMENTS PAGE -->
+          <div class="page" id="page-documents"></div>
+
+          <!-- AI TOOLS PAGE -->
+          <div class="page" id="page-ai-tools"></div>
+
+          <!-- REVENUE PAGE -->
+          <div class="page" id="page-revenue"></div>
+
+          <!-- MESSAGING PAGE -->
+          <div class="page" id="page-messaging"></div>
+
+          <!-- ANALYTICS PAGE -->
+          <div class="page" id="page-analytics"></div>
+
+          <!-- SETTINGS PAGE -->
+          <div class="page" id="page-settings"></div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- NOTIFICATION PANEL -->
+  <div class="notification-panel" id="notification-panel">
+    <div class="notif-header">
+      <h3>Notifications</h3>
+      <button class="btn btn-sm btn-secondary" onclick="markAllRead()">Mark all as read</button>
+    </div>
+    <div class="notif-body" id="notif-body"></div>
+  </div>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-modal">
+      <div class="search-modal-input">
+        <input type="text" placeholder="Search everything..." id="search-modal-input" oninput="handleSearch(this.value)">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- ONBOARDING MODAL -->
+  <div class="modal-overlay" id="onboarding-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add New Client</h3>
+        <span class="modal-close" onclick="closeOnboarding()">&times;</span>
+      </div>
+      <div class="modal-body" id="onboarding-body"></div>
+    </div>
+  </div>
+
+  <!-- EVENT FORM MODAL -->
+  <div class="modal-overlay event-form-modal" id="event-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="event-modal-title">New Event</h3>
+        <span class="modal-close" onclick="closeEventModal()">&times;</span>
+      </div>
+      <div class="modal-body" id="event-modal-body"></div>
+      <div class="modal-footer" id="event-modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- NEW DOCUMENT MODAL -->
+  <div class="modal-overlay" id="new-doc-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>New Document</h3>
+        <span class="modal-close" onclick="closeNewDocModal()">&times;</span>
+      </div>
+      <div class="modal-body" id="new-doc-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeNewDocModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="createNewDocument()">Create Document</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- KANBAN CARD POPOVER -->
+  <div class="popover" id="kanban-popover">
+    <div class="popover-header">
+      <h3 id="popover-title" style="font-size:0.95rem"></h3>
+      <span class="modal-close" onclick="closePopover()" style="font-size:1.2rem">&times;</span>
+    </div>
+    <div class="popover-body" id="popover-body"></div>
+  </div>
+
+  <!-- FAB -->
+  <div class="fab-container" id="fab-container">
+    <div class="fab-actions" id="fab-actions">
+      <div class="fab-action" onclick="fabAction('addClient')">
+        <div class="fab-action-btn">&#43;</div>
+        <span class="fab-action-label">Add Client</span>
+      </div>
+      <div class="fab-action" onclick="fabAction('schedule')">
+        <div class="fab-action-btn">&#9716;</div>
+        <span class="fab-action-label">Schedule Session</span>
+      </div>
+      <div class="fab-action" onclick="fabAction('newDoc')">
+        <div class="fab-action-btn">&#9997;</div>
+        <span class="fab-action-label">New Document</span>
+      </div>
+      <div class="fab-action" onclick="fabAction('sendMsg')">
+        <div class="fab-action-btn">&#9993;</div>
+        <span class="fab-action-label">Send Message</span>
+      </div>
+    </div>
+    <div class="fab-main" id="fab-main" onclick="toggleFab()">&#43;</div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

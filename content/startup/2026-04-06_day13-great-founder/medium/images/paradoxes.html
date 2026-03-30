@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.paradoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.paradox-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.06);
+}
+
+.side {
+  flex: 1;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.side-left {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.side-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.side-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.side-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-purple {
+  background: #7C3AED;
+}
+
+.icon-dark {
+  background: #1A1A2E;
+}
+
+.side-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1A1A2E;
+}
+
+.side-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  margin-top: 2px;
+}
+
+.center-badge {
+  flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+  padding: 12px 0;
+}
+
+.center-vs {
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.center-pct {
+  font-size: 20px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.9);
+  line-height: 1;
+}
+
+.center-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.insight {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7C3AED;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The Founder Paradoxes</div>
+  <div class="title">Not 50/50. Both Sides at 100%.</div>
+  <div class="paradoxes">
+    <div class="paradox-row">
+      <div class="side side-left">
+        <div>
+          <div class="side-text">Persistent</div>
+          <div class="side-desc">Push through rejection and failure</div>
+        </div>
+        <div class="side-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+      </div>
+      <div class="center-badge">
+        <div class="center-pct">100%</div>
+        <div class="center-vs">VS</div>
+        <div class="center-pct">100%</div>
+      </div>
+      <div class="side side-right">
+        <div class="side-icon icon-dark">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+        </div>
+        <div>
+          <div class="side-text">Flexible</div>
+          <div class="side-desc">Pivot when the data says so</div>
+        </div>
+      </div>
+    </div>
+    <div class="paradox-row">
+      <div class="side side-left">
+        <div>
+          <div class="side-text">Conviction</div>
+          <div class="side-desc">You're right when everyone says no</div>
+        </div>
+        <div class="side-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+      </div>
+      <div class="center-badge">
+        <div class="center-pct">100%</div>
+        <div class="center-vs">VS</div>
+        <div class="center-pct">100%</div>
+      </div>
+      <div class="side side-right">
+        <div class="side-icon icon-dark">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+        </div>
+        <div>
+          <div class="side-text">Fear</div>
+          <div class="side-desc">Stay paranoid about being wrong</div>
+        </div>
+      </div>
+    </div>
+    <div class="paradox-row">
+      <div class="side side-left">
+        <div>
+          <div class="side-text">Internal Focus</div>
+          <div class="side-desc">Build product, manage team, ship</div>
+        </div>
+        <div class="side-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+      </div>
+      <div class="center-badge">
+        <div class="center-pct">100%</div>
+        <div class="center-vs">VS</div>
+        <div class="center-pct">100%</div>
+      </div>
+      <div class="side side-right">
+        <div class="side-icon icon-dark">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div>
+          <div class="side-text">External Focus</div>
+          <div class="side-desc">Fundraise, recruit, position</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="insight">The skill is knowing which side to deploy at which moment.</div>
+</div>
+</body>
+</html>

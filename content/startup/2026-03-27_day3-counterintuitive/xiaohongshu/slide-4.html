@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 56px;
+  }
+
+  .comparison {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 48px;
+    flex: 1;
+  }
+
+  .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-header {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 16px 24px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .col-wrong .col-header {
+    background: #FEE2E2;
+    color: #DC2626;
+  }
+
+  .col-right .col-header {
+    background: #F5F0FF;
+    color: #7C3AED;
+  }
+
+  .col-item {
+    font-size: 32px;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px 0;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .col-item:last-child {
+    border-bottom: none;
+  }
+
+  .example-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 28px 32px;
+    margin-bottom: 80px;
+  }
+
+  .example-box .label {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 12px;
+  }
+
+  .example-box p {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div><span class="badge">6点起床学创业 Day 3</span></div>
+
+    <h1 class="title">不需要创业知识，需要用户知识</h1>
+
+    <div class="comparison">
+      <div class="col col-wrong">
+        <div class="col-header">你以为需要的</div>
+        <div class="col-item">融资流程和术语</div>
+        <div class="col-item">商业计划书模板</div>
+        <div class="col-item">股权分配公式</div>
+        <div class="col-item">增长黑客技巧</div>
+      </div>
+      <div class="col col-right">
+        <div class="col-header">你真正需要的</div>
+        <div class="col-item">用户到底要什么</div>
+        <div class="col-item">用户痛点在哪里</div>
+        <div class="col-item">用户愿不愿意付费</div>
+        <div class="col-item">用户会不会推荐给朋友</div>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <p class="label">真实案例</p>
+      <p>Zuckerberg创办Facebook时根本不懂融资机制，但他比任何人都了解大学生想要什么社交体验。用户知识才是核心壁垒。</p>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

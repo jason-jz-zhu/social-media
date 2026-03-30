@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Three pillars */
+  .pillars-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .pillar-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .pillar-card.hw {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .pillar-card.sw {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+  }
+
+  .pillar-card.data {
+    background: #FFF7ED;
+    border: 2px solid #F59E0B;
+  }
+
+  .pillar-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .pillar-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .pillar-card.hw .pillar-title { color: #7C3AED; }
+  .pillar-card.sw .pillar-title { color: #3B82F6; }
+  .pillar-card.data .pillar-title { color: #F59E0B; }
+
+  .pillar-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .result-box {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .result-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .result-text .purple {
+    color: #B794F4;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Five stages */
+  .stages-flow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stage-item {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    min-width: 140px;
+  }
+
+  .stage-num {
+    font-size: 20px;
+    color: #7C3AED;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+
+  .stage-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .stage-meta {
+    font-size: 18px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  .stage-arrow {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 900;
+  }
+
+  .analogy-box {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .analogy-text {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .analogy-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  /* WHYS */
+  .whys-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 24px 24px;
+  }
+
+  .whys-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #7C3AED;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .whys-question {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .whys-question .bold {
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 17</div>
+
+    <h1 class="title">全栈思维 + WHYS框架</h1>
+
+    <div class="section-label">硬件=全栈思维：三条腿缺一不可</div>
+
+    <div class="pillars-container">
+      <div class="pillar-card hw">
+        <div class="pillar-title">硬件</div>
+        <div class="pillar-desc">物理载体<br>传感器/交互</div>
+      </div>
+      <div class="pillar-card sw">
+        <div class="pillar-title">软件</div>
+        <div class="pillar-desc">算法引擎<br>体验层</div>
+      </div>
+      <div class="pillar-card data">
+        <div class="pillar-title">数据</div>
+        <div class="pillar-desc">用户行为<br>持续优化</div>
+      </div>
+    </div>
+
+    <div class="result-box">
+      <div class="result-text">Jawbone不是硬件公司，是<span class="purple">体验公司</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">五阶段流程</div>
+
+    <div class="stages-flow">
+      <div class="stage-item">
+        <div class="stage-num">1</div>
+        <div class="stage-name">探索</div>
+      </div>
+      <div class="stage-arrow">></div>
+      <div class="stage-item">
+        <div class="stage-num">2</div>
+        <div class="stage-name">验证</div>
+      </div>
+      <div class="stage-arrow">></div>
+      <div class="stage-item">
+        <div class="stage-num">3</div>
+        <div class="stage-name">概念</div>
+      </div>
+      <div class="stage-arrow">></div>
+      <div class="stage-item">
+        <div class="stage-num">4</div>
+        <div class="stage-name">规划</div>
+      </div>
+      <div class="stage-arrow">></div>
+      <div class="stage-item">
+        <div class="stage-num">5</div>
+        <div class="stage-name">开发</div>
+      </div>
+    </div>
+
+    <div class="analogy-box">
+      <div class="analogy-text">从<span class="purple">科学实验</span>到<span class="purple">博士论文</span>到<span class="purple">工程执行</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">WHYS框架：起点问题</div>
+
+    <div class="whys-box">
+      <div class="whys-title">WHYS</div>
+      <div class="whys-question"><span class="bold">为什么</span>这个东西应该存在？<br>它解决什么<span class="bold">人类问题</span>？</div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

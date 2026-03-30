@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Track-Understand-Act flow */
+  .tua-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .tua-step {
+    flex: 1;
+    border-radius: 16px;
+    padding: 22px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tua-step.track {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .tua-step.understand {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+  }
+
+  .tua-step.act {
+    background: #F0FFF4;
+    border: 2px solid #48BB78;
+  }
+
+  .tua-name {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .tua-step.track .tua-name { color: #7C3AED; }
+  .tua-step.understand .tua-name { color: #3B82F6; }
+  .tua-step.act .tua-name { color: #48BB78; }
+
+  .tua-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .tua-arrow {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+  }
+
+  .example-box {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .example-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .example-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .example-text .bold {
+    font-weight: 700;
+  }
+
+  .example-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .data-box {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .data-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .data-text .purple {
+    color: #B794F4;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Constraints section */
+  .constraint-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .constraint-main {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .constraint-main .purple {
+    color: #7C3AED;
+  }
+
+  .constraint-desc {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Speed insight */
+  .speed-box {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 20px 24px;
+  }
+
+  .speed-text {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .speed-text .bold {
+    font-weight: 700;
+  }
+
+  .speed-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 17</div>
+
+    <h1 class="title">数据框架 + 约束即创新</h1>
+
+    <div class="section-label">Track > Understand > Act</div>
+
+    <div class="tua-flow">
+      <div class="tua-step track">
+        <div class="tua-name">Track</div>
+        <div class="tua-desc">采集数据<br>传感器/行为</div>
+      </div>
+      <div class="tua-arrow">></div>
+      <div class="tua-step understand">
+        <div class="tua-name">Understand</div>
+        <div class="tua-desc">理解含义<br>上下文/模式</div>
+      </div>
+      <div class="tua-arrow">></div>
+      <div class="tua-step act">
+        <div class="tua-name">Act</div>
+        <div class="tua-desc">驱动行动<br>建议/干预</div>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">例子：心率75好不好？</div>
+      <div class="example-text">数据本身<span class="bold">没有意义</span><br>取决于你在<span class="purple">跑步还是睡觉</span></div>
+    </div>
+
+    <div class="data-box">
+      <div class="data-text">Dashboard人人会做，<span class="purple">数据到决策的鸿沟</span>才是产品机会</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">约束是创新的催化剂</div>
+
+    <div class="constraint-box">
+      <div class="constraint-main">约束不是<span class="purple">限制</span><br>是<span class="purple">简化和精炼</span>的机会</div>
+      <div class="constraint-desc">Jambox：无线音箱从0%市场到78%份额<br>把限制变成了品类创造</div>
+    </div>
+
+    <div class="speed-box">
+      <div class="speed-text"><span class="purple">硬件让软件变慢</span>，<span class="purple">软件让硬件变快</span><br>互相学习，<span class="bold">系统是思维方式不是复杂度</span></div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

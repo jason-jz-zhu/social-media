@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .rule-block {
+    margin-bottom: 48px;
+  }
+
+  .rule-label {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .rule-text {
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .rule-desc {
+    font-size: 32px;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: #EBEBEB;
+    margin: 16px 0 48px 0;
+  }
+
+  .story-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 28px 24px;
+    margin-bottom: 60px;
+  }
+
+  .story-box .label {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .story-box p {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 4</div>
+
+    <h1 class="title">别造"科学怪人"产品</h1>
+
+    <div class="content-section">
+      <div class="rule-block">
+        <div><span class="rule-label">Adora的原则</span></div>
+        <p class="rule-text">"暂时的broken好过永远的瘫痪"</p>
+        <p class="rule-desc">不要什么都想好了再做。先上线一个能用的版本，手动做的事情反而能让你学到最多。早期不要过度自动化。</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="rule-block">
+        <div><span class="rule-label">别堆功能</span></div>
+        <p class="rule-text">用户说"我要这个功能"，先搞清楚他为什么要</p>
+        <p class="rule-desc">不问WHY就堆功能 = 造科学怪人。每个人要的不一样，堆出来的产品谁都不满意。</p>
+      </div>
+
+      <div class="story-box">
+        <div class="label">冰水营销故事</div>
+        <p>大热天在街头集市发冰冻水瓶，别人接了你的水，不好意思不听你说两句。用"负罪感"换来了第一批用户。增长不一定靠烧钱，靠巧劲。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

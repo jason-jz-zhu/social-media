@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 80px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+  }
+
+  .section-label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .boulder-section {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+  }
+
+  .boulder-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+  }
+
+  .boulder-desc {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .boulder-visual {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid #EBEBEB;
+  }
+
+  .boulder-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+  }
+
+  .boulder-stats {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+  }
+
+  .boulder-stat {
+    flex: 1;
+    text-align: center;
+  }
+
+  .boulder-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 4px;
+  }
+
+  .boulder-label {
+    font-size: 22px;
+    color: #888;
+  }
+
+  .champion-section {
+    margin-bottom: 16px;
+  }
+
+  .champion-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 14px;
+  }
+
+  .champion-formula {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .formula-text {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .formula-highlight {
+    color: #7C3AED;
+  }
+
+  .formula-desc {
+    font-size: 26px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .champion-cards {
+    display: flex;
+    gap: 16px;
+  }
+
+  .champion-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+
+  .champion-card.good {
+    background: #F0FDF4;
+    border: 2px solid #86EFAC;
+  }
+
+  .champion-card.bad {
+    background: #FEF2F2;
+    border: 2px solid #FECACA;
+  }
+
+  .champion-card-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .champion-card-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .champion-card-title.green { color: #16A34A; }
+  .champion-card-title.red { color: #DC2626; }
+
+  .champion-card-desc {
+    font-size: 24px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 20px;
+    margin-top: auto;
+    margin-bottom: 70px;
+  }
+
+  .insight-box .label {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .insight-box p {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 8</div>
+
+    <h1 class="title">第一批用户最难 + Champions</h1>
+
+    <div class="section-label">推巨石上山</div>
+    <div class="boulder-section">
+      <div class="boulder-title">开头最陡，但必须推</div>
+      <div class="boulder-desc">Teespring花了好几天才卖出第一批50件T恤。Walker Williams说：第一批用户永远是最难的。</div>
+      <div class="boulder-visual">
+        <div class="boulder-icon">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <path d="M8 48L28 8L48 48" stroke="#7C3AED" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="22" cy="36" r="8" fill="#7C3AED" opacity="0.2"/>
+            <circle cx="22" cy="36" r="5" fill="#7C3AED"/>
+          </svg>
+        </div>
+        <div class="boulder-stats">
+          <div class="boulder-stat">
+            <div class="boulder-number">50件</div>
+            <div class="boulder-label">第一批T恤</div>
+          </div>
+          <div class="boulder-stat">
+            <div class="boulder-number">$1000</div>
+            <div class="boulder-label">第一笔收入</div>
+          </div>
+          <div class="boulder-stat">
+            <div class="boulder-number">好几天</div>
+            <div class="boulder-label">花的时间</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">用户分类</div>
+    <div class="champion-section">
+      <div class="champion-title">把用户变成你的Champions</div>
+      <div class="champion-formula">
+        <div class="formula-text">1个 <span class="formula-highlight">Detractor</span> = 抵消 <span class="formula-highlight">10个</span> Champions</div>
+        <div class="formula-desc">出问题必须 make it right，否则负面传播指数级扩散</div>
+      </div>
+      <div class="champion-cards">
+        <div class="champion-card good">
+          <div class="champion-card-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="#16A34A" stroke-width="2.5" fill="none"/>
+              <path d="M12 20L18 26L28 14" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="champion-card-title green">Champion</div>
+          <div class="champion-card-desc">主动推荐你<br>帮你传播<br>容忍小问题</div>
+        </div>
+        <div class="champion-card bad">
+          <div class="champion-card-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="#DC2626" stroke-width="2.5" fill="none"/>
+              <path d="M14 14L26 26M26 14L14 26" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="champion-card-title red">Detractor</div>
+          <div class="champion-card-desc">到处说你坏话<br>劝别人别用<br>一个抵消十个</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">亲身体验</div>
+      <p>做social分享也一样——一开始没多少人点赞，但得坚持推过最陡的坡。</p>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

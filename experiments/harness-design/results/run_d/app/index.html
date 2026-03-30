@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClientHub - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="material-symbols-outlined" style="color:#1e1b4b;font-size:20px">hub</span>
+        </div>
+        <div class="sidebar-brand">
+          <h1>ClientHub</h1>
+          <span>Consulting</span>
+        </div>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <span class="material-symbols-outlined" style="font-size:16px">chevron_left</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Main</div>
+        <a href="#" class="nav-item active" data-view="dashboard">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="nav-item-text">Dashboard</span>
+        </a>
+        <a href="#" class="nav-item" data-view="clients" aria-label="Clients">
+          <span class="material-symbols-outlined">group</span>
+          <span class="nav-item-text">Clients</span>
+        </a>
+        <a href="#" class="nav-item" data-view="pipeline">
+          <span class="material-symbols-outlined">view_kanban</span>
+          <span class="nav-item-text">Pipeline</span>
+        </a>
+        <a href="#" class="nav-item" data-view="calendar">
+          <span class="material-symbols-outlined">calendar_month</span>
+          <span class="nav-item-text">Calendar</span>
+        </a>
+        <a href="#" class="nav-item" data-view="documents">
+          <span class="material-symbols-outlined">description</span>
+          <span class="nav-item-text">Documents</span>
+        </a>
+
+        <div class="nav-section-label">AI Tools</div>
+        <a href="#" class="nav-item" data-view="ai-resume">
+          <span class="material-symbols-outlined">auto_fix_high</span>
+          <span class="nav-item-text">Resume Tailor</span>
+        </a>
+        <a href="#" class="nav-item" data-view="ai-interview">
+          <span class="material-symbols-outlined">psychology</span>
+          <span class="nav-item-text">Interview Prep</span>
+        </a>
+
+        <div class="nav-section-label">Finance</div>
+        <a href="#" class="nav-item" data-view="revenue">
+          <span class="material-symbols-outlined">payments</span>
+          <span class="nav-item-text">Revenue</span>
+        </a>
+
+        <div class="nav-section-label">Communicate</div>
+        <a href="#" class="nav-item" data-view="messaging">
+          <span class="material-symbols-outlined">chat</span>
+          <span class="nav-item-text">Messages</span>
+          <span class="nav-badge" id="msg-badge">3</span>
+        </a>
+        <a href="#" class="nav-item" data-view="analytics">
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span class="nav-item-text">Analytics</span>
+        </a>
+
+        <div class="nav-section-label">System</div>
+        <a href="#" class="nav-item" data-view="settings">
+          <span class="material-symbols-outlined">settings</span>
+          <span class="nav-item-text">Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="user-avatar">AW</div>
+          <div class="user-info">
+            <div class="name">Alex Wang</div>
+            <div class="role">Consultant</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+            <h2 id="page-title">Dashboard</h2>
+          </div>
+          <p class="subtitle" id="page-subtitle">Welcome back, Alex. Here's your overview.</p>
+        </div>
+        <div class="header-actions">
+          <div class="global-search-wrapper">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" id="global-search-input" placeholder="Search clients, docs, events... (Ctrl+K)" autocomplete="off">
+            <div class="global-search-results" id="global-search-results"></div>
+          </div>
+          <button class="header-icon-btn" id="notification-bell" title="Notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notif-badge" id="notif-badge">3</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="page-body">
+
+        <!-- Dashboard View -->
+        <div class="view active" id="dashboard">
+          <div class="metrics-grid" id="metrics-grid"></div>
+          <div class="dashboard-grid">
+            <div class="panel activity-feed">
+              <div class="panel-header">
+                <h3>Needs Attention</h3>
+                <span class="badge">Live</span>
+              </div>
+              <ul class="activity-list" id="activity-list"></ul>
+            </div>
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Today's Schedule</h3>
+              </div>
+              <div class="quick-stats" id="quick-stats"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clients View -->
+        <div class="view" id="clients">
+          <div class="client-toolbar">
+            <div class="search-box">
+              <span class="material-symbols-outlined">search</span>
+              <input type="text" id="client-search" placeholder="Search clients by name or company...">
+            </div>
+            <select class="filter-select" id="client-filter">
+              <option value="all">All Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="lead">Lead</option>
+            </select>
+            <select class="filter-select" id="client-plan-filter">
+              <option value="all">All Plans</option>
+              <option value="Basic">Basic</option>
+              <option value="Pro">Pro</option>
+              <option value="Premium">Premium</option>
+            </select>
+            <span class="client-count" id="client-count">0 clients</span>
+            <button class="btn-primary" id="add-client-btn">
+              <span class="material-symbols-outlined" style="font-size:18px">person_add</span>
+              Add Client
+            </button>
+          </div>
+          <div class="client-table-wrapper">
+            <table class="client-table">
+              <thead>
+                <tr>
+                  <th data-sort="name" class="sortable">Client <span class="sort-arrow"></span></th>
+                  <th>Company</th>
+                  <th>Plan</th>
+                  <th>Status</th>
+                  <th data-sort="health" class="sortable">Health <span class="sort-arrow"></span></th>
+                  <th>Projects</th>
+                  <th data-sort="lastContact" class="sortable">Last Contact <span class="sort-arrow"></span></th>
+                </tr>
+              </thead>
+              <tbody id="client-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Client Detail View -->
+        <div class="view" id="client-detail">
+          <div class="client-detail-header" id="client-detail-header"></div>
+          <div class="client-detail-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="documents">Documents</button>
+            <button class="tab-btn" data-tab="activity">Activity</button>
+            <button class="tab-btn" data-tab="applications">Projects</button>
+          </div>
+          <div class="tab-content active" id="tab-overview"></div>
+          <div class="tab-content" id="tab-documents"></div>
+          <div class="tab-content" id="tab-activity"></div>
+          <div class="tab-content" id="tab-applications"></div>
+        </div>
+
+        <!-- Pipeline / Kanban View -->
+        <div class="view" id="pipeline">
+          <div class="kanban-board" id="kanban-board"></div>
+        </div>
+
+        <!-- Calendar View -->
+        <div class="view" id="calendar">
+          <div class="calendar-toolbar">
+            <div class="calendar-nav">
+              <button class="btn-icon" id="cal-prev"><span class="material-symbols-outlined">chevron_left</span></button>
+              <button class="btn-secondary" id="cal-today">Today</button>
+              <button class="btn-icon" id="cal-next"><span class="material-symbols-outlined">chevron_right</span></button>
+              <span class="calendar-title" id="calendar-title"></span>
+            </div>
+            <div class="calendar-view-toggle">
+              <button class="toggle-btn active" data-calview="week">Week</button>
+              <button class="toggle-btn" data-calview="day">Day</button>
+            </div>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+        </div>
+
+        <!-- Documents View -->
+        <div class="view" id="documents">
+          <div class="doc-layout">
+            <div class="doc-sidebar" id="doc-sidebar"></div>
+            <div class="doc-list-area" id="doc-list-area">
+              <p class="doc-empty-msg">Select a client to view their documents.</p>
+            </div>
+            <div class="doc-preview-area" id="doc-preview-area">
+              <p class="doc-empty-msg">Select a document to preview.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Resume Tailor View -->
+        <div class="view" id="ai-resume">
+          <div class="ai-split-layout">
+            <div class="ai-panel">
+              <h3>Job Description</h3>
+              <textarea id="ai-jd-input" placeholder="Paste the job description here..." rows="12"></textarea>
+            </div>
+            <div class="ai-panel-center">
+              <button class="btn-primary btn-large" id="ai-tailor-btn">
+                <span class="material-symbols-outlined">auto_fix_high</span>
+                Tailor Resume
+              </button>
+            </div>
+            <div class="ai-panel">
+              <h3>Client Resume</h3>
+              <select class="filter-select" id="ai-client-select" style="width:100%;margin-bottom:12px">
+                <option value="">Select a client...</option>
+              </select>
+              <div class="ai-resume-content" id="ai-resume-content">Select a client to load their resume.</div>
+            </div>
+          </div>
+          <div class="ai-results" id="ai-results" style="display:none"></div>
+        </div>
+
+        <!-- AI Interview Prep View -->
+        <div class="view" id="ai-interview">
+          <div class="ai-interview-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Client</label>
+                <select class="filter-select" id="ai-interview-client" style="width:100%">
+                  <option value="">Select a client...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" class="form-input" id="ai-interview-company" placeholder="e.g., Google">
+              </div>
+              <div class="form-group">
+                <label>Role Title</label>
+                <input type="text" class="form-input" id="ai-interview-role" placeholder="e.g., Senior PM">
+              </div>
+              <div class="form-group">
+                <label>Interview Type</label>
+                <select class="filter-select" id="ai-interview-type" style="width:100%">
+                  <option value="phone">Phone Screen</option>
+                  <option value="technical">Technical</option>
+                  <option value="behavioral">Behavioral</option>
+                  <option value="final">Final Round</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn-primary btn-large" id="ai-interview-btn" style="margin-top:16px">
+              <span class="material-symbols-outlined">psychology</span>
+              Generate Prep Kit
+            </button>
+          </div>
+          <div class="ai-interview-results" id="ai-interview-results" style="display:none"></div>
+        </div>
+
+        <!-- Revenue View -->
+        <div class="view" id="revenue">
+          <div class="metrics-grid" id="revenue-metrics"></div>
+          <div class="revenue-grid">
+            <div class="panel" style="grid-column:1/-1">
+              <div class="panel-header">
+                <h3>Monthly Revenue</h3>
+              </div>
+              <div class="chart-container" id="revenue-chart"></div>
+            </div>
+          </div>
+          <div class="panel" style="margin-top:24px">
+            <div class="panel-header">
+              <h3>Invoices</h3>
+              <div style="display:flex;gap:8px">
+                <button class="btn-filter active" data-inv-filter="all">All</button>
+                <button class="btn-filter" data-inv-filter="overdue">Overdue</button>
+                <button class="btn-filter" data-inv-filter="pending">Pending</button>
+                <button class="btn-filter" data-inv-filter="paid">Paid</button>
+              </div>
+            </div>
+            <div class="invoice-table-wrapper">
+              <table class="client-table invoice-table">
+                <thead>
+                  <tr>
+                    <th>Invoice #</th>
+                    <th>Client</th>
+                    <th>Amount</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="invoice-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messaging View -->
+        <div class="view" id="messaging">
+          <div class="messaging-layout">
+            <div class="convo-list" id="convo-list"></div>
+            <div class="convo-thread" id="convo-thread">
+              <div class="convo-placeholder">
+                <span class="material-symbols-outlined" style="font-size:48px;color:var(--slate-400)">chat</span>
+                <p>Select a conversation to start messaging.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics View -->
+        <div class="view" id="analytics">
+          <div class="analytics-date-range">
+            <button class="btn-filter active" data-range="30">Last 30 Days</button>
+            <button class="btn-filter" data-range="90">Last 90 Days</button>
+            <button class="btn-filter" data-range="365">This Year</button>
+          </div>
+          <div class="analytics-grid" id="analytics-grid"></div>
+        </div>
+
+        <!-- Settings View -->
+        <div class="view" id="settings">
+          <div class="settings-layout" id="settings-content"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notification-panel">
+      <div class="notif-panel-header">
+        <h3>Notifications</h3>
+        <button class="link-btn" id="mark-all-read">Mark all as read</button>
+      </div>
+      <div class="notif-panel-body" id="notif-panel-body"></div>
+    </div>
+    <div class="notif-overlay" id="notif-overlay"></div>
+
+    <!-- Onboarding Wizard Modal -->
+    <div class="modal-overlay" id="onboarding-overlay">
+      <div class="modal" id="onboarding-modal">
+        <div class="modal-header">
+          <h3>Add New Client</h3>
+          <button class="modal-close" id="onboarding-close">&times;</button>
+        </div>
+        <div class="wizard-progress">
+          <div class="wizard-step active" data-step="1"><span>1</span> Basic Info</div>
+          <div class="wizard-step" data-step="2"><span>2</span> Plan</div>
+          <div class="wizard-step" data-step="3"><span>3</span> Intake</div>
+          <div class="wizard-step" data-step="4"><span>4</span> Review</div>
+        </div>
+        <div class="wizard-body" id="wizard-body"></div>
+        <div class="wizard-footer">
+          <button class="btn-secondary" id="wizard-back" style="display:none">Back</button>
+          <button class="btn-primary" id="wizard-next">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kanban Card Detail Modal -->
+    <div class="modal-overlay" id="kanban-detail-overlay">
+      <div class="modal" id="kanban-detail-modal">
+        <div class="modal-header">
+          <h3 id="kanban-detail-title"></h3>
+          <button class="modal-close" id="kanban-detail-close">&times;</button>
+        </div>
+        <div class="kanban-detail-body" id="kanban-detail-body"></div>
+      </div>
+    </div>
+
+    <!-- Calendar Event Modal -->
+    <div class="modal-overlay" id="cal-event-overlay">
+      <div class="modal" id="cal-event-modal">
+        <div class="modal-header">
+          <h3 id="cal-event-title">New Event</h3>
+          <button class="modal-close" id="cal-event-close">&times;</button>
+        </div>
+        <div class="cal-event-body" id="cal-event-body"></div>
+        <div class="modal-footer" id="cal-event-footer"></div>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Quick Actions FAB -->
+    <div class="fab-container" id="fab-container">
+      <div class="fab-actions" id="fab-actions">
+        <button class="fab-action" data-action="add-client" title="Add Client">
+          <span class="material-symbols-outlined">person_add</span>
+          <span class="fab-label">Add Client</span>
+        </button>
+        <button class="fab-action" data-action="schedule" title="Schedule Session">
+          <span class="material-symbols-outlined">event</span>
+          <span class="fab-label">Schedule Session</span>
+        </button>
+        <button class="fab-action" data-action="new-doc" title="New Document">
+          <span class="material-symbols-outlined">note_add</span>
+          <span class="fab-label">New Document</span>
+        </button>
+        <button class="fab-action" data-action="send-msg" title="Send Message">
+          <span class="material-symbols-outlined">send</span>
+          <span class="fab-label">Send Message</span>
+        </button>
+      </div>
+      <button class="fab-main" id="fab-main">
+        <span class="material-symbols-outlined">add</span>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

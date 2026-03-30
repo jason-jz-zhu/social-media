@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 3 - $450用户的真实问题</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+  }
+  .title .teal { color: #0EA5E9; }
+
+  .cost-breakdown {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .cost-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .cost-card.claude {
+    background: #F0F9FF;
+    border: 2px solid rgba(14, 165, 233, 0.3);
+  }
+  .cost-card.gpt {
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+  }
+  .cost-card.other {
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+  }
+
+  .cost-card .amount {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .cost-card.claude .amount { color: #0EA5E9; }
+  .cost-card.gpt .amount { color: #555; }
+  .cost-card.other .amount { color: #555; }
+
+  .cost-card .name {
+    font-size: 22px;
+    color: #888;
+    font-weight: 500;
+  }
+
+  .question-box {
+    background: #1A1A1A;
+    border-radius: 18px;
+    padding: 36px 40px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .question-box .intro {
+    font-size: 28px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+
+  .question-box .main-q {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+  .question-box .teal {
+    color: #0EA5E9;
+  }
+
+  .worry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 36px;
+    flex: 1;
+  }
+
+  .worry-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: #F9FAFB;
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .worry-icon {
+    width: 44px;
+    height: 44px;
+    background: #FEF2F2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .worry-text {
+    font-size: 27px;
+    color: #444;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .worry-text .bold {
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .bottom-note {
+    background: #F0F9FF;
+    border-left: 4px solid #0EA5E9;
+    padding: 18px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+  .bottom-note .teal { color: #0EA5E9; font-weight: 700; }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">真实问题</div>
+
+    <h1 class="title">每月<span class="teal">$450</span>用户的第一反应</h1>
+
+    <div class="cost-breakdown">
+      <div class="cost-card claude">
+        <div class="amount">$200</div>
+        <div class="name">Claude Max</div>
+      </div>
+      <div class="cost-card gpt">
+        <div class="amount">$200</div>
+        <div class="name">ChatGPT Pro</div>
+      </div>
+      <div class="cost-card other">
+        <div class="amount">$50</div>
+        <div class="name">Genspark</div>
+      </div>
+    </div>
+
+    <div class="question-box">
+      <div class="intro">看到Mythos泄露，第一反应不是兴奋</div>
+      <div class="main-q">模型能力跳一个台阶<br>我围绕它建的<span class="teal">workflow还成立吗</span>？</div>
+    </div>
+
+    <div class="worry-list">
+      <div class="worry-item">
+        <div class="worry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="worry-text">我设计的<span class="bold">多agent架构</span>，会不会因为单agent就够了而变得多余？</div>
+      </div>
+      <div class="worry-item">
+        <div class="worry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="worry-text">我精心调的<span class="bold">prompt系统</span>，是在补偿模型局限还是在增加真正的价值？</div>
+      </div>
+      <div class="worry-item">
+        <div class="worry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="worry-text">我的<span class="bold">评估和验证环节</span>，在更强的模型下还有意义吗？</div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p>这不是假设性问题——<span class="teal">每次模型升级我都要重新审视workflow</span></p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

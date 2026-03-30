@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #0A2540;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(180deg, #0A1628 0%, #0D1F3C 100%);
+  border-bottom: 5px solid #0EA5E9;
+  position: relative;
+  padding: 50px 60px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0EA5E9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 10px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  right: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(14,165,233,0.3), #0EA5E9, rgba(14,165,233,0.3));
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0D1F3C;
+  border: 3px solid #0EA5E9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.step-dot-inner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0EA5E9;
+}
+
+.step.mythos .step-dot {
+  border-color: #F59E0B;
+  box-shadow: 0 0 20px rgba(245,158,11,0.4);
+}
+
+.step.mythos .step-dot-inner {
+  background: #F59E0B;
+}
+
+.step-model {
+  font-size: 15px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.step-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.step-card {
+  background: rgba(14,165,233,0.08);
+  border: 1px solid rgba(14,165,233,0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  width: 190px;
+}
+
+.step.mythos .step-card {
+  background: rgba(245,158,11,0.08);
+  border-color: rgba(245,158,11,0.25);
+}
+
+.step-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #0EA5E9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.step.mythos .step-label {
+  color: #F59E0B;
+}
+
+.step-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+
+.arrow {
+  position: absolute;
+  top: 16px;
+  font-size: 20px;
+  color: #0EA5E9;
+  font-weight: 900;
+  z-index: 2;
+}
+
+.arrow-1 { left: 230px; }
+.arrow-2 { left: 460px; }
+.arrow-3 { left: 690px; }
+.arrow-4 { left: 920px; }
+
+.footer-note {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.footer-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="section-title">Capability Timeline</div>
+  <div class="heading">What "Step Change" Has Actually Meant</div>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-model">GPT-3 &rarr; GPT-4</div>
+      <div class="step-date">Mar 2023</div>
+      <div class="step-card">
+        <div class="step-label">Enabled</div>
+        <div class="step-desc">Multi-step reasoning. Code generation became a real tool. New product categories emerged.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-model">Claude 2 &rarr; 3 Opus</div>
+      <div class="step-date">Mar 2024</div>
+      <div class="step-card">
+        <div class="step-label">Enabled</div>
+        <div class="step-desc">Real long-context understanding. Entire codebases as input. Context windows became practical.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-model">Opus 4.5 &rarr; 4.6</div>
+      <div class="step-date">2025</div>
+      <div class="step-card">
+        <div class="step-label">Enabled</div>
+        <div class="step-desc">Eliminated sprint decomposition. Single-pass complex tasks. Thinner harness architectures.</div>
+      </div>
+    </div>
+
+    <div class="step mythos">
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-model">Mythos</div>
+      <div class="step-date">2026?</div>
+      <div class="step-card">
+        <div class="step-label">Enables</div>
+        <div class="step-desc">Unknown. The question: which harness components become obsolete? What new tasks become possible?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <div class="footer-line"></div>
+    <div class="footer-text">Each step change made specific architectural components unnecessary</div>
+    <div class="footer-line"></div>
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

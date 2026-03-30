@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .vs-block {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .vs-card {
+    flex: 1;
+    padding: 32px 28px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .vs-card.last {
+    background: #F5F0FF;
+    border: 3px solid #7C3AED;
+  }
+
+  .vs-card.first {
+    background: #F9F9F9;
+    border: 3px solid #DDD;
+  }
+
+  .vs-card .icon {
+    font-size: 60px;
+    margin-bottom: 16px;
+  }
+
+  .vs-card .card-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+
+  .vs-card.last .card-title {
+    color: #7C3AED;
+  }
+
+  .vs-card.first .card-title {
+    color: #999;
+  }
+
+  .vs-card .card-desc {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .vs-label {
+    font-size: 48px;
+    font-weight: 900;
+    color: #CCC;
+    display: flex;
+    align-items: center;
+  }
+
+  .framework-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 28px 24px;
+    margin-bottom: 40px;
+  }
+
+  .framework-box .label {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .framework-box p {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .framework-box .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .monopoly-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .monopoly-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .monopoly-item + .monopoly-item {
+    border-top: 1px solid #EBEBEB;
+  }
+
+  .monopoly-item .num {
+    font-size: 32px;
+    font-weight: 900;
+    color: #7C3AED;
+    min-width: 40px;
+  }
+
+  .monopoly-item .text {
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .monopoly-item .hint {
+    font-size: 26px;
+    color: #888;
+    margin-left: auto;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 5</div>
+
+    <h1 class="title">Last Mover > First Mover</h1>
+
+    <div class="content-section">
+      <div class="vs-block">
+        <div class="vs-card last">
+          <div class="card-title">Last Mover</div>
+          <div class="card-desc">75-85%的价值<br>来自10年后的现金流<br><br>留得久比跑得快重要</div>
+        </div>
+        <div class="vs-label">vs</div>
+        <div class="vs-card first">
+          <div class="card-title">First Mover</div>
+          <div class="card-desc">先做不一定赢<br>被后来者超越的<br>案例比比皆是</div>
+        </div>
+      </div>
+
+      <div class="framework-box">
+        <div class="label">垄断四要素</div>
+        <p>建立持久垄断需要这四个壁垒，缺一不可：</p>
+      </div>
+
+      <div class="monopoly-list">
+        <div class="monopoly-item">
+          <div class="num">1</div>
+          <div class="text">专有技术</div>
+          <div class="hint">要做到10倍改进</div>
+        </div>
+        <div class="monopoly-item">
+          <div class="num">2</div>
+          <div class="text">网络效应</div>
+          <div class="hint">用的人越多越好用</div>
+        </div>
+        <div class="monopoly-item">
+          <div class="num">3</div>
+          <div class="text">规模经济</div>
+          <div class="hint">越大成本越低</div>
+        </div>
+        <div class="monopoly-item">
+          <div class="num">4</div>
+          <div class="text">品牌</div>
+          <div class="hint">但不能只靠品牌</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

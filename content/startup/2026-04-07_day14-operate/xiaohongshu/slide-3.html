@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Editor role */
+  .editor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .editor-card {
+    background: #F5F0FF;
+    border-radius: 14px;
+    padding: 20px 18px;
+    text-align: center;
+  }
+
+  .editor-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .editor-label {
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  .editor-desc {
+    font-size: 22px;
+    color: #888;
+    line-height: 1.4;
+  }
+
+  .editor-goal {
+    font-size: 26px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .editor-goal .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  /* Simplify section */
+  .simplify-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .simplify-example {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+
+  .simplify-example-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .simplify-example-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .simplify-example-desc .bold {
+    font-weight: 700;
+  }
+
+  .simplify-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .simplify-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .step-arrow {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 900;
+    min-width: 36px;
+    text-align: center;
+  }
+
+  .step-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .step-text .bold {
+    font-weight: 700;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 14</div>
+
+    <h1 class="title">CEO=编辑 + 简化一切</h1>
+
+    <div class="section-label">CEO的四个编辑动作</div>
+
+    <div class="editor-grid">
+      <div class="editor-card">
+        <div class="editor-label">删减简化</div>
+        <div class="editor-desc">砍掉多余的部分</div>
+      </div>
+      <div class="editor-card">
+        <div class="editor-label">问澄清问题</div>
+        <div class="editor-desc">逼出清晰表达</div>
+      </div>
+      <div class="editor-card">
+        <div class="editor-label">分配资源</div>
+        <div class="editor-desc">把人放对位置</div>
+      </div>
+      <div class="editor-card">
+        <div class="editor-label">统一声音</div>
+        <div class="editor-desc">保持一致信息</div>
+      </div>
+    </div>
+
+    <div class="editor-goal">目标：每天<span class="purple">红墨水越来越少</span></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">简化 ≠ 简单化</div>
+
+    <div class="simplify-box">
+      <div class="simplify-example">
+        <div class="simplify-example-title">Twitter 案例</div>
+        <div class="simplify-example-desc"><span class="bold">140个字</span>改变了世界<br>不接受"这个很复杂"的借口</div>
+      </div>
+
+      <div class="simplify-steps">
+        <div class="simplify-step">
+          <div class="step-arrow">1</div>
+          <div class="step-text">提炼到 <span class="bold">1-2-3件事</span></div>
+        </div>
+        <div class="simplify-step">
+          <div class="step-arrow">2</div>
+          <div class="step-text">每减一步流程 = <span class="bold">+30-50%效率</span></div>
+        </div>
+        <div class="simplify-step">
+          <div class="step-arrow">3</div>
+          <div class="step-text">简化<span class="bold">步骤</span>，不是简化<span class="bold">问题</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">问题可以很复杂，流程必须简单</span><br>怎么简单怎么来，是简化步骤，不是简单化</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Timeline comparison */
+  .era-compare {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  .era-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 28px 22px;
+  }
+
+  .era-card.past {
+    background: #FAFAFA;
+    border: 2px solid #E0E0E0;
+  }
+
+  .era-card.now {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .era-year {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  .era-card.past .era-year { color: #888; }
+  .era-card.now .era-year { color: #7C3AED; }
+
+  .era-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .era-item:last-child { margin-bottom: 0; }
+
+  .era-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 10px;
+    flex-shrink: 0;
+  }
+
+  .era-card.past .era-dot { background: #CCC; }
+  .era-card.now .era-dot { background: #7C3AED; }
+
+  .era-text {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .era-card.now .era-text {
+    font-weight: 500;
+  }
+
+  /* Arrow between */
+  .era-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .arrow-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .arrow-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #7C3AED;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Personal angle */
+  .personal-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .personal-label {
+    font-size: 22px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .personal-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .personal-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 12</div>
+
+    <h1 class="title">2014 vs 2026：断层的迭代</h1>
+
+    <div class="section-label">Aaron说的"最好时代" — 每一轮都对</div>
+
+    <div class="era-compare">
+      <div class="era-card past">
+        <div class="era-year">2014</div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">云计算刚普及</div>
+        </div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">移动设备爆发</div>
+        </div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">用户主导采购</div>
+        </div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">Box/Dropbox崛起</div>
+        </div>
+      </div>
+      <div class="era-card now">
+        <div class="era-year">2026</div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">AI重新定义工作流</div>
+        </div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">Agent自动化落地</div>
+        </div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">数据成为新基建</div>
+        </div>
+        <div class="era-item">
+          <div class="era-dot"></div>
+          <div class="era-text">断层比2014更大</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="era-arrow">
+      <div class="arrow-line">
+        <div class="arrow-text">同一套逻辑，新一轮机会</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">从业者视角</div>
+
+    <div class="personal-box">
+      <div class="personal-label">10年DATA/AI从业观察</div>
+      <div class="personal-text">
+        企业知道AI能做什么，但<span class="purple">实际落地不到10%</span>。<br>
+        这个gap就是Aaron说的"技术断层"。<br>
+        做ToB产品的都知道——<span class="purple">enterprise software正在被AI重新定义</span>。
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">每一轮技术变革</span>都是企业软件的"最好时代"<br>关键是你能不能找到那个断层</p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

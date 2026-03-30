@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 6 - 收藏页</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 44px;
+  }
+
+  .points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+  }
+
+  .point-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 28px 30px;
+  }
+
+  .point-icon {
+    width: 52px;
+    height: 52px;
+    background: #0EA5E9;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .point-content {
+    flex: 1;
+  }
+
+  .point-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+  }
+
+  .point-desc {
+    font-size: 25px;
+    color: #777;
+    line-height: 1.5;
+  }
+  .point-desc .teal {
+    color: #0EA5E9;
+    font-weight: 600;
+  }
+
+  .save-prompt {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 28px;
+    color: #BBB;
+    font-weight: 500;
+    padding: 16px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">核心要点</div>
+
+    <h1 class="title">Harness Design 5条法则</h1>
+
+    <div class="points-list">
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">不要让AI自我评估</div>
+          <div class="point-desc">Generator永远觉得自己完美，<span class="teal">自评偏差是真实存在的</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">读代码 =/= 用产品</div>
+          <div class="point-desc">Code review找不到交互bug，<span class="teal">只有浏览器测试能发现</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">Harness = Prompt架构</div>
+          <div class="point-desc">同模型同工具，<span class="teal">不同prompt组合</span>就是不同架构</div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">反馈循环真的有效</div>
+          <div class="point-desc">3轮feedback修复了<span class="teal">3/4个bug</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">成本一样，信心天差地别</div>
+          <div class="point-desc">Run C和D都是$5，但<span class="teal">D的信心远超C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="save-prompt">收藏备用，下次用AI做项目时对照检查</div>
+  </div>
+
+  <div class="page-number">6 / 7</div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Toussaint story */
+  .story-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .story-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 14px;
+  }
+
+  .story-subtitle {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .story-points {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .story-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .story-icon {
+    width: 36px;
+    height: 36px;
+    background: #7C3AED;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .story-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .story-text .bold {
+    font-weight: 700;
+  }
+
+  .story-lesson {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .story-lesson-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .story-lesson-text .purple {
+    color: #B794F4;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Cross-lecture insight */
+  .cross-label {
+    font-size: 22px;
+    color: #fff;
+    background: #7C3AED;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .cross-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .cross-compare {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .cross-card {
+    flex: 1;
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .cross-day {
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .cross-concept {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .cross-meaning {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .cross-insight {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cross-insight .bold {
+    font-weight: 700;
+  }
+
+  .cross-insight .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 15</div>
+
+    <h1 class="title">Toussaint的管理智慧 + 跨课洞察</h1>
+
+    <div class="section-label">历史上唯一成功的奴隶革命</div>
+
+    <div class="story-box">
+      <div class="story-title">Toussaint Louverture</div>
+      <div class="story-subtitle">他没有选择报复，而是选择了升级</div>
+      <div class="story-points">
+        <div class="story-point">
+          <div class="story-icon">1</div>
+          <div class="story-text">敌军最优秀的人 <span class="bold">变成自己的将军</span></div>
+        </div>
+        <div class="story-point">
+          <div class="story-icon">2</div>
+          <div class="story-text">奴隶主保留土地 + <span class="bold">付工资 + 降税</span></div>
+        </div>
+        <div class="story-point">
+          <div class="story-icon">3</div>
+          <div class="story-text"><span class="bold">文化升级</span> 大于 报复</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-lesson">
+      <div class="story-lesson-text">管理不是赢，是让<span class="purple">所有人</span>都变好</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cross-label">跨课连接</div>
+
+    <div class="cross-box">
+      <div class="cross-compare">
+        <div class="cross-card">
+          <div class="cross-day">Day 14 Rabois</div>
+          <div class="cross-concept">简化</div>
+          <div class="cross-meaning">减少不必要的步骤</div>
+        </div>
+        <div class="cross-card">
+          <div class="cross-day">Day 15 Horowitz</div>
+          <div class="cross-concept">流程</div>
+          <div class="cross-meaning">把必要的步骤标准化</div>
+        </div>
+      </div>
+      <div class="cross-insight">
+        两者<span class="purple">互补不矛盾</span><br>
+        <span class="bold">没流程的混乱才是真正的复杂</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

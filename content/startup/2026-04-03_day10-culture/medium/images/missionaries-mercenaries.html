@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 44px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  gap: 40px;
+}
+
+.col {
+  flex: 1;
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.col-missionary {
+  background: #7C3AED;
+}
+
+.col-mercenary {
+  background: #1A1A2E;
+}
+
+.col-header {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.col-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trait {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.trait-icon {
+  flex: 0 0 22px;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.trait-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+}
+
+.outcome {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 2px solid rgba(255,255,255,0.15);
+}
+
+.outcome-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.outcome-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+}
+
+.vs-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1A1A2E;
+  border: 3px solid #7C3AED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Brian Chesky's Decision</div>
+  <div class="title">Missionaries vs. Mercenaries</div>
+  <div class="columns">
+    <div class="col col-missionary">
+      <div class="col-header">Missionaries</div>
+      <div class="col-sub">Airbnb's Approach</div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Join because they believe in the mission</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Build culture from day one</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Stay through the hard years</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Do things that don't scale</div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-label">Result</div>
+        <div class="outcome-text">Europe now >50% of Airbnb revenue</div>
+      </div>
+    </div>
+    <div class="vs">
+      <div class="vs-badge">VS</div>
+    </div>
+    <div class="col col-mercenary">
+      <div class="col-header">Mercenaries</div>
+      <div class="col-sub">Samwer Clone (Wimdu)</div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Join to execute a copy</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">400 people hired in 30 days</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Leave when the next opportunity appears</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Optimize for speed, not depth</div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-label">Result</div>
+        <div class="outcome-text">Wimdu shut down</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

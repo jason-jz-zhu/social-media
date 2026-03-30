@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #0A2540;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 50%, #0A2540 100%);
+  border-bottom: 5px solid #0EA5E9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 120px;
+}
+
+.quote-mark {
+  font-size: 120px;
+  font-weight: 900;
+  color: #0EA5E9;
+  opacity: 0.2;
+  line-height: 0.6;
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-size: 34px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 900px;
+  margin-bottom: 16px;
+}
+
+.quote em {
+  color: #0EA5E9;
+  font-style: normal;
+}
+
+.subquote {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #0EA5E9;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.author {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+}
+
+.author-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  text-align: center;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="quote-mark">&ldquo;</div>
+  <div class="quote">Model upgrades don't make harness design <em>obsolete.</em> They make it more <em>interesting.</em></div>
+  <div class="subquote">Every step change is an invitation to strip away the scaffolding you no longer need and build something more ambitious.</div>
+  <div class="divider"></div>
+  <div class="author">Jiazhen Zhu</div>
+  <div class="author-title">10+ Years Data/AI &middot; NYU Stern MBA &middot; NEU Adjunct Faculty</div>
+  <div class="glow"></div>
+  <div class="grain"></div>
+</div>
+</body>
+</html>

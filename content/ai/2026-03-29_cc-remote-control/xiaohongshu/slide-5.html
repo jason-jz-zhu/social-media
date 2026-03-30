@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 5 - 3个Power User技巧</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Fira+Code:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+  }
+
+  .tip-card {
+    background: #FAFAFA;
+    border: 1px solid #EEE;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+
+  .tip-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .tip-card:nth-child(1)::before { background: #0EA5E9; }
+  .tip-card:nth-child(2)::before { background: #8B5CF6; }
+  .tip-card:nth-child(3)::before { background: #22C55E; }
+
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .tip-num {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .tip-card:nth-child(1) .tip-num { background: #0EA5E9; }
+  .tip-card:nth-child(2) .tip-num { background: #8B5CF6; }
+  .tip-card:nth-child(3) .tip-num { background: #22C55E; }
+
+  .tip-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .tip-desc {
+    font-size: 25px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .tip-cmd {
+    background: #1E1E2E;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-family: 'Fira Code', monospace;
+    font-size: 20px;
+    color: #89B4FA;
+  }
+
+  .tip-benefit {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .tip-card:nth-child(1) .tip-benefit { background: rgba(14,165,233,0.1); color: #0EA5E9; }
+  .tip-card:nth-child(2) .tip-benefit { background: rgba(139,92,246,0.1); color: #8B5CF6; }
+  .tip-card:nth-child(3) .tip-benefit { background: rgba(34,197,94,0.1); color: #22C55E; }
+
+  .bottom-note {
+    margin-top: auto;
+    background: #F0F9FF;
+    border-left: 4px solid #0EA5E9;
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 50px;
+  }
+
+  .bottom-note p {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .teal { color: #0EA5E9; font-weight: 700; }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">进阶技巧</div>
+
+    <h1 class="title">3个Power User技巧</h1>
+
+    <div class="tip-card">
+      <div class="tip-header">
+        <div class="tip-num">1</div>
+        <div class="tip-name">Bypass权限确认</div>
+      </div>
+      <div class="tip-desc">每次弹窗让你approve很烦？设置allowedTools白名单，信任的操作自动放行。出门之前配好，AI自己跑不用你管。</div>
+      <div class="tip-cmd">Settings > Allowed Tools > 添加信任的工具</div>
+      <div class="tip-benefit">解放双手，真正异步</div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-header">
+        <div class="tip-num">2</div>
+        <div class="tip-name">Plan Mode先规划</div>
+      </div>
+      <div class="tip-desc">大任务别直接让它干。先用plan mode出方案，手机上review，觉得靠谱再approve执行。避免跑偏浪费token。</div>
+      <div class="tip-cmd">Shift+Tab 切换到 Plan Mode</div>
+      <div class="tip-benefit">防跑偏，省token</div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-header">
+        <div class="tip-num">3</div>
+        <div class="tip-name">多项目并行</div>
+      </div>
+      <div class="tip-desc">电脑开多个终端窗口，每个跑一个Claude Code + Remote Control。手机上切着看不同项目进度，一个人干三个人的活。</div>
+      <div class="tip-cmd">每个终端分别 /remote-control</div>
+      <div class="tip-benefit">效率翻倍，并行推进</div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="teal">我的经验：</span>三个技巧组合用，给它一个大任务然后出门，回来发现已经写完了。</p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

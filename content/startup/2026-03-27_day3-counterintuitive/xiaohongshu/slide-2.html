@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .content {
+    font-size: 42px;
+    color: #333;
+    line-height: 1.75;
+    margin-bottom: 60px;
+  }
+
+  .content p {
+    margin-bottom: 8px;
+  }
+
+  .speaker-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 32px;
+    margin-bottom: 48px;
+  }
+
+  .speaker-box p {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .speaker-box .label {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 16px;
+  }
+
+  .formula-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 24px;
+    margin-top: auto;
+    margin-bottom: 80px;
+  }
+
+  .formula-box p {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.8;
+  }
+
+  .formula-box .purple {
+    color: #7C3AED;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div><span class="badge">6点起床学创业 Day 3</span></div>
+
+    <h1 class="title">今日拆解</h1>
+
+    <div class="content">
+      <p>YC创业课第三节</p>
+      <p>主讲：Paul Graham（YC联合创始人）</p>
+      <p>主题：创业的反直觉 & 如何产生好点子</p>
+    </div>
+
+    <div class="speaker-box">
+      <p class="label">关于Paul Graham</p>
+      <p>创办了Viaweb（被Yahoo收购）</p>
+      <p>联合创办YC，运营了9年</p>
+      <p>硅谷最有影响力的创业导师和散文家</p>
+    </div>
+
+    <div class="formula-box">
+      <p>核心公式：<span class="purple">好奇心</span> + <span class="purple">领域深耕</span> = 好点子</p>
+      <p>别刻意想，让idea来找你</p>
+    </div>
+  </div>
+
+  <div class="page-number">2 / 7</div>
+</body>
+</html>

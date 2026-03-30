@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #7C3AED;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 16px;
+  font-family: 'Noto Sans SC', sans-serif;
+  margin-bottom: 48px;
+  align-self: flex-start;
+}
+
+.title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 56px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 22px 0;
+}
+
+.item + .item {
+  border-top: 1px solid #EBEBEB;
+}
+
+.item-number {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+  min-width: 56px;
+  padding-top: 2px;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.item-desc {
+  font-size: 24px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="badge">6点起床学创业 Day 15</div>
+  <div class="title">收藏：Day 15 八个核心观点</div>
+  <div class="list">
+    <div class="item">
+      <div class="item-number">1</div>
+      <div class="item-text">
+        <div class="item-title">通过所有人的眼睛看决策</div>
+        <div class="item-desc">不只是你和当事人，还有不在房间里的人</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">2</div>
+      <div class="item-text">
+        <div class="item-title">降职比解雇更破坏文化</div>
+        <div class="item-desc">股份不公平、权威丧失、错误信号</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">3</div>
+      <div class="item-text">
+        <div class="item-title">给主动要的人加薪=惩罚沉默者</div>
+        <div class="item-desc">Shmoney Dance效应</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">4</div>
+      <div class="item-text">
+        <div class="item-title">流程保护文化</div>
+        <div class="item-desc">正式评估确保公平，不取决于谁会开口</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">5</div>
+      <div class="item-text">
+        <div class="item-title">Toussaint：文化升级>报复</div>
+        <div class="item-desc">敌军最优秀变自己的将军</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">6</div>
+      <div class="item-text">
+        <div class="item-title">解雇保留尊严</div>
+        <div class="item-desc">可以拿走工作，不能拿走dignity</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">7</div>
+      <div class="item-text">
+        <div class="item-title">Kimchi Problem：埋得越深越热</div>
+        <div class="item-desc">不要偷偷解决，正面面对</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">8</div>
+      <div class="item-text">
+        <div class="item-title">简化和流程互补不矛盾</div>
+        <div class="item-desc">没流程的混乱才是真正的复杂</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</div>
+</body>
+</html>

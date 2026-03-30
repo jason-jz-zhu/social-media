@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 44px 80px;
+  width: 100%;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+}
+
+.comparison {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.phase-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.phase-card.dating {
+  border-color: #E8E4F0;
+}
+
+.phase-card.marriage {
+  border-color: #7C3AED;
+}
+
+.phase-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.phase-badge {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.phase-card.dating .phase-badge {
+  background: #F0F0F0;
+  color: #888;
+}
+
+.phase-card.marriage .phase-badge {
+  background: #7C3AED;
+  color: #fff;
+}
+
+.phase-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 6px;
+}
+
+.phase-subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.trait-list {
+  list-style: none;
+  padding: 0;
+}
+
+.trait-list li {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #F0F0F0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trait-list li:last-child {
+  border-bottom: none;
+}
+
+.trait-icon {
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.phase-card.dating .trait-icon {
+  background: #F0F0F0;
+  color: #888;
+}
+
+.phase-card.marriage .trait-icon {
+  background: rgba(124,58,237,0.15);
+  color: #7C3AED;
+}
+
+.vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vs-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #1A1A2E;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-text {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #666;
+}
+
+.bottom-text strong {
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Kevin Hale's Metaphor</div>
+  <div class="title">Your Product Has Two Relationships</div>
+  <div class="comparison">
+    <div class="phase-card dating">
+      <div class="phase-badge">Where most teams focus</div>
+      <div class="phase-title">Dating</div>
+      <div class="phase-subtitle">New User Acquisition</div>
+      <ul class="trait-list">
+        <li><span class="trait-icon">1</span> Polished landing pages</li>
+        <li><span class="trait-icon">2</span> Beautiful onboarding</li>
+        <li><span class="trait-icon">3</span> First impressions matter</li>
+        <li><span class="trait-icon">4</span> Best behavior, best self</li>
+        <li><span class="trait-icon">5</span> One-time effort</li>
+      </ul>
+    </div>
+    <div class="vs-divider">
+      <div class="vs-circle">VS</div>
+    </div>
+    <div class="phase-card marriage">
+      <div class="phase-badge">Where growth actually lives</div>
+      <div class="phase-title">Marriage</div>
+      <div class="phase-subtitle">Existing User Retention</div>
+      <ul class="trait-list">
+        <li><span class="trait-icon">1</span> Constant energy input</li>
+        <li><span class="trait-icon">2</span> Fast support responses</li>
+        <li><span class="trait-icon">3</span> Every interaction matters</li>
+        <li><span class="trait-icon">4</span> Requires real investment</li>
+        <li><span class="trait-icon">5</span> Compounds over time</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-text">Most companies put their <strong>A-team on dating</strong> and their <strong>B-team on the marriage</strong>.</div>
+</div>
+</body>
+</html>

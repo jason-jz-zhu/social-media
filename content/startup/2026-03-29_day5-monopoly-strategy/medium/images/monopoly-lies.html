@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 50px 80px;
+  width: 100%;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 44px;
+}
+
+.columns {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.column {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.column.left {
+  border-color: #E0E0E0;
+}
+
+.column.right {
+  border-color: #7C3AED;
+}
+
+.col-badge {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.column.left .col-badge {
+  background: #F0F0F0;
+  color: #888;
+}
+
+.column.right .col-badge {
+  background: #7C3AED;
+  color: #fff;
+}
+
+.col-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 10px;
+}
+
+.col-strategy {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7C3AED;
+  margin-bottom: 18px;
+}
+
+.col-example {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  background: #F8F8F8;
+  border-radius: 8px;
+  border-left: 3px solid #DDD;
+}
+
+.column.right .col-example {
+  background: #F3F0FA;
+  border-left-color: #7C3AED;
+}
+
+.col-reality {
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+}
+
+.col-reality strong {
+  color: #1A1A2E;
+}
+
+.bottom-line {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #666;
+}
+
+.bottom-line strong {
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Peter Thiel's Framework</div>
+  <div class="title">Everybody Lies About Their Market</div>
+  <div class="columns">
+    <div class="column left">
+      <div class="col-badge">Non-Monopolist</div>
+      <div class="col-title">Intersection</div>
+      <div class="col-strategy">Shrink the market to look unique</div>
+      <div class="col-example">"We're the only British food restaurant in Palo Alto"</div>
+      <div class="col-reality">Reality: <strong>Still just a restaurant</strong></div>
+    </div>
+    <div class="column right">
+      <div class="col-badge">Monopolist</div>
+      <div class="col-title">Union</div>
+      <div class="col-strategy">Expand the market to look small</div>
+      <div class="col-example">"Google is 3.5% of the $500B global ad market"</div>
+      <div class="col-reality">Reality: <strong>90%+ of search advertising</strong></div>
+    </div>
+  </div>
+  <div class="bottom-line">Every market definition is a <strong>strategic claim</strong>, not an objective fact.</div>
+</div>
+</body>
+</html>

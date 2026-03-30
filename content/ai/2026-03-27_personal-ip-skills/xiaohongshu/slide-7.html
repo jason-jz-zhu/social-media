@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 7 - 金句 + CTA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #1A1A1A;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .accent-block {
+    position: absolute;
+    bottom: -200px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: #0EA5E9;
+    opacity: 0.06;
+    transform: rotate(20deg);
+    border-radius: 60px;
+  }
+
+  .grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  .glow {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 350px;
+    background: radial-gradient(ellipse at center, #0EA5E9 0%, transparent 70%);
+    filter: blur(120px);
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 80px;
+  }
+
+  .quote-mark {
+    font-size: 120px;
+    color: #0EA5E9;
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 20px;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .quote-text {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 62px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.45;
+    margin-bottom: 50px;
+  }
+
+  .quote-text .teal {
+    color: #0EA5E9;
+  }
+
+  .divider-line {
+    width: 120px;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    margin-bottom: 50px;
+  }
+
+  .cta-box {
+    background: rgba(14, 165, 233, 0.12);
+    border: 2px solid rgba(14, 165, 233, 0.3);
+    border-radius: 20px;
+    padding: 32px 48px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .cta-text {
+    font-size: 34px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+  }
+
+  .cta-text .bold {
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .author-info {
+    text-align: center;
+  }
+
+  .author-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+  }
+
+  .author-desc {
+    font-size: 24px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: rgba(255,255,255,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+  <div class="accent-block"></div>
+  <div class="glow"></div>
+  <div class="grain"></div>
+
+  <div class="content">
+    <div class="quote-mark">"</div>
+
+    <div class="quote-text">
+      文章是output<br>
+      系统是生成output的<span class="teal">机器</span><br><br>
+      你的竞争力<br>
+      不是你写了什么<br>
+      是你<span class="teal">训练出了什么</span>
+    </div>
+
+    <div class="divider-line"></div>
+
+    <div class="cta-box">
+      <div class="cta-text">
+        你开始训练自己的"<span class="bold">系统</span>"了吗？<br>
+        评论区聊聊你在用AI做什么workflow
+      </div>
+    </div>
+
+    <div class="author-info">
+      <div class="author-name">朱佳臻 Jiazhen Zhu</div>
+      <div class="author-desc">10年Data/AI从业者 | NYU Stern MBA | CS客座讲师</div>
+    </div>
+  </div>
+
+  <div class="page-number">7 / 7</div>
+</body>
+</html>

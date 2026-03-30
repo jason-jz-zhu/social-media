@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.test-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 50px;
+}
+
+.examples {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.example {
+  text-align: center;
+}
+
+.example-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.fail {
+  font-size: 20px;
+  font-weight: 500;
+  color: #999;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  max-width: 340px;
+  line-height: 1.4;
+}
+
+.pass {
+  font-size: 28px;
+  font-weight: 800;
+  color: #7C3AED;
+  max-width: 340px;
+  line-height: 1.3;
+  border: 3px solid #7C3AED;
+  border-radius: 12px;
+  padding: 20px 28px;
+}
+
+.arrow {
+  font-size: 48px;
+  color: #7C3AED;
+  font-weight: 300;
+}
+
+.bottom-text {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.bottom-text strong {
+  color: #1A1A2E;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The One-Sentence Test</div>
+  <div class="test-title">If you can't say it in one sentence, you don't understand it yet.</div>
+  <div class="examples">
+    <div class="example">
+      <div class="example-label">Before (Pivot #12)</div>
+      <div class="fail">"We're building an AI-powered platform that leverages machine learning to optimize home service matching..."</div>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="example">
+      <div class="example-label">After (Homejoy)</div>
+      <div class="pass">$20/hour, get your place cleaned.</div>
+    </div>
+  </div>
+  <div class="bottom-text">Clarity took <strong>12 failed pivots</strong> to reach. — Adora Cheung</div>
+</div>
+</body>
+</html>

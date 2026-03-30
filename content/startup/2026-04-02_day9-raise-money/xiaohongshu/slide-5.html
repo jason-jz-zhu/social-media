@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Cap table visual */
+  .cap-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .cap-chart {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .cap-scenario {
+    flex: 1;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #EBEBEB;
+  }
+
+  .cap-header {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .cap-scenario.good .cap-header {
+    background: #F5F0FF;
+    color: #7C3AED;
+  }
+
+  .cap-scenario.bad .cap-header {
+    background: #FFF5F5;
+    color: #E53E3E;
+  }
+
+  .cap-bar-area {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cap-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cap-bar-label {
+    font-size: 20px;
+    color: #888;
+    width: 60px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .cap-bar-track {
+    flex: 1;
+    height: 28px;
+    background: #F0F0F0;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cap-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  .cap-bar-fill.founder { background: #7C3AED; }
+  .cap-bar-fill.investor { background: #E53E3E; }
+
+  .cap-bar-pct {
+    font-size: 20px;
+    font-weight: 700;
+    color: #555;
+    width: 50px;
+    flex-shrink: 0;
+  }
+
+  .cap-rules {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cap-rule {
+    flex: 1;
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid #EBEBEB;
+  }
+
+  .cap-rule .round {
+    font-size: 24px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 4px;
+  }
+
+  .cap-rule .range {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 2px;
+  }
+
+  .cap-rule .note {
+    font-size: 20px;
+    color: #888;
+  }
+
+  .warning-box {
+    background: #FFF5F5;
+    border-left: 4px solid #E53E3E;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .warning-box p {
+    font-size: 26px;
+    font-weight: 700;
+    color: #E53E3E;
+    line-height: 1.5;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 14px 0;
+  }
+
+  /* Bootstrap section */
+  .bootstrap-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .tips {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid #EBEBEB;
+  }
+
+  .tip-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+    flex-shrink: 0;
+    min-width: 32px;
+  }
+
+  .tip-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .tip-text .bold {
+    font-weight: 700;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .insight-box .label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .insight-box p {
+    font-size: 25px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 9</div>
+
+    <h1 class="title">Cap Table被毁 = 公司被毁</h1>
+
+    <div class="section-label">健康 vs 危险的股权结构</div>
+
+    <div class="cap-wrapper">
+      <div class="cap-chart">
+        <div class="cap-scenario good">
+          <div class="cap-header">健康：创始人 > 60%</div>
+          <div class="cap-bar-area">
+            <div class="cap-bar-row">
+              <div class="cap-bar-label">创始人</div>
+              <div class="cap-bar-track"><div class="cap-bar-fill founder" style="width:70%"></div></div>
+              <div class="cap-bar-pct">70%</div>
+            </div>
+            <div class="cap-bar-row">
+              <div class="cap-bar-label">投资人</div>
+              <div class="cap-bar-track"><div class="cap-bar-fill investor" style="width:30%"></div></div>
+              <div class="cap-bar-pct">30%</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap-scenario bad">
+          <div class="cap-header">危险：早期稀释40%</div>
+          <div class="cap-bar-area">
+            <div class="cap-bar-row">
+              <div class="cap-bar-label">创始人</div>
+              <div class="cap-bar-track"><div class="cap-bar-fill founder" style="width:35%"></div></div>
+              <div class="cap-bar-pct">&lt;5%</div>
+            </div>
+            <div class="cap-bar-row">
+              <div class="cap-bar-label">投资人</div>
+              <div class="cap-bar-track"><div class="cap-bar-fill investor" style="width:65%"></div></div>
+              <div class="cap-bar-pct">65%+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-rules">
+      <div class="cap-rule">
+        <div class="round">Seed轮</div>
+        <div class="range">稀释 10-15%</div>
+        <div class="note">保持控制权</div>
+      </div>
+      <div class="cap-rule">
+        <div class="round">A轮</div>
+        <div class="range">稀释 20-30%</div>
+        <div class="note">换高速增长</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <p>早期稀释40%，几轮后创始人持股 &lt; 5%，注定失去动力</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="bootstrap-title">融资实战技巧</div>
+
+    <div class="tips">
+      <div class="tip">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><span class="bold">Bootstrap越久越好</span> — 不拿钱能活就别急着拿</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><span class="bold">口头承诺立刻邮件确认</span> — 口头的不算数</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><span class="bold">不要把融资当成就</span> — 融资是手段不是目的</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">从业者视角</div>
+      <p>投资人和创始人都是人，有意思的是又用婚姻来做对比了。和Day 7的co-founder隐喻呼应——创业中人与人的关系永远是核心。</p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

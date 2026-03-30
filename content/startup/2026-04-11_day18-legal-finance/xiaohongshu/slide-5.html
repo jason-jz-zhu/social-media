@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Money test */
+  .money-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .money-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #7C3AED;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .money-story {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .money-story .bold {
+    font-weight: 700;
+  }
+
+  .test-card {
+    background: #fff;
+    border: 2px solid #7C3AED;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .test-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.5;
+  }
+
+  .test-text .purple {
+    color: #7C3AED;
+  }
+
+  .salary-box {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .salary-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .salary-text .purple {
+    color: #B794F4;
+  }
+
+  .salary-text .red {
+    color: #FC8181;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* Firing section */
+  .fire-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .fire-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .fire-num {
+    width: 40px;
+    height: 40px;
+    background: #7C3AED;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .fire-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .fire-text .bold {
+    font-weight: 700;
+  }
+
+  /* Cross lecture */
+  .cross-label {
+    font-size: 22px;
+    color: #fff;
+    background: #7C3AED;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .cross-box {
+    background: #1A1A1A;
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .cross-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cross-text .purple {
+    color: #B794F4;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 18</div>
+
+    <h1 class="title">花钱纪律 + 解雇流程</h1>
+
+    <div class="section-label">投资人的钱 =/= 你的钱</div>
+
+    <div class="money-box">
+      <div class="money-title">Vegas故事</div>
+      <div class="money-story">有founder拿了融资<span class="bold">去Las Vegas</span><br>Nathoo的逐行支出测试：</div>
+      <div class="test-card">
+        <div class="test-text">每一笔支出，你敢<br><span class="purple">逐行给投资人看</span>吗？</div>
+      </div>
+    </div>
+
+    <div class="salary-box">
+      <div class="salary-text">付工资是<span class="purple">法律要求</span> | 最低<span class="purple">$2000/月</span><br>不付 = 被解雇founder的<span class="red">法律杠杆</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">解雇：快、专业、清晰</div>
+
+    <div class="fire-flow">
+      <div class="fire-step">
+        <div class="fire-num">1</div>
+        <div class="fire-text"><span class="bold">快速决定</span> — 拖延只会更痛</div>
+      </div>
+      <div class="fire-step">
+        <div class="fire-num">2</div>
+        <div class="fire-text"><span class="bold">当面告知</span> — 清晰、简短、不含糊</div>
+      </div>
+      <div class="fire-step">
+        <div class="fire-num">3</div>
+        <div class="fire-text"><span class="bold">立刻结清</span> — 当天付清所有工资</div>
+      </div>
+      <div class="fire-step">
+        <div class="fire-num">4</div>
+        <div class="fire-text"><span class="bold">切断权限</span> — GitHub/Slack/所有系统</div>
+      </div>
+    </div>
+
+    <div class="cross-label">跨课连接</div>
+
+    <div class="cross-box">
+      <div class="cross-text">Day 15 Horowitz：<span class="purple">流程保护文化</span><br>Day 18 Nathoo/Levy：<span class="purple">法务财务保护公司</span><br>不是束缚，是底线</div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

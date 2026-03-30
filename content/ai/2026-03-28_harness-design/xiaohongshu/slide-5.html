@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 5 - 架构进化</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+  }
+
+  .evolution-track {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Vertical connector line */
+  .evolution-track::before {
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: 44px;
+    bottom: 44px;
+    width: 4px;
+    background: linear-gradient(to bottom, #E5E7EB 0%, #E5E7EB 50%, #0EA5E9 75%, #0EA5E9 100%);
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  .evo-step {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+  }
+
+  .evo-node {
+    width: 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    flex-shrink: 0;
+  }
+
+  .evo-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .evo-dot.grey { background: #D1D5DB; }
+  .evo-dot.yellow { background: #F59E0B; }
+  .evo-dot.orange { background: #F97316; }
+  .evo-dot.teal { background: #0EA5E9; }
+
+  .evo-card {
+    flex: 1;
+    border-radius: 18px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .evo-card.level-a {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+  }
+  .evo-card.level-b {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+  }
+  .evo-card.level-c {
+    background: #FFF7ED;
+    border: 1px solid #FED7AA;
+  }
+  .evo-card.level-d {
+    background: #F0F9FF;
+    border: 2px solid rgba(14, 165, 233, 0.4);
+  }
+
+  .evo-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+
+  .evo-run {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 8px;
+  }
+  .evo-run.a { background: #E5E7EB; color: #6B7280; }
+  .evo-run.b { background: #FDE68A; color: #92400E; }
+  .evo-run.c { background: #FED7AA; color: #9A3412; }
+  .evo-run.d { background: #0EA5E9; color: #fff; }
+
+  .evo-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .evo-desc {
+    font-size: 24px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .evo-catches {
+    font-size: 22px;
+    color: #999;
+  }
+  .evo-catches .val {
+    font-weight: 700;
+    color: #555;
+  }
+  .evo-card.level-d .evo-catches .val {
+    color: #0EA5E9;
+  }
+
+  .bottom-note {
+    margin-top: 28px;
+    text-align: center;
+    background: #F0F9FF;
+    border-left: 5px solid #0EA5E9;
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .bottom-note .text {
+    font-size: 28px;
+    color: #333;
+    line-height: 1.6;
+  }
+  .bottom-note .teal {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">架构进化</div>
+    <h1 class="title">从Solo到Full Harness的4级进化</h1>
+
+    <div class="evolution-track">
+      <div class="evo-step">
+        <div class="evo-node"><div class="evo-dot grey"></div></div>
+        <div class="evo-card level-a">
+          <div class="evo-header">
+            <div class="evo-run a">Run A</div>
+            <div class="evo-name">Solo Agent</div>
+          </div>
+          <div class="evo-desc">单Agent直出，无评估</div>
+          <div class="evo-catches">能发现: <span class="val">Nothing</span> | 信心: <span class="val">未知</span></div>
+        </div>
+      </div>
+
+      <div class="evo-step">
+        <div class="evo-node"><div class="evo-dot yellow"></div></div>
+        <div class="evo-card level-b">
+          <div class="evo-header">
+            <div class="evo-run b">Run B</div>
+            <div class="evo-name">Self-Eval</div>
+          </div>
+          <div class="evo-desc">同Agent自我评估，有自评偏差</div>
+          <div class="evo-catches">能发现: <span class="val">明显逻辑错误</span> | 信心: <span class="val">低</span></div>
+        </div>
+      </div>
+
+      <div class="evo-step">
+        <div class="evo-node"><div class="evo-dot orange"></div></div>
+        <div class="evo-card level-c">
+          <div class="evo-header">
+            <div class="evo-run c">Run C</div>
+            <div class="evo-name">3-Agent Code Review</div>
+          </div>
+          <div class="evo-desc">独立Evaluator做代码审查</div>
+          <div class="evo-catches">能发现: <span class="val">代码级bug、缺失功能</span> | 信心: <span class="val">中</span></div>
+        </div>
+      </div>
+
+      <div class="evo-step">
+        <div class="evo-node"><div class="evo-dot teal"></div></div>
+        <div class="evo-card level-d">
+          <div class="evo-header">
+            <div class="evo-run d">Run D</div>
+            <div class="evo-name">Full Harness + Playwright</div>
+          </div>
+          <div class="evo-desc">浏览器真实测试 + 反馈修复循环</div>
+          <div class="evo-catches">能发现: <span class="val">交互bug、状态bug、UX阻断</span> | 信心: <span class="val">高</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <div class="text">Harness就是<span class="teal">prompt架构</span>——同模型、同工具、不同prompt</div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

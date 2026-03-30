@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .concept-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .concept-label {
+    font-size: 30px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .concept-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+    line-height: 1.3;
+  }
+
+  .concept-desc {
+    font-size: 36px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  .compare-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .compare-box {
+    flex: 1;
+    padding: 28px 24px;
+    border-radius: 12px;
+  }
+
+  .compare-box.monopoly {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+  }
+
+  .compare-box.competition {
+    background: #FEF3F2;
+    border-left: 4px solid #EF4444;
+  }
+
+  .compare-box .label {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .compare-box.monopoly .label {
+    color: #7C3AED;
+  }
+
+  .compare-box.competition .label {
+    color: #EF4444;
+  }
+
+  .compare-box p {
+    font-size: 30px;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .compare-box .example {
+    font-size: 28px;
+    color: #888;
+    margin-top: 8px;
+  }
+
+  .insight-box {
+    background: #FAFAFA;
+    border-left: 4px solid #DDD;
+    padding: 28px 24px;
+  }
+
+  .insight-box .label {
+    font-size: 28px;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .insight-box p {
+    font-size: 32px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 5</div>
+
+    <h1 class="title">世界只有两种公司</h1>
+
+    <div class="concept-section">
+      <div class="concept-label">THIEL的核心观点</div>
+      <div class="concept-title">垄断 vs 完全竞争，中间几乎没有</div>
+      <div class="concept-desc">而且大家都在撒谎：垄断者假装竞争，竞争者假装独特。市场定义就是一场话术游戏。</div>
+
+      <div class="compare-row">
+        <div class="compare-box monopoly">
+          <div class="label">垄断者的谎言</div>
+          <p>把市场说大（并集）</p>
+          <p class="example">Google："我们在5000亿广告市场只占3.5%"</p>
+        </div>
+        <div class="compare-box competition">
+          <div class="label">竞争者的谎言</div>
+          <p>把市场说小（交集）</p>
+          <p class="example">"我们是帕洛阿尔托唯一的英式餐厅"</p>
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">反常识</div>
+        <p>航空业创造巨大价值（X大），利润几乎为零（Y≈0）。Google价值相对小，但Y极高。大市场不等于大利润。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

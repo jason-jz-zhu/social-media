@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Validation ladder */
+  .ladder {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .ladder-step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+  }
+
+  .ladder-step.gold {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .ladder-step.silver {
+    background: #FAFAFA;
+    border: 2px solid #E2E8F0;
+  }
+
+  .ladder-step.bronze {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .ladder-rank {
+    font-size: 40px;
+    font-weight: 900;
+    min-width: 56px;
+    text-align: center;
+  }
+
+  .ladder-step.gold .ladder-rank { color: #7C3AED; }
+  .ladder-step.silver .ladder-rank { color: #A0AEC0; }
+  .ladder-step.bronze .ladder-rank { color: #E53E3E; }
+
+  .ladder-info {
+    flex: 1;
+  }
+
+  .ladder-method {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+  }
+
+  .ladder-detail {
+    font-size: 22px;
+    color: #888;
+    line-height: 1.4;
+  }
+
+  .ladder-verdict {
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 100px;
+    text-align: right;
+  }
+
+  .ladder-step.gold .ladder-verdict { color: #7C3AED; }
+  .ladder-step.silver .ladder-verdict { color: #A0AEC0; }
+  .ladder-step.bronze .ladder-verdict { color: #E53E3E; }
+
+  .money-box {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .money-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .money-text .purple {
+    color: #B794F4;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Cross-lecture insight */
+  .cross-label {
+    font-size: 22px;
+    color: #fff;
+    background: #7C3AED;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .cross-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .cross-compare {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .cross-card {
+    flex: 1;
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+
+  .cross-day {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .cross-concept {
+    font-size: 24px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 6px;
+  }
+
+  .cross-meaning {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .cross-insight {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cross-insight .bold {
+    font-weight: 700;
+  }
+
+  .cross-insight .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 16</div>
+
+    <h1 class="title">验证阶梯 + 跨课连接</h1>
+
+    <div class="section-label">验证方法排序：钱 > demo > 描述</div>
+
+    <div class="ladder">
+      <div class="ladder-step gold">
+        <div class="ladder-rank">1</div>
+        <div class="ladder-info">
+          <div class="ladder-method">让用户付钱</div>
+          <div class="ladder-detail">愿意掏钱 = 真需求</div>
+        </div>
+        <div class="ladder-verdict">终极验证</div>
+      </div>
+      <div class="ladder-step silver">
+        <div class="ladder-rank">2</div>
+        <div class="ladder-info">
+          <div class="ladder-method">让用户试demo</div>
+          <div class="ladder-detail">行为数据 > 口头反馈</div>
+        </div>
+        <div class="ladder-verdict">还行</div>
+      </div>
+      <div class="ladder-step bronze">
+        <div class="ladder-rank">3</div>
+        <div class="ladder-info">
+          <div class="ladder-method">描述功能问好不好</div>
+          <div class="ladder-detail">"听起来不错" = 什么都没说</div>
+        </div>
+        <div class="ladder-verdict">假阳性</div>
+      </div>
+    </div>
+
+    <div class="money-box">
+      <div class="money-text"><span class="purple">付不付钱</span>决定了一切 — 钱是终极真话</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cross-label">跨课连接</div>
+
+    <div class="cross-box">
+      <div class="cross-compare">
+        <div class="cross-card">
+          <div class="cross-day">Day 4 Adora</div>
+          <div class="cross-concept">先当保洁员</div>
+          <div class="cross-meaning">先理解行为再设计方案</div>
+        </div>
+        <div class="cross-card">
+          <div class="cross-day">Day 8 Walker</div>
+          <div class="cross-concept">不要免费送</div>
+          <div class="cross-meaning">付钱才是真需求</div>
+        </div>
+        <div class="cross-card">
+          <div class="cross-day">Day 16 Shear</div>
+          <div class="cross-concept">不要展示产品</div>
+          <div class="cross-meaning">了解用户已有的认知</div>
+        </div>
+      </div>
+      <div class="cross-insight">
+        三节课同一个逻辑：<span class="purple">先理解，后方案</span><br>
+        <span class="bold">钱是检验真需求的唯一标准</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

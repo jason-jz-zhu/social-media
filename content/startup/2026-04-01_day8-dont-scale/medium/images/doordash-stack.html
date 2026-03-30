@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 44px 80px;
+  width: 100%;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+}
+
+.stack-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.stack-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  border: 2px solid #E8E4F0;
+  position: relative;
+}
+
+.stack-emoji {
+  font-size: 44px;
+  margin-bottom: 14px;
+}
+
+.stack-tool {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 6px;
+}
+
+.stack-purpose {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  line-height: 1.4;
+}
+
+.stack-replaces {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #7C3AED;
+  background: rgba(124,58,237,0.1);
+  padding: 5px 14px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.time-badge {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.time-badge span {
+  background: #7C3AED;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 28px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #666;
+}
+
+.bottom-text strong {
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">DoorDash Day One</div>
+  <div class="title">The "Tech Stack" Behind a $70B Company</div>
+  <div class="time-badge"><span>Built in 1 Hour</span></div>
+  <div class="stack-row">
+    <div class="stack-card">
+      <div class="stack-emoji">&#128196;</div>
+      <div class="stack-tool">Landing Page</div>
+      <div class="stack-purpose">paloaltodelivery.com with PDF menus</div>
+      <div class="stack-replaces">Replaces: Mobile App</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-emoji">&#128179;</div>
+      <div class="stack-tool">Square</div>
+      <div class="stack-purpose">Payment processing via card reader</div>
+      <div class="stack-replaces">Replaces: Payment Backend</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-emoji">&#128221;</div>
+      <div class="stack-tool">Google Docs</div>
+      <div class="stack-purpose">Shared spreadsheet for order tracking</div>
+      <div class="stack-replaces">Replaces: Order Management System</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-emoji">&#128205;</div>
+      <div class="stack-tool">Find My Friends</div>
+      <div class="stack-purpose">Track founder-drivers in real time</div>
+      <div class="stack-replaces">Replaces: Driver Dispatch Algorithm</div>
+    </div>
+  </div>
+  <div class="bottom-text">No algorithms. No backend. No drivers. <strong>Just founders solving a real problem.</strong></div>
+</div>
+</body>
+</html>

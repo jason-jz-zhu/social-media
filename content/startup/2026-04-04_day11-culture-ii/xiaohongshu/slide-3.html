@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Bandwidth diagram */
+  .bandwidth-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 28px;
+  }
+
+  .bandwidth-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .bandwidth-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .bw-label {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1A1A1A;
+    min-width: 110px;
+  }
+
+  .bw-bar {
+    flex: 1;
+    height: 28px;
+    border-radius: 14px;
+    position: relative;
+  }
+
+  .bw-bar-bg {
+    width: 100%;
+    height: 100%;
+    background: #EDE9FE;
+    border-radius: 14px;
+  }
+
+  .bw-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #7C3AED;
+    border-radius: 14px;
+  }
+
+  .bw-pct {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7C3AED;
+    min-width: 60px;
+    text-align: right;
+  }
+
+  .bandwidth-note {
+    font-size: 24px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  /* First 10 people */
+  .trait-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .trait-card {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 20px 18px;
+    text-align: center;
+  }
+
+  .trait-card .trait-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .trait-card .trait-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+  }
+
+  .trait-card .trait-who {
+    font-size: 20px;
+    color: #888;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 11</div>
+
+    <h1 class="title">文化是带宽问题的解决方案</h1>
+
+    <div class="section-label">你能参与的决策 = 指数递减</div>
+
+    <div class="bandwidth-box">
+      <div class="bandwidth-row">
+        <div class="bw-label">1人</div>
+        <div class="bw-bar"><div class="bw-bar-bg"></div><div class="bw-bar-fill" style="width:100%"></div></div>
+        <div class="bw-pct">100%</div>
+      </div>
+      <div class="bandwidth-row">
+        <div class="bw-label">10人</div>
+        <div class="bw-bar"><div class="bw-bar-bg"></div><div class="bw-bar-fill" style="width:40%"></div></div>
+        <div class="bw-pct">40%</div>
+      </div>
+      <div class="bandwidth-row">
+        <div class="bw-label">100人</div>
+        <div class="bw-bar"><div class="bw-bar-bg"></div><div class="bw-bar-fill" style="width:10%"></div></div>
+        <div class="bw-pct">10%</div>
+      </div>
+      <div class="bandwidth-row">
+        <div class="bw-label">1000人</div>
+        <div class="bw-bar"><div class="bw-bar-bg"></div><div class="bw-bar-fill" style="width:3%"></div></div>
+        <div class="bw-pct">1%</div>
+      </div>
+      <div class="bandwidth-note">文化 = 你不在场时的不变量</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">前10人的特质（Ben + Patrick）</div>
+
+    <div class="trait-grid">
+      <div class="trait-card">
+        <div class="trait-name">勤奋</div>
+        <div class="trait-who">Ben</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-name">高诚信</div>
+        <div class="trait-who">Ben</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-name">低 ego</div>
+        <div class="trait-who">Ben</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-name">好奇心</div>
+        <div class="trait-who">Ben</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-name">真诚在意细节</div>
+        <div class="trait-who">Patrick</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-name">能完成事情</div>
+        <div class="trait-who">Patrick</div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">前10人 = 招100人的基因模板</span><br>没有一条是"聪明"——聪明是门槛，不是筛选器</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

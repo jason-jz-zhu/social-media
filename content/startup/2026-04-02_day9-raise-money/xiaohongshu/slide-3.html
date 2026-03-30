@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Onion diagram */
+  .onion-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .onion {
+    position: relative;
+    width: 420px;
+    height: 420px;
+  }
+
+  .onion-layer {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .layer-b {
+    width: 420px;
+    height: 420px;
+    top: 0;
+    left: 0;
+    background: rgba(124, 58, 237, 0.08);
+    border: 2px solid rgba(124, 58, 237, 0.2);
+  }
+
+  .layer-a {
+    width: 290px;
+    height: 290px;
+    top: 65px;
+    left: 65px;
+    background: rgba(124, 58, 237, 0.15);
+    border: 2px solid rgba(124, 58, 237, 0.3);
+  }
+
+  .layer-seed {
+    width: 160px;
+    height: 160px;
+    top: 130px;
+    left: 130px;
+    background: rgba(124, 58, 237, 0.3);
+    border: 2px solid #7C3AED;
+  }
+
+  .layer-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.3;
+  }
+
+  .layer-label .round {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .onion-legend {
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .legend-item {
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 14px 18px;
+    border: 1px solid #EBEBEB;
+  }
+
+  .legend-round {
+    font-size: 24px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 2px;
+  }
+
+  .legend-text {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Outlier section */
+  .outlier-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+  }
+
+  .funnel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 18px;
+  }
+
+  .funnel-step {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .funnel-num {
+    font-size: 44px;
+    font-weight: 900;
+    color: #7C3AED;
+    line-height: 1;
+  }
+
+  .funnel-label {
+    font-size: 20px;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  .funnel-arrow {
+    font-size: 32px;
+    color: #CCC;
+    margin: 0 12px;
+    flex-shrink: 0;
+  }
+
+  .funnel-result {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 14px 24px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .funnel-result-text {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .funnel-result-text .purple {
+    color: #7C3AED;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 20px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .insight-box .label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 9</div>
+
+    <h1 class="title">风险洋葱：每轮融资剥几层</h1>
+
+    <div class="section-label">融资 = 剥风险</div>
+
+    <div class="onion-wrapper">
+      <div class="onion">
+        <div class="onion-layer layer-b">
+          <span class="layer-label" style="position:absolute; top:18px; left:50%; transform:translateX(-50%);">
+            <span class="round">B轮</span>规模风险
+          </span>
+        </div>
+        <div class="onion-layer layer-a">
+          <span class="layer-label" style="position:absolute; top:14px; left:50%; transform:translateX(-50%);">
+            <span class="round">A轮</span>招聘+客户
+          </span>
+        </div>
+        <div class="onion-layer layer-seed">
+          <span class="layer-label">
+            <span class="round">Seed</span>团队+产品
+          </span>
+        </div>
+      </div>
+
+      <div class="onion-legend">
+        <div class="legend-item">
+          <div class="legend-round">Seed轮</div>
+          <div class="legend-text">证明团队靠谱<br>产品能做出来</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-round">A轮</div>
+          <div class="legend-text">证明能招到人<br>客户愿意付费</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-round">B轮</div>
+          <div class="legend-text">证明模式可复制<br>规模能上去</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="outlier-title">VC是极端outlier游戏</div>
+
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="funnel-num">4000</div>
+        <div class="funnel-label">融资公司</div>
+      </div>
+      <div class="funnel-arrow">&rarr;</div>
+      <div class="funnel-step">
+        <div class="funnel-num">200</div>
+        <div class="funnel-label">有回报</div>
+      </div>
+      <div class="funnel-arrow">&rarr;</div>
+      <div class="funnel-step">
+        <div class="funnel-num">15</div>
+        <div class="funnel-label">大赢家</div>
+      </div>
+    </div>
+
+    <div class="funnel-result">
+      <div class="funnel-result-text"><span class="purple">15家</span>产生了<span class="purple">97%</span>的回报</div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">从业者视角</div>
+      <p>做了10年data，我见过太多团队融资金额和实际风险不匹配。拿太多钱反而失去紧迫感，拿太少又剥不了下一层风险。</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

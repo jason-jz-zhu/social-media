@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #0A2540;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 50%, #0A2540 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 120px;
+}
+
+.quote-mark {
+  font-size: 120px;
+  font-weight: 900;
+  color: #0EA5E9;
+  opacity: 0.2;
+  line-height: 0.6;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.quote {
+  font-size: 36px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.35;
+  text-align: left;
+  max-width: 960px;
+}
+
+.quote em {
+  color: #0EA5E9;
+  font-style: normal;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: #0EA5E9;
+  border-radius: 2px;
+  margin: 30px 0;
+  align-self: flex-start;
+}
+
+.attribution {
+  align-self: flex-start;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+
+.attribution span {
+  color: rgba(255,255,255,0.3);
+  font-weight: 400;
+}
+
+.badge {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  background: #0EA5E9;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -150px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.glow-left {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -100px;
+  left: -50px;
+  pointer-events: none;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+
+.border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #0EA5E9;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="badge">AI Productivity</div>
+  <div class="quote-mark">&ldquo;</div>
+  <div class="quote">The model is the engine. The harness is the <em>car.</em> You can have 500 horsepower, but without steering, brakes, and suspension, you're not getting anywhere safely.</div>
+  <div class="divider"></div>
+  <div class="attribution">Jiazhen Zhu <span>&middot; Harness Design for AI Agents</span></div>
+  <div class="glow"></div>
+  <div class="glow-left"></div>
+  <div class="grain"></div>
+  <div class="border-bottom"></div>
+</div>
+</body>
+</html>

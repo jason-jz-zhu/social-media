@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 44px 80px;
+  width: 100%;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+}
+
+.examples {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.example-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  border: 2px solid #E8E4F0;
+  position: relative;
+}
+
+.company-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 16px;
+}
+
+.circles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  height: 160px;
+  justify-content: center;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.circle-outer {
+  width: 150px;
+  height: 150px;
+  background: rgba(124,58,237,0.08);
+  border: 2px dashed rgba(124,58,237,0.25);
+}
+
+.circle-mid {
+  width: 105px;
+  height: 105px;
+  background: rgba(124,58,237,0.15);
+  border: 2px dashed rgba(124,58,237,0.35);
+}
+
+.circle-inner {
+  width: 64px;
+  height: 64px;
+  background: #7C3AED;
+}
+
+.circle-inner span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  padding: 4px;
+}
+
+.outer-label {
+  position: absolute;
+  bottom: -2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+}
+
+.mid-label {
+  position: absolute;
+  bottom: 18px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #7C3AED;
+  opacity: 0.7;
+}
+
+.arrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.arrow-step {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  background: #F3F0FA;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.arrow-icon {
+  color: #7C3AED;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+}
+
+.bottom-text strong {
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The Monopoly Playbook</div>
+  <div class="title">Start Small. Dominate. Expand in Concentric Circles.</div>
+  <div class="examples">
+    <div class="example-card">
+      <div class="company-name">Amazon</div>
+      <div class="circles">
+        <div class="circle circle-outer">
+          <div class="circle circle-mid">
+            <div class="circle circle-inner"><span>Books</span></div>
+          </div>
+        </div>
+        <div class="outer-label">Everything</div>
+        <div class="mid-label">Media</div>
+      </div>
+      <div class="arrow-row">
+        <span class="arrow-step">Books</span>
+        <span class="arrow-icon">&rarr;</span>
+        <span class="arrow-step">Media</span>
+        <span class="arrow-icon">&rarr;</span>
+        <span class="arrow-step">Everything</span>
+      </div>
+    </div>
+    <div class="example-card">
+      <div class="company-name">PayPal</div>
+      <div class="circles">
+        <div class="circle circle-outer">
+          <div class="circle circle-mid">
+            <div class="circle circle-inner"><span>20K eBay sellers</span></div>
+          </div>
+        </div>
+        <div class="outer-label">Global payments</div>
+        <div class="mid-label">All eBay</div>
+      </div>
+      <div class="arrow-row">
+        <span class="arrow-step">Power sellers</span>
+        <span class="arrow-icon">&rarr;</span>
+        <span class="arrow-step">All eBay</span>
+        <span class="arrow-icon">&rarr;</span>
+        <span class="arrow-step">Global</span>
+      </div>
+    </div>
+    <div class="example-card">
+      <div class="company-name">Facebook</div>
+      <div class="circles">
+        <div class="circle circle-outer">
+          <div class="circle circle-mid">
+            <div class="circle circle-inner"><span>10K Harvard</span></div>
+          </div>
+        </div>
+        <div class="outer-label">Everyone</div>
+        <div class="mid-label">All colleges</div>
+      </div>
+      <div class="arrow-row">
+        <span class="arrow-step">Harvard</span>
+        <span class="arrow-icon">&rarr;</span>
+        <span class="arrow-step">Ivy League</span>
+        <span class="arrow-icon">&rarr;</span>
+        <span class="arrow-step">Everyone</span>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-text"><strong>Dominate a tiny market</strong>, then expand. Never start big.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 26px;
+    color: #888;
+    margin-bottom: 24px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 36px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    bottom: 12px;
+    width: 3px;
+    background: linear-gradient(to bottom, #EDE9FE, #7C3AED);
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+    position: relative;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -30px;
+    top: 18px;
+    width: 12px;
+    height: 12px;
+    background: #7C3AED;
+    border-radius: 50%;
+    border: 3px solid #F5F0FF;
+  }
+
+  .tl-day {
+    font-size: 22px;
+    font-weight: 900;
+    color: #7C3AED;
+    min-width: 70px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .tl-content {
+    flex: 1;
+  }
+
+  .tl-who {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 2px;
+  }
+
+  .tl-what {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .tl-action {
+    font-size: 22px;
+    color: #888;
+    font-style: italic;
+  }
+
+  /* Core insight */
+  .core-box {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .core-box .big {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #7C3AED;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .core-box .explain {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* 100 vs 1M */
+  .versus {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .versus-card {
+    flex: 1;
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .versus-card.win {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .versus-card.lose {
+    background: #FAFAFA;
+    border: 2px solid #EBEBEB;
+  }
+
+  .versus-card .num {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .versus-card.win .num { color: #7C3AED; }
+  .versus-card.lose .num { color: #CCC; }
+
+  .versus-card .vlabel {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .versus-card.win .vlabel { color: #7C3AED; }
+  .versus-card.lose .vlabel { color: #888; }
+
+  .versus-card .vdesc {
+    font-size: 20px;
+    color: #888;
+  }
+
+  .vs-text {
+    font-size: 32px;
+    font-weight: 900;
+    color: #CCC;
+    display: flex;
+    align-items: center;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .insight-box .label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .insight-box p {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 10</div>
+
+    <h1 class="title">"做不可规模化的事"到底是什么？</h1>
+    <div class="subtitle">跨10节课反复出现的核心主题</div>
+
+    <div class="section-label">4次出现的同一个道理</div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-day">Day 4</div>
+        <div class="tl-content">
+          <div class="tl-who">Adora Cheung（Homejoy）</div>
+          <div class="tl-action">CEO亲自当保洁员上门打扫</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-day">Day 7</div>
+        <div class="tl-content">
+          <div class="tl-who">Kevin Hale（Wufoo）</div>
+          <div class="tl-action">全员轮岗做客服，手写感谢卡</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-day">Day 8</div>
+        <div class="tl-content">
+          <div class="tl-who">Stanley Tang（DoorDash）</div>
+          <div class="tl-action">创始人亲自开车送外卖</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-day">Day 10</div>
+        <div class="tl-content">
+          <div class="tl-who">Brian Chesky（Airbnb）</div>
+          <div class="tl-action">住用户家里帮拍照、改listing</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="core-box">
+      <div class="big">用最笨的方式<br>建最真的连接</div>
+      <div class="explain">不可规模化 = 亲自做那些"不值得CEO做"的事<br>因为早期只有你才真正在乎</div>
+    </div>
+
+    <div class="versus">
+      <div class="versus-card win">
+        <div class="num">100</div>
+        <div class="vlabel">爱你的人</div>
+        <div class="vdesc">深度连接</div>
+      </div>
+      <div class="vs-text">&gt;</div>
+      <div class="versus-card lose">
+        <div class="num">1M</div>
+        <div class="vlabel">觉得你还行</div>
+        <div class="vdesc">浅层认知</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">亲身体验</div>
+      <p>做data产品的时候，最有效的反馈从来不是看dashboard，而是坐在用户旁边看他们怎么用。这个"笨办法"至今是我产品直觉的来源。</p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

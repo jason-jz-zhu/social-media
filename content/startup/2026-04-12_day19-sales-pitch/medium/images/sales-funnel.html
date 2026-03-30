@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 36px 60px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.funnel {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.stage {
+  flex: 1;
+  max-width: 220px;
+  position: relative;
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.stage-bar {
+  height: 8px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.stage:nth-child(1) .stage-bar { background: #7C3AED; width: 100%; }
+.stage:nth-child(2) .stage-bar { background: #8B5CF6; width: 80%; margin-left: 10%; }
+.stage:nth-child(3) .stage-bar { background: #A78BFA; width: 60%; margin-left: 20%; }
+.stage:nth-child(4) .stage-bar { background: #C4B5FD; width: 40%; margin-left: 30%; }
+.stage:nth-child(5) .stage-bar { background: #22C55E; width: 30%; margin-left: 35%; }
+
+.stage-number {
+  font-size: 32px;
+  font-weight: 900;
+  color: #7C3AED;
+  margin-bottom: 4px;
+}
+
+.stage-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 8px;
+}
+
+.stage-stat {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7C3AED;
+  background: #EDE9FE;
+  border-radius: 20px;
+  padding: 4px 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.stage-tactic {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  min-width: 24px;
+  color: #C4B5FD;
+  font-size: 20px;
+}
+
+.bottom-note-wrap {
+  text-align: center;
+}
+
+.bottom-note {
+  display: inline-block;
+  background: #1A1A2E;
+  border-radius: 10px;
+  padding: 12px 28px;
+}
+
+.bottom-note-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bottom-note-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Early-Stage Sales</div>
+  <div class="title">The Founder Sales Funnel</div>
+
+  <div class="funnel">
+    <div class="stage">
+      <div class="stage-bar"></div>
+      <div class="stage-number">400+</div>
+      <div class="stage-name">Cold Outreach</div>
+      <div class="stage-stat">100%</div>
+      <div class="stage-tactic">Cold email, conferences, personal network</div>
+    </div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="stage">
+      <div class="stage-bar"></div>
+      <div class="stage-number">2.5%</div>
+      <div class="stage-name">Take the Call</div>
+      <div class="stage-stat">~10 prospects</div>
+      <div class="stage-tactic">"Why did you take my call?"</div>
+    </div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="stage">
+      <div class="stage-bar"></div>
+      <div class="stage-number">70/30</div>
+      <div class="stage-name">Listen &amp; Learn</div>
+      <div class="stage-stat">70% listening</div>
+      <div class="stage-tactic">"How do you solve this today?"</div>
+    </div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="stage">
+      <div class="stage-bar"></div>
+      <div class="stage-number">60+</div>
+      <div class="stage-name">Follow Up</div>
+      <div class="stage-stat">Touchpoints</div>
+      <div class="stage-tactic">Get to Yes or No fast. Kill "maybe."</div>
+    </div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="stage">
+      <div class="stage-bar"></div>
+      <div class="stage-number">CLOSE</div>
+      <div class="stage-name">Win the Deal</div>
+      <div class="stage-stat">Charge day 1</div>
+      <div class="stage-tactic">No free trials. No feature promises.</div>
+    </div>
+  </div>
+
+  <div class="bottom-note-wrap">
+    <div class="bottom-note">
+      <div class="bottom-note-text">Founder <span class="highlight">passion</span> + domain knowledge &gt; hired <span class="highlight">sales experience</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>未来个人IP是你训练的系统</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #1A1A1A;
+    position: relative;
+  }
+
+  .accent-block {
+    position: absolute;
+    top: -200px;
+    right: -150px;
+    width: 500px;
+    height: 600px;
+    background: #0EA5E9;
+    opacity: 0.08;
+    transform: rotate(-15deg);
+    border-radius: 60px;
+  }
+
+  .grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  .glow {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, #0EA5E9 0%, transparent 70%);
+    filter: blur(120px);
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topic-badge {
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 12px 40px;
+    border-radius: 50px;
+    margin-bottom: 70px;
+    letter-spacing: 2px;
+  }
+
+  .title-line {
+    font-size: 82px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .highlight {
+    position: relative;
+    display: inline;
+  }
+
+  .highlight::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    bottom: 4px;
+    height: 0.45em;
+    background: #0EA5E9;
+    opacity: 0.6;
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .subtitle {
+    font-size: 44px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 80px;
+    max-width: 800px;
+  }
+
+  .author {
+    font-size: 38px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+  }
+
+  /* Gear icon -- top right */
+  .icon-gear {
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    opacity: 0.6;
+    z-index: 10;
+  }
+
+  /* Network icon -- top left */
+  .icon-network {
+    position: absolute;
+    top: 110px;
+    left: 110px;
+    opacity: 0.45;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+  <div class="accent-block"></div>
+  <div class="glow"></div>
+  <div class="grain"></div>
+
+  <!-- Gear icon doodle -->
+  <svg class="icon-gear" width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M45 30C36.7 30 30 36.7 30 45C30 53.3 36.7 60 45 60C53.3 60 60 53.3 60 45C60 36.7 53.3 30 45 30Z" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <path d="M38 12H52L54 22L62 26L72 20L80 28L74 38L78 46V52L68 54L64 62L70 72L62 80L52 74L46 78H40L38 68L30 64L20 70L12 62L18 52L14 44V38L24 36L28 28L22 18L30 10L38 16Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+  </svg>
+
+  <!-- Network nodes doodle -->
+  <svg class="icon-network" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="40" cy="20" r="6" stroke="white" stroke-width="2.5"/>
+    <circle cx="20" cy="55" r="6" stroke="white" stroke-width="2.5"/>
+    <circle cx="60" cy="55" r="6" stroke="white" stroke-width="2.5"/>
+    <line x1="37" y1="25" x2="23" y2="50" stroke="white" stroke-width="2" opacity="0.6"/>
+    <line x1="43" y1="25" x2="57" y2="50" stroke="white" stroke-width="2" opacity="0.6"/>
+    <line x1="26" y1="55" x2="54" y2="55" stroke="white" stroke-width="2" opacity="0.6"/>
+  </svg>
+
+  <div class="content">
+    <div class="topic-badge">AI + 个人IP</div>
+    <div class="title-line">未来个人IP<br>是你训练的<span class="highlight">系统</span></div>
+    <div class="subtitle">不是你写了什么，而是你训练出了什么</div>
+    <div class="author">朱佳臻 Jiazhen Zhu</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.rules-wrap {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.rule {
+  flex: 1;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 16px rgba(124,58,237,0.06);
+  border-top: 4px solid #7C3AED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rule-icon {
+  width: 56px;
+  height: 56px;
+  background: #EDE9FE;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.rule-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.rule-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 6px;
+}
+
+.rule-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.rule-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.rule-example {
+  background: #F3F0FA;
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 100%;
+}
+
+.example-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.example-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1A2E;
+}
+
+.bottom-note-wrap {
+  text-align: center;
+}
+
+.bottom-note {
+  display: inline-block;
+  background: #1A1A2E;
+  border-radius: 10px;
+  padding: 12px 28px;
+}
+
+.bottom-note-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bottom-note-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Founder Equity</div>
+  <div class="title">How Top YC Companies Handle Equity</div>
+
+  <div class="rules-wrap">
+    <div class="rule">
+      <div class="rule-icon">
+        <svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <div class="rule-name">Equal Split</div>
+      <div class="rule-tag">Execution &gt; Ideas</div>
+      <div class="rule-desc">Ideas are worth $0. Top YC companies all split equity roughly equally among cofounders.</div>
+      <div class="rule-example">
+        <div class="example-label">Warning</div>
+        <div class="example-text">90/10 splits create time bombs</div>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">
+        <svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      </div>
+      <div class="rule-name">4-Year Vesting</div>
+      <div class="rule-tag">1-Year Cliff</div>
+      <div class="rule-desc">Standard vesting protects everyone. Even solo founders need it &mdash; signals skin in the game to investors.</div>
+      <div class="rule-example">
+        <div class="example-label">How It Works</div>
+        <div class="example-text">0% until month 12, then monthly</div>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">
+        <svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+      </div>
+      <div class="rule-name">83(b) Election</div>
+      <div class="rule-tag">File Within 30 Days</div>
+      <div class="rule-desc">Must be filed within 30 days of receiving restricted stock. No extensions. Deals have blown up over this.</div>
+      <div class="rule-example">
+        <div class="example-label">Risk</div>
+        <div class="example-text">Taxed on $M value, not $0 value</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-note-wrap">
+    <div class="bottom-note">
+      <div class="bottom-note-text">Zero top YC companies have <span class="highlight">disproportionate</span> equity splits &mdash; <span class="highlight">execution</span> is everything</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

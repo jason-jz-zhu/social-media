@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 36px 60px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.shift-visual {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.phase-block {
+  flex: 1;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  box-shadow: 0 2px 16px rgba(124,58,237,0.06);
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.phase-badge {
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.phase-badge.before {
+  background: #EDE9FE;
+  color: #7C3AED;
+}
+
+.phase-badge.after {
+  background: #7C3AED;
+  color: #fff;
+}
+
+.phase-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1A1A2E;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.task-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.task-icon.before {
+  background: #EDE9FE;
+  color: #7C3AED;
+}
+
+.task-icon.after {
+  background: #7C3AED;
+  color: #fff;
+}
+
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  min-width: 80px;
+}
+
+.connector-number {
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+}
+
+.connector-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.connector-arrow {
+  font-size: 32px;
+  color: #C4B5FD;
+  margin: 4px 0;
+}
+
+.failures-wrap {
+  text-align: center;
+}
+
+.failures {
+  display: inline-flex;
+  gap: 16px;
+  background: #1A1A2E;
+  border-radius: 12px;
+  padding: 14px 24px;
+}
+
+.failure-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.failure-x {
+  color: #EF4444;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.failure-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  white-space: nowrap;
+}
+
+.failure-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.15);
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The Inflection Point</div>
+  <div class="title">From Building Product to Building Company</div>
+
+  <div class="shift-visual">
+    <div class="phase-block">
+      <div class="phase-header">
+        <div class="phase-badge before">&lt; 25</div>
+        <div class="phase-title">Product Mode</div>
+      </div>
+      <ul class="task-list">
+        <li><div class="task-icon before">&lt;/&gt;</div> Write code, ship features</li>
+        <li><div class="task-icon before">&phone;</div> Talk to users directly</li>
+        <li><div class="task-icon before">$</div> Close deals personally</li>
+        <li><div class="task-icon before">&infin;</div> Informal communication</li>
+        <li><div class="task-icon before">&star;</div> Culture by proximity</li>
+      </ul>
+    </div>
+
+    <div class="connector">
+      <div class="connector-number">25</div>
+      <div class="connector-text">employees</div>
+      <div class="connector-arrow">&rarr;</div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-header">
+        <div class="phase-badge after">&gt; 25</div>
+        <div class="phase-title">Company Mode</div>
+      </div>
+      <ul class="task-list">
+        <li><div class="task-icon after">&#9638;</div> Hire &amp; manage managers</li>
+        <li><div class="task-icon after">&#9998;</div> Write down How &amp; Why</li>
+        <li><div class="task-icon after">&#9878;</div> Build HR infrastructure</li>
+        <li><div class="task-icon after">&#9733;</div> Create comp bands &amp; equity plans</li>
+        <li><div class="task-icon after">&#10004;</div> Formal performance feedback</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="failures-wrap">
+    <div class="failures">
+      <div class="failure-item">
+        <div class="failure-x">&times;</div>
+        <div class="failure-text">Afraid to hire senior</div>
+      </div>
+      <div class="failure-divider"></div>
+      <div class="failure-item">
+        <div class="failure-x">&times;</div>
+        <div class="failure-text">Hero mode</div>
+      </div>
+      <div class="failure-divider"></div>
+      <div class="failure-item">
+        <div class="failure-x">&times;</div>
+        <div class="failure-text">Bad delegation</div>
+      </div>
+      <div class="failure-divider"></div>
+      <div class="failure-item">
+        <div class="failure-x">&times;</div>
+        <div class="failure-text">No personal organization</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

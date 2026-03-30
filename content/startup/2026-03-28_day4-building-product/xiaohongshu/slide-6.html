@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #7C3AED;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 16px;
+  font-family: 'Noto Sans SC', sans-serif;
+  margin-bottom: 48px;
+  align-self: flex-start;
+}
+
+.title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 56px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 0;
+}
+
+.item + .item {
+  border-top: 1px solid #EBEBEB;
+}
+
+.item-number {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+  min-width: 56px;
+  padding-top: 2px;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.item-desc {
+  font-size: 28px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="badge">6点起床学创业 Day 4</div>
+  <div class="title">收藏：Day 4 六个核心观点</div>
+  <div class="list">
+    <div class="item">
+      <div class="item-number">1</div>
+      <div class="item-text">
+        <div class="item-title">成为行业的螺丝钉</div>
+        <div class="item-desc">亲身体验你服务的行业，拿一手资料</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">2</div>
+      <div class="item-text">
+        <div class="item-title">一句话说清产品</div>
+        <div class="item-desc">"20美元/小时帮你打扫" = 认清自己在做什么</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">3</div>
+      <div class="item-text">
+        <div class="item-title">付费陌生人的反馈最真</div>
+        <div class="item-desc">诚实度：陌生人 > 朋友 > 你妈</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">4</div>
+      <div class="item-text">
+        <div class="item-title">暂时broken > 永远瘫痪</div>
+        <div class="item-desc">早期手动做事，不要过度自动化</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">5</div>
+      <div class="item-text">
+        <div class="item-title">别造科学怪人</div>
+        <div class="item-desc">堆功能前先问WHY，不然谁都不满意</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">6</div>
+      <div class="item-text">
+        <div class="item-title">增长公式：CLV > CAC</div>
+        <div class="item-desc">粘性/病毒/付费，用户终身价值必须大于获客成本</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</div>
+</body>
+</html>

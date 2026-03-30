@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Mythos泄露 我在想什么</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #1A1A1A;
+    position: relative;
+  }
+
+  .accent-block {
+    position: absolute;
+    top: -200px;
+    right: -150px;
+    width: 500px;
+    height: 600px;
+    background: #0EA5E9;
+    opacity: 0.08;
+    transform: rotate(-15deg);
+    border-radius: 60px;
+  }
+
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  .glow {
+    position: absolute;
+    top: 520px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, #0EA5E9 0%, transparent 70%);
+    filter: blur(120px);
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topic-badge {
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 38px;
+    font-weight: 700;
+    padding: 12px 36px;
+    border-radius: 50px;
+    margin-bottom: 70px;
+    letter-spacing: 2px;
+  }
+
+  .title-line {
+    font-size: 80px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .highlight {
+    position: relative;
+    display: inline;
+  }
+  .highlight::after {
+    content: '';
+    position: absolute;
+    left: -6px; right: -6px; bottom: 4px;
+    height: 0.45em;
+    background: #0EA5E9;
+    opacity: 0.6;
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  .subtitle {
+    font-size: 42px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 80px;
+    max-width: 800px;
+  }
+
+  .data-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  .data-pill {
+    background: rgba(14, 165, 233, 0.12);
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    border-radius: 16px;
+    padding: 16px 28px;
+    text-align: center;
+  }
+  .data-pill .num {
+    font-size: 42px;
+    font-weight: 900;
+    color: #0EA5E9;
+  }
+  .data-pill .label {
+    font-size: 22px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  .author {
+    font-size: 36px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+  }
+
+  /* Doodle icons */
+  .icon-spark {
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    opacity: 0.5;
+    z-index: 10;
+  }
+  .icon-brain {
+    position: absolute;
+    top: 110px;
+    left: 110px;
+    opacity: 0.4;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+  <div class="accent-block"></div>
+  <div class="glow"></div>
+  <div class="grain"></div>
+
+  <!-- Spark/lightning icon -->
+  <svg class="icon-spark" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M44 8L18 44H38L34 72L62 34H42L44 8Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <!-- Brain icon -->
+  <svg class="icon-brain" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 68V40" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M40 40C40 28 28 20 20 24C12 28 12 40 18 44C24 48 40 44 40 40Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M40 40C40 28 52 20 60 24C68 28 68 40 62 44C56 48 40 44 40 40Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="28" cy="32" r="3" stroke="white" stroke-width="2" opacity="0.5"/>
+    <circle cx="52" cy="32" r="3" stroke="white" stroke-width="2" opacity="0.5"/>
+  </svg>
+
+  <div class="content">
+    <div class="topic-badge">AI模型观察</div>
+    <div class="title-line">Mythos泄露了<br><span class="highlight">我在想什么</span></div>
+    <div class="subtitle">每月$450的Claude用户的第一反应</div>
+
+    <div class="data-row">
+      <div class="data-pill">
+        <div class="num">$450</div>
+        <div class="label">月AI开销</div>
+      </div>
+      <div class="data-pill">
+        <div class="num">Step Change</div>
+        <div class="label">Anthropic定义</div>
+      </div>
+      <div class="data-pill">
+        <div class="num">1个</div>
+        <div class="label">核心问题</div>
+      </div>
+    </div>
+
+    <div class="author">朱佳臻 Jiazhen Zhu</div>
+  </div>
+
+</body>
+</html>

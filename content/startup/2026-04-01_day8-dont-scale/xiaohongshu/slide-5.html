@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 80px 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .speed-section {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+  }
+
+  .speed-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .speed-desc {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .speed-comparison {
+    display: flex;
+    gap: 16px;
+  }
+
+  .speed-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 2px solid #EBEBEB;
+    background: #fff;
+  }
+
+  .speed-card.fast {
+    border-color: #7C3AED;
+    background: #F5F0FF;
+  }
+
+  .speed-card-label {
+    font-size: 22px;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .speed-card-value {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+
+  .speed-card-value.slow { color: #DC2626; }
+  .speed-card-value.fast { color: #7C3AED; }
+
+  .speed-card-desc {
+    font-size: 22px;
+    color: #666;
+  }
+
+  .pr-section {
+    margin-bottom: 20px;
+  }
+
+  .pr-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .pr-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .pr-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .pr-step-num {
+    width: 40px;
+    height: 40px;
+    background: #7C3AED;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .pr-step-text {
+    font-size: 28px;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .pr-warning {
+    background: #FEF2F2;
+    border: 2px solid #FECACA;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .pr-warning-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #DC2626;
+    margin-bottom: 8px;
+  }
+
+  .pr-warning-desc {
+    font-size: 26px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 20px 24px;
+    margin-top: auto;
+    margin-bottom: 70px;
+  }
+
+  .insight-box .label {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .insight-box p {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 8</div>
+
+    <h1 class="title">速度 > 完美 + PR策略</h1>
+
+    <div class="section-label">速度优先</div>
+    <div class="speed-section">
+      <div class="speed-title">只关注下一个数量级</div>
+      <div class="speed-desc">复制代码库，1个月的开发压到3-4天。代码质量不重要，行动和结果才重要。</div>
+      <div class="speed-comparison">
+        <div class="speed-card">
+          <div class="speed-card-label">完美主义</div>
+          <div class="speed-card-value slow">1个月</div>
+          <div class="speed-card-desc">干净代码<br>完整架构</div>
+        </div>
+        <div class="speed-card fast">
+          <div class="speed-card-label">创业模式</div>
+          <div class="speed-card-value fast">3-4天</div>
+          <div class="speed-card-desc">能跑就行<br>快速验证</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">JUSTIN KAN 的 PR 指南</div>
+    <div class="pr-section">
+      <div class="pr-title">PR是销售漏斗，不是终点</div>
+      <div class="pr-steps">
+        <div class="pr-step">
+          <div class="pr-step-num">1</div>
+          <div class="pr-step-text">想清目标 — 你想让谁看到？</div>
+        </div>
+        <div class="pr-step">
+          <div class="pr-step-num">2</div>
+          <div class="pr-step-text">写bullet points — 不要长篇大论</div>
+        </div>
+        <div class="pr-step">
+          <div class="pr-step-num">3</div>
+          <div class="pr-step-text">通过创业者介绍记者 — personal connection</div>
+        </div>
+        <div class="pr-step">
+          <div class="pr-step-num">4</div>
+          <div class="pr-step-text">提前一周联系 — 给记者留时间</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-warning">
+      <div class="pr-warning-title">PR是虚荣指标</div>
+      <div class="pr-warning-desc">上新闻 =/= 成功。适合前几百用户，但不可持续。不要免费送产品，付费用户才是真用户。</div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">从业者视角</div>
+      <p>技术没那么重要，主要是行动和结果。这是YC课反复出现的主题——付费验证 > 完美代码。</p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

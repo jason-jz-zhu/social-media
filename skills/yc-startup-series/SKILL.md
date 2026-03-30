@@ -17,11 +17,27 @@ User provides:
 
 ## Workflow
 
+### Interaction Flow (Human ↔ AI)
+
+```
+User: 贴transcript
+  ↓
+AI: 总结 + highlight重点（5-8关键观点 + 反常识 + 金句）
+  ↓
+User: 给个人感受（哪些触动、个人经历、想跳过的）
+  ↓
+AI: 用agent team读skill，并行生成三平台内容（XHS + LinkedIn + Medium）
+  ↓
+AI: 截图所有slides和Medium图片
+  ↓
+User: review → feedback → 发布
+```
+
 ### Step 1 — Summarize & Highlight
 
-Read the transcript and produce:
+Read the transcript and produce (直接回复用户，不用agent):
 - **5-8 key points** with brief explanations
-- **2-3 counterintuitive/surprising insights** (标记为反常识)
+- **2-3 counterintuitive/surprising insights** (标记为反常识 🔥)
 - **2-3 best quotes** from the speaker(s)
 - **Speaker info** — who they are, what they built
 
@@ -36,11 +52,32 @@ User responds with:
 
 ### Step 3 — Generate All Platform Content (Parallel)
 
-Generate content for 3 platforms simultaneously using agent teams.
+Use **agent teams** that read this skill file and generate content. Each agent receives:
+- The skill file path to read
+- Day number, speaker, lecture topic
+- Key points from the transcript
+- User's personal reactions
+- Resource links (YouTube + Genius)
+
+Launch 2 agents in parallel:
+- **Agent 1 (XHS):** content.md + cover.html + slide-2 to slide-7.html (8 files)
+- **Agent 2 (LinkedIn + Medium):** post.md + comment.md + article.md + PUBLISH-GUIDE.md + 4 image HTMLs (8 files)
+
+### Step 4 — Screenshot & Review
+
+After agents complete:
+1. Batch screenshot all XHS slides (1080x1440) and Medium images (1200x630)
+2. Show key slides to user for review
+3. Iterate based on feedback
+
+### Step 5 — Update & Publish
+
+- Update topics/startup.md (move Day from 待写 to 已完成)
+- User publishes to platforms
 
 **CRITICAL: Professional Identity Across All Platforms**
 
-The author is NOT a student learning about startups. He is a **10-year tech veteran specializing in AI and data**, currently finishing an MBA at NYU Stern, and teaching CS as a guest lecturer. The framing across ALL platforms must reflect this:
+The author is NOT a student learning about startups. He is a **10+ year veteran at major tech companies specializing in data and AI**, holds an **MBA from NYU Stern**, and serves as **Adjunct Faculty teaching data courses at Northeastern University (NEU)**. The framing across ALL platforms must reflect this:
 
 | Platform | Identity Framing | Never Say | Instead Say |
 |----------|-----------------|-----------|-------------|
@@ -50,9 +87,9 @@ The author is NOT a student learning about startups. He is a **10-year tech vete
 | Substack | Deepest personal + professional insight | (N/A) | Add "The AI/Data Angle" section each week |
 
 **Every post should naturally reveal 1-2 of these credentials:**
-- 10+ years building data/AI products
-- NYU Stern MBA (finishing)
-- University CS guest lecturer
+- 10+ years building data/AI products at major tech companies
+- NYU Stern MBA
+- Adjunct Faculty at Northeastern University (NEU), teaching data courses
 - Heavy AI user ($450/month in AI tools)
 - Built chat-to-data, data platforms, AI features
 
@@ -69,7 +106,7 @@ Don't list them. Weave them in as "I've seen this in my own experience..." or "I
   - CTA question
 - **Slides:** 7 pages
   1. Cover — dark #1A1A1A background, purple accent, "Day N" large, today's key insight, series badge
-  2. 今天学了什么 — speaker + topic + key formula/framework
+  2. 今日拆解 — speaker + topic + key formula/framework
   3. Core insight 1 — with examples from the lecture
   4. Core insight 2 — with visual comparison or framework
   5. Core insight 3 or personal connection — deeper point
@@ -121,12 +158,22 @@ Don't list them. Weave them in as "I've seen this in my own experience..." or "I
 - **SEO:** Primary keyword in title, subtitle, first 100 words, at least one H2
 - **CTA:** Subscribe to Substack ("I go deeper there, with angles I don't publish on Medium")
 - **Images (English, 1200x630px):** Generate 3-4 images per article:
-  1. Hero image — dark gradient, series badge "20 Days of YC's Startup Bible", Day number, article title, speaker attribution
-  2. Key insight visual (1-2) — clean white background, data visualization or comparison chart illustrating a core concept
-  3. Quote card — light purple #F8F5FF background, featured quote with speaker attribution
+  1. Hero image — dark gradient on `.hero` div, body background `#0F3460` (matches gradient endpoint, prevents color band), series badge "20 Days of YC's Startup Bible", Day number, article title, speaker attribution, `border-bottom: 5px solid #7C3AED`
+  2. Key insight visual (1-2) — background `#F3F0FA` (light purple, NOT white — matches series color and stands out on Medium's white page)
+  3. Quote card — background `#F3F0FA`, featured quote with speaker attribution
   - All images use Noto Sans (not SC), purple #7C3AED accent
+  - All content images use `#F3F0FA` background for visual consistency
   - Screenshot at 1200x630 using Chrome headless
   - Insert into article with descriptive alt text for SEO
+- **Resources section (at article end):**
+  - YouTube lecture link
+  - Genius annotated transcript link (if available)
+- **Substack CTA link:** `https://substack.com/@jiazhenzhu`
+- **PUBLISH-GUIDE.md:** Generate a publishing guide for each article with:
+  - How to paste/import into Medium
+  - Image upload locations
+  - Topics/tags to add
+  - Preview image selection
 
 ### Step 4 — User Review
 
@@ -137,7 +184,12 @@ Present all 3 platform contents for user feedback. Iterate as needed.
 After content approval:
 1. Generate all HTML slide files (cover + 6 content slides)
 2. Screenshot to PNG using Chrome headless
-3. Verify all images render correctly
+3. **Overflow check (MANDATORY):** After screenshotting, visually inspect EVERY slide image. Check that:
+   - All text is fully visible (no cut-off at bottom or right edge)
+   - The "从业者视角" / "亲身体验" insight box at slide bottom is completely rendered
+   - Page number "N / 7" is visible at bottom-right
+   - If ANY content is clipped, reduce padding/margins/font-size and re-screenshot before showing to user
+4. Verify all images render correctly
 
 ### Step 6 — Update Topics File
 
@@ -149,7 +201,7 @@ In `topics/startup.md`:
 
 Every Friday (after Day 5, 10, 15, 20), generate a Substack newsletter:
 
-- **Subject:** "Week N: 从YC创业课第X-Y节我学到的"
+- **Subject:** "Week N: What I Took Away from YC Lectures X-Y"
 - **Length:** 2500-3500 words, English
 - **Structure:**
   1. Personal greeting
@@ -161,6 +213,27 @@ Every Friday (after Day 5, 10, 15, 20), generate a Substack newsletter:
   7. Next week preview
   8. CTA — reply to email, forward to a friend
 - **Goal:** Give subscribers content they can't get on Medium. Build the "I know this person" feeling.
+
+## Cross-Platform Rules
+
+### Unified Identity
+All platforms use the name **Jiazhen Zhu**. XHS uses 朱佳臻 Jiazhen.
+
+### XHS Specific Rules
+- **NEVER mention** Medium, Substack, LinkedIn, or any external platform name in posts or bio — triggers shadowban/traffic reduction
+- **Safe bio phrasing:** "全平台同名 Jiazhen Zhu" (no platform names)
+- **Posting frequency:** Do NOT post this series daily on XHS. Interleave with AI/career posts. Total 4-5 posts/week across all series.
+- Example weekly XHS schedule: Mon=创业Day1, Wed=AI帖, Thu=创业Day2, Sat=职场帖
+
+### LinkedIn → Medium Flow
+- LinkedIn post is a SHORT hook (150-300 words), NOT the full article
+- Medium link goes in the FIRST COMMENT, never in the post body (algorithm penalty)
+- After publishing Medium, immediately update `comment.md` with the real URL
+
+### Medium → Substack Flow
+- Every Medium article ends with CTA linking to `https://substack.com/@jiazhenzhu`
+- Phrasing: "I go deeper there, with angles I don't publish on Medium"
+- Substack weekly compilation must include EXCLUSIVE content not on Medium
 
 ## Platform Funnel
 
@@ -232,11 +305,12 @@ content/startup/YYYY-MM-DD_dayN-topic-slug/
     post.md          # short hook post
     comment.md       # Medium link for comments
   medium/
-    article.md       # full article
+    article.md           # full article
+    PUBLISH-GUIDE.md     # publishing instructions (topics, image placement)
     images/
-      hero.html + hero.png         # article header
-      [insight].html + .png        # 1-2 concept visuals
-      quote.html + quote.png       # featured quote card
+      hero.html + hero.png           # article header (dark gradient, #0F3460 body bg)
+      [insight].html + .png          # 1-2 concept visuals (#F3F0FA bg)
+      quote.html + quote.png         # featured quote card (#F3F0FA bg)
 ```
 
 Weekly Substack:

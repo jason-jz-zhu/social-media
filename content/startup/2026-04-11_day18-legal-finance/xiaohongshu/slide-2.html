@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .content {
+    font-size: 38px;
+    color: #333;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+
+  .content p {
+    margin-bottom: 8px;
+  }
+
+  .speakers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .speaker-card {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .speaker-icon {
+    width: 56px;
+    height: 56px;
+    background: #7C3AED;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .speaker-info {
+    flex: 1;
+  }
+
+  .speaker-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+  }
+
+  .speaker-role {
+    font-size: 24px;
+    color: #888;
+  }
+
+  .framework-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin-top: auto;
+    margin-bottom: 80px;
+  }
+
+  .framework-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .framework-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .fw-label {
+    font-size: 30px;
+    font-weight: 700;
+    color: #7C3AED;
+  }
+
+  .fw-highlight {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1A1A1A;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .fw-highlight .purple {
+    color: #7C3AED;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div><span class="badge">6点起床学创业 Day 18</span></div>
+
+    <h1 class="title">今日拆解</h1>
+
+    <div class="content">
+      <p>YC创业课第十八节</p>
+      <p>主题：Legal and Accounting Basics for Startups</p>
+    </div>
+
+    <div class="speakers">
+      <div class="speaker-card">
+        <div class="speaker-icon">KN</div>
+        <div class="speaker-info">
+          <div class="speaker-name">Kirsty Nathoo</div>
+          <div class="speaker-role">YC CFO / 经手2000+创业公司财务</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-icon">CL</div>
+        <div class="speaker-info">
+          <div class="speaker-name">Carolynn Levy</div>
+          <div class="speaker-role">YC Partner / 律师 / SAFE协议设计者</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="framework-box">
+      <div class="framework-row">
+        <div class="fw-label">Sam Altman原话</div>
+      </div>
+      <div class="fw-highlight">
+        "最<span class="purple">无聊</span>但能<span class="purple">救你命</span>的一节课"
+      </div>
+      <div class="fw-highlight" style="margin-top: 16px;">
+        法务财务流程 = <span class="purple">公司的底线保护</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">2 / 7</div>
+</body>
+</html>

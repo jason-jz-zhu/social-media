@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 50px 60px;
+  width: 100%;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A1A;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title .highlight {
+  color: #7C3AED;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  width: 240px;
+  text-align: center;
+  border: 1px solid #E8E0F0;
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+
+.card-company {
+  font-size: 22px;
+  font-weight: 800;
+  color: #7C3AED;
+  margin-bottom: 8px;
+}
+
+.card-origin {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: #7C3AED;
+  font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #888;
+  font-weight: 500;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="title">Best Ideas Start as <span class="highlight">Side Projects</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">&#x1F310;</div>
+      <div class="card-company">Yahoo</div>
+      <div class="card-origin">Personal list of cool websites</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#x1F50D;</div>
+      <div class="card-company">Google</div>
+      <div class="card-origin">Research project on link analysis</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#x1F465;</div>
+      <div class="card-company">Facebook</div>
+      <div class="card-origin">Dorm project to find classmates</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#x1F4BB;</div>
+      <div class="card-company">Apple</div>
+      <div class="card-origin">A computer Woz built for himself</div>
+    </div>
+  </div>
+  <div class="footer">None were conceived as billion-dollar companies.</div>
+</div>
+</body>
+</html>

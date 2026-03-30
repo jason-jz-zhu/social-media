@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #7C3AED;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 16px;
+  font-family: 'Noto Sans SC', sans-serif;
+  margin-bottom: 48px;
+  align-self: flex-start;
+}
+
+.title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 56px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.item + .item {
+  border-top: 1px solid #EBEBEB;
+}
+
+.item-number {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+  min-width: 56px;
+  padding-top: 2px;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.item-desc {
+  font-size: 24px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="badge">6点起床学创业 Day 19</div>
+  <div class="title">收藏：Day 19 八个核心观点</div>
+  <div class="list">
+    <div class="item">
+      <div class="item-number">1</div>
+      <div class="item-text">
+        <div class="item-title">创始人就是最好的销售</div>
+        <div class="item-desc">你最懂产品、最懂行业、最有热情</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">2</div>
+      <div class="item-text">
+        <div class="item-title">2.5%接电话率=数字游戏</div>
+        <div class="item-desc">Tyler联系400+公司，大量outreach是常态</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">3</div>
+      <div class="item-text">
+        <div class="item-title">打电话：70%听30%说</div>
+        <div class="item-desc">问行为问痛点，不是推销功能</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">4</div>
+      <div class="item-text">
+        <div class="item-title">超人级follow up：60+步骤签一单</div>
+        <div class="item-desc">Maybe是杀手，快速逼到Yes或No</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">5</div>
+      <div class="item-text">
+        <div class="item-title">三个陷阱别踩</div>
+        <div class="item-desc">"再加一功能"、免费试用、合同纠结</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">6</div>
+      <div class="item-text">
+        <div class="item-title">30秒pitch = 3句话</div>
+        <div class="item-desc">做什么 + 市场多大 + traction</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">7</div>
+      <div class="item-text">
+        <div class="item-title">融资时机：你强他弱</div>
+        <div class="item-desc">会议排同一周，制造紧迫感</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">8</div>
+      <div class="item-text">
+        <div class="item-title">融资不等于成功</div>
+        <div class="item-desc">拿到钱是开始，不是终点</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</div>
+</body>
+</html>

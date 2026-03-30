@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F0F9FF;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 1200px;
+  height: 630px;
+  background: #F0F9FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 100px;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 120px;
+  font-weight: 900;
+  color: #0EA5E9;
+  line-height: 0.6;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+
+.quote-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0A2540;
+  line-height: 1.4;
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+.quote-text em {
+  color: #0EA5E9;
+  font-style: normal;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: #0EA5E9;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.attribution {
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748B;
+  text-align: center;
+}
+
+.accent-dot {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.dot-1 {
+  top: -40px;
+  right: 60px;
+}
+
+.dot-2 {
+  bottom: -40px;
+  left: 80px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="accent-dot dot-1"></div>
+  <div class="accent-dot dot-2"></div>
+  <div class="quote-mark">&ldquo;</div>
+  <div class="quote-text">If you lost all your content but kept your skill system, you could <em>regenerate everything</em> &mdash; and it would be better than the original.</div>
+  <div class="divider"></div>
+  <div class="attribution">Jiazhen Zhu &middot; On Personal IP in the AI Era</div>
+</div>
+</body>
+</html>

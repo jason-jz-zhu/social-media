@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 36px 60px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.column {
+  flex: 1;
+  max-width: 540px;
+}
+
+.column-header {
+  font-size: 13px;
+  font-weight: 800;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  padding-left: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 8px rgba(124,58,237,0.05);
+}
+
+.item-check {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #EDE9FE;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.item-check svg {
+  width: 16px;
+  height: 16px;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1A2E;
+  margin-bottom: 2px;
+}
+
+.item-desc {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.item-warning {
+  font-size: 11px;
+  font-weight: 700;
+  color: #DC2626;
+  margin-top: 3px;
+}
+
+.bottom-note-wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bottom-note {
+  display: inline-block;
+  background: #1A1A2E;
+  border-radius: 10px;
+  padding: 12px 28px;
+}
+
+.bottom-note-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bottom-note-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Startup Operations</div>
+  <div class="title">Legal &amp; Finance Checklist for Founders</div>
+
+  <div class="columns">
+    <div class="column">
+      <div class="column-header">Formation &amp; Equity</div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">Incorporate in Delaware (C-Corp)</div>
+          <div class="item-desc">Standard structure every investor expects</div>
+          <div class="item-warning">Wrong state = $500K+ conversion cost</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">Split equity roughly equally</div>
+          <div class="item-desc">Ideas = $0. Execution is everything.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">4-year vesting + 1-year cliff</div>
+          <div class="item-desc">Even solo founders. Signals commitment.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">File 83(b) within 30 days</div>
+          <div class="item-desc">No extensions. No exceptions.</div>
+          <div class="item-warning">Deals blow up over this single form</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="column-header">Operations &amp; Hygiene</div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">Pay founders minimum wage</div>
+          <div class="item-desc">Unpaid wages = legal leverage for fired cofounders</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">Treat investor money as trust</div>
+          <div class="item-desc">"Would you be embarrassed?" test</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">Fire fast, cut access immediately</div>
+          <div class="item-desc">Face-to-face, third party present, revoke same day</div>
+          <div class="item-warning">GitHub hostage story: revoke access NOW</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-check"><svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="item-content">
+          <div class="item-title">Keep all documents organized &amp; signed</div>
+          <div class="item-desc">Missing docs kill deals during due diligence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-note-wrap">
+    <div class="bottom-note">
+      <div class="bottom-note-text"><span class="highlight">Boring</span> stuff saves you from <span class="highlight">most</span> of the pain &mdash; Sam Altman</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

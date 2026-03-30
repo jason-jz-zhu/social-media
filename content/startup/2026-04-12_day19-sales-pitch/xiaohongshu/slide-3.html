@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Why founder = sales */
+  .reason-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .reason-grid {
+    display: flex;
+    gap: 16px;
+  }
+
+  .reason-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 16px;
+    text-align: center;
+    border: 2px solid rgba(124, 58, 237, 0.15);
+  }
+
+  .reason-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 10px;
+  }
+
+  .reason-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .reason-desc {
+    font-size: 22px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .warning-box {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .warning-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .warning-text .purple {
+    color: #B794F4;
+  }
+
+  .warning-text .red {
+    color: #FC8181;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* Numbers game */
+  .stats-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .stats-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  .stats-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .stat-big {
+    font-size: 56px;
+    font-weight: 900;
+    color: #7C3AED;
+    min-width: 180px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .stat-label .bold {
+    font-weight: 700;
+  }
+
+  .channels-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  .channel-pill {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #7C3AED;
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+
+  .channel-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 4px;
+  }
+
+  .channel-desc {
+    font-size: 20px;
+    color: #888;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 19</div>
+
+    <h1 class="title">创始人 = 最好的销售</h1>
+
+    <div class="section-label">为什么你不能等着招销售？</div>
+
+    <div class="reason-box">
+      <div class="reason-grid">
+        <div class="reason-card">
+          <div class="reason-num">1</div>
+          <div class="reason-title">最懂产品</div>
+          <div class="reason-desc">没人比你更清楚产品能解决什么</div>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">2</div>
+          <div class="reason-title">最懂行业</div>
+          <div class="reason-desc">你做了调研，你见了用户</div>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">3</div>
+          <div class="reason-title">最有热情</div>
+          <div class="reason-desc">雇来的人不会有你的conviction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-text">别说"<span class="red">以后招销售</span>"<br>早期只有创始人能卖 = <span class="purple">创始人就是销售</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">数字游戏：400+公司，2.5%接电话</div>
+
+    <div class="stats-box">
+      <div class="stats-row">
+        <div class="stat-big">400+</div>
+        <div class="stat-label">Tyler联系的公司数<br><span class="bold">大量outreach是必须的</span></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-big">2.5%</div>
+        <div class="stat-label">cold call接听率<br><span class="bold">打40个电话=1个会议</span></div>
+      </div>
+    </div>
+
+    <div class="channels-row">
+      <div class="channel-pill">
+        <div class="channel-name">会议</div>
+        <div class="channel-desc">面对面最有效</div>
+      </div>
+      <div class="channel-pill">
+        <div class="channel-name">Cold Email</div>
+        <div class="channel-desc">短、直接、有数据</div>
+      </div>
+      <div class="channel-pill">
+        <div class="channel-name">个人网络</div>
+        <div class="channel-desc">warm intro成功率最高</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

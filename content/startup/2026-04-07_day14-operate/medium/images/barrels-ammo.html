@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.column {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 16px rgba(124,58,237,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column-barrel {
+  border: 3px solid #7C3AED;
+}
+
+.column-ammo {
+  border: 3px solid #CBD5E1;
+}
+
+.column-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.icon-purple { background: #7C3AED; }
+.icon-gray { background: #94A3B8; }
+
+.column-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.column-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 8px;
+}
+
+.column-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.column-subtitle.gray {
+  color: #94A3B8;
+}
+
+.column-traits {
+  list-style: none;
+  width: 100%;
+}
+
+.column-traits li {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #F0F0F0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.column-traits li:last-child {
+  border-bottom: none;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.check-purple { background: #EDE9FE; color: #7C3AED; }
+.check-gray { background: #F1F5F9; color: #94A3B8; }
+
+.check svg {
+  width: 12px;
+  height: 12px;
+}
+
+.equation {
+  text-align: center;
+  margin-top: 28px;
+  padding: 16px 32px;
+  background: #1A1A2E;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.equation-wrap {
+  text-align: center;
+}
+
+.equation-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.equation-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Operations Framework</div>
+  <div class="title">Barrels vs. Ammunition</div>
+  <div class="columns">
+    <div class="column column-barrel">
+      <div class="column-icon icon-purple">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="column-title">Barrels</div>
+      <div class="column-subtitle">Rare — Limits Velocity</div>
+      <ul class="column-traits">
+        <li><span class="check check-purple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Concept to shipped product</li>
+        <li><span class="check check-purple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Crosses all functional boundaries</li>
+        <li><span class="check check-purple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Self-driven, no pushing needed</li>
+        <li><span class="check check-purple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Expand scope until it breaks</li>
+      </ul>
+    </div>
+    <div class="column column-ammo">
+      <div class="column-icon icon-gray">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      </div>
+      <div class="column-title">Ammunition</div>
+      <div class="column-subtitle gray">Most People — Needs Direction</div>
+      <ul class="column-traits">
+        <li><span class="check check-gray"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Talented and hardworking</li>
+        <li><span class="check check-gray"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Great at execution when aimed</li>
+        <li><span class="check check-gray"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> Needs a barrel to drive output</li>
+        <li><span class="check check-gray"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span> More headcount ≠ more output</li>
+      </ul>
+    </div>
+  </div>
+  <div class="equation-wrap">
+    <div class="equation">
+      <div class="equation-text">Company Velocity = <span class="highlight">Number of Barrels</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

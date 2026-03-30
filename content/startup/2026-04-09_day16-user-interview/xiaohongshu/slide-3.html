@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .principle-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 20px;
+  }
+
+  .principle-main {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .principle-main .purple {
+    color: #7C3AED;
+  }
+
+  .principle-desc {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  /* Three user types */
+  .types-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .type-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 22px 16px;
+    text-align: center;
+  }
+
+  .type-card.current {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .type-card.competitor {
+    background: #FFF5F0;
+    border: 2px solid #ED8936;
+  }
+
+  .type-card.non-user {
+    background: #F0FFF4;
+    border: 2px solid #48BB78;
+  }
+
+  .type-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .type-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  .type-card.current .type-title { color: #7C3AED; }
+  .type-card.competitor .type-title { color: #ED8936; }
+  .type-card.non-user .type-title { color: #48BB78; }
+
+  .type-feedback {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .type-feedback .bold {
+    font-weight: 700;
+    color: #333;
+  }
+
+  /* Twitch example */
+  .example-box {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .example-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 10px;
+  }
+
+  .example-row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .example-col {
+    flex: 1;
+  }
+
+  .example-label {
+    font-size: 22px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .example-content {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .example-content .bold {
+    font-weight: 700;
+  }
+
+  .arrow-result {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 18px 24px;
+    text-align: center;
+  }
+
+  .arrow-result-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .arrow-result-text .purple {
+    color: #B794F4;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 16</div>
+
+    <h1 class="title">跟谁聊 > 问什么</h1>
+
+    <div class="section-label">核心原则</div>
+
+    <div class="principle-box">
+      <div class="principle-main">Twitch聚焦<span class="purple">主播</span>而不是观众<br>谁是真正用户<span class="purple">没有公式</span>，你得自己判断</div>
+      <div class="principle-desc">选错了聊天对象，问再好的问题也没用。6-8个人就够，多样性比数量重要。</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">三类人都要聊——反馈完全不同</div>
+
+    <div class="types-container">
+      <div class="type-card current">
+        <div class="type-title">现有用户</div>
+        <div class="type-feedback">要<span class="bold">小功能</span><br>微调优化</div>
+      </div>
+      <div class="type-card competitor">
+        <div class="type-title">竞品用户</div>
+        <div class="type-feedback">要<span class="bold">赚钱</span><br>稳定 / 全球覆盖</div>
+      </div>
+      <div class="type-card non-user">
+        <div class="type-title">非用户</div>
+        <div class="type-feedback">完全<span class="bold">不同的</span><br>需求和认知</div>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">Twitch的选择</div>
+      <div class="example-row">
+        <div class="example-col">
+          <div class="example-label">现有用户说</div>
+          <div class="example-content">"加个<span class="bold">表情包</span>功能"</div>
+        </div>
+        <div class="example-col">
+          <div class="example-label">竞品用户说</div>
+          <div class="example-content">"我要<span class="bold">赚钱、稳定、全球</span>"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-result">
+      <div class="arrow-result-text">资源投到<span class="purple">竞品用户的需求</span>，增长才来了</div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

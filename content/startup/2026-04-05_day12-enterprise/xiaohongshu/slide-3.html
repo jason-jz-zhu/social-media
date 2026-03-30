@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Market comparison */
+  .market-compare {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  .market-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .market-card.enterprise {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .market-card.consumer {
+    background: #FAFAFA;
+    border: 2px solid #E0E0E0;
+  }
+
+  .market-label {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .market-card.enterprise .market-label { color: #7C3AED; }
+  .market-card.consumer .market-label { color: #888; }
+
+  .market-number {
+    font-size: 52px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .market-card.enterprise .market-number { color: #7C3AED; }
+  .market-card.consumer .market-number { color: #333; }
+
+  .market-unit {
+    font-size: 22px;
+    color: #888;
+  }
+
+  .market-note {
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .market-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  /* Gap diagram */
+  .gap-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .gap-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .gap-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .gap-label {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A1A;
+    min-width: 160px;
+  }
+
+  .gap-bar {
+    flex: 1;
+    height: 28px;
+    border-radius: 14px;
+    position: relative;
+  }
+
+  .gap-bar-bg {
+    width: 100%;
+    height: 100%;
+    background: #EDE9FE;
+    border-radius: 14px;
+  }
+
+  .gap-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #7C3AED;
+    border-radius: 14px;
+  }
+
+  .gap-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0;
+  }
+
+  .gap-arrow-text {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+    background: #F5F0FF;
+    padding: 8px 24px;
+    border-radius: 20px;
+    border: 2px dashed #7C3AED;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 12</div>
+
+    <h1 class="title">$3.7万亿市场 + 技术断层</h1>
+
+    <div class="section-label">企业IT vs 消费者市场（每年）</div>
+
+    <div class="market-compare">
+      <div class="market-card enterprise">
+        <div class="market-label">企业 IT</div>
+        <div class="market-number">$3.7T</div>
+        <div class="market-unit">万亿/年</div>
+      </div>
+      <div class="market-card consumer">
+        <div class="market-label">消费者</div>
+        <div class="market-number">$170B</div>
+        <div class="market-unit">十亿/年</div>
+      </div>
+    </div>
+
+    <div class="market-note">企业客户<span class="purple">为价值付费</span>，不是为省钱</div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">技术断层 = 创业机会</div>
+
+    <div class="gap-box">
+      <div class="gap-row">
+        <div class="gap-label">技术可能做到的</div>
+        <div class="gap-bar"><div class="gap-bar-bg"></div><div class="gap-bar-fill" style="width:95%"></div></div>
+      </div>
+      <div class="gap-arrow">
+        <div class="gap-arrow-text">差距 = 你的机会</div>
+      </div>
+      <div class="gap-row">
+        <div class="gap-label">企业实际在做的</div>
+        <div class="gap-bar"><div class="gap-bar-bg"></div><div class="gap-bar-fill" style="width:25%"></div></div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">差距最大时 = 最佳创业时机</span><br>2014年：云+移动 → 2026年：AI正在制造更大的断层</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

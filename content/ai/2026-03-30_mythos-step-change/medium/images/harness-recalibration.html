@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #0A2540;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(180deg, #0A1628 0%, #0D1F3C 100%);
+  border-bottom: 5px solid #0EA5E9;
+  position: relative;
+  padding: 45px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0EA5E9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 35px;
+}
+
+.columns {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+.column-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.old .column-icon {
+  background: rgba(239,68,68,0.15);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #EF4444;
+}
+
+.new .column-icon {
+  background: rgba(34,197,94,0.15);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: #22C55E;
+}
+
+.column-label {
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.column-sublabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.item-marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.old .item-marker {
+  background: rgba(239,68,68,0.12);
+  color: #EF4444;
+}
+
+.new .item-marker {
+  background: rgba(34,197,94,0.12);
+  color: #22C55E;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 3px;
+}
+
+.old .item-title {
+  text-decoration: line-through;
+  color: rgba(255,255,255,0.45);
+}
+
+.item-desc {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.4;
+}
+
+.center-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.arrow-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(14,165,233,0.15);
+  border: 2px solid rgba(14,165,233,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #0EA5E9;
+  font-weight: 900;
+}
+
+.footer-note {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-text em {
+  color: #0EA5E9;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="section-title">Harness Recalibration</div>
+  <div class="heading">Step Change = Strip the Old, Build the New</div>
+
+  <div class="columns">
+    <div class="column old">
+      <div class="column-header">
+        <div class="column-icon">&minus;</div>
+        <div>
+          <div class="column-label">Components to Strip</div>
+          <div class="column-sublabel">No longer load-bearing</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&times;</div>
+        <div class="item-content">
+          <div class="item-title">Sprint Decomposition</div>
+          <div class="item-desc">Breaking large tasks into sequential sprints because the model couldn't hold full scope</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&times;</div>
+        <div class="item-content">
+          <div class="item-title">Verbose Artifact Contracts</div>
+          <div class="item-desc">Detailed spec documents because the model needed explicit structure between agents</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&times;</div>
+        <div class="item-content">
+          <div class="item-title">Multiple Fix Cycles</div>
+          <div class="item-desc">3+ rounds of evaluator-to-generator feedback that a stronger model may not need</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&times;</div>
+        <div class="item-content">
+          <div class="item-title">Redundant Guardrails</div>
+          <div class="item-desc">Safety checks for failure modes the model no longer exhibits</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-arrow">
+      <div class="arrow-box">&rarr;</div>
+    </div>
+
+    <div class="column new">
+      <div class="column-header">
+        <div class="column-icon">+</div>
+        <div>
+          <div class="column-label">Components to Build</div>
+          <div class="column-sublabel">Now possible with stronger model</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&check;</div>
+        <div class="item-content">
+          <div class="item-title">More Ambitious Single Tasks</div>
+          <div class="item-desc">Attempt tasks that no harness could previously make work at all</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&check;</div>
+        <div class="item-content">
+          <div class="item-title">Higher-Level Agent Roles</div>
+          <div class="item-desc">Agents handle "design and build this feature" instead of "build this component"</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&check;</div>
+        <div class="item-content">
+          <div class="item-title">Thinner Evaluation Layers</div>
+          <div class="item-desc">Fewer independent evaluators if self-evaluation reliability improves</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-marker">&check;</div>
+        <div class="item-content">
+          <div class="item-title">End-to-End Workflows</div>
+          <div class="item-desc">Chain tasks that previously required human handoffs between stages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <div class="footer-text">The harness doesn't go away. It <em>evolves</em>.</div>
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.timeline {
+  display: flex;
+  gap: 24px;
+  position: relative;
+}
+
+.era {
+  flex: 1;
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.era-2014 {
+  background: #1A1A2E;
+}
+
+.era-2026 {
+  background: #7C3AED;
+}
+
+.era-year {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.era-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.shift-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.shift-from {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  flex: 1;
+  text-align: right;
+}
+
+.shift-arrow {
+  flex: 0 0 24px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.shift-to {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex: 1;
+}
+
+.era-result {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 2px solid rgba(255,255,255,0.15);
+}
+
+.era-result-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.era-result-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 60px;
+  gap: 8px;
+}
+
+.connector-line {
+  width: 3px;
+  flex: 1;
+  background: linear-gradient(180deg, #1A1A2E 0%, #7C3AED 100%);
+  border-radius: 2px;
+}
+
+.connector-badge {
+  width: 60px;
+  height: 32px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #7C3AED;
+  letter-spacing: 1px;
+}
+
+.insight {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7C3AED;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Same Framework, New Disruption</div>
+  <div class="title">Enterprise Software Disruption: 2014 vs 2026</div>
+  <div class="timeline">
+    <div class="era era-2014">
+      <div class="era-year">2014</div>
+      <div class="era-subtitle">Cloud &amp; Mobile Era</div>
+      <div class="shift-row">
+        <div class="shift-from">On-premise</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Cloud SaaS</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-from">Desktop-bound</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Mobile-first</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-from">IT-procured</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">User-adopted</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-from">Ugly enterprise UX</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Consumer-grade</div>
+      </div>
+      <div class="era-result">
+        <div class="era-result-label">Winners</div>
+        <div class="era-result-text">Box, Slack, Zoom, Gusto, Figma, Notion</div>
+      </div>
+    </div>
+    <div class="connector">
+      <div class="connector-line"></div>
+      <div class="connector-badge">SAME PLAY</div>
+      <div class="connector-line"></div>
+    </div>
+    <div class="era era-2026">
+      <div class="era-year">2026</div>
+      <div class="era-subtitle">AI &amp; LLM Era</div>
+      <div class="shift-row">
+        <div class="shift-from">Deterministic</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Probabilistic</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-from">Structured query</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Natural language</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-from">Human-operated</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Agent-assisted</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-from">Batch reports</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-to">Real-time intelligence</div>
+      </div>
+      <div class="era-result">
+        <div class="era-result-label">Winners</div>
+        <div class="era-result-text">Being built right now. Will YOU be one?</div>
+      </div>
+    </div>
+  </div>
+  <div class="insight">The framework is the same. The technology layer has changed. The window is open again.</div>
+</div>
+</body>
+</html>

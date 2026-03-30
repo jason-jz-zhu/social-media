@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "total": 20,
+    "pass": 18,
+    "fail": 2,
+    "partial": 0,
+    "score_pct": 90
+  },
+  "results": [
+    {
+      "feature": "S1",
+      "criterion": "Sidebar exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S1",
+      "criterion": "Nav items (11)",
+      "status": "PASS",
+      "detail": "found 11"
+    },
+    {
+      "feature": "S1",
+      "criterion": "Navigable pages",
+      "status": "PASS",
+      "detail": "Dashboard, Clients, Pipeline, Calendar, Documents, Resume Tailor, Interview Prep, Revenue, Messages, Analytics, Settings"
+    },
+    {
+      "feature": "S1",
+      "criterion": "Dashboard metric cards (61)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S1",
+      "criterion": "Client rows (41)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S1",
+      "criterion": "Client search",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S2",
+      "criterion": "Client detail opens",
+      "status": "FAIL",
+      "detail": ""
+    },
+    {
+      "feature": "S2",
+      "criterion": "Pipeline columns (10)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S2",
+      "criterion": "Pipeline cards (61)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S2",
+      "criterion": "Calendar events (6)",
+      "status": "PASS",
+      "detail": "found 6"
+    },
+    {
+      "feature": "S2",
+      "criterion": "Document items (51)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S3",
+      "criterion": "AI Tools page",
+      "status": "FAIL",
+      "detail": "No AI nav"
+    },
+    {
+      "feature": "S3",
+      "criterion": "Revenue page loads",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S3",
+      "criterion": "Messaging conversations (8)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S3",
+      "criterion": "Analytics charts (34)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S3",
+      "criterion": "Notification panel opens",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S4",
+      "criterion": "Global search (Ctrl+K)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S4",
+      "criterion": "Settings page loads",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "S4",
+      "criterion": "FAB quick actions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "Quality",
+      "criterion": "No JS console errors",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "js_errors": []
+}

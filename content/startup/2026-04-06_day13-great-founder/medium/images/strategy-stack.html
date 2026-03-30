@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.layer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 36px;
+  position: relative;
+}
+
+.layer-1 {
+  background: #7C3AED;
+  border-radius: 16px 16px 0 0;
+}
+
+.layer-2 {
+  background: #5B21B6;
+}
+
+.layer-3 {
+  background: #1A1A2E;
+  border-radius: 0 0 16px 16px;
+}
+
+.layer-rank {
+  flex: 0 0 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.layer-content {
+  flex: 1;
+}
+
+.layer-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.layer-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+.layer-priority {
+  flex: 0 0 auto;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.priority-highest {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.priority-high {
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+}
+
+.priority-base {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 116px;
+  margin: -4px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 10px solid rgba(255,255,255,0.3);
+}
+
+.insight {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7C3AED;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Hoffman's Strategy Stack</div>
+  <div class="title">The Three Layers Every Founder Must Prioritize</div>
+  <div class="stack">
+    <div class="layer layer-1">
+      <div class="layer-rank">#1</div>
+      <div class="layer-content">
+        <div class="layer-name">Product Distribution</div>
+        <div class="layer-desc">How people discover and adopt your product. In 2026, AI-native distribution is a structural advantage.</div>
+      </div>
+      <div class="layer-priority priority-highest">Most Critical</div>
+    </div>
+    <div class="layer layer-2">
+      <div class="layer-rank">#2</div>
+      <div class="layer-content">
+        <div class="layer-name">Product</div>
+        <div class="layer-desc">What you build and the value it creates. Great product without distribution still fails.</div>
+      </div>
+      <div class="layer-priority priority-high">Critical</div>
+    </div>
+    <div class="layer layer-3">
+      <div class="layer-rank">#3</div>
+      <div class="layer-content">
+        <div class="layer-name">Financing</div>
+        <div class="layer-desc">Funding enables the above but doesn't replace them. Money can't fix broken distribution.</div>
+      </div>
+      <div class="layer-priority priority-base">Foundation</div>
+    </div>
+  </div>
+  <div class="insight">Distribution wins even over great products. The best product nobody finds is still a failed product.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* Values list */
+  .values {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 14px 18px;
+    border: 1px solid #EBEBEB;
+  }
+
+  .value-num {
+    font-size: 26px;
+    font-weight: 900;
+    color: #7C3AED;
+    min-width: 32px;
+    flex-shrink: 0;
+  }
+
+  .value-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .value-text .bold {
+    font-weight: 700;
+  }
+
+  .cereal-box {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border: 2px solid #7C3AED;
+  }
+
+  .cereal-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 6px;
+  }
+
+  .cereal-text {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .hiring-stat {
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    text-align: center;
+    border: 1px solid #EBEBEB;
+  }
+
+  .hiring-stat .big {
+    font-size: 44px;
+    font-weight: 900;
+    color: #7C3AED;
+  }
+
+  .hiring-stat .desc {
+    font-size: 24px;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 10px 0;
+  }
+
+  /* Missionary vs Mercenary */
+  .compare-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 14px;
+  }
+
+  .compare-wrapper {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .compare-col {
+    flex: 1;
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .compare-col.bad {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .compare-col.good {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .compare-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .compare-col-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .compare-col.bad .compare-col-title { color: #E53E3E; }
+  .compare-col.good .compare-col-title { color: #7C3AED; }
+
+  .compare-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .example-box {
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #EBEBEB;
+  }
+
+  .example-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+  }
+
+  .example-text {
+    font-size: 22px;
+    color: #888;
+    line-height: 1.4;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 16px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .insight-box .insight-label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .insight-box p {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 10</div>
+
+    <h1 class="title">Airbnb：招第一个人前就定好文化</h1>
+
+    <div class="section-label">核心价值观必须独特</div>
+
+    <div class="values">
+      <div class="value-item">
+        <div class="value-num">1</div>
+        <div class="value-text"><span class="bold">Be a host</span> — 主人思维渗透一切</div>
+      </div>
+      <div class="value-item">
+        <div class="value-num">2</div>
+        <div class="value-text"><span class="bold">Champion the mission</span> — 使命驱动</div>
+      </div>
+      <div class="value-item">
+        <div class="value-num">3</div>
+        <div class="value-text"><span class="bold">Be a cereal entrepreneur</span> — 见下</div>
+      </div>
+    </div>
+
+    <div class="cereal-box">
+      <div class="cereal-title">"Be a cereal entrepreneur" 的由来</div>
+      <div class="cereal-text">Airbnb快断粮时，Brian做了Obama-O's麦片盒卖40刀一盒，赚了3万刀活过来。这种"想尽办法活下去"的精神成了核心价值观。</div>
+    </div>
+
+    <div class="hiring-stat">
+      <div class="big">4-5个月</div>
+      <div class="desc">Brian找第一个工程师花的时间 — "第一个员工 = DNA芯片"</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="compare-title">传教士 vs 雇佣兵</div>
+
+    <div class="compare-wrapper">
+      <div class="compare-col good">
+        <div class="compare-icon">&#9733;</div>
+        <div class="compare-col-title">传教士</div>
+        <div class="compare-desc">相信使命<br>10年可活也要来<br>困难时更拼</div>
+      </div>
+      <div class="compare-col bad">
+        <div class="compare-icon">&#10005;</div>
+        <div class="compare-col-title">雇佣兵</div>
+        <div class="compare-desc">只看薪资期权<br>困难时第一个走<br>稀释文化DNA</div>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">实战案例：拒收Samwer兄弟的克隆</div>
+      <div class="example-text">Samwer带400人克隆Airbnb欧洲，Brian拒绝收购。结果Airbnb自己做，欧洲贡献>50%收入。</div>
+    </div>
+
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

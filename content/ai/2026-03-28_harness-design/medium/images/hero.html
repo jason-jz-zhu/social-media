@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #0A2540;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.hero {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 50%, #0A2540 100%);
+  border-bottom: 5px solid #0EA5E9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+}
+
+.badge {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  background: #0EA5E9;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.category {
+  position: absolute;
+  top: 42px;
+  right: 80px;
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.experiment-tag {
+  display: inline-block;
+  background: rgba(14,165,233,0.15);
+  color: #0EA5E9;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(14,165,233,0.3);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 950px;
+}
+
+.title em {
+  color: #0EA5E9;
+  font-style: normal;
+}
+
+.subtitle {
+  font-size: 19px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: left;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0EA5E9;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.author {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  color: rgba(255,255,255,0.45);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(14,165,233,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -50px;
+  pointer-events: none;
+}
+
+.glow-top {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -80px;
+  left: 200px;
+  pointer-events: none;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="badge">AI Productivity</div>
+  <div class="category">Experiment</div>
+  <div class="experiment-tag">4 Runs &middot; 1 Model &middot; 4 Architectures</div>
+  <div class="title">I Ran the Same AI Task <em>Four Ways.</em> Here's What Broke.</div>
+  <div class="subtitle">Same model, same tools, same requirement. The only variable was the harness around the agent.</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Architectures</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">579K</div>
+      <div class="stat-label">Total Tokens</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">1</div>
+      <div class="stat-label">App-Breaking Bug</div>
+    </div>
+  </div>
+  <div class="author">Jiazhen Zhu &middot; 10+ Years Data/AI &middot; NYU Stern MBA</div>
+  <div class="glow"></div>
+  <div class="glow-top"></div>
+  <div class="grain"></div>
+</div>
+</body>
+</html>

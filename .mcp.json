@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "web-fetcher": {
+      "command": "python",
+      "args": ["-m", "web_fetcher.mcp_server"],
+      "cwd": "/Users/jiazhenzhu/Desktop/code/life-kit/web-fetcher"
+    }
+  }
+}

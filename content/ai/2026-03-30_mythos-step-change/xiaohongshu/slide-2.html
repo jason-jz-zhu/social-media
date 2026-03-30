@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2 - 什么是Mythos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 36px;
+  }
+  .title .teal { color: #0EA5E9; }
+
+  .event-box {
+    background: #FEF2F2;
+    border-left: 4px solid #EF4444;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  .event-box .label {
+    font-size: 26px;
+    color: #EF4444;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .event-box p {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .event-box .bold { font-weight: 700; color: #DC2626; }
+
+  .definition-box {
+    background: #F0F9FF;
+    border-left: 4px solid #0EA5E9;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  .definition-box .label {
+    font-size: 26px;
+    color: #0EA5E9;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .definition-box p {
+    font-size: 28px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .definition-box .highlight {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .timeline-section {
+    margin-bottom: 28px;
+  }
+
+  .timeline-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .timeline-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .timeline-item {
+    flex: 1;
+    background: #F9FAFB;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .timeline-item .date {
+    font-size: 20px;
+    color: #999;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item .event {
+    font-size: 22px;
+    font-weight: 700;
+    color: #555;
+  }
+
+  .timeline-item.highlight-item {
+    background: #F0F9FF;
+    border: 2px solid rgba(14, 165, 233, 0.3);
+  }
+
+  .timeline-item.highlight-item .event {
+    color: #0EA5E9;
+  }
+
+  .bottom-note {
+    margin-top: auto;
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 30px;
+    color: #fff;
+    line-height: 1.6;
+  }
+  .bottom-note .teal {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">今日拆解</div>
+
+    <h1 class="title">什么是<span class="teal">Claude Mythos</span>？</h1>
+
+    <div class="event-box">
+      <div class="label">泄露事件</div>
+      <p>Anthropic在内部文档中意外暴露了<span class="bold">"Claude Mythos"</span>的存在。Fortune率先报道，Anthropic随后确认。目前正在与早期客户测试。</p>
+    </div>
+
+    <div class="definition-box">
+      <div class="label">Step Change 是什么意思</div>
+      <p>不是 10% 的提升，不是"更快一点"。<br>Step change = <span class="highlight">能力跳了一个台阶</span>。<br>能做到之前做不到的事情类别。</p>
+    </div>
+
+    <div class="timeline-section">
+      <div class="timeline-title">AI能力阶梯回顾</div>
+      <div class="timeline-row">
+        <div class="timeline-item">
+          <div class="date">2023</div>
+          <div class="event">GPT-4 发布</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2024</div>
+          <div class="event">Claude 3 Opus</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025</div>
+          <div class="event">Opus 4.5 / 4.6</div>
+        </div>
+        <div class="timeline-item highlight-item">
+          <div class="date">2026?</div>
+          <div class="event">Mythos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p>每次step change发生时<br>不是输出变好了，是<span class="teal">能尝试的任务类别变了</span></p>
+    </div>
+  </div>
+
+  <div class="page-number">2 / 7</div>
+</body>
+</html>

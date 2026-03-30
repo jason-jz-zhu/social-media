@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 4 - 为什么不可fork</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 44px;
+  }
+
+  .reason-card {
+    background: #F9FAFB;
+    border-radius: 18px;
+    padding: 34px 36px;
+    margin-bottom: 24px;
+    border-left: 6px solid #0EA5E9;
+  }
+
+  .reason-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0EA5E9;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .reason-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+  }
+
+  .reason-analogy {
+    font-size: 26px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .reason-analogy .teal {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .reason-detail {
+    font-size: 24px;
+    color: #999;
+    line-height: 1.5;
+  }
+
+  .visual-gap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .gap-chart {
+    width: 100%;
+    background: #1A1A1A;
+    border-radius: 18px;
+    padding: 36px 40px;
+  }
+
+  .gap-chart-title {
+    font-size: 24px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 16px;
+  }
+
+  .bar-label {
+    font-size: 22px;
+    color: rgba(255,255,255,0.7);
+    width: 100px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 36px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .bar-fill.you {
+    background: linear-gradient(90deg, #0EA5E9, #06B6D4);
+  }
+
+  .bar-fill.other {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .gap-note {
+    font-size: 22px;
+    color: #0EA5E9;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">关键洞察</div>
+
+    <h1 class="title">Personal Skill 为什么不可fork？</h1>
+
+    <div class="reason-card">
+      <div class="reason-num">REASON 01</div>
+      <div class="reason-title">菜谱可以抄，味觉不能</div>
+      <div class="reason-analogy">你的skill = 所有经验的<span class="teal">编码</span></div>
+      <div class="reason-detail">别人拿到你的配置文件，也跑不出同样的效果</div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-num">REASON 02</div>
+      <div class="reason-title">Compound Effect 复利效应</div>
+      <div class="reason-analogy">每一次使用都在<span class="teal">迭代</span>，越用差距越大</div>
+      <div class="reason-detail">你在第50个版本，别人从零开始</div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-num">REASON 03</div>
+      <div class="reason-title">时间不可压缩</div>
+      <div class="reason-analogy">踩过的坑、做过的<span class="teal">判断</span>，无法速成</div>
+      <div class="reason-detail">这是真正的护城河</div>
+    </div>
+
+    <div class="visual-gap">
+      <div class="gap-chart">
+        <div class="gap-chart-title">PERSONAL SKILL 差距随时间扩大</div>
+        <div class="bar-row">
+          <div class="bar-label">你（v50）</div>
+          <div class="bar-track"><div class="bar-fill you" style="width: 90%;"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Fork者</div>
+          <div class="bar-track"><div class="bar-fill other" style="width: 25%;"></div></div>
+        </div>
+        <div class="gap-note">同一个文件，产出天差地别</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

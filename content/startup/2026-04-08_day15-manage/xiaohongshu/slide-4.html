@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Raise request flow */
+  .flow-container {
+    margin-bottom: 20px;
+  }
+
+  .flow-step {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .flow-num {
+    width: 44px;
+    height: 44px;
+    background: #7C3AED;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .flow-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .flow-text .bold {
+    font-weight: 700;
+  }
+
+  .flow-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .flow-result {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+    border-radius: 14px;
+    padding: 20px 22px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .flow-result-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E53E3E;
+    line-height: 1.5;
+  }
+
+  .shmoney-label {
+    font-size: 22px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Process section */
+  .process-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .process-main {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .process-main .purple {
+    color: #7C3AED;
+  }
+
+  .process-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .process-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .process-arrow {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 900;
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .process-desc {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .process-desc .bold {
+    font-weight: 700;
+  }
+
+  /* Stock option box */
+  .stock-box {
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .stock-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .stock-desc {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .stock-desc .bold {
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 15</div>
+
+    <h1 class="title">加薪请求 + 流程保护文化</h1>
+
+    <div class="section-label">加薪请求的陷阱</div>
+
+    <div class="flow-container">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-text">员工A主动<span class="bold">要求加薪</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-text">你觉得合理，<span class="bold">同意了</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-text">员工B同样优秀但<span class="purple">不开口</span></div>
+      </div>
+    </div>
+
+    <div class="flow-result">
+      <div class="flow-result-text">你在惩罚不会"表演"的人</div>
+    </div>
+    <div class="shmoney-label">Shmoney Dance效应：会跳舞的拿钱，不跳的吃亏</div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">解法：用流程保护文化</div>
+
+    <div class="process-box">
+      <div class="process-main"><span class="purple">正式评估流程</span>确保公平</div>
+      <div class="process-details">
+        <div class="process-item">
+          <div class="process-arrow">></div>
+          <div class="process-desc">统一的绩效评估周期</div>
+        </div>
+        <div class="process-item">
+          <div class="process-arrow">></div>
+          <div class="process-desc">薪酬调整<span class="bold">不取决于谁会开口</span></div>
+        </div>
+        <div class="process-item">
+          <div class="process-arrow">></div>
+          <div class="process-desc">流程 = 让<span class="bold">沉默的优秀者</span>也被看见</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-box">
+      <div class="stock-title">股票期权90天规则</div>
+      <div class="stock-desc">旧法律遗留的90天行权期。10年行权对留下的人不公平，但<span class="bold">没有统一答案</span>——每个决策都有二阶效应。</div>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

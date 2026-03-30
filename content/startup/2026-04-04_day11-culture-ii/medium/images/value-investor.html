@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 44px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  gap: 40px;
+}
+
+.col {
+  flex: 1;
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.col-discovered {
+  background: #1A1A2E;
+}
+
+.col-undiscovered {
+  background: #7C3AED;
+}
+
+.col-header {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.col-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trait {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.trait-icon {
+  flex: 0 0 22px;
+  font-size: 16px;
+  margin-top: 2px;
+  color: rgba(255,255,255,0.5);
+}
+
+.trait-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+}
+
+.outcome {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 2px solid rgba(255,255,255,0.15);
+}
+
+.outcome-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.outcome-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+}
+
+.vs-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1A1A2E;
+  border: 3px solid #7C3AED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Stripe's Hiring Philosophy</div>
+  <div class="title">Think Like a Value Investor</div>
+  <div class="columns">
+    <div class="col col-discovered">
+      <div class="col-header">"Consensus Talent"</div>
+      <div class="col-sub">High Apparent, High Actual</div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Big-company pedigree, top schools</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Everyone competing for same people</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Expensive to recruit and retain</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">May optimize for next role, not mission</div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-label">Market Price</div>
+        <div class="outcome-text">Fully valued — you pay a premium</div>
+      </div>
+    </div>
+    <div class="vs">
+      <div class="vs-badge">VS</div>
+    </div>
+    <div class="col col-undiscovered">
+      <div class="col-header">"Undervalued Talent"</div>
+      <div class="col-sub">Low Apparent, High Actual</div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">18-year-old designer in Sweden</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">College student who built real systems</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">No pedigree, extraordinary output</div>
+      </div>
+      <div class="trait">
+        <div class="trait-icon">&#9679;</div>
+        <div class="trait-text">Joins for the mission, not the brand</div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-label">Market Price</div>
+        <div class="outcome-text">Undervalued — massive upside for both sides</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

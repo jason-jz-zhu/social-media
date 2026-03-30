@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 32px 60px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.matrix-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  margin-right: 12px;
+}
+
+.y-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1A2E;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.matrix-content {
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+}
+
+.cell {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 170px;
+}
+
+.cell-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cell-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cell-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cell-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1A1A2E;
+}
+
+.cell-action {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cell-desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Top-left: High conviction, High consequence */
+.cell-hh { border: 2px solid #7C3AED; }
+.cell-hh .cell-icon { background: #7C3AED; }
+.cell-hh .cell-action { color: #7C3AED; }
+
+/* Top-right: Low conviction, High consequence */
+.cell-lh { border: 2px solid #F59E0B; }
+.cell-lh .cell-icon { background: #F59E0B; }
+.cell-lh .cell-action { color: #F59E0B; }
+
+/* Bottom-left: High conviction, Low consequence */
+.cell-hl { border: 2px solid #3B82F6; }
+.cell-hl .cell-icon { background: #3B82F6; }
+.cell-hl .cell-action { color: #3B82F6; }
+
+/* Bottom-right: Low conviction, Low consequence */
+.cell-ll { border: 2px solid #10B981; }
+.cell-ll .cell-icon { background: #10B981; }
+.cell-ll .cell-action { color: #10B981; }
+
+.x-axis {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+  margin-left: 52px;
+}
+
+.x-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1A2E;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.axis-arrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 52px;
+  margin-top: 4px;
+}
+
+.axis-arrow-y {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.corner-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grid-labels-x {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-left: 52px;
+  margin-top: 8px;
+}
+
+.grid-labels-x .corner-label {
+  text-align: center;
+}
+
+.grid-labels-y {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.grid-labels-y .corner-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Delegation Framework</div>
+  <div class="title">The Conviction x Consequence Matrix</div>
+  <div class="matrix-wrapper">
+    <div class="y-axis">
+      <div class="y-label">Consequence &rarr;</div>
+    </div>
+    <div class="matrix-content">
+      <div class="grid">
+        <!-- Top-left: High conviction, High consequence -->
+        <div class="cell cell-hh">
+          <div class="cell-header">
+            <div class="cell-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="cell-name">High / High</div>
+          </div>
+          <div class="cell-action">Do it yourself</div>
+          <div class="cell-desc">You feel strongly AND the stakes are high. Own it — but explain to the team WHY you're overriding their judgment.</div>
+        </div>
+        <!-- Top-right: Low conviction, High consequence -->
+        <div class="cell cell-lh">
+          <div class="cell-header">
+            <div class="cell-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg></div>
+            <div class="cell-name">Low / High</div>
+          </div>
+          <div class="cell-action">Slow down, gather info</div>
+          <div class="cell-desc">You're unsure but the stakes are high. Don't rush. Involve senior people. Get more data before deciding.</div>
+        </div>
+        <!-- Bottom-left: High conviction, Low consequence -->
+        <div class="cell cell-hl">
+          <div class="cell-header">
+            <div class="cell-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg></div>
+            <div class="cell-name">High / Low</div>
+          </div>
+          <div class="cell-action">Delegate + share opinion</div>
+          <div class="cell-desc">You have a strong view but the stakes are low. Share your opinion, then let the team make the final call.</div>
+        </div>
+        <!-- Bottom-right: Low conviction, Low consequence -->
+        <div class="cell cell-ll">
+          <div class="cell-header">
+            <div class="cell-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="cell-name">Low / Low</div>
+          </div>
+          <div class="cell-action">Delegate fully</div>
+          <div class="cell-desc">You don't feel strongly AND the stakes are low. Let the team decide. Don't even weigh in.</div>
+        </div>
+      </div>
+      <div class="grid-labels-x">
+        <div class="corner-label">High Conviction</div>
+        <div class="corner-label">Low Conviction</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

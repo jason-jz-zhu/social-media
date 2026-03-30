@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 50px;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 120px;
+  color: #7C3AED;
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: -20px;
+  font-weight: 900;
+}
+
+.quote {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote .highlight {
+  color: #7C3AED;
+}
+
+.divider {
+  width: 100px;
+  height: 1px;
+  background: #D1D1D1;
+  margin: 30px auto;
+}
+
+.attribution {
+  font-size: 18px;
+  color: #888;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="quote-mark">&ldquo;</div>
+  <div class="quote">Users are like sharks. They're too <span class="highlight">stupid to be fooled</span>. Either it's meat, or it's not.</div>
+  <div class="divider"></div>
+  <div class="attribution">&mdash; Paul Graham, YC Lecture 3</div>
+</div>
+</body>
+</html>

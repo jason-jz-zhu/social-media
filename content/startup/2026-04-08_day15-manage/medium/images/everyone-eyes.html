@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.center-decision {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #7C3AED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(124,58,237,0.3);
+}
+
+.center-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.center-label {
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.center-sub {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.stakeholders {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stakeholder {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.06);
+  min-width: 260px;
+}
+
+.stakeholder.in-room {
+  border: 2px solid #7C3AED;
+}
+
+.stakeholder.not-in-room {
+  border: 2px solid #E9D5FF;
+}
+
+.stakeholder-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-purple { background: #7C3AED; }
+.icon-light { background: #EDE9FE; }
+
+.stakeholder-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.stakeholder-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stakeholder-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1A2E;
+}
+
+.stakeholder-desc {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.tag-in { background: #7C3AED; color: #fff; }
+.tag-out { background: #EDE9FE; color: #7C3AED; }
+
+.arrow {
+  font-size: 24px;
+  color: #7C3AED;
+  opacity: 0.4;
+}
+
+.bottom-note {
+  text-align: center;
+  margin-top: 28px;
+  padding: 14px 28px;
+  background: #1A1A2E;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.bottom-note-wrap {
+  text-align: center;
+}
+
+.bottom-note-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.bottom-note-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Management Framework</div>
+  <div class="title">Every Decision Through Everyone's Eyes</div>
+  <div class="visual">
+    <div class="stakeholders">
+      <div class="stakeholder in-room">
+        <div class="stakeholder-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        </div>
+        <div class="stakeholder-text">
+          <span class="stakeholder-name">You</span>
+          <span class="stakeholder-desc">The decision-maker</span>
+        </div>
+        <span class="tag tag-in">In Room</span>
+      </div>
+      <div class="stakeholder in-room">
+        <div class="stakeholder-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        </div>
+        <div class="stakeholder-text">
+          <span class="stakeholder-name">The Person Affected</span>
+          <span class="stakeholder-desc">Asking for raise / being fired</span>
+        </div>
+        <span class="tag tag-in">In Room</span>
+      </div>
+    </div>
+
+    <div class="arrow">&rarr;</div>
+
+    <div class="center-decision">
+      <svg class="center-icon" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      <span class="center-label">Decision</span>
+      <span class="center-sub">Sets Precedent</span>
+    </div>
+
+    <div class="arrow">&rarr;</div>
+
+    <div class="stakeholders">
+      <div class="stakeholder not-in-room">
+        <div class="stakeholder-icon icon-light">
+          <svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="stakeholder-text">
+          <span class="stakeholder-name">The Quiet Performers</span>
+          <span class="stakeholder-desc">Who didn't ask for a raise</span>
+        </div>
+        <span class="tag tag-out">Not in Room</span>
+      </div>
+      <div class="stakeholder not-in-room">
+        <div class="stakeholder-icon icon-light">
+          <svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="stakeholder-text">
+          <span class="stakeholder-name">The Whole Team</span>
+          <span class="stakeholder-desc">Who sees the precedent</span>
+        </div>
+        <span class="tag tag-out">Not in Room</span>
+      </div>
+      <div class="stakeholder not-in-room">
+        <div class="stakeholder-icon icon-light">
+          <svg viewBox="0 0 24 24" fill="#7C3AED"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="stakeholder-text">
+          <span class="stakeholder-name">Future Hires</span>
+          <span class="stakeholder-desc">Who inherit the culture</span>
+        </div>
+        <span class="tag tag-out">Not in Room</span>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-note-wrap">
+    <div class="bottom-note">
+      <div class="bottom-note-text">The people <span class="highlight">not in the room</span> matter more than the person <span class="highlight">in the room</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

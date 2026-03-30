@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Strategy stack */
+  .strategy-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .strategy-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #F5F0FF;
+    border-radius: 14px;
+    padding: 18px 22px;
+  }
+
+  .strategy-rank {
+    font-size: 40px;
+    font-weight: 900;
+    color: #7C3AED;
+    min-width: 48px;
+    text-align: center;
+  }
+
+  .strategy-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    flex: 1;
+  }
+
+  .strategy-note {
+    font-size: 22px;
+    color: #888;
+  }
+
+  .strategy-caption {
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .strategy-caption .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Reference section */
+  .ref-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .ref-case {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+
+  .ref-case-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .ref-case-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .ref-case-desc .bold {
+    font-weight: 700;
+  }
+
+  .ref-insight {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .ref-insight .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  /* All-in section */
+  .allin-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .allin-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .allin-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 13</div>
+
+    <h1 class="title">Reference网络 + All-in的代价</h1>
+
+    <div class="section-label">Hoffman的三层策略优先级</div>
+
+    <div class="strategy-stack">
+      <div class="strategy-row">
+        <div class="strategy-rank">1</div>
+        <div class="strategy-text">产品分发</div>
+        <div class="strategy-note">怎么到用户手里</div>
+      </div>
+      <div class="strategy-row">
+        <div class="strategy-rank">2</div>
+        <div class="strategy-text">产品本身</div>
+        <div class="strategy-note">解决什么问题</div>
+      </div>
+      <div class="strategy-row">
+        <div class="strategy-rank">3</div>
+        <div class="strategy-text">融资</div>
+        <div class="strategy-note">钱是放大器</div>
+      </div>
+    </div>
+
+    <div class="strategy-caption"><span class="purple">分发 > 产品 > 融资</span>，顺序不能反</div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Reference = 最快的信任</div>
+
+    <div class="ref-box">
+      <div class="ref-case">
+        <div class="ref-case-title">Airbnb投资案例</div>
+        <div class="ref-case-desc">Hoffman投Airbnb <span class="bold">2分钟决定</span><br>不是因为pitch好，是因为<span class="bold">已有reference</span></div>
+      </div>
+      <div class="ref-insight">投资、招聘、合作——<span class="purple">网络和背书</span>比什么都重要</div>
+    </div>
+
+    <div class="section-label">创始人没有Balance</div>
+
+    <div class="allin-box">
+      <div class="allin-text">
+        All in几年，没有work-life balance。<br>
+        <span class="purple">年纪越大顾虑越多</span>，辍学生nothing to lose。<br>
+        这大概就是为什么很多初创成功者很年轻。
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">10年tech回头看</span>——年龄不是障碍，但得想清all-in程度。</p>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

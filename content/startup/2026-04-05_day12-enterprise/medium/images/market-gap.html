@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.top-section {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.market-card {
+  flex: 1;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.market-enterprise {
+  background: #7C3AED;
+}
+
+.market-consumer {
+  background: #1A1A2E;
+}
+
+.market-amount {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.market-unit {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+
+.market-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.ratio-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 80px;
+}
+
+.ratio-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1A1A2E;
+  border: 3px solid #7C3AED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratio-number {
+  font-size: 22px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+}
+
+.ratio-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gap-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.gap-icon {
+  flex: 0 0 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: #7C3AED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+.gap-content {
+  flex: 1;
+}
+
+.gap-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 4px;
+}
+
+.gap-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.4;
+}
+
+.gap-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 140px;
+}
+
+.gap-arrow-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #7C3AED, #E91E63);
+  border-radius: 2px;
+  position: relative;
+}
+
+.gap-arrow-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gap-right {
+  flex: 0 0 180px;
+}
+
+.gap-right-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #E91E63;
+  margin-bottom: 2px;
+}
+
+.gap-right-desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The Enterprise Opportunity</div>
+  <div class="title">$3.7 Trillion vs $170 Billion — Where Startups Should Really Look</div>
+  <div class="top-section">
+    <div class="market-card market-enterprise">
+      <div class="market-amount">$3.7T</div>
+      <div class="market-unit">per year</div>
+      <div class="market-name">Enterprise IT Spending</div>
+    </div>
+    <div class="ratio-badge">
+      <div class="ratio-circle">
+        <div class="ratio-number">20:1</div>
+        <div class="ratio-label">ratio</div>
+      </div>
+    </div>
+    <div class="market-card market-consumer">
+      <div class="market-amount">$170B</div>
+      <div class="market-unit">per year</div>
+      <div class="market-name">Consumer Tech Spending</div>
+    </div>
+  </div>
+  <div class="gap-section">
+    <div class="gap-icon">
+      <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+    </div>
+    <div class="gap-content">
+      <div class="gap-title">What Technology Makes Possible</div>
+      <div class="gap-desc">Cloud, mobile, AI, natural language interfaces</div>
+    </div>
+    <div class="gap-arrow">
+      <div class="gap-arrow-label">Widest Gap</div>
+      <div class="gap-arrow-line"></div>
+    </div>
+    <div class="gap-right">
+      <div class="gap-right-title">How Things Still Work</div>
+      <div class="gap-right-desc">Legacy systems, manual workflows, batch processes</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

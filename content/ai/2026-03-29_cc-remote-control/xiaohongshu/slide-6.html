@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 6 - vs OpenClaw + 安全</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .table-container {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+    margin-bottom: 24px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    padding: 18px 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  thead th:first-child {
+    background: #F9FAFB;
+    color: #666;
+    width: 180px;
+  }
+
+  thead th:nth-child(2) {
+    background: #F0F9FF;
+    color: #0EA5E9;
+  }
+
+  thead th:nth-child(3) {
+    background: #F9FAFB;
+    color: #666;
+  }
+
+  tbody td {
+    padding: 14px 20px;
+    font-size: 24px;
+    border-top: 1px solid #F3F4F6;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  tbody td:first-child {
+    font-weight: 600;
+    color: #555;
+    background: #FAFAFA;
+  }
+
+  .win { color: #22C55E; font-weight: 700; }
+  .lose { color: #999; }
+  .warn { color: #EF4444; font-weight: 700; }
+
+  .security-section {
+    margin-bottom: 20px;
+  }
+
+  .security-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .security-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .sec-card {
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .sec-card.safe {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+  }
+
+  .sec-card.risk {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+  }
+
+  .sec-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+    margin-top: 2px;
+  }
+
+  .sec-card.safe .sec-icon { background: #22C55E; color: #fff; }
+  .sec-card.risk .sec-icon { background: #EF4444; color: #fff; }
+
+  .sec-text {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
+  .sec-card.safe .sec-text { color: #166534; }
+  .sec-card.risk .sec-text { color: #991B1B; }
+
+  .sec-label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .verdict-box {
+    margin-top: auto;
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 22px 28px;
+    margin-bottom: 50px;
+  }
+
+  .verdict-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .verdict-row:last-child { margin-bottom: 0; }
+
+  .verdict-label {
+    font-size: 22px;
+    color: rgba(255,255,255,0.5);
+    min-width: 260px;
+  }
+
+  .verdict-answer {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0EA5E9;
+  }
+
+  .verdict-answer.alt { color: #F59E0B; }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">对比分析</div>
+
+    <h1 class="title">Remote Control vs OpenClaw</h1>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Remote Control</th>
+            <th>OpenClaw</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>部署</td>
+            <td><span class="win">零配置，官方内置</span></td>
+            <td><span class="lose">需自己部署服务器</span></td>
+          </tr>
+          <tr>
+            <td>安全</td>
+            <td><span class="win">代码不上传+一次性凭证</span></td>
+            <td><span class="warn">Cisco发现过漏洞</span></td>
+          </tr>
+          <tr>
+            <td>功能</td>
+            <td><span class="lose">仅限Claude Code遥控</span></td>
+            <td><span class="win">可接飞书/钉钉/Slack</span></td>
+          </tr>
+          <tr>
+            <td>维护</td>
+            <td><span class="win">Anthropic官方维护</span></td>
+            <td><span class="lose">社区项目，自己维护</span></td>
+          </tr>
+          <tr>
+            <td>成本</td>
+            <td><span class="win">包含在订阅内</span></td>
+            <td><span class="lose">额外服务器费用</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="security-section">
+      <div class="security-title">安全对比一眼看清</div>
+      <div class="security-grid">
+        <div class="sec-card safe">
+          <div class="sec-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="sec-text">
+            <span class="sec-label">Remote Control</span>
+            代码本地、不开端口、一次性token
+          </div>
+        </div>
+        <div class="sec-card risk">
+          <div class="sec-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="sec-text">
+            <span class="sec-label">OpenClaw</span>
+            需开放端口、被Cisco报过CVE
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="verdict-row">
+        <div class="verdict-label">只想手机遥控Claude Code →</div>
+        <div class="verdict-answer">Remote Control</div>
+      </div>
+      <div class="verdict-row">
+        <div class="verdict-label">想接入飞书/钉钉/多平台 →</div>
+        <div class="verdict-answer alt">OpenClaw</div>
+      </div>
+      <div class="verdict-row">
+        <div class="verdict-label">怕折腾、怕安全问题 →</div>
+        <div class="verdict-answer">用官方的，省心</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">6 / 7</div>
+</body>
+</html>

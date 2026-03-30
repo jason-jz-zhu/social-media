@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2 - 什么是Harness Design</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #0EA5E9;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .problem-box {
+    background: #FEF2F2;
+    border-left: 4px solid #EF4444;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  .problem-box .label {
+    font-size: 26px;
+    color: #EF4444;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .problem-box p {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .definition-box {
+    background: #F0F9FF;
+    border-left: 4px solid #0EA5E9;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  .definition-box .label {
+    font-size: 26px;
+    color: #0EA5E9;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .definition-box p {
+    font-size: 28px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .definition-box .highlight {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .metaphor {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .metaphor p {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .metaphor .teal {
+    color: #0EA5E9;
+  }
+
+  .compare-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .compare-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .compare-card.old {
+    background: #F5F5F5;
+    border: 2px solid #DDD;
+  }
+
+  .compare-card.new {
+    background: #F0F9FF;
+    border: 2px solid #0EA5E9;
+  }
+
+  .compare-card .card-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .compare-card.old .card-title { color: #999; }
+  .compare-card.new .card-title { color: #0EA5E9; }
+
+  .compare-card .card-desc {
+    font-size: 22px;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  .bottom-note {
+    margin-top: auto;
+    background: #F0F9FF;
+    border-left: 4px solid #0EA5E9;
+    padding: 18px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .bottom-note .teal { color: #0EA5E9; font-weight: 700; }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">核心概念</div>
+
+    <h1 class="title">什么是Harness Design？</h1>
+
+    <div class="problem-box">
+      <div class="label">痛点</div>
+      <p>AI做完说"搞定了"，你一用就发现半截是坏的。<br>写更好的prompt没用——问题不在prompt，在prompt之外的架构。</p>
+    </div>
+
+    <div class="definition-box">
+      <div class="label">定义</div>
+      <p>Harness = 围绕AI agent的<span class="highlight">控制架构</span><br>包括：几个agent、各自什么角色、怎么评估、怎么反馈修复</p>
+    </div>
+
+    <div class="metaphor">
+      <p>模型是<span class="teal">引擎</span><br>Harness是<span class="teal">整辆车</span></p>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-card old">
+        <div class="card-title">Prompt Engineering</div>
+        <div class="card-desc">优化你对模型说的话<br>单次对话</div>
+      </div>
+      <div class="compare-card new">
+        <div class="card-title">Harness Design</div>
+        <div class="card-desc">设计模型周围的系统<br>多agent + 评估 + 反馈</div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="teal">基于Anthropic最新研究</span>：单agent $9做出坏的，harness $200做出能用的。LangChain验证：同模型换harness，52.8%→66.5%。</p>
+    </div>
+  </div>
+
+  <div class="page-number">2 / 7</div>
+</body>
+</html>

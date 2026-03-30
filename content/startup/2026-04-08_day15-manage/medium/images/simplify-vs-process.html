@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.col {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 16px rgba(124,58,237,0.06);
+}
+
+.col-day14 {
+  border: 3px solid #7C3AED;
+}
+
+.col-day15 {
+  border: 3px solid #7C3AED;
+}
+
+.col-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.col-day-badge {
+  background: #7C3AED;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.col-speaker {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+}
+
+.col-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 12px;
+}
+
+.col-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.col-enemy {
+  background: #FEF2F2;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.col-enemy-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #DC2626;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.col-enemy-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #991B1B;
+}
+
+.col-action {
+  background: #F0FDF4;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.col-action-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #16A34A;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.col-action-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #166534;
+}
+
+.plus-sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.plus-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #7C3AED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.bottom-bar {
+  background: #1A1A2E;
+  border-radius: 14px;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.bottom-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.bottom-text .highlight {
+  color: #A78BFA;
+}
+
+.bottom-arrow {
+  font-size: 20px;
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Cross-Lecture Insight</div>
+  <div class="title">Simplification + Process = Complementary, Not Contradictory</div>
+  <div class="columns">
+    <div class="col col-day14">
+      <div class="col-header">
+        <span class="col-day-badge">DAY 14</span>
+        <span class="col-speaker">Keith Rabois</span>
+      </div>
+      <div class="col-title">Simplify</div>
+      <div class="col-desc">Every step removed yields 30-50% performance gain. Wage war on unnecessary complexity.</div>
+      <div class="col-enemy">
+        <div class="col-enemy-label">Enemy</div>
+        <div class="col-enemy-text">Unnecessary steps that slow without adding value</div>
+      </div>
+      <div class="col-action">
+        <div class="col-action-label">Action</div>
+        <div class="col-action-text">Remove steps that don't add judgment or value</div>
+      </div>
+    </div>
+
+    <div class="plus-sign">
+      <div class="plus-circle">+</div>
+    </div>
+
+    <div class="col col-day15">
+      <div class="col-header">
+        <span class="col-day-badge">DAY 15</span>
+        <span class="col-speaker">Ben Horowitz</span>
+      </div>
+      <div class="col-title">Systematize</div>
+      <div class="col-desc">Formal process ensures fairness independent of who speaks up, who's likeable, who has the CEO's ear.</div>
+      <div class="col-enemy">
+        <div class="col-enemy-label">Enemy</div>
+        <div class="col-enemy-text">Ad hoc chaos that breeds invisible unfairness</div>
+      </div>
+      <div class="col-action">
+        <div class="col-action-label">Action</div>
+        <div class="col-action-text">Standardize steps that protect consistency and fairness</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="bottom-text">Fewer steps</span>
+    <span class="bottom-arrow">+</span>
+    <span class="bottom-text">Each one <span class="highlight">standardized</span></span>
+    <span class="bottom-arrow">=</span>
+    <span class="bottom-text"><span class="highlight">Simple Processes</span></span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Traps */
+  .traps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .trap-card {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .trap-num {
+    width: 44px;
+    height: 44px;
+    background: #E53E3E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .trap-content {
+    flex: 1;
+  }
+
+  .trap-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E53E3E;
+    margin-bottom: 4px;
+  }
+
+  .trap-desc {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* Pitch formula */
+  .pitch-box {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .pitch-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .pitch-title .purple {
+    color: #B794F4;
+  }
+
+  .pitch-section {
+    margin-bottom: 20px;
+  }
+
+  .pitch-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .pitch-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #B794F4;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .pitch-items {
+    display: flex;
+    gap: 10px;
+  }
+
+  .pitch-item {
+    flex: 1;
+    background: rgba(124, 58, 237, 0.15);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+
+  .pitch-item-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .pitch-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 16px 0;
+  }
+
+  .pitch-items-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pitch-items-4 .pitch-item {
+    flex: 0 0 calc(50% - 5px);
+  }
+
+  /* Fundraise timing */
+  .timing-box {
+    background: #F5F0FF;
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .timing-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .timing-text .purple {
+    color: #7C3AED;
+  }
+
+  .timing-quote {
+    font-size: 24px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 19</div>
+
+    <h1 class="title">三个陷阱 + 30秒Pitch</h1>
+
+    <div class="section-label">销售三大陷阱</div>
+
+    <div class="traps">
+      <div class="trap-card">
+        <div class="trap-num">1</div>
+        <div class="trap-content">
+          <div class="trap-title">"再加一功能我就买"</div>
+          <div class="trap-desc">客户几乎不兑现，别被带跑了产品路线</div>
+        </div>
+      </div>
+      <div class="trap-card">
+        <div class="trap-num">2</div>
+        <div class="trap-content">
+          <div class="trap-title">免费试用</div>
+          <div class="trap-desc">不付钱=不认真，你什么反馈都得不到</div>
+        </div>
+      </div>
+      <div class="trap-card">
+        <div class="trap-num">3</div>
+        <div class="trap-content">
+          <div class="trap-title">合同纠结</div>
+          <div class="trap-desc">在条款上反复拉锯，浪费大量时间精力</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">30秒 Pitch = 3句话定生死</div>
+
+    <div class="pitch-box">
+      <div class="pitch-title"><span class="purple">30秒</span> 版本</div>
+      <div class="pitch-section">
+        <div class="pitch-items">
+          <div class="pitch-item">
+            <div class="pitch-item-text">做什么</div>
+          </div>
+          <div class="pitch-item">
+            <div class="pitch-item-text">市场多大</div>
+          </div>
+          <div class="pitch-item">
+            <div class="pitch-item-text">Traction</div>
+          </div>
+        </div>
+      </div>
+      <div class="pitch-divider"></div>
+      <div class="pitch-title"><span class="purple">2分钟</span> 扩展版</div>
+      <div class="pitch-section">
+        <div class="pitch-items-4">
+          <div class="pitch-item">
+            <div class="pitch-item-text">Unique<br>Insight</div>
+          </div>
+          <div class="pitch-item">
+            <div class="pitch-item-text">商业模式</div>
+          </div>
+          <div class="pitch-item">
+            <div class="pitch-item-text">团队</div>
+          </div>
+          <div class="pitch-item">
+            <div class="pitch-item-text">Ask</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timing-box">
+      <div class="timing-text">融资时机：<span class="purple">你强他弱</span><br>把会议排同一周，制造紧迫感</div>
+      <div class="timing-quote">"我们在building，3周后有空"</div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

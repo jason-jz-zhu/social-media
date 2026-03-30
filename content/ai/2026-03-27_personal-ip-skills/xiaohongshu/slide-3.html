@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 3 - 两种Skill对比</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+  }
+
+  .vs-layout {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+  }
+
+  .skill-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column-header {
+    text-align: center;
+    padding: 20px;
+    border-radius: 16px 16px 0 0;
+    margin-bottom: 0;
+  }
+
+  .column-header.infra {
+    background: #F5F5F5;
+  }
+
+  .column-header.personal {
+    background: #0EA5E9;
+  }
+
+  .column-header .label {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  .column-header.infra .label {
+    color: #888;
+  }
+
+  .column-header.personal .label {
+    color: #fff;
+  }
+
+  .column-header .sublabel {
+    font-size: 22px;
+    margin-top: 6px;
+  }
+
+  .column-header.infra .sublabel {
+    color: #AAA;
+  }
+
+  .column-header.personal .sublabel {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .column-body {
+    flex: 1;
+    padding: 24px 20px;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .column-body.infra {
+    background: #FAFAFA;
+    border: 2px solid #EBEBEB;
+    border-top: none;
+  }
+
+  .column-body.personal {
+    background: #F0F9FF;
+    border: 2px solid rgba(14, 165, 233, 0.25);
+    border-top: none;
+  }
+
+  .skill-item {
+    padding: 16px 18px;
+    border-radius: 12px;
+    font-size: 26px;
+    line-height: 1.5;
+  }
+
+  .skill-item.infra {
+    background: #fff;
+    color: #666;
+    border: 1px solid #E8E8E8;
+  }
+
+  .skill-item.personal {
+    background: #fff;
+    color: #333;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+  }
+
+  .skill-item .item-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .skill-item.personal .item-title {
+    color: #0EA5E9;
+  }
+
+  .skill-item .item-desc {
+    font-size: 22px;
+    color: #999;
+  }
+
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    flex-shrink: 0;
+  }
+
+  .vs-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1A1A1A;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-bar {
+    margin-top: 28px;
+    background: #1A1A1A;
+    border-radius: 14px;
+    padding: 22px 30px;
+    text-align: center;
+  }
+
+  .bottom-bar .text {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .bottom-bar .teal {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">核心概念</div>
+
+    <h1 class="title">两种Skill，价值天差地别</h1>
+
+    <div class="vs-layout">
+      <div class="skill-column">
+        <div class="column-header infra">
+          <div class="label">Infra Skill</div>
+          <div class="sublabel">通用工具型</div>
+        </div>
+        <div class="column-body infra">
+          <div class="skill-item infra">
+            <div class="item-title">Code Review Agent</div>
+            <div class="item-desc">自动检查代码规范</div>
+          </div>
+          <div class="skill-item infra">
+            <div class="item-title">翻译 Skill</div>
+            <div class="item-desc">中英文互译模板</div>
+          </div>
+          <div class="skill-item infra">
+            <div class="item-title">排版模板</div>
+            <div class="item-desc">通用slide格式</div>
+          </div>
+          <div class="skill-item infra">
+            <div class="item-title">会议纪要生成</div>
+            <div class="item-desc">标准格式输出</div>
+          </div>
+          <div class="skill-item infra" style="background: #F5F5F5; border: none; text-align: center; color: #BBB; font-size: 24px;">
+            人人可用 &middot; 无壁垒
+          </div>
+        </div>
+      </div>
+
+      <div class="vs-divider">
+        <div class="vs-circle">VS</div>
+      </div>
+
+      <div class="skill-column">
+        <div class="column-header personal">
+          <div class="label">Personal Skill</div>
+          <div class="sublabel">隐性知识外化</div>
+        </div>
+        <div class="column-body personal">
+          <div class="skill-item personal">
+            <div class="item-title">你的审美判断</div>
+            <div class="item-desc">封面配色、排版节奏</div>
+          </div>
+          <div class="skill-item personal">
+            <div class="item-title">你的措辞习惯</div>
+            <div class="item-desc">"今日拆解" vs "今天学了什么"</div>
+          </div>
+          <div class="skill-item personal">
+            <div class="item-title">你的踩坑总结</div>
+            <div class="item-desc">内容溢出检查、字数控制</div>
+          </div>
+          <div class="skill-item personal">
+            <div class="item-title">你的决策逻辑</div>
+            <div class="item-desc">什么该写、什么该砍</div>
+          </div>
+          <div class="skill-item personal" style="background: #E0F2FE; border: none; text-align: center; color: #0284C7; font-size: 24px; font-weight: 700;">
+            独一无二 &middot; 不可复制
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="text">Infra是基础设施，<span class="teal">Personal才是IP</span></div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

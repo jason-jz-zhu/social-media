@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 6 - 收藏页</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 44px;
+  }
+
+  .points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+  }
+
+  .point-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 28px 30px;
+  }
+
+  .point-icon {
+    width: 52px;
+    height: 52px;
+    background: #0EA5E9;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .point-content {
+    flex: 1;
+  }
+
+  .point-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+  }
+
+  .point-desc {
+    font-size: 25px;
+    color: #777;
+    line-height: 1.5;
+  }
+  .point-desc .teal {
+    color: #0EA5E9;
+    font-weight: 600;
+  }
+
+  .save-prompt {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 28px;
+    color: #BBB;
+    font-weight: 500;
+    padding: 16px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">核心要点</div>
+
+    <h1 class="title">模型升级的5个认知</h1>
+
+    <div class="points-list">
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">Step change改变的是上限</div>
+          <div class="point-desc">不是输出更好，是<span class="teal">能尝试的任务类别变了</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">验证需求从未消失</div>
+          <div class="point-desc">GPT-3到4.6，<span class="teal">每次升级都没有消除验证的必要</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">Harness组件编码了模型假设</div>
+          <div class="point-desc">模型升级时，<span class="teal">每个harness组件都应该被重新审计</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">旧harness简化，新harness更野</div>
+          <div class="point-desc">补偿性组件可以删，<span class="teal">然后把复杂度预算用在更大的任务上</span></div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="point-content">
+          <div class="point-title">$450/月的价值在于速度</div>
+          <div class="point-desc">不是省钱，是<span class="teal">第一时间适应新能力边界</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="save-prompt">收藏备用，下次模型升级时对照审视workflow</div>
+  </div>
+
+  <div class="page-number">6 / 7</div>
+</body>
+</html>

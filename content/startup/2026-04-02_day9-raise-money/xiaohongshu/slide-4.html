@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Comparison table */
+  .compare-wrapper {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .compare-col {
+    flex: 1;
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .compare-col.bad {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .compare-col.good {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .compare-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+
+  .compare-title {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+
+  .compare-col.bad .compare-title { color: #E53E3E; }
+  .compare-col.good .compare-title { color: #7C3AED; }
+
+  .compare-list {
+    list-style: none;
+    text-align: left;
+  }
+
+  .compare-list li {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .compare-list li:last-child {
+    border-bottom: none;
+  }
+
+  .example-box {
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border: 1px solid #EBEBEB;
+  }
+
+  .example-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+  }
+
+  .example-text {
+    font-size: 24px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 10px 0;
+  }
+
+  /* Marriage section */
+  .marriage-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 18px;
+  }
+
+  .marriage-cards {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .marriage-card {
+    flex: 1;
+    background: #FAFAFA;
+    border-radius: 14px;
+    padding: 16px 14px;
+    text-align: center;
+    border: 1px solid #EBEBEB;
+  }
+
+  .marriage-card .num {
+    font-size: 44px;
+    font-weight: 900;
+    color: #7C3AED;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .marriage-card .label {
+    font-size: 22px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  .marriage-card .desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .marriage-highlight {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 18px 24px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .marriage-highlight p {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.5;
+  }
+
+  .marriage-highlight .purple {
+    color: #7C3AED;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .insight-box .insight-label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .insight-box p {
+    font-size: 25px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 9</div>
+
+    <h1 class="title">投strength，不投lack of weakness</h1>
+
+    <div class="section-label">两种投资逻辑</div>
+
+    <div class="compare-wrapper">
+      <div class="compare-col bad">
+        <div class="compare-icon">&#10005;</div>
+        <div class="compare-title">打勾式投资</div>
+        <ul class="compare-list">
+          <li>团队背景 &#10003;</li>
+          <li>市场规模 &#10003;</li>
+          <li>商业模式 &#10003;</li>
+          <li>竞争壁垒 &#10003;</li>
+          <li>结果：错过大赢家</li>
+        </ul>
+      </div>
+      <div class="compare-col good">
+        <div class="compare-icon">&#9733;</div>
+        <div class="compare-title">投极端优势</div>
+        <ul class="compare-list">
+          <li>有严重缺陷 &#10007;</li>
+          <li>某方面极端强 &#10003;</li>
+          <li>让人无法忽视 &#10003;</li>
+          <li>突破性潜力 &#10003;</li>
+          <li>结果：抓住outlier</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">真实案例：a16z pass了Airbnb第一轮</div>
+      <div class="example-text">当时看起来"不靠谱" — 谁会住陌生人家？但极端优势（用户热爱度）让它成为千亿公司</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="marriage-title">选投资人 = 选结婚对象</div>
+
+    <div class="marriage-cards">
+      <div class="marriage-card">
+        <div class="num">10-20</div>
+        <div class="label">合作年限</div>
+        <div class="desc">比很多婚姻<br>还要长</div>
+      </div>
+      <div class="marriage-card">
+        <div class="num">30:1</div>
+        <div class="label">SV Angel漏斗</div>
+        <div class="desc">看30家<br>只投1家</div>
+      </div>
+    </div>
+
+    <div class="marriage-highlight">
+      <p><span class="purple">顺风时谁都行</span>，逆风时才见真章</p>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">从业者视角</div>
+      <p>强项是什么太重要了。不只创业，个人品牌也要找到极端优势，而不是补短板。</p>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

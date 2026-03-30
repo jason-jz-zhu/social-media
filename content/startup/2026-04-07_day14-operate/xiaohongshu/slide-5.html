@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Focus section */
+  .focus-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .focus-quote {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .focus-quote .purple {
+    color: #7C3AED;
+  }
+
+  .focus-explain {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .focus-explain .bold {
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 20px 0;
+  }
+
+  /* Paired metrics */
+  .pair-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .pair-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #FAFAFA;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .pair-metric {
+    flex: 1;
+    padding: 18px 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .pair-plus {
+    width: 48px;
+    height: 48px;
+    background: #7C3AED;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .pair-note {
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .pair-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  /* Anomaly section */
+  .anomaly-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .anomaly-cases {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .anomaly-case {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .anomaly-case-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 4px;
+  }
+
+  .anomaly-case-desc {
+    font-size: 22px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .anomaly-case-desc .bold {
+    font-weight: 700;
+  }
+
+  .anomaly-insight {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+
+  .anomaly-insight .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 14</div>
+
+    <h1 class="title">聚焦 + 配对指标 + 异常数据</h1>
+
+    <div class="section-label">Peter Thiel的"只做一件事"</div>
+
+    <div class="focus-box">
+      <div class="focus-quote">人倾向解决<span class="purple">B+问题</span><br>而不碰<span class="purple">A+问题</span></div>
+      <div class="focus-explain">因为A+问题太难、太不舒服<br>强制每人<span class="bold">只汇报一件事</span>，逼出聚焦</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">配对指标：防止优化偏差</div>
+
+    <div class="pair-list">
+      <div class="pair-row">
+        <div class="pair-metric">欺诈率</div>
+        <div class="pair-plus">+</div>
+        <div class="pair-metric">误判率</div>
+      </div>
+      <div class="pair-row">
+        <div class="pair-metric">用户增长</div>
+        <div class="pair-plus">+</div>
+        <div class="pair-metric">留存率</div>
+      </div>
+    </div>
+
+    <div class="pair-note"><span class="purple">只测一个指标</span>一定会被gaming</div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">找异常数据 = 找Insight</div>
+
+    <div class="anomaly-box">
+      <div class="anomaly-cases">
+        <div class="anomaly-case">
+          <div class="anomaly-case-title">PayPal</div>
+          <div class="anomaly-case-desc">发现大量交易来自<span class="bold">eBay</span> = 找到增长引擎</div>
+        </div>
+        <div class="anomaly-case">
+          <div class="anomaly-case-title">LinkedIn</div>
+          <div class="anomaly-case-desc">vanity点击异常高 = <span class="bold">人们想被看到</span></div>
+        </div>
+      </div>
+      <div class="anomaly-insight"><span class="purple">异常不是bug，是还没被理解的feature</span></div>
+    </div>
+  </div>
+
+  <div class="page-number">5 / 7</div>
+</body>
+</html>

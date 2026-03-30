@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Do / Don't comparison */
+  .compare-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+
+  .compare-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
+
+  .compare-card.bad {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .compare-card.good {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .compare-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .compare-card.bad .compare-title { color: #E53E3E; }
+  .compare-card.good .compare-title { color: #7C3AED; }
+
+  .compare-example {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .compare-example .bold {
+    font-weight: 700;
+    color: #333;
+  }
+
+  .compare-example .strike {
+    text-decoration: line-through;
+    color: #AAA;
+  }
+
+  .compare-result {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .compare-card.bad .compare-result { color: #E53E3E; }
+  .compare-card.good .compare-result { color: #7C3AED; }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* iPod example */
+  .ipod-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .ipod-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .ipod-compare {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .ipod-card {
+    flex: 1;
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .ipod-card.wrong {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .ipod-card.right {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .ipod-label {
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  .ipod-text {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .ipod-card.wrong .ipod-text { color: #E53E3E; }
+  .ipod-card.right .ipod-text { color: #7C3AED; }
+
+  .ipod-insight {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .ipod-insight .bold {
+    font-weight: 700;
+  }
+
+  /* Cross-lecture */
+  .cross-label {
+    font-size: 22px;
+    color: #fff;
+    background: #7C3AED;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .cross-box {
+    background: #1A1A1A;
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .cross-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cross-text .purple {
+    color: #B794F4;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 17</div>
+
+    <h1 class="title">问行为不问验证</h1>
+
+    <div class="section-label">反常识：换个思维去问人</div>
+
+    <div class="compare-row">
+      <div class="compare-card bad">
+        <div class="compare-title">问验证</div>
+        <div class="compare-example">
+          <span class="strike">"你想买$199</span><br>
+          <span class="strike">无线音箱吗？"</span>
+        </div>
+        <div class="compare-result">回答率 0%</div>
+      </div>
+      <div class="compare-card good">
+        <div class="compare-title">问行为</div>
+        <div class="compare-example">
+          <span class="bold">"你怎么和别人</span><br>
+          <span class="bold">一起听音乐？"</span>
+        </div>
+        <div class="compare-result">发现真需求</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">经典案例：iPod的定位</div>
+
+    <div class="ipod-box">
+      <div class="ipod-compare">
+        <div class="ipod-card wrong">
+          <div class="ipod-label">产品描述</div>
+          <div class="ipod-text">"Digital<br>Music Player"</div>
+        </div>
+        <div class="ipod-card right">
+          <div class="ipod-label">行为洞察</div>
+          <div class="ipod-text">"1000 Songs<br>in Your Pocket"</div>
+        </div>
+      </div>
+      <div class="ipod-insight">不是描述功能，而是描述<span class="bold">行为改变</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cross-label">跨课连接</div>
+
+    <div class="cross-box">
+      <div class="cross-text">Day 16 Shear：<span class="purple">不展示产品，观察行为</span><br>Day 17 Rahman：<span class="purple">不问验证，理解生活</span><br>同一个逻辑：你来做创新决策</div>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

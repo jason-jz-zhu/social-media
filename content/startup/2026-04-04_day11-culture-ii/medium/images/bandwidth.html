@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 44px 80px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  height: 280px;
+  position: relative;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 140px;
+}
+
+.bar-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 240px;
+}
+
+.bar {
+  width: 48px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.bar-founder {
+  background: #7C3AED;
+}
+
+.bar-culture {
+  background: #1A1A2E;
+}
+
+.bar-label {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.stage-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1A2E;
+  text-align: center;
+}
+
+.stage-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: #888;
+  text-align: center;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.legend-dot-founder {
+  background: #7C3AED;
+}
+
+.legend-dot-culture {
+  background: #1A1A2E;
+}
+
+.legend-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.insight {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7C3AED;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The Bandwidth Problem</div>
+  <div class="title">Culture Scales When Founders Can't</div>
+  <div class="chart">
+    <div class="stage">
+      <div class="bar-group">
+        <div class="bar bar-founder" style="height: 220px;"><div class="bar-label">95%</div></div>
+        <div class="bar bar-culture" style="height: 30px;"><div class="bar-label">5%</div></div>
+      </div>
+      <div class="stage-label">5 people</div>
+      <div class="stage-sub">You're in every room</div>
+    </div>
+    <div class="stage">
+      <div class="bar-group">
+        <div class="bar bar-founder" style="height: 150px;"><div class="bar-label">60%</div></div>
+        <div class="bar bar-culture" style="height: 100px;"><div class="bar-label">40%</div></div>
+      </div>
+      <div class="stage-label">20 people</div>
+      <div class="stage-sub">Most rooms</div>
+    </div>
+    <div class="stage">
+      <div class="bar-group">
+        <div class="bar bar-founder" style="height: 60px;"><div class="bar-label">25%</div></div>
+        <div class="bar bar-culture" style="height: 180px;"><div class="bar-label">75%</div></div>
+      </div>
+      <div class="stage-label">50 people</div>
+      <div class="stage-sub">Some rooms</div>
+    </div>
+    <div class="stage">
+      <div class="bar-group">
+        <div class="bar bar-founder" style="height: 20px;"><div class="bar-label">5%</div></div>
+        <div class="bar bar-culture" style="height: 220px;"><div class="bar-label">95%</div></div>
+      </div>
+      <div class="stage-label">500 people</div>
+      <div class="stage-sub">Almost no rooms</div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot legend-dot-founder"></div>
+      <div class="legend-text">Founder-driven decisions</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot legend-dot-culture"></div>
+      <div class="legend-text">Culture-driven decisions</div>
+    </div>
+  </div>
+  <div class="insight">Your first 10 hires set the culture for the next 100.</div>
+</div>
+</body>
+</html>

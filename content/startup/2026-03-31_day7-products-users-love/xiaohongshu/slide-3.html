@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+  }
+
+  .concept-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .concept-label {
+    font-size: 30px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .concept-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+    line-height: 1.3;
+  }
+
+  .comparison {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .compare-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 36px 28px;
+  }
+
+  .compare-card.dating {
+    background: #FFF7ED;
+    border: 2px solid #FB923C;
+  }
+
+  .compare-card.marriage {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .compare-emoji {
+    font-size: 56px;
+    margin-bottom: 16px;
+  }
+
+  .compare-label {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+
+  .compare-label.dating { color: #EA580C; }
+  .compare-label.marriage { color: #7C3AED; }
+
+  .compare-target {
+    font-size: 30px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 16px;
+  }
+
+  .compare-desc {
+    font-size: 28px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .japan-section {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 36px 28px;
+    margin-bottom: 32px;
+  }
+
+  .japan-label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .japan-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .japan-row:last-child { margin-bottom: 0; }
+
+  .japan-tag {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 8px;
+    min-width: 160px;
+    text-align: center;
+  }
+
+  .japan-tag.basic { background: #94A3B8; }
+  .japan-tag.magic { background: #7C3AED; }
+
+  .japan-text {
+    font-size: 28px;
+    color: #555;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 28px 24px;
+  }
+
+  .insight-box .label {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .insight-box p {
+    font-size: 30px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 7</div>
+
+    <h1 class="title">用户关系 = 约会 + 婚姻</h1>
+
+    <div class="concept-section">
+      <div class="concept-label">KEVIN HALE 的用户关系框架</div>
+      <div class="concept-title">新用户是约会，老用户是婚姻</div>
+
+      <div class="comparison">
+        <div class="compare-card dating">
+          <div class="compare-emoji">💘</div>
+          <div class="compare-label dating">约会阶段</div>
+          <div class="compare-target">对象：新用户</div>
+          <div class="compare-desc">第一印象决定一切<br>首次体验要让人心动<br>降低所有使用门槛</div>
+        </div>
+        <div class="compare-card marriage">
+          <div class="compare-emoji">💍</div>
+          <div class="compare-label marriage">婚姻阶段</div>
+          <div class="compare-target">对象：老用户</div>
+          <div class="compare-desc">持续投入能量<br>不能理所当然<br>沉默 = 最大的背叛</div>
+        </div>
+      </div>
+
+      <div class="japan-section">
+        <div class="japan-label">日本质量哲学</div>
+        <div class="japan-row">
+          <span class="japan-tag basic">Atarimae</span>
+          <span class="japan-text">功能正常 — 产品该做到的基本功</span>
+        </div>
+        <div class="japan-row">
+          <span class="japan-tag magic">Miryokuteki</span>
+          <span class="japan-text">令人着迷 — 超出预期的惊喜体验</span>
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">先婚姻，再约会</div>
+        <p>大多数团队只关注拉新（约会），却忽略了留住老用户（婚姻）。先把基本功做好，再创造惊喜。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

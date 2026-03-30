@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 80px 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .timeline {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 28px;
+  }
+
+  .timeline-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+  }
+
+  .timeline-steps {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .step {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+    border: 2px solid #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step.highlight {
+    border-color: #7C3AED;
+    background: #F5F0FF;
+  }
+
+  .step-time {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .step-text {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .arrow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px 0;
+  }
+
+  .arrow-text {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .tools-section {
+    margin-bottom: 24px;
+  }
+
+  .tools-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .tool-card {
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 2px solid #EBEBEB;
+  }
+
+  .tool-need {
+    font-size: 22px;
+    color: #999;
+    margin-bottom: 6px;
+    text-decoration: line-through;
+  }
+
+  .tool-actual {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 24px 24px;
+    margin-top: auto;
+    margin-bottom: 70px;
+  }
+
+  .insight-box .label {
+    font-size: 28px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .insight-box p {
+    font-size: 28px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 8</div>
+
+    <h1 class="title">DoorDash：1小时验证 + 自己送餐</h1>
+
+    <div class="section-label">1小时做了什么</div>
+    <div class="timeline">
+      <div class="timeline-title">用最简方式测试假设</div>
+      <div class="timeline-steps">
+        <div class="step highlight">
+          <div class="step-time">30min</div>
+          <div class="step-text">做一个<br>landing page</div>
+        </div>
+        <div class="step">
+          <div class="step-time">15min</div>
+          <div class="step-text">拍PDF<br>餐厅菜单</div>
+        </div>
+        <div class="step">
+          <div class="step-time">15min</div>
+          <div class="step-text">放上<br>手机号码</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-row">
+      <span class="arrow-text">没后端 / 没算法 / 没司机 / 没App</span>
+    </div>
+
+    <div class="section-label">不可规模化的工具箱</div>
+    <div class="tools-section">
+      <div class="tools-title">自己做 = 成为专家</div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-need">支付系统</div>
+          <div class="tool-actual">Square刷卡</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-need">订单系统</div>
+          <div class="tool-actual">Google Doc</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-need">司机调度</div>
+          <div class="tool-actual">Find My Friends</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-need">客服中心</div>
+          <div class="tool-actual">创始人手机</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">从业者视角</div>
+      <p>自己一定要去尝试你想做的domain。做咨询也一样，在自己熟悉的领域才能给出真正有价值的建议。亲自下场才懂痛点。</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

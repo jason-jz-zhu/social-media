@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* Culture equation */
+  .equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .eq-item {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+    border-radius: 14px;
+    padding: 14px 20px;
+    text-align: center;
+  }
+
+  .eq-item .label {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+  }
+
+  .eq-item .desc {
+    font-size: 20px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  .eq-sign {
+    font-size: 36px;
+    font-weight: 900;
+    color: #CCC;
+  }
+
+  /* Gym metaphor */
+  .gym-box {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .gym-card {
+    flex: 1;
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .gym-card.bad {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .gym-card.good {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .gym-card .icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .gym-card .gym-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+
+  .gym-card.bad .gym-title { color: #E53E3E; }
+  .gym-card.good .gym-title { color: #7C3AED; }
+
+  .gym-card .gym-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .stat-highlight {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .stat-highlight p {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.5;
+  }
+
+  .stat-highlight .purple { color: #7C3AED; }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 14px 0;
+  }
+
+  /* Lencioni Pyramid */
+  .pyramid-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+
+  .pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .pyramid-layer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 12px 0;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .pyramid-layer .num {
+    font-size: 22px;
+    opacity: 0.7;
+    margin-right: 10px;
+  }
+
+  .pyramid-layer .text {
+    font-size: 26px;
+  }
+
+  .layer-5 { width: 340px; background: #7C3AED; }
+  .layer-4 { width: 460px; background: #8B5CF6; }
+  .layer-3 { width: 580px; background: #A78BFA; }
+  .layer-2 { width: 700px; background: #C4B5FD; color: #1A1A1A; }
+  .layer-1 { width: 820px; background: #EDE9FE; color: #1A1A1A; }
+
+  .pyramid-note {
+    font-size: 22px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .insight-box .label {
+    font-size: 26px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .insight-box p {
+    font-size: 25px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 10</div>
+
+    <h1 class="title">文化是每天的习惯，不是墙上的标语</h1>
+
+    <div class="section-label">文化公式</div>
+
+    <div class="equation">
+      <div class="eq-item">
+        <div class="label">价值观</div>
+        <div class="desc">你信什么</div>
+      </div>
+      <div class="eq-sign">+</div>
+      <div class="eq-item">
+        <div class="label">行动</div>
+        <div class="desc">你做什么</div>
+      </div>
+      <div class="eq-sign">+</div>
+      <div class="eq-item">
+        <div class="label">使命</div>
+        <div class="desc">你为什么</div>
+      </div>
+      <div class="eq-sign">=</div>
+      <div class="eq-item">
+        <div class="label">文化</div>
+        <div class="desc">daily habit</div>
+      </div>
+    </div>
+
+    <div class="section-label">健身隐喻</div>
+
+    <div class="gym-box">
+      <div class="gym-card bad">
+        <div class="icon">&#10005;</div>
+        <div class="gym-title">Crash Diet</div>
+        <div class="gym-desc">突击搞文化<br>贴口号发周报<br>三个月就放弃</div>
+      </div>
+      <div class="gym-card good">
+        <div class="icon">&#9733;</div>
+        <div class="gym-title">Daily Workout</div>
+        <div class="gym-desc">每天重复练<br>融入招聘决策<br>长期复利积累</div>
+      </div>
+    </div>
+
+    <div class="stat-highlight">
+      <p>重视文化的公司回报率 <span class="purple">11.8%</span>，S&P 500的 <span class="purple">近两倍</span></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="pyramid-title">Lencioni团队金字塔</div>
+
+    <div class="pyramid">
+      <div class="pyramid-layer layer-5"><span class="num">5</span><span class="text">结果</span></div>
+      <div class="pyramid-layer layer-4"><span class="num">4</span><span class="text">问责</span></div>
+      <div class="pyramid-layer layer-3"><span class="num">3</span><span class="text">承诺</span></div>
+      <div class="pyramid-layer layer-2"><span class="num">2</span><span class="text">良性冲突</span></div>
+      <div class="pyramid-layer layer-1"><span class="num">1</span><span class="text">信任（地基）</span></div>
+    </div>
+
+    <div class="pyramid-note">没有信任就没有冲突，没有冲突就没有承诺</div>
+
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

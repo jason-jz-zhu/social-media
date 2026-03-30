@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1A1A1A;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title .highlight {
+  color: #7C3AED;
+}
+
+.comparison {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.side {
+  flex: 1;
+  max-width: 460px;
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.side.wrong {
+  background: #fff;
+  border: 2px solid #E0E0E0;
+}
+
+.side.right {
+  background: #fff;
+  border: 2px solid #7C3AED;
+}
+
+.side-label {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.side.wrong .side-label {
+  color: #CC3333;
+}
+
+.side.right .side-label {
+  color: #7C3AED;
+}
+
+.side-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 16px;
+}
+
+.item {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.6;
+  padding: 6px 0;
+}
+
+.item .icon {
+  margin-right: 8px;
+}
+
+.side.wrong .icon { color: #CC3333; }
+.side.right .icon { color: #7C3AED; }
+
+.bottom-strip {
+  background: #7C3AED;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+.bottom-strip p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+<div class="content">
+  <div class="title">Growth Hacks = <span class="highlight">Bullshit</span></div>
+  <div class="comparison">
+    <div class="side wrong">
+      <div class="side-label">Gaming the System</div>
+      <div class="side-title">What doesn't work</div>
+      <div class="item"><span class="icon">&#10007;</span> Viral referral loops</div>
+      <div class="item"><span class="icon">&#10007;</span> A/B testing your way to PMF</div>
+      <div class="item"><span class="icon">&#10007;</span> Engagement manipulation</div>
+      <div class="item"><span class="icon">&#10007;</span> Hack-your-way-to-growth playbooks</div>
+    </div>
+    <div class="side right">
+      <div class="side-label">Build Something Real</div>
+      <div class="side-title">What actually works</div>
+      <div class="item"><span class="icon">&#10003;</span> Solve a real problem deeply</div>
+      <div class="item"><span class="icon">&#10003;</span> Understand your users obsessively</div>
+      <div class="item"><span class="icon">&#10003;</span> Make something people want</div>
+      <div class="item"><span class="icon">&#10003;</span> Let the product be the growth strategy</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-strip">
+  <p>Users are like sharks. Meat or no meat. That's it.</p>
+</div>
+</body>
+</html>

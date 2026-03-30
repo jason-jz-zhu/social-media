@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #7C3AED;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 16px;
+  font-family: 'Noto Sans SC', sans-serif;
+  margin-bottom: 48px;
+  align-self: flex-start;
+}
+
+.title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 56px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.item + .item {
+  border-top: 1px solid #EBEBEB;
+}
+
+.item-number {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+  min-width: 56px;
+  padding-top: 2px;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.item-desc {
+  font-size: 24px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="badge">6点起床学创业 Day 17</div>
+  <div class="title">收藏：Day 17 九个核心观点</div>
+  <div class="list">
+    <div class="item">
+      <div class="item-number">1</div>
+      <div class="item-text">
+        <div class="item-title">硬件=全栈思维</div>
+        <div class="item-desc">硬件+软件+数据三条腿缺一不可</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">2</div>
+      <div class="item-text">
+        <div class="item-title">不是硬件公司，是体验公司</div>
+        <div class="item-desc">Jawbone的自我定义改变了产品方向</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">3</div>
+      <div class="item-text">
+        <div class="item-title">五阶段流程</div>
+        <div class="item-desc">探索→验证→概念→规划→开发</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">4</div>
+      <div class="item-text">
+        <div class="item-title">WHYS框架：为什么应该存在</div>
+        <div class="item-desc">从人类问题出发，不从技术出发</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">5</div>
+      <div class="item-text">
+        <div class="item-title">问行为不问验证</div>
+        <div class="item-desc">不问"你要不要"，问"你怎么做"</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">6</div>
+      <div class="item-text">
+        <div class="item-title">Jambox创造品类</div>
+        <div class="item-desc">无线音箱从0%到78%市场份额</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">7</div>
+      <div class="item-text">
+        <div class="item-title">Track→Understand→Act</div>
+        <div class="item-desc">数据→理解→行动，context决定含义</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">8</div>
+      <div class="item-text">
+        <div class="item-title">约束是创新催化剂</div>
+        <div class="item-desc">不是限制，是简化和精炼的机会</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">9</div>
+      <div class="item-text">
+        <div class="item-title">系统是思维方式不是复杂度</div>
+        <div class="item-desc">硬件让软件变慢，软件让硬件变快</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</div>
+</body>
+</html>

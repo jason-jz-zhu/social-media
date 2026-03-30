@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Ratio visual */
+  .ratio-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .ratio-bar-container {
+    display: flex;
+    gap: 4px;
+    height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .ratio-listen {
+    flex: 7;
+    background: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 900;
+  }
+
+  .ratio-talk {
+    flex: 3;
+    background: #E0D4F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7C3AED;
+    font-size: 28px;
+    font-weight: 900;
+  }
+
+  .ratio-tips {
+    display: flex;
+    gap: 12px;
+  }
+
+  .tip-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 16px;
+    border: 2px solid rgba(124, 58, 237, 0.15);
+  }
+
+  .tip-icon {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .tip-text {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .tip-text .bold {
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* Follow up section */
+  .followup-box {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .followup-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .followup-title .purple {
+    color: #B794F4;
+  }
+
+  .followup-stat {
+    font-size: 72px;
+    font-weight: 900;
+    color: #7C3AED;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .followup-stat-label {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .followup-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .followup-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .fu-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fu-icon.bad {
+    background: #FC8181;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .fu-icon.good {
+    background: #7C3AED;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .fu-text {
+    font-size: 26px;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .fu-text .purple {
+    color: #B794F4;
+    font-weight: 700;
+  }
+
+  .fu-text .red {
+    color: #FC8181;
+    font-weight: 700;
+  }
+
+  /* Personal connection */
+  .personal-box {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .personal-label {
+    font-size: 22px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .personal-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .personal-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 19</div>
+
+    <h1 class="title">打电话闭嘴 + 超人Follow Up</h1>
+
+    <div class="section-label">黄金比例：70%听 30%说</div>
+
+    <div class="ratio-box">
+      <div class="ratio-bar-container">
+        <div class="ratio-listen">70% 听</div>
+        <div class="ratio-talk">30% 说</div>
+      </div>
+      <div class="ratio-tips">
+        <div class="tip-card">
+          <div class="tip-icon">Q</div>
+          <div class="tip-text"><span class="bold">问行为</span><br>你现在怎么解决这个问题？</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">Q</div>
+          <div class="tip-text"><span class="bold">问痛点</span><br>最让你头疼的是什么？</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">超人级 Follow Up</div>
+
+    <div class="followup-box">
+      <div class="followup-title">签一单需要多少步骤？</div>
+      <div class="followup-stat">60+</div>
+      <div class="followup-stat-label">步骤签一单 — 这是正常的</div>
+      <div class="followup-items">
+        <div class="followup-item">
+          <div class="fu-icon bad">X</div>
+          <div class="fu-text"><span class="red">Maybe</span> = 隐形杀手，消耗你的时间和希望</div>
+        </div>
+        <div class="followup-item">
+          <div class="fu-icon good">!</div>
+          <div class="fu-text">快速逼到 <span class="purple">Yes</span> 或 <span class="purple">No</span>，别在中间地带耗着</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="personal-box">
+      <div class="personal-label">从业者视角</div>
+      <div class="personal-text">有信心的follow up不是骚扰<br>是对自己产品的<span class="purple">信心</span></div>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

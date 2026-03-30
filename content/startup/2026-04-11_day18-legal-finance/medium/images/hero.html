@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #0F3460;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+.hero {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+  border-bottom: 5px solid #7C3AED;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+}
+
+.badge {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  background: #7C3AED;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.day {
+  position: absolute;
+  top: 42px;
+  right: 80px;
+  color: rgba(255,255,255,0.5);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 950px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -50px;
+  pointer-events: none;
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="badge">20 Days of YC's Startup Bible</div>
+  <div class="day">Day 18</div>
+  <div class="title">Legal and Accounting Basics — The Boring Stuff That Saves Your Company</div>
+  <div class="subtitle">Kirsty Nathoo &middot; YC CFO &amp; Carolynn Levy &middot; YC Partner/Lawyer &middot; YC Lecture 18</div>
+  <div class="glow"></div>
+  <div class="grain"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Small wedge examples */
+  .wedge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .wedge-card {
+    background: #F5F0FF;
+    border-radius: 14px;
+    padding: 22px 18px;
+    text-align: center;
+  }
+
+  .wedge-name {
+    font-size: 28px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .wedge-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .wedge-note {
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .wedge-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  /* Asymmetric advantage */
+  .asym-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .asym-compare {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .asym-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .asym-card.incumbent {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+  }
+
+  .asym-card.startup {
+    background: #F5F0FF;
+    border: 2px solid #7C3AED;
+  }
+
+  .asym-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  .asym-card.incumbent .asym-title { color: #E53E3E; }
+  .asym-card.startup .asym-title { color: #7C3AED; }
+
+  .asym-desc {
+    font-size: 22px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .case-box {
+    background: #F5F0FF;
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+
+  .case-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 8px;
+  }
+
+  .case-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .case-desc .bold {
+    font-weight: 700;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 12</div>
+
+    <h1 class="title">小切口 + 不对称优势</h1>
+
+    <div class="section-label">故意从小切口开始</div>
+
+    <div class="wedge-grid">
+      <div class="wedge-card">
+        <div class="wedge-name">ZenPayroll</div>
+        <div class="wedge-desc">只做发薪<br>一个痛点打透</div>
+      </div>
+      <div class="wedge-card">
+        <div class="wedge-name">PlanGrid</div>
+        <div class="wedge-desc">只做建筑蓝图<br>大公司看不上</div>
+      </div>
+    </div>
+
+    <div class="wedge-note"><span class="purple">大公司看不上的 = 你的机会</span></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">找不对称优势</div>
+
+    <div class="asym-box">
+      <div class="asym-compare">
+        <div class="asym-card incumbent">
+          <div class="asym-title">大公司</div>
+          <div class="asym-desc">被现有模式绑定<br>不能自我颠覆<br>船大难掉头</div>
+        </div>
+        <div class="asym-card startup">
+          <div class="asym-title">创业公司</div>
+          <div class="asym-desc">没有包袱<br>可以重新定义<br>做他们做不了的事</div>
+        </div>
+      </div>
+
+      <div class="case-box">
+        <div class="case-title">Zenefits 案例</div>
+        <div class="case-desc"><span class="bold">HR软件免费送</span>，让保险公司付费<br>incumbent的商业模式不允许这样做</div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">找边缘客户</span> — 活在未来的客户告诉你缺什么<br>听问题，不照搬方案；模块化不定制化</p>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

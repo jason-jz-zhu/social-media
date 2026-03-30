@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Vesting timeline */
+  .vesting-box {
+    background: #F5F0FF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .vesting-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #7C3AED;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 16px;
+  }
+
+  .timeline-segment {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+
+  .timeline-bar {
+    height: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-segment:nth-child(1) .timeline-bar {
+    background: #E53E3E;
+    border-radius: 6px 0 0 6px;
+  }
+
+  .timeline-segment:nth-child(2) .timeline-bar,
+  .timeline-segment:nth-child(3) .timeline-bar,
+  .timeline-segment:nth-child(4) .timeline-bar {
+    background: #7C3AED;
+  }
+
+  .timeline-segment:nth-child(4) .timeline-bar {
+    border-radius: 0 6px 6px 0;
+  }
+
+  .timeline-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .timeline-desc {
+    font-size: 18px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  .cliff-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+
+  .cliff-icon {
+    font-size: 28px;
+    color: #E53E3E;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .cliff-text {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .cliff-text .bold {
+    font-weight: 700;
+  }
+
+  .solo-note {
+    background: #FAFAFA;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .solo-text {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .solo-text .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 22px 0;
+  }
+
+  /* 83(b) section */
+  .alert-box {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+
+  .alert-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .alert-title .red {
+    color: #FC8181;
+  }
+
+  .alert-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .alert-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .alert-num {
+    width: 40px;
+    height: 40px;
+    background: #7C3AED;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .alert-text {
+    font-size: 26px;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .alert-text .purple {
+    color: #B794F4;
+    font-weight: 700;
+  }
+
+  .consequence-box {
+    background: #FFF5F5;
+    border: 2px solid #FEB2B2;
+    border-radius: 14px;
+    padding: 22px 24px;
+    text-align: center;
+  }
+
+  .consequence-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E53E3E;
+    line-height: 1.5;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 18</div>
+
+    <h1 class="title">Vesting + 83(b) Election</h1>
+
+    <div class="section-label">Vesting：4年 + 1年 Cliff</div>
+
+    <div class="vesting-box">
+      <div class="vesting-title">标准 Vesting 时间线</div>
+      <div class="timeline">
+        <div class="timeline-segment">
+          <div class="timeline-bar"></div>
+          <div class="timeline-label">Year 1</div>
+          <div class="timeline-desc">Cliff期</div>
+        </div>
+        <div class="timeline-segment">
+          <div class="timeline-bar"></div>
+          <div class="timeline-label">Year 2</div>
+          <div class="timeline-desc">按月vest</div>
+        </div>
+        <div class="timeline-segment">
+          <div class="timeline-bar"></div>
+          <div class="timeline-label">Year 3</div>
+          <div class="timeline-desc">按月vest</div>
+        </div>
+        <div class="timeline-segment">
+          <div class="timeline-bar"></div>
+          <div class="timeline-label">Year 4</div>
+          <div class="timeline-desc">全部vest</div>
+        </div>
+      </div>
+      <div class="cliff-note">
+        <div class="cliff-icon">!</div>
+        <div class="cliff-text">1年Cliff = 如果第一年走人，<span class="bold">股权为0</span></div>
+      </div>
+      <div class="solo-note">
+        <div class="solo-text">即使<span class="purple">solo founder</span>也要签 vesting<br>Skin in the game = 对自己的承诺</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">83(b) Election：错过就炸</div>
+
+    <div class="alert-box">
+      <div class="alert-title">83(b) <span class="red">必签</span></div>
+      <div class="alert-items">
+        <div class="alert-item">
+          <div class="alert-num">1</div>
+          <div class="alert-text">获得股权后 <span class="purple">30天内</span> 提交IRS</div>
+        </div>
+        <div class="alert-item">
+          <div class="alert-num">2</div>
+          <div class="alert-text">按 <span class="purple">发放时价值</span> 交税（通常接近$0）</div>
+        </div>
+        <div class="alert-item">
+          <div class="alert-num">3</div>
+          <div class="alert-text">不签 = 按 <span class="purple">vest时市值</span> 交税（可能天价）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="consequence-box">
+      <div class="consequence-text">Nathoo亲历：交易因为漏签83(b)而炸掉<br>30天，过期不候</div>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

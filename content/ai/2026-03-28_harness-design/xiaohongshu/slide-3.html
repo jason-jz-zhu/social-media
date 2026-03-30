@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 3 - Self-Evaluation Bias</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+  }
+  .title .teal { color: #0EA5E9; }
+
+  /* Self vs Independent comparison */
+  .comparison-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  .eval-card {
+    border-radius: 18px;
+    padding: 32px 36px;
+  }
+
+  .eval-card.self {
+    background: #FEF2F2;
+    border: 2px solid #FECACA;
+  }
+
+  .eval-card.independent {
+    background: #F0FDF4;
+    border: 2px solid #BBF7D0;
+  }
+
+  .eval-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .eval-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .eval-icon.self { background: #EF4444; }
+  .eval-icon.independent { background: #22C55E; }
+
+  .eval-label {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .eval-label.self { color: #DC2626; }
+  .eval-label.independent { color: #16A34A; }
+
+  .eval-body {
+    padding-left: 68px;
+  }
+
+  .eval-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .eval-row:last-child { border-bottom: none; }
+
+  .eval-run {
+    font-size: 26px;
+    color: #555;
+    font-weight: 500;
+  }
+
+  .eval-score {
+    font-size: 28px;
+    font-weight: 900;
+  }
+  .eval-score.perfect { color: #EF4444; }
+  .eval-score.real { color: #16A34A; }
+
+  /* Arrow section */
+  .arrow-section {
+    text-align: center;
+    margin: 10px 0 30px;
+  }
+  .arrow-text {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  /* Key insight */
+  .insight-card {
+    background: #1A1A1A;
+    border-radius: 18px;
+    padding: 36px 40px;
+    flex: 0;
+  }
+
+  .insight-quote {
+    font-size: 30px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    text-align: center;
+  }
+  .insight-quote .teal {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">核心发现 1</div>
+    <h1 class="title">Generator永远说<span class="teal">"完美"</span></h1>
+
+    <div class="comparison-section">
+      <div class="eval-card self">
+        <div class="eval-header">
+          <div class="eval-icon self">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <div class="eval-label self">Generator 自我评估</div>
+        </div>
+        <div class="eval-body">
+          <div class="eval-row">
+            <div class="eval-run">Run B 自评</div>
+            <div class="eval-score perfect">13/14 PASS (93%)</div>
+          </div>
+          <div class="eval-row">
+            <div class="eval-run">Run C Generator自评</div>
+            <div class="eval-score perfect">90/90 PASS (100%)</div>
+          </div>
+          <div class="eval-row">
+            <div class="eval-run">Run D Generator自评</div>
+            <div class="eval-score perfect">90/90 PASS (100%)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrow-section">
+        <div class="arrow-text">VS 独立评估的结果</div>
+      </div>
+
+      <div class="eval-card independent">
+        <div class="eval-header">
+          <div class="eval-icon independent">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="eval-label independent">独立评估（不同Agent）</div>
+        </div>
+        <div class="eval-body">
+          <div class="eval-row">
+            <div class="eval-run">Run C Code Review</div>
+            <div class="eval-score real">88/90 (98%) - 找到3个bug</div>
+          </div>
+          <div class="eval-row">
+            <div class="eval-run">Run D Playwright浏览器测试</div>
+            <div class="eval-score real">18/20 (90%) - 找到4个bug</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-quote">
+        自评偏差是真实存在的<br>
+        <span class="teal">永远不要让Generator自己判定质量</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

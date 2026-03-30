@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 60px 100px;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 120px;
+  color: #7C3AED;
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: -20px;
+  font-weight: 900;
+}
+
+.quote-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1A2E;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  max-width: 900px;
+}
+
+.quote-text .highlight {
+  color: #7C3AED;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #7C3AED;
+  margin: 0 auto 24px;
+}
+
+.attribution {
+  font-size: 18px;
+  color: #888;
+  font-weight: 400;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="quote-mark">"</div>
+  <div class="quote-text">Every industry is becoming a <span class="highlight">technology industry</span>. The only question is whether you'll build the new enterprise tools or <span class="highlight">compete against someone who does</span>.</div>
+  <div class="divider"></div>
+  <div class="attribution">— Aaron Levie, YC Lecture 12</div>
+</div>
+</body>
+</html>

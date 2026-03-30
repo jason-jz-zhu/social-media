@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1080px;
+  height: 1440px;
+  background: #FFFFFF;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1080px;
+  height: 1440px;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #7C3AED;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 16px;
+  font-family: 'Noto Sans SC', sans-serif;
+  margin-bottom: 48px;
+  align-self: flex-start;
+}
+
+.title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 56px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.item + .item {
+  border-top: 1px solid #EBEBEB;
+}
+
+.item-number {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  line-height: 1;
+  min-width: 56px;
+  padding-top: 2px;
+}
+
+.item-text {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.item-desc {
+  font-size: 26px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  font-size: 28px;
+  color: #CCC;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="badge">6点起床学创业 Day 9</div>
+  <div class="title">收藏：Day 9 八个核心观点</div>
+  <div class="list">
+    <div class="item">
+      <div class="item-number">1</div>
+      <div class="item-text">
+        <div class="item-title">Be so good they can't ignore you</div>
+        <div class="item-desc">业务好过pitch好，融资是创业中最容易的事</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">2</div>
+      <div class="item-text">
+        <div class="item-title">风险洋葱理论</div>
+        <div class="item-desc">每轮融资剥几层风险，金额精确匹配风险</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">3</div>
+      <div class="item-text">
+        <div class="item-title">VC是极端outlier游戏</div>
+        <div class="item-desc">4000家中15家产生97%回报</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">4</div>
+      <div class="item-text">
+        <div class="item-title">投strength不投lack of weakness</div>
+        <div class="item-desc">打勾式投资错过大赢家，a16z pass了Airbnb</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">5</div>
+      <div class="item-text">
+        <div class="item-title">选投资人 = 选结婚对象</div>
+        <div class="item-desc">10-20年合作，顺风时谁都行，逆风时才见真章</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">6</div>
+      <div class="item-text">
+        <div class="item-title">Cap table被毁 = 公司被毁</div>
+        <div class="item-desc">Seed稀释10-15%，A轮20-30%，守住底线</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">7</div>
+      <div class="item-text">
+        <div class="item-title">30:1漏斗</div>
+        <div class="item-desc">第一句话必须让人秒懂你做什么</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-number">8</div>
+      <div class="item-text">
+        <div class="item-title">Bootstrap越久越好</div>
+        <div class="item-desc">不要把融资当成就，口头承诺立刻邮件确认</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-number">6 / 7</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "total": 10,
+    "pass": 7,
+    "fail": 1,
+    "partial": 2
+  },
+  "results": [
+    {
+      "feature": "App Shell",
+      "criterion": "Sidebar visible",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "App Shell",
+      "criterion": "Main content area visible",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "App Shell",
+      "criterion": "Mobile responsive",
+      "status": "PARTIAL",
+      "detail": "Sidebar still visible on mobile"
+    },
+    {
+      "feature": "Navigation",
+      "criterion": "Has 12 nav items",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "Navigation",
+      "criterion": "Clicked through: dashboard\n          Dashboard, Dashboard, group\n          Clients, Clients, folder_open\n          Projects, Projects",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "Navigation",
+      "criterion": "Active state indicator",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "Dashboard",
+      "criterion": "Has 62 metric/stat cards",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "feature": "Dashboard",
+      "criterion": "Activity feed present",
+      "status": "PARTIAL",
+      "detail": "No activity feed found"
+    },
+    {
+      "feature": "Client List",
+      "criterion": "Navigate to clients page",
+      "status": "FAIL",
+      "detail": "No Clients nav link"
+    },
+    {
+      "feature": "Code Quality",
+      "criterion": "No JS console errors",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

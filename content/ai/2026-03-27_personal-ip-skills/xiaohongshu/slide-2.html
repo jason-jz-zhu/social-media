@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 2 - 现状vs转折</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+  }
+
+  .section-label {
+    font-size: 26px;
+    color: #0EA5E9;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+  }
+
+  .old-ip {
+    background: #F5F5F5;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+  }
+
+  .old-ip-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 18px;
+  }
+
+  .old-ip-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .old-ip-tag {
+    background: #E8E8E8;
+    color: #666;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 12px;
+  }
+
+  .arrow-down {
+    text-align: center;
+    font-size: 52px;
+    color: #0EA5E9;
+    margin: 20px 0;
+    font-weight: 900;
+  }
+
+  .new-ip {
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+    border: 2px solid rgba(14, 165, 233, 0.3);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+  }
+
+  .new-ip-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0EA5E9;
+    margin-bottom: 14px;
+  }
+
+  .new-ip-desc {
+    font-size: 28px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .new-ip-desc .teal {
+    color: #0EA5E9;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  .insight-text {
+    font-size: 30px;
+    color: #444;
+    line-height: 1.7;
+    text-align: center;
+    padding: 20px 30px;
+    background: #FAFAFA;
+    border-radius: 14px;
+    border-left: 5px solid #0EA5E9;
+  }
+
+  .insight-text .bold {
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">今日拆解</div>
+
+    <h1 class="title">个人IP正在升维</h1>
+
+    <div class="section-label">传统个人IP</div>
+
+    <div class="old-ip">
+      <div class="old-ip-title">过去 = 内容 output</div>
+      <div class="old-ip-items">
+        <div class="old-ip-tag">写文章</div>
+        <div class="old-ip-tag">拍视频</div>
+        <div class="old-ip-tag">做课程</div>
+        <div class="old-ip-tag">攒品牌</div>
+      </div>
+    </div>
+
+    <div class="arrow-down">&darr;</div>
+
+    <div class="section-label">AI时代个人IP</div>
+
+    <div class="new-ip">
+      <div class="new-ip-title">现在 = 内容 + 系统</div>
+      <div class="new-ip-desc">
+        多了一层：你和AI共同训练出的<br>
+        <span class="teal">workflow system</span><br><br>
+        文章是output<br>
+        系统是<span class="teal">生成output的机器</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="insight-text">
+      <span class="bold">竞争力已经不只是"你写了什么"</span><br>
+      而是你训练出了什么系统
+    </div>
+  </div>
+
+  <div class="page-number">2 / 7</div>
+</body>
+</html>

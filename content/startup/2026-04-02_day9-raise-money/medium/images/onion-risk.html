@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 80px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.left {
+  flex: 0 0 480px;
+  position: relative;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  flex: 1;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1A1A2E;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+.round-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.round-dot {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.round-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 2px;
+}
+
+.round-desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* Concentric circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-outer {
+  width: 420px;
+  height: 420px;
+  background: rgba(124,58,237,0.08);
+  border: 3px solid rgba(124,58,237,0.15);
+}
+
+.c-mid-outer {
+  width: 320px;
+  height: 320px;
+  background: rgba(124,58,237,0.12);
+  border: 3px solid rgba(124,58,237,0.22);
+}
+
+.c-mid {
+  width: 220px;
+  height: 220px;
+  background: rgba(124,58,237,0.18);
+  border: 3px solid rgba(124,58,237,0.32);
+}
+
+.c-inner {
+  width: 120px;
+  height: 120px;
+  background: rgba(124,58,237,0.28);
+  border: 3px solid rgba(124,58,237,0.45);
+}
+
+.c-core {
+  width: 56px;
+  height: 56px;
+  background: #7C3AED;
+  border: none;
+  box-shadow: 0 0 20px rgba(124,58,237,0.4);
+}
+
+/* Labels on the circles */
+.circle-label {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(124,58,237,0.7);
+  white-space: nowrap;
+}
+
+.cl-series-c { top: 10px; left: 50%; transform: translateX(-50%); }
+.cl-series-b { top: 62px; left: 50%; transform: translateX(-50%); }
+.cl-series-a { top: 112px; left: 50%; transform: translateX(-50%); }
+.cl-seed { top: 165px; left: 50%; transform: translateX(-50%); }
+
+.peel-arrow {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #7C3AED;
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="left">
+    <div class="circle c-outer">
+      <div class="circle-label cl-series-c">SERIES C+</div>
+      <div class="circle c-mid-outer">
+        <div class="circle-label cl-series-b">SERIES B</div>
+        <div class="circle c-mid">
+          <div class="circle-label cl-series-a">SERIES A</div>
+          <div class="circle c-inner">
+            <div class="circle-label cl-seed">SEED</div>
+            <div class="circle c-core"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="label">Marc Andreessen's Framework</div>
+    <div class="title">The Onion Theory of Risk</div>
+    <div class="round-item">
+      <div class="round-dot" style="background: #7C3AED;"></div>
+      <div>
+        <div class="round-label">Seed — Team + Product Risk</div>
+        <div class="round-desc">Can this team build this thing? Does the concept hold? Sell 10-15%.</div>
+      </div>
+    </div>
+    <div class="round-item">
+      <div class="round-dot" style="background: rgba(124,58,237,0.7);"></div>
+      <div>
+        <div class="round-label">Series A — PMF + Recruiting Risk</div>
+        <div class="round-desc">Real customers? Can you hire? Give up 20-30%.</div>
+      </div>
+    </div>
+    <div class="round-item">
+      <div class="round-dot" style="background: rgba(124,58,237,0.5);"></div>
+      <div>
+        <div class="round-label">Series B — Scale Risk</div>
+        <div class="round-desc">Can this grow into a large market? Unit economics?</div>
+      </div>
+    </div>
+    <div class="round-item">
+      <div class="round-dot" style="background: rgba(124,58,237,0.3);"></div>
+      <div>
+        <div class="round-label">Series C+ — Market Dominance</div>
+        <div class="round-desc">Can you become the category leader?</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

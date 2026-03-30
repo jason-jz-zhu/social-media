@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.pyramid-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.pyramid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.tier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.tier-1 {
+  width: 200px;
+  height: 120px;
+  background: #7C3AED;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  font-size: 20px;
+  padding-top: 50px;
+}
+
+.tier-2 {
+  width: 340px;
+  height: 90px;
+  background: #9F7AEA;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  font-size: 18px;
+  margin-top: -1px;
+}
+
+.tier-3 {
+  width: 480px;
+  height: 90px;
+  background: #C4B5FD;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  font-size: 18px;
+  color: #1A1A2E;
+  margin-top: -1px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+
+.detail {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.06);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.detail-rank {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.rank-1 { background: #7C3AED; color: #fff; }
+.rank-2 { background: #9F7AEA; color: #fff; }
+.rank-3 { background: #EDE9FE; color: #7C3AED; }
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 3px;
+}
+
+.detail-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.detail-signal {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7C3AED;
+  margin-top: 4px;
+}
+
+.bottom-note-wrap {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.bottom-note {
+  display: inline-block;
+  background: #1A1A2E;
+  border-radius: 10px;
+  padding: 12px 28px;
+}
+
+.bottom-note-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bottom-note-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Validation Framework</div>
+  <div class="title">The Only Validation That Actually Counts</div>
+  <div class="pyramid-wrap">
+    <div class="pyramid">
+      <div class="tier tier-1">Money</div>
+      <div class="tier tier-2">Demo</div>
+      <div class="tier tier-3">Description</div>
+    </div>
+    <div class="details">
+      <div class="detail">
+        <div class="detail-rank rank-1">1</div>
+        <div class="detail-content">
+          <div class="detail-name">Money</div>
+          <div class="detail-desc">They pay you. Real sacrifice, real commitment. Cuts through every bias.</div>
+          <div class="detail-signal">Strongest signal &mdash; predicts product-market fit</div>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="detail-rank rank-2">2</div>
+        <div class="detail-content">
+          <div class="detail-name">Demo</div>
+          <div class="detail-desc">They react to a working prototype. Better than words, but demo excitement ≠ daily usage.</div>
+          <div class="detail-signal">Medium signal &mdash; concrete but unreliable</div>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="detail-rank rank-3">3</div>
+        <div class="detail-content">
+          <div class="detail-name">Description</div>
+          <div class="detail-desc">They say "that sounds great!" People are polite. Barely better than guessing.</div>
+          <div class="detail-signal">Weakest signal &mdash; social desirability bias</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-note-wrap">
+    <div class="bottom-note">
+      <div class="bottom-note-text"><span class="highlight">Payment</span> is the only signal that reliably predicts product-market fit</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

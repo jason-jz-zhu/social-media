@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 100px 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 56px;
+  }
+
+  .curve-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .curve-item {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 0;
+  }
+
+  .curve-item + .curve-item {
+    border-top: 1px solid #EBEBEB;
+  }
+
+  .curve-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 36px;
+  }
+
+  .curve-icon.red { background: #FEE2E2; }
+  .curve-icon.yellow { background: #FEF3C7; }
+  .curve-icon.green { background: #D1FAE5; }
+
+  .curve-text {
+    flex: 1;
+  }
+
+  .curve-label {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+  }
+
+  .curve-desc {
+    font-size: 30px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .honesty-bar {
+    height: 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  .honesty-bar.low { width: 20%; background: #EF4444; }
+  .honesty-bar.mid { width: 55%; background: #F59E0B; }
+  .honesty-bar.high { width: 95%; background: #10B981; }
+
+  .insight-box {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 28px 24px;
+    margin-bottom: 60px;
+  }
+
+  .insight-box p {
+    font-size: 34px;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .insight-box .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 4</div>
+
+    <h1 class="title">诚实度曲线：谁的反馈最真？</h1>
+
+    <div class="curve-section">
+      <div class="curve-item">
+        <div class="curve-icon red">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4C10.3 4 4 10.3 4 18s6.3 14 14 14 14-6.3 14-14S25.7 4 18 4z" stroke="#EF4444" stroke-width="2.5"/><path d="M12 14h.01M24 14h.01" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/><path d="M12 24c1.5-2 3.5-3 6-3s4.5 1 6 3" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="curve-text">
+          <div class="curve-label">你妈</div>
+          <div class="curve-desc">永远说"真好"，怕你不开心</div>
+          <div class="honesty-bar low"></div>
+        </div>
+      </div>
+
+      <div class="curve-item">
+        <div class="curve-icon yellow">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4C10.3 4 4 10.3 4 18s6.3 14 14 14 14-6.3 14-14S25.7 4 18 4z" stroke="#F59E0B" stroke-width="2.5"/><path d="M12 14h.01M24 14h.01" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="22" x2="24" y2="22" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="curve-text">
+          <div class="curve-label">朋友/同事</div>
+          <div class="curve-desc">会客气，不想伤关系</div>
+          <div class="honesty-bar mid"></div>
+        </div>
+      </div>
+
+      <div class="curve-item">
+        <div class="curve-icon green">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4C10.3 4 4 10.3 4 18s6.3 14 14 14 14-6.3 14-14S25.7 4 18 4z" stroke="#10B981" stroke-width="2.5"/><path d="M12 14h.01M24 14h.01" stroke="#10B981" stroke-width="3" stroke-linecap="round"/><path d="M12 22c1.5 2 3.5 3 6 3s4.5-1 6-3" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="curve-text">
+          <div class="curve-label">付费陌生人</div>
+          <div class="curve-desc">花了钱，不满意一定会说</div>
+          <div class="honesty-bar high"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <p>付费还有隐藏好处：<span class="purple">虽然钱少，但有现金流能振奋整个团队</span>。不仅是验证，更是信心来源。</p>
+    </div>
+  </div>
+
+  <div class="page-number">4 / 7</div>
+</body>
+</html>

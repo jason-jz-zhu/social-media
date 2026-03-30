@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 44px 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 40px;
+}
+
+.funnel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.funnel-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bar {
+  height: 72px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bar-number {
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.bar-label {
+  position: absolute;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  white-space: nowrap;
+}
+
+.bar-label-left {
+  right: calc(100% + 20px);
+}
+
+.bar-label-right {
+  left: calc(100% + 20px);
+}
+
+.arrow-down {
+  font-size: 28px;
+  color: #7C3AED;
+  opacity: 0.5;
+  margin: 4px 0;
+}
+
+.b1 {
+  width: 900px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.15), rgba(124,58,237,0.25));
+  border: 2px solid rgba(124,58,237,0.3);
+}
+.b1 .bar-number { color: #1A1A2E; }
+
+.b2 {
+  width: 500px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.35), rgba(124,58,237,0.55));
+}
+
+.b3 {
+  width: 200px;
+  background: #7C3AED;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+}
+
+.percent-badge {
+  margin-top: 16px;
+  background: #1A1A2E;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 10px 32px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.percent-badge span {
+  color: #7C3AED;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">The Venture Capital Math</div>
+  <div class="title">An Extreme Outlier Game</div>
+  <div class="funnel">
+    <div class="funnel-stage">
+      <div class="bar b1">
+        <div class="bar-number">4,000</div>
+        <div class="bar-label bar-label-right">Companies seen per year</div>
+      </div>
+    </div>
+    <div class="arrow-down">&#9660;</div>
+    <div class="funnel-stage">
+      <div class="bar b2">
+        <div class="bar-number">200</div>
+        <div class="bar-label bar-label-right">Investments made</div>
+      </div>
+    </div>
+    <div class="arrow-down">&#9660;</div>
+    <div class="funnel-stage">
+      <div class="bar b3">
+        <div class="bar-number">15</div>
+        <div class="bar-label bar-label-right">Generate real returns</div>
+      </div>
+    </div>
+  </div>
+  <div class="percent-badge">These 15 produce <span>97%</span> of all VC returns</div>
+</div>
+</body>
+</html>

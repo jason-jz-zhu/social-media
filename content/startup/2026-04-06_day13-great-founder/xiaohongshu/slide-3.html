@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 70px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 24px;
+    color: #7C3AED;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* Paradox pairs */
+  .paradox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .paradox-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #F5F0FF;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .paradox-side {
+    flex: 1;
+    padding: 22px 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .paradox-vs {
+    width: 56px;
+    height: 56px;
+    background: #7C3AED;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .paradox-note {
+    font-size: 26px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .paradox-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #EBEBEB;
+    margin: 24px 0;
+  }
+
+  /* Investment Thesis */
+  .thesis-box {
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .thesis-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #7C3AED;
+    margin-bottom: 16px;
+  }
+
+  .thesis-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .thesis-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .step-num {
+    width: 36px;
+    height: 36px;
+    background: #7C3AED;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .step-text {
+    font-size: 26px;
+    color: #333;
+    line-height: 1.5;
+    padding-top: 4px;
+  }
+
+  .step-text .bold {
+    font-weight: 700;
+  }
+
+  .bottom-note {
+    background: #F5F0FF;
+    border-left: 4px solid #7C3AED;
+    padding: 18px 22px;
+    margin-top: auto;
+    margin-bottom: 60px;
+  }
+
+  .bottom-note p {
+    font-size: 26px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .bottom-note .purple {
+    color: #7C3AED;
+    font-weight: 700;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">6点起床学创业 Day 13</div>
+
+    <h1 class="title">创始人的三组矛盾</h1>
+
+    <div class="section-label">两头都100%，不是50/50</div>
+
+    <div class="paradox-list">
+      <div class="paradox-row">
+        <div class="paradox-side">坚持愿景</div>
+        <div class="paradox-vs">vs</div>
+        <div class="paradox-side">随时灵活</div>
+      </div>
+      <div class="paradox-row">
+        <div class="paradox-side">绝对自信</div>
+        <div class="paradox-vs">vs</div>
+        <div class="paradox-side">保持恐惧</div>
+      </div>
+      <div class="paradox-row">
+        <div class="paradox-side">专注内部</div>
+        <div class="paradox-vs">vs</div>
+        <div class="paradox-side">面向外部</div>
+      </div>
+    </div>
+
+    <div class="paradox-note">不是"平衡"——是<span class="purple">两个都拉满</span></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">如何检验自己？</div>
+
+    <div class="thesis-box">
+      <div class="thesis-title">Investment Thesis 方法</div>
+      <div class="thesis-steps">
+        <div class="thesis-step">
+          <div class="step-num">1</div>
+          <div class="step-text">把核心假设<span class="bold">写成bullets</span></div>
+        </div>
+        <div class="thesis-step">
+          <div class="step-num">2</div>
+          <div class="step-text">定期问自己：信心<span class="bold">增了还是减了</span>？</div>
+        </div>
+        <div class="thesis-step">
+          <div class="step-num">3</div>
+          <div class="step-text">信心减 = <span class="bold">该调整</span>，不是该放弃</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <p><span class="purple">坚持 ≠ 固执</span>，灵活 ≠ 没主见<br>区别在于你有没有一个可以检验的thesis</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>

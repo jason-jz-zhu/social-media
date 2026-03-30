@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 50px 80px;
+  width: 100%;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 50px;
+}
+
+.curve {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.bar {
+  width: 140px;
+  background: #7C3AED;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.bar-1 { height: 80px; opacity: 0.25; }
+.bar-2 { height: 140px; opacity: 0.4; }
+.bar-3 { height: 210px; opacity: 0.6; }
+.bar-4 { height: 320px; opacity: 1.0; }
+
+.bar-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.bar-1 .bar-label, .bar-2 .bar-label { color: rgba(124,58,237,0.8); position: absolute; top: -28px; }
+
+.level-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A1A2E;
+}
+
+.level-emoji {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.axis-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 40px 0;
+}
+
+.axis-left {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+
+.axis-right {
+  font-size: 14px;
+  color: #7C3AED;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Adora Cheung's Framework</div>
+  <div class="title">The Honesty Curve</div>
+  <div class="curve">
+    <div class="level">
+      <div class="bar bar-1"><div class="bar-label">Least honest</div></div>
+      <div class="level-name">Your Mom</div>
+    </div>
+    <div class="level">
+      <div class="bar bar-2"><div class="bar-label">Polite</div></div>
+      <div class="level-name">Friends</div>
+    </div>
+    <div class="level">
+      <div class="bar bar-3"><div class="bar-label">Some truth</div></div>
+      <div class="level-name">Acquaintances</div>
+    </div>
+    <div class="level">
+      <div class="bar bar-4"><div class="bar-label">Most honest</div></div>
+      <div class="level-name">Paying Strangers</div>
+    </div>
+  </div>
+  <div class="axis-label">
+    <div class="axis-left">Feedback Honesty &rarr;</div>
+    <div class="axis-right">Cash doesn't lie.</div>
+  </div>
+</div>
+</body>
+</html>

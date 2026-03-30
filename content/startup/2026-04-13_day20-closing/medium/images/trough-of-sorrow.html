@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px;
+  height: 630px;
+  background: #F3F0FA;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  padding: 36px 60px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.graph-area {
+  position: relative;
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto 20px;
+}
+
+.axis-y {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #DDD;
+}
+
+.axis-x {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #DDD;
+}
+
+.axis-label-y {
+  position: absolute;
+  left: -10px;
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+  transform: translateX(-100%);
+}
+
+.curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.curve svg {
+  width: 100%;
+  height: 100%;
+}
+
+.phase {
+  position: absolute;
+  bottom: -28px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.phase-marker {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(124,58,237,0.1);
+}
+
+.trough-zone {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(124,58,237,0.06);
+  border-radius: 8px;
+}
+
+.trough-label {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 800;
+  color: #7C3AED;
+  text-align: center;
+}
+
+.trough-days {
+  position: absolute;
+  font-size: 48px;
+  font-weight: 900;
+  color: #7C3AED;
+  opacity: 0.15;
+  text-align: center;
+}
+
+.annotation {
+  position: absolute;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1A1A2E;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+
+.annotation .num {
+  color: #7C3AED;
+  font-weight: 800;
+}
+
+.bottom-note-wrap {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.bottom-note {
+  display: inline-block;
+  background: #1A1A2E;
+  border-radius: 10px;
+  padding: 12px 28px;
+}
+
+.bottom-note-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bottom-note-text .highlight {
+  color: #A78BFA;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="label">Founder Journey</div>
+  <div class="title">Airbnb's 1,000-Day Trough of Sorrow</div>
+
+  <div class="graph-area">
+    <div class="axis-y"></div>
+    <div class="axis-x"></div>
+
+    <div class="axis-label-y" style="top: 0;">High</div>
+    <div class="axis-label-y" style="top: 50%; transform: translateX(-100%) translateY(-50%);">Mid</div>
+    <div class="axis-label-y" style="bottom: 0; transform: translateX(-100%);">Low</div>
+
+    <!-- Trough zone highlight -->
+    <div class="trough-zone" style="left: 18%; width: 52%;"></div>
+    <div class="trough-days" style="left: 22%; top: 35%; width: 44%;">1,000 DAYS</div>
+
+    <!-- SVG curve representing the startup journey -->
+    <div class="curve">
+      <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#C4B5FD"/>
+            <stop offset="30%" stop-color="#7C3AED"/>
+            <stop offset="70%" stop-color="#7C3AED"/>
+            <stop offset="100%" stop-color="#22C55E"/>
+          </linearGradient>
+        </defs>
+        <!-- Launch spike, deep trough, long flat, gradual rise -->
+        <path d="M 0,280 C 50,280 80,260 120,100 C 140,40 155,30 170,50 C 200,120 220,230 280,250 C 340,265 450,260 550,250 C 620,244 680,230 720,200 C 760,170 800,120 850,70 C 900,30 950,10 1000,5"
+              stroke="url(#curveGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <!-- Area fill -->
+        <path d="M 0,280 C 50,280 80,260 120,100 C 140,40 155,30 170,50 C 200,120 220,230 280,250 C 340,265 450,260 550,250 C 620,244 680,230 720,200 C 760,170 800,120 850,70 C 900,30 950,10 1000,5 L 1000,300 L 0,300 Z"
+              fill="url(#curveGrad)" opacity="0.06"/>
+      </svg>
+    </div>
+
+    <!-- Phase labels -->
+    <div class="phase" style="left: 8%; width: 12%;">Launch</div>
+    <div class="phase" style="left: 24%; width: 40%;">Trough of Sorrow</div>
+    <div class="phase" style="left: 68%; width: 14%;">Growth</div>
+    <div class="phase" style="left: 85%; width: 14%;">Scale</div>
+
+    <!-- Annotations -->
+    <div class="annotation" style="top: 10%; left: 8%;">TechCrunch<br/>of Initiation</div>
+    <div class="annotation" style="top: 65%; left: 42%;">Wiggles of<br/>False Hope</div>
+    <div class="annotation" style="top: 20%; right: 5%;"><span class="num">$100B</span><br/>company</div>
+
+    <!-- Phase markers -->
+    <div class="phase-marker" style="left: 18%;"></div>
+    <div class="phase-marker" style="left: 70%;"></div>
+    <div class="phase-marker" style="left: 84%;"></div>
+  </div>
+
+  <div class="bottom-note-wrap">
+    <div class="bottom-note">
+      <div class="bottom-note-text"><span class="highlight">#1 post-YC failure:</span> not running out of money &mdash; <span class="highlight">losing focus</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

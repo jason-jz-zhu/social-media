@@ -140,6 +140,13 @@ This reframes the "idea vs. execution" debate. In 2014, execution meant hiring a
 
 This is Day 1 of my "20 Days of YC's Startup Bible" series, where I'm breaking down all 20 lectures from Stanford's CS183B. Tomorrow is **Day 2: Teams and Execution** — Sam Altman's deep dive into co-founder dynamics, hiring, and why you should fire fast.
 
-If you're building something — especially at the intersection of AI, data, and a domain you care about — subscribe to my newsletter. I go deeper there, with angles I don't publish on Medium.
+If you're building something — especially at the intersection of AI, data, and a domain you care about — [subscribe to my newsletter](https://substack.com/@jiazhenzhu). I go deeper there, with angles I don't publish on Medium.
 
 **Follow along for the full series. Day 2 drops tomorrow.**
+
+---
+
+## Resources
+
+- [Watch Lecture 1 on YouTube](https://www.youtube.com/watch?v=CBYhVcO4WgI&list=PL5q_lef6zVkaTY_cT1k7qFNF2TidHCe-1) — Full 50-minute lecture
+- [Annotated Transcript on Genius](https://genius.com/Sam-altman-lecture-1-how-to-start-a-startup-annotated) — Read along with community highlights

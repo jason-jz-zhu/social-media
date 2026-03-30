@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Slide 3 - 两分钟配好</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Fira+Code:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1440px;
+    background: #FFFFFF;
+    font-family: 'Noto Sans SC', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 80px 70px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    align-self: flex-start;
+  }
+
+  .title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+  }
+
+  .steps-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .step-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #0EA5E9;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 900;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+  }
+
+  .step-desc {
+    font-size: 24px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .terminal {
+    background: #1E1E2E;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  .terminal-bar {
+    background: #2D2D3F;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-red { background: #FF5F56; }
+  .dot-yellow { background: #FFBD2E; }
+  .dot-green { background: #27C93F; }
+
+  .terminal-body {
+    padding: 14px 18px;
+    font-family: 'Fira Code', monospace;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #CDD6F4;
+  }
+
+  .comment { color: #6C7086; }
+  .cmd { color: #89B4FA; }
+  .prompt { color: #A6E3A1; }
+  .success { color: #A6E3A1; }
+  .highlight-term { color: #F9E2AF; }
+  .url { color: #89DCEB; }
+
+  .divider {
+    height: 1px;
+    background: #EEE;
+    margin: 6px 0;
+  }
+
+  .note-box {
+    margin-top: auto;
+    background: #FFFBEB;
+    border-left: 4px solid #F59E0B;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin-bottom: 50px;
+  }
+
+  .note-box p {
+    font-size: 24px;
+    color: #92400E;
+    line-height: 1.5;
+  }
+
+  .note-box .bold { font-weight: 700; }
+
+  .page-number {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    font-size: 28px;
+    color: #CCC;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">配置步骤</div>
+
+    <h1 class="title">两分钟配好，就三步</h1>
+
+    <div class="steps-container">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">安装 Claude Code</div>
+          <div class="step-desc">终端一行命令搞定</div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="terminal-body">
+              <span class="prompt">$</span> <span class="cmd">npm install -g @anthropic-ai/claude-code</span><br>
+              <span class="success">+ claude-code installed</span><br>
+              <span class="prompt">$</span> <span class="cmd">claude</span><br>
+              <span class="highlight-term"> Claude Code v2.1 ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">开启 Remote Control</div>
+          <div class="step-desc">在Claude Code里输入命令，生成连接链接</div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="terminal-body">
+              <span class="prompt">></span> <span class="highlight-term">/remote-control</span><br>
+              <span class="success"> Remote Control is active.</span><br>
+              <span style="color:#CDD6F4"> Code at </span><span class="url">claude.ai/code/session_...</span><br>
+              <span style="color:#CDD6F4"> Press space for QR code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">手机连接</div>
+          <div class="step-desc">扫二维码 或 打开 claude.ai/code 同账号登录</div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="dot dot-red"></div>
+              <div class="dot dot-yellow"></div>
+              <div class="dot dot-green"></div>
+            </div>
+            <div class="terminal-body">
+              <span class="success"> Connected to local session</span><br>
+              <span style="color:#CDD6F4"> Model: Claude Opus 4.6</span><br>
+              <span style="color:#CDD6F4"> Project: ~/my-project</span><br>
+              <span class="prompt">></span> <span style="color:#CDD6F4">ready for input_</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p><span class="bold">需要：</span>Claude Max订阅 ($200/月) 或 Pro ($20/月)。电脑保持开机即可，不用一直盯着。</p>
+    </div>
+  </div>
+
+  <div class="page-number">3 / 7</div>
+</body>
+</html>
