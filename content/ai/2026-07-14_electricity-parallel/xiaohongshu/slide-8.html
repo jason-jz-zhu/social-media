@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 8</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #1E2A3A; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; text-align: center; }
+  .top-line, .bot-line { position: absolute; left: 60px; right: 60px; height: 2px; background: repeating-linear-gradient(90deg, #C89860 0 20px, transparent 20px 32px); }
+  .top-line { top: 50px; } .bot-line { bottom: 50px; }
+  .quote-mark { font-family: 'Noto Serif SC', serif; font-size: 160px; color: #FF6B6B; opacity: 0.35; line-height: 0.4; margin-bottom: 30px; }
+  .big { font-family: 'Noto Serif SC', serif; font-size: 62px; font-weight: 900; color: #FDF6E8; line-height: 1.5; letter-spacing: 2px; margin-bottom: 34px; }
+  .big .hl { color: #FF6B6B; }
+  .attrib { font-size: 24px; color: #C89860; letter-spacing: 3px; margin-bottom: 60px; }
+  .divider { width: 80px; height: 3px; background: #FF6B6B; margin-bottom: 50px; border-radius: 2px; }
+  .cta { padding: 30px 40px; background: rgba(255,107,107,0.1); border: 2px solid #FF6B6B; border-radius: 12px; margin-bottom: 40px; }
+  .cta .q { font-family: 'Noto Serif SC', serif; font-size: 40px; color: #FDF6E8; font-weight: 900; margin-bottom: 16px; line-height: 1.5; }
+  .cta .q .hl { color: #FF6B6B; }
+  .cta .hint { font-size: 26px; color: #C89860; letter-spacing: 2px; }
+  .series { position: absolute; bottom: 90px; font-family: 'Noto Serif SC', serif; font-size: 22px; color: #C89860; letter-spacing: 4px; font-weight: 700; }
+  .page-number { position: absolute; bottom: 90px; right: 80px; font-size: 22px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-line"></div>
+  <div class="quote-mark">"</div>
+  <div class="big">通用技术的 ROI<br>从不来自技术本身<br>而来自<span class="hl">为它重新<br>设计工厂</span>的人</div>
+  <div class="divider"></div>
+  <div class="cta">
+    <div class="q">你现在是站在<br><span class="hl">爱迪生</span>这边<br>还是<span class="hl">福特</span>这边？</div>
+    <div class="hint">评论区聊聊 👇</div>
+  </div>
+  <div class="series">AI SERIES · 10</div>
+  <span class="page-number">8 / 8</span>
+  <div class="bot-line"></div>
+</div>
+</body>
+</html>

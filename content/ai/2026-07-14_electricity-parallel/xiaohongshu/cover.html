@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #1E2A3A; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 90px 80px; display: flex; flex-direction: column; position: relative; }
+  .top-line, .bot-line { position: absolute; left: 60px; right: 60px; height: 2px; background: repeating-linear-gradient(90deg, #C89860 0 20px, transparent 20px 32px); }
+  .top-line { top: 50px; } .bot-line { bottom: 50px; }
+  .badges { display: flex; gap: 14px; margin-bottom: 40px; }
+  .badge { font-size: 22px; font-weight: 700; letter-spacing: 3px; padding: 8px 18px; border: 1.5px solid #C89860; color: #C89860; border-radius: 2px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 116px; font-weight: 900; color: #FDF6E8; line-height: 1.15; margin-bottom: 40px; letter-spacing: 2px; }
+  .title .hl { color: #FF6B6B; }
+  .title .small { font-size: 76px; }
+  .subtitle { font-family: 'Noto Serif SC', serif; font-size: 40px; color: #C89860; line-height: 1.5; margin-bottom: 60px; letter-spacing: 2px; }
+  .subtitle .accent { color: #FF6B6B; font-weight: 700; }
+  .split { display: flex; align-items: stretch; gap: 30px; margin: 40px 0; padding: 30px 0; border-top: 1px solid rgba(200,152,96,0.3); border-bottom: 1px solid rgba(200,152,96,0.3); }
+  .era { flex: 1; text-align: center; }
+  .era .year { font-family: 'Noto Serif SC', serif; font-size: 64px; font-weight: 900; color: #C89860; line-height: 1; margin-bottom: 8px; }
+  .era .lbl { font-size: 24px; color: rgba(253,246,232,0.7); letter-spacing: 4px; }
+  .divider-icon { display: flex; align-items: center; font-family: 'Noto Serif SC', serif; font-size: 60px; color: #FF6B6B; font-weight: 900; }
+  .bottom { position: absolute; bottom: 90px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; }
+  .author { font-size: 26px; color: rgba(253,246,232,0.6); }
+  .author b { color: #FDF6E8; }
+  .series { font-family: 'Noto Serif SC', serif; font-size: 22px; color: #C89860; letter-spacing: 4px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-line"></div>
+  <div class="badges"><span class="badge">AI 观察</span><span class="badge">历史照进现实</span></div>
+  <h1 class="title">AI 竟然和<br><span class="small">100 年前</span><br><span class="hl">电力革命</span><br>一模一样</h1>
+  <div class="subtitle">Paul David <span class="accent">30 年前</span>就写过答案</div>
+  <div class="split">
+    <div class="era"><div class="year">1880s</div><div class="lbl">电力时代</div></div>
+    <div class="divider-icon">↔</div>
+    <div class="era"><div class="year">2020s</div><div class="lbl">AI 时代</div></div>
+  </div>
+  <div class="bottom">
+    <div class="author"><b>@jason</b> · 一个观察</div>
+    <div class="series">AI SERIES · 10</div>
+  </div>
+  <div class="bot-line"></div>
+</div>
+</body>
+</html>

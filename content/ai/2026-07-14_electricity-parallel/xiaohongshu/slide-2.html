@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #1E2A3A; color: #C89860; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 40px; border-radius: 4px; }
+  .hook { font-family: 'Noto Serif SC', serif; font-size: 62px; font-weight: 900; color: #1E2A3A; line-height: 1.4; margin-bottom: 40px; }
+  .hook .hl { color: #FF6B6B; }
+  .hook::after { content: ''; display: block; width: 80px; height: 4px; background: #FF6B6B; margin-top: 30px; border-radius: 2px; }
+  .quote-card { background: #FFF; border-left: 6px solid #C89860; padding: 34px 34px; margin: 40px 0 34px; border-radius: 6px; box-shadow: 0 4px 20px rgba(30,42,58,0.06); }
+  .quote-card .lbl { font-size: 22px; color: #C89860; letter-spacing: 3px; margin-bottom: 12px; font-weight: 700; }
+  .quote-card .name { font-family: 'Noto Serif SC', serif; font-size: 40px; font-weight: 900; color: #1E2A3A; margin-bottom: 14px; }
+  .quote-card .paper { font-family: 'Noto Serif SC', serif; font-size: 28px; color: #666; font-style: italic; }
+  .body { font-size: 34px; color: #333; line-height: 1.7; margin-bottom: 20px; }
+  .body .hl { color: #FF6B6B; font-weight: 700; }
+  .kicker { font-family: 'Noto Serif SC', serif; font-size: 40px; color: #1E2A3A; font-weight: 700; margin-top: auto; padding: 24px 0; text-align: center; line-height: 1.5; }
+  .kicker .hl { color: #FF6B6B; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">开场</span>
+  <h1 class="hook">你现在对 AI 的焦虑<br><span class="hl">1900 年的人也焦虑过</span></h1>
+  <div class="quote-card">
+    <div class="lbl">1990 · 经济学论文</div>
+    <div class="name">Paul David</div>
+    <div class="paper">《The Dynamo and the Computer》</div>
+  </div>
+  <p class="body">他讲了一件反直觉的事——<br>电力 1880s 就商业化了，<br>但生产率<span class="hl">整整等了 30 年</span>才起飞。</p>
+  <div class="kicker">通用技术的 ROI<br><span class="hl">本来就要等</span></div>
+  <span class="page-number">2 / 8</span>
+</div>
+</body>
+</html>

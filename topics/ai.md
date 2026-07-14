@@ -6,6 +6,7 @@
 ## 待写
 1. 带投简历 agent
 2. vibe coding 有多少钱？
+
 4. AI 做脱口秀
 5. 现在AI就这几个公司和cloud一样，万一那几个公司down了，全世界不就down了吗
 6. 系列：AI工具推荐 → AI工作流 → AI agent → AI coding → AI产品
@@ -23,3 +24,6 @@
 - [x] 黄仁勋讲了2小时，我帮你划重点 → content/ai/2026-03-17_gtc-2026/
 - [x] Claude Code手机遥控写代码，2分钟配好 → content/ai/2026-03-24_cc-remote-control/
 - [x] 谷歌颠覆旅行社那年，有人慌了有人发了 → content/ai/2026-03-23_google-search-vibe-coding/
+- [x] 是AI慢了，还是我习惯了？ → content/ai/2026-04-14_ai-progress-feeling/
+- [x] AI 抬的是地板不是天花板，中间层工程师最危险 → content/ai/2026-07-03_fde-eng-future/
+- [x] AI 竟然和 100 年前电力革命一模一样 → content/ai/2026-07-14_electricity-parallel/

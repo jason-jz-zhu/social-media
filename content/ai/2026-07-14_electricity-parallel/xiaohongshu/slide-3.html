@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #1E2A3A; color: #C89860; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 34px; border-radius: 4px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 58px; font-weight: 900; color: #1E2A3A; line-height: 1.35; margin-bottom: 30px; }
+  .title .hl { color: #FF6B6B; }
+  .title::after { content: ''; display: block; width: 70px; height: 4px; background: #FF6B6B; margin-top: 22px; border-radius: 2px; }
+  .year-tag { display: inline-block; background: #FFF; color: #C89860; font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; padding: 10px 26px; border: 2px solid #C89860; border-radius: 30px; margin-bottom: 30px; letter-spacing: 2px; }
+  .body { font-size: 34px; color: #333; line-height: 1.7; margin-bottom: 30px; }
+  .body .hl { color: #FF6B6B; font-weight: 700; }
+  .reason { background: #FFF; border-left: 6px solid #FF6B6B; padding: 28px 32px; margin-bottom: 30px; border-radius: 6px; }
+  .reason .lbl { font-size: 22px; color: #C89860; letter-spacing: 3px; margin-bottom: 10px; font-weight: 700; }
+  .reason .txt { font-family: 'Noto Serif SC', serif; font-size: 40px; color: #1E2A3A; font-weight: 900; line-height: 1.4; }
+  .reason .txt .hl { color: #FF6B6B; }
+  .mirror { font-family: 'Noto Serif SC', serif; font-size: 32px; color: #1E2A3A; margin-top: auto; padding: 24px 32px; background: rgba(30,42,58,0.06); border-radius: 8px; line-height: 1.6; }
+  .mirror .arrow { color: #FF6B6B; font-weight: 900; font-size: 34px; }
+  .mirror b { color: #FF6B6B; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">类比 · 01</span>
+  <span class="year-tag">1892 年</span>
+  <h1 class="title">爱迪生被<br>自己创办的公司<span class="hl">挤走了</span></h1>
+  <p class="body">他的<span class="hl">直流电</span>，<br>输给了西屋 + 特斯拉的<span class="hl">交流电</span>。</p>
+  <div class="reason">
+    <div class="lbl">原因不是技术</div>
+    <div class="txt">是<span class="hl">单位经济学</span><br>AC 传得更远、更便宜</div>
+  </div>
+  <div class="mirror"><span class="arrow">↳</span> 今天：foundation model 实验室，<br>会不会就是<b>新一代爱迪生</b>？</div>
+  <span class="page-number">3 / 8</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 6</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #1E2A3A; color: #C89860; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 30px; border-radius: 4px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 58px; font-weight: 900; color: #1E2A3A; line-height: 1.35; margin-bottom: 32px; }
+  .title .hl { color: #FF6B6B; }
+  .title::after { content: ''; display: block; width: 70px; height: 4px; background: #FF6B6B; margin-top: 20px; border-radius: 2px; }
+  .compare { display: flex; gap: 20px; margin-bottom: 34px; }
+  .col { flex: 1; padding: 26px 22px; border-radius: 10px; }
+  .col.wrong { background: rgba(30,42,58,0.06); border: 2px dashed #999; }
+  .col.right { background: #1E2A3A; }
+  .col .tag { font-size: 22px; letter-spacing: 3px; margin-bottom: 10px; font-weight: 700; }
+  .col.wrong .tag { color: #999; }
+  .col.right .tag { color: #C89860; }
+  .col .headline { font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.4; margin-bottom: 12px; }
+  .col.wrong .headline { color: #666; text-decoration: line-through; }
+  .col.right .headline { color: #FDF6E8; }
+  .col .sub { font-size: 22px; line-height: 1.5; }
+  .col.wrong .sub { color: #999; }
+  .col.right .sub { color: rgba(253,246,232,0.75); }
+  .col.right .sub b { color: #FF6B6B; }
+  .quote-block { background: #FFF; border-left: 8px solid #FF6B6B; padding: 30px 32px; border-radius: 8px; margin-bottom: 24px; }
+  .quote-block .lbl { font-size: 20px; color: #C89860; letter-spacing: 3px; margin-bottom: 12px; font-weight: 700; }
+  .quote-block .q { font-family: 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: #1E2A3A; line-height: 1.5; }
+  .quote-block .q .hl { color: #FF6B6B; }
+  .footer { font-size: 26px; color: #666; text-align: center; margin-top: auto; padding: 12px 0; line-height: 1.5; font-style: italic; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">类比 · 04 · 灵魂</span>
+  <h1 class="title">不能把电动机<br><span class="hl">装进旧工厂</span></h1>
+  <div class="compare">
+    <div class="col wrong">
+      <div class="tag">早期做法</div>
+      <div class="headline">电机接旧轴</div>
+      <div class="sub">蒸汽时代的<br>线性轴传动</div>
+    </div>
+    <div class="col right">
+      <div class="tag">真正革命</div>
+      <div class="headline">单元驱动</div>
+      <div class="sub">一机一电机 +<br><b>单层流水线</b></div>
+    </div>
+  </div>
+  <div class="quote-block">
+    <div class="lbl">照进现实</div>
+    <div class="q">把 Copilot 塞进旧 workflow<br>就是<span class="hl">把电动机装在旧轴上</span></div>
+  </div>
+  <div class="footer">AI 提效需要的不是插件，是重新设计工厂</div>
+  <span class="page-number">6 / 8</span>
+</div>
+</body>
+</html>

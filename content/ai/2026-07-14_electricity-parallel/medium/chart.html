@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chart</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1600px; height: 900px; background: #FAF3E7; font-family: 'Inter', sans-serif; position: relative; overflow: hidden; }
+  .stage { width: 1600px; height: 900px; padding: 70px 100px; display: flex; flex-direction: column; }
+  .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: #C89860; text-transform: uppercase; margin-bottom: 16px; }
+  .title { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: #0F1826; line-height: 1.1; margin-bottom: 12px; }
+  .title .hl { color: #FF6B6B; font-style: italic; }
+  .sub { font-size: 20px; color: #666; margin-bottom: 30px; max-width: 1000px; line-height: 1.5; }
+  .chart-wrap { flex: 1; background: #FFF; border-radius: 16px; padding: 40px 50px 30px; box-shadow: 0 8px 30px rgba(15,24,38,0.06); position: relative; }
+  .y-label { position: absolute; left: 20px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-size: 14px; letter-spacing: 3px; color: #999; font-weight: 700; text-transform: uppercase; white-space: nowrap; }
+  .chart-area { position: relative; height: 380px; margin-left: 40px; }
+  .gridline { position: absolute; left: 0; right: 0; height: 1px; background: #EEE; }
+  .gl-label { position: absolute; left: -50px; font-size: 14px; color: #999; font-family: 'Playfair Display', serif; font-weight: 700; }
+  .bars { position: absolute; bottom: 0; left: 0; right: 0; height: 380px; display: flex; align-items: flex-end; gap: 12px; padding: 0 20px; }
+  .bar { flex: 1; background: #C89860; border-radius: 6px 6px 0 0; position: relative; opacity: 0.85; }
+  .bar.spike { background: linear-gradient(180deg, #FF6B6B 0%, #FF4747 100%); opacity: 1; }
+  .bar .val { position: absolute; top: -34px; left: 50%; transform: translateX(-50%); font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: #0F1826; white-space: nowrap; }
+  .bar.spike .val { color: #FF6B6B; font-size: 28px; }
+  .x-axis { display: flex; gap: 12px; padding: 12px 20px 0; border-top: 2px solid #0F1826; margin-left: 40px; }
+  .x-axis span { flex: 1; text-align: center; font-size: 15px; color: #666; font-weight: 600; }
+  .x-axis span.spike { color: #FF6B6B; font-weight: 900; }
+  .annotation { position: absolute; top: 100px; left: 260px; padding: 12px 20px; background: rgba(200,152,96,0.15); border-left: 3px solid #C89860; border-radius: 4px; max-width: 340px; }
+  .annotation .lbl { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: #0F1826; margin-bottom: 4px; }
+  .annotation .txt { font-size: 14px; color: #666; line-height: 1.4; }
+  .annotation-hero { position: absolute; top: 60px; right: 80px; padding: 14px 22px; background: rgba(255,107,107,0.12); border-left: 3px solid #FF6B6B; border-radius: 4px; max-width: 260px; }
+  .annotation-hero .lbl { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: #FF6B6B; margin-bottom: 4px; }
+  .annotation-hero .txt { font-size: 14px; color: #333; line-height: 1.4; }
+  .caption { font-size: 15px; color: #888; font-style: italic; margin-top: 20px; text-align: center; }
+  .caption b { color: #0F1826; font-style: normal; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="eyebrow">The 30-year void · U.S. Manufacturing TFP Growth</div>
+  <h1 class="title">Three decades of "where's the productivity?"<br>then <span class="hl">everything at once</span></h1>
+  <div class="sub">U.S. manufacturing productivity growth was flat for 30 years after the electric dynamo arrived — then exploded in the 1920s once factories were rebuilt around <b>unit drive</b>. AI in 2026 is at year 3 of this curve.</div>
+  <div class="chart-wrap">
+    <div class="y-label">TFP annual growth</div>
+    <div class="chart-area">
+      <div class="gridline" style="bottom: 340px;"><span class="gl-label">6%</span></div>
+      <div class="gridline" style="bottom: 226px;"><span class="gl-label">4%</span></div>
+      <div class="gridline" style="bottom: 113px;"><span class="gl-label">2%</span></div>
+      <div class="gridline" style="bottom: 0px;"><span class="gl-label">0%</span></div>
+      <div class="bars">
+        <div class="bar" style="height: 12%;"><span class="val">0.5%</span></div>
+        <div class="bar" style="height: 18%;"></div>
+        <div class="bar" style="height: 14%;"></div>
+        <div class="bar" style="height: 20%;"></div>
+        <div class="bar" style="height: 16%;"></div>
+        <div class="bar" style="height: 22%;"></div>
+        <div class="bar spike" style="height: 95%;"><span class="val">5.4%</span></div>
+      </div>
+      <div class="annotation">
+        <div class="lbl">Motors installed<br>Layout unchanged</div>
+        <div class="txt">Factories bolted electric motors onto steam-era line-shafts. No productivity gain.</div>
+      </div>
+      <div class="annotation-hero">
+        <div class="lbl">Unit drive<br>+ Ford's line</div>
+        <div class="txt">Factories rebuilt from scratch around individual motors. Productivity explodes.</div>
+      </div>
+    </div>
+    <div class="x-axis">
+      <span>1890</span>
+      <span>1895</span>
+      <span>1900</span>
+      <span>1905</span>
+      <span>1910</span>
+      <span>1915</span>
+      <span class="spike">1919-29</span>
+    </div>
+    <div class="caption">Data: Paul David (1990), <b>"The Dynamo and the Computer"</b> · Stanford CEPR · figures approximate</div>
+  </div>
+</div>
+</body>
+</html>
