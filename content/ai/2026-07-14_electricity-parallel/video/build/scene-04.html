@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 04</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 22px; padding-top: 6px; }
+  .head-row { flex: 0 0 auto; display: flex; align-items: baseline; gap: 32px; min-height: 84px; }
+  .head-row .headline { font-size: 68px; }
+  .head-row .ink-note { font-size: 26px; letter-spacing: 4px; }
+  .panel { position: relative; border: 3px solid var(--ink); flex: 0 0 auto; }
+  .panel.dc { height: 274px; background: rgba(30,42,58,0.05); }
+  .panel.ac { height: 330px; }
+  .panel-tag {
+    position: absolute; left: 20px; top: 16px; z-index: 5;
+    border: 2.5px solid var(--ink); background: var(--paper);
+    padding: 8px 18px; font-size: 24px; font-weight: 900; letter-spacing: 3px;
+  }
+  .panel-note {
+    position: absolute; right: 24px; top: 26px; z-index: 5;
+    font-size: 23px; font-weight: 700; letter-spacing: 3px; color: var(--ink-soft);
+  }
+  .panel svg { position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px; }
+  .panel.dc .smog { position: absolute; top: 0; left: 0; right: 0; height: 60px; opacity: 0.14; }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="head-row">
+      <div class="headline">账，算不过来</div>
+      <span class="ink-note">— 同一度电 · 两种送法 —</span>
+    </div>
+
+    <!-- DC: cramped, one station per mile -->
+    <section class="panel dc">
+      <div class="smog halftone"></div>
+      <span class="panel-tag">DC · 直流方案</span>
+      <span class="panel-note">低压大电流 · 传不远</span>
+      <svg width="1560" height="200" viewBox="0 0 1560 200">
+        <defs>
+          <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter>
+          <g id="st">
+            <rect x="-52" y="62" width="104" height="88" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="5"/>
+            <rect x="-44" y="30" width="18" height="34" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+            <path d="M-35 24 q8 -9 0 -18" stroke="rgba(30,42,58,0.62)" stroke-width="3.5" fill="none"/>
+            <path d="M10 78 L-10 108 L0 108 L-14 140 L16 102 L4 102 Z" fill="#1E2A3A"/>
+            <rect x="24" y="112" width="22" height="38" fill="none" stroke="#1E2A3A" stroke-width="4"/>
+          </g>
+        </defs>
+        <g filter="url(#rough)" fill="none">
+          <path d="M40 150 H1120" stroke="#1E2A3A" stroke-width="7"/>
+          <path d="M1120 150 H1272" stroke="rgba(30,42,58,0.35)" stroke-width="6" stroke-dasharray="20 14"/>
+          <path d="M1296 132 L1332 168 M1332 132 L1296 168" stroke="#1E2A3A" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <g filter="url(#rough)">
+          <use href="#st" x="130"/>
+          <use href="#st" x="285"/>
+          <use href="#st" x="440"/>
+          <use href="#st" x="595"/>
+          <use href="#st" x="750"/>
+          <use href="#st" x="905"/>
+          <use href="#st" x="1060"/>
+        </g>
+        <g filter="url(#rough)" stroke="#1E2A3A" stroke-width="4">
+          <path d="M207 138 V162"/><path d="M362 138 V162"/><path d="M517 138 V162"/>
+          <path d="M672 138 V162"/><path d="M827 138 V162"/><path d="M982 138 V162"/>
+        </g>
+        <g font-family="'Noto Sans SC',sans-serif" font-size="20" font-weight="700" fill="rgba(30,42,58,0.62)" text-anchor="middle">
+          <text x="207" y="192">1 mi</text><text x="362" y="192">1 mi</text><text x="517" y="192">1 mi</text>
+          <text x="672" y="192">1 mi</text><text x="827" y="192">1 mi</text><text x="982" y="192">1 mi</text>
+        </g>
+      </svg>
+    </section>
+
+    <!-- AC: one long high-voltage line over the mountains -->
+    <section class="panel ac">
+      <span class="panel-tag">AC · 交流方案</span>
+      <span class="panel-note">升压一次 · 到家降压</span>
+      <svg width="1560" height="250" viewBox="0 0 1560 250">
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none" stroke-width="5">
+          <path d="M30 230 H258"/>
+          <path d="M1320 230 H1532"/>
+          <path d="M430 230 L560 110 L660 170 L780 80 L900 165 L1010 120 L1120 230"/>
+        </g>
+        <g filter="url(#rough)">
+          <use href="#st" x="128" y="80"/>
+        </g>
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <path d="M182 192 H276" stroke-width="5"/>
+          <circle cx="306" cy="176" r="24" fill="#FAF3E7" stroke-width="5"/>
+          <circle cx="306" cy="204" r="24" fill="#FAF3E7" stroke-width="5"/>
+          <path d="M260 150 V118 M248 130 L260 116 L272 130" stroke-width="5" stroke-linecap="round"/>
+          <path d="M560 84 V112 M544 92 H576" stroke-width="4"/>
+          <path d="M780 62 V82 M764 70 H796" stroke-width="4"/>
+          <path d="M1010 88 V122 M994 96 H1026" stroke-width="4"/>
+          <circle cx="1264" cy="176" r="24" fill="#FAF3E7" stroke-width="5"/>
+          <circle cx="1264" cy="204" r="24" fill="#FAF3E7" stroke-width="5"/>
+          <path d="M1312 118 V150 M1300 138 L1312 152 L1324 138" stroke-width="5" stroke-linecap="round"/>
+          <path d="M1290 192 H1404" stroke-width="5"/>
+        </g>
+        <path filter="url(#rough)" d="M306 150 Q560 55 780 60 Q1010 65 1264 150" stroke="#FF6B6B" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <path d="M1396 174 L1454 124 L1512 174 Z" fill="rgba(30,42,58,0.06)" stroke-width="5"/>
+          <rect x="1408" y="174" width="92" height="56" stroke-width="5"/>
+          <rect x="1446" y="198" width="22" height="32" stroke-width="4"/>
+          <rect x="1420" y="186" width="20" height="16" stroke-width="4"/>
+        </g>
+        <g font-family="'Noto Sans SC',sans-serif" font-weight="900" fill="#1E2A3A" text-anchor="middle">
+          <text x="260" y="106" font-size="24" letter-spacing="2">升压</text>
+          <text x="1312" y="106" font-size="24" letter-spacing="2">降压</text>
+        </g>
+        <text x="780" y="34" font-family="'Noto Sans SC',sans-serif" font-size="22" font-weight="700" fill="rgba(30,42,58,0.62)" letter-spacing="6" text-anchor="middle">高压 · 小电流</text>
+      </svg>
+    </section>
+
+    <div class="stamps">
+      <span class="stamp">1英里1电站</span>
+      <span class="stamp">DC vs AC</span>
+      <span class="stamp accent">几百公里</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>04</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

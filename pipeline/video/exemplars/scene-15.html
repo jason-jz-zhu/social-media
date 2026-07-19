@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 15</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2800px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2800" height="1080" viewBox="0 0 2800 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- chart area -->
+  <g filter="url(#rough)">
+    <line x1="160" y1="880" x2="1760" y2="880" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="160" y1="880" x2="160" y2="140" stroke="#1E2A3A" stroke-width="8"/>
+  </g>
+  <text x="180" y="110" font-size="38" font-weight="700" fill="rgba(30,42,58,0.55)" letter-spacing="6">INSULL UTILITY INVESTMENTS · 股价</text>
+  <text x="220" y="950" font-size="34" fill="rgba(30,42,58,0.6)">1928</text>
+  <text x="1560" y="950" font-size="34" fill="rgba(30,42,58,0.6)">1932</text>
+
+  <path id="rise" d="M180 800 Q400 780 620 740 T980 660" stroke="#1E2A3A" stroke-width="8" fill="none" filter="url(#rough)"/>
+  <path id="boom" d="M980 660 Q1080 560 1130 400 Q1170 280 1200 210" stroke="#FF6B6B" stroke-width="12" fill="none" filter="url(#rough)"/>
+  <path id="crash" d="M1200 210 Q1260 380 1330 560 Q1420 760 1520 856" stroke="#1E2A3A" stroke-width="8" fill="none" stroke-dasharray="22 14" filter="url(#rough)"/>
+  <g id="peakLbl">
+    <text x="1080" y="160" font-size="52" font-weight="900" fill="#FF6B6B">1929 · ×5</text>
+  </g>
+  <g id="crashLbl">
+    <text x="1440" y="820" font-size="46" font-weight="900" fill="#1E2A3A">1932 · 破产</text>
+    <text x="1440" y="875" font-size="34" font-weight="700" fill="rgba(30,42,58,0.6)">-$8亿</text>
+  </g>
+
+  <!-- metro platform (right) -->
+  <g filter="url(#rough)">
+    <line x1="1900" y1="900" x2="2740" y2="900" stroke="#1E2A3A" stroke-width="8"/>
+    <rect x="2080" y="240" width="26" height="380" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="2093" y1="620" x2="2093" y2="640" stroke="#1E2A3A" stroke-width="6"/>
+    <!-- bench -->
+    <rect x="2220" y="760" width="360" height="26" fill="none" stroke="#1E2A3A" stroke-width="7"/>
+    <line x1="2250" y1="786" x2="2250" y2="900" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="2550" y1="786" x2="2550" y2="900" stroke="#1E2A3A" stroke-width="8"/>
+    <text x="2140" y="330" font-size="34" font-weight="700" fill="rgba(30,42,58,0.5)" letter-spacing="8">MÉTRO</text>
+  </g>
+  <!-- hanging lamp -->
+  <g id="lampG">
+    <line x1="2400" y1="140" x2="2400" y2="300" stroke="#1E2A3A" stroke-width="5"/>
+    <path d="M2360 300 L2440 300 L2420 340 L2380 340 Z" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <circle id="lamp" cx="2400" cy="368" r="20" fill="#FF6B6B"/>
+    <circle id="lampHalo" cx="2400" cy="368" r="90" fill="#FF6B6B" opacity="0.1"/>
+  </g>
+  <!-- sitting figure on the bench -->
+  <g id="sitter" filter="url(#rough)">
+    <circle cx="2380" cy="600" r="24" fill="#1E2A3A"/>
+    <path d="M2380 624 Q2372 680 2360 728 L2360 760" stroke="#1E2A3A" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M2360 700 Q2340 716 2330 748" stroke="#1E2A3A" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M2360 760 L2352 830 L2352 898 M2372 760 L2390 830 L2390 898" stroke="#1E2A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- falling newspaper -->
+  <g id="npaper">
+    <rect x="-44" y="-30" width="88" height="60" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="-30" y1="-12" x2="30" y2="-12" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+    <line x1="-30" y1="4" x2="30" y2="4" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+  </g>
+  <text id="cityLbl" x="2240" y="1010" font-size="44" font-weight="900" fill="rgba(30,42,58,0.7)" letter-spacing="8">1938 · 巴黎</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM_BASE = [
+  { t: 0.0,  x: 0,   z: 1.05 },
+  { t: 5.0,  x: 260, z: 1.12 },   // ride the boom
+  { t: 8.5,  x: 200, z: 1.04 },
+  { t: 12.0, x: 880, z: 1.06 },   // pan to the metro platform
+  { t: 17.8, x: 860, z: 1.10 },
+];
+
+const rise = document.getElementById('rise');
+const boom = document.getElementById('boom');
+const crash = document.getElementById('crash');
+const peak = document.getElementById('peakLbl');
+const cl = document.getElementById('crashLbl');
+const lamp = document.getElementById('lamp');
+const halo = document.getElementById('lampHalo');
+const np = document.getElementById('npaper');
+const city = document.getElementById('cityLbl');
+const sitter = document.getElementById('sitter');
+
+window.seek = function (t) {
+  const c = A.kf(CAM_BASE, t);
+  // camera shake right at the crash (7-7.5s)
+  const sh = A.once(t, 7.0, 0.5);
+  if (sh > 0 && sh < 1) {
+    c.x += Math.sin(t * 90) * 9 * (1 - sh);
+    c.y = (c.y || 0) + Math.cos(t * 77) * 6 * (1 - sh);
+  }
+  applyCam(c);
+
+  A.draw(rise, A.once(t, 0.3, 2.6));
+  A.draw(boom, A.ease(A.once(t, 3.0, 2.0)));
+  peak.style.opacity = A.once(t, 4.8, 0.5);
+  A.draw(crash, A.ease(A.once(t, 6.6, 1.6)));
+  cl.style.opacity = A.once(t, 8.2, 0.6);
+
+  // platform life: lamp flickers weakly forever
+  const fl = 0.35 + 0.4 * Math.max(0, A.sin(t, 1.1)) * (A.sin(t, 4.3) > -0.6 ? 1 : 0.25);
+  lamp.style.opacity = fl;
+  halo.style.opacity = fl * 0.22;
+
+  // sitter breathes almost imperceptibly
+  sitter.setAttribute('transform', `translate(0 ${A.sin(t, 3.8) * 1.6})`);
+
+  // a newspaper tumbles down beside him at ~13s, then rests
+  const nf = A.ease(A.once(t, 13.0, 1.6));
+  np.style.opacity = t > 12.8 ? 1 : 0;
+  np.setAttribute('transform', `translate(${2500 + nf * 60} ${A.lerp(300, 872, nf)}) rotate(${nf * 210})`);
+
+  city.style.opacity = A.once(t, 14.2, 0.8);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

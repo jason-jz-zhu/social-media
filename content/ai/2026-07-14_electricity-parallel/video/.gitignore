@@ -1,0 +1,9 @@
+out/
+audio/yunxi-backup/
+audio/andrew-backup/
+audio/JZ.mp3
+audio/jz-ref.wav
+node_modules/
+package.json
+package-lock.json
+out-test/

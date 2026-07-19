@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 05</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; justify-content: center; }
+  .receipt {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    transform: rotate(7deg);
+    z-index: 1;
+  }
+  .quote-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    text-align: center;
+    transform: translateY(-18px);
+  }
+  .quote-text {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 74px;
+    font-weight: 900;
+    line-height: 1.42;
+    letter-spacing: 6px;
+  }
+  .quote-text .hl { color: var(--accent); }
+  .qmark {
+    position: absolute;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 220px;
+    font-weight: 900;
+    color: var(--ink-faint);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .qmark.open { left: -170px; top: -76px; }
+  .qmark.close { right: -170px; bottom: 4px; }
+  .quote-divider { width: 180px; border-top: 3px double var(--ink); }
+  .quote-sub {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--ink-soft);
+  }
+  .stamps { left: 50%; transform: translateX(-50%); bottom: 36px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="receipt">
+      <svg width="300" height="390" viewBox="0 0 300 390">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+        <g filter="url(#rough)">
+          <rect x="10" y="10" width="280" height="370" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4" stroke-dasharray="16 9"/>
+          <text x="150" y="54" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#1E2A3A">ELECTRIC LIGHT CO.</text>
+          <line x1="36" y1="72" x2="264" y2="72" stroke="rgba(30,42,58,0.62)" stroke-width="3"/>
+          <text x="150" y="102" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="rgba(30,42,58,0.62)" letter-spacing="3">MONTHLY BILL</text>
+          <path d="M36 142 q10 -7 20 0 q10 7 20 0 q10 -7 20 0 q10 7 20 0 q10 -7 20 0" stroke="rgba(30,42,58,0.62)" stroke-width="3" fill="none"/>
+          <line x1="216" y1="142" x2="262" y2="142" stroke="#1E2A3A" stroke-width="3"/>
+          <path d="M36 180 q10 -7 20 0 q10 7 20 0 q10 -7 20 0 q10 7 20 0" stroke="rgba(30,42,58,0.62)" stroke-width="3" fill="none"/>
+          <line x1="216" y1="180" x2="262" y2="180" stroke="#1E2A3A" stroke-width="3"/>
+          <path d="M36 218 q10 -7 20 0 q10 7 20 0 q10 -7 20 0 q10 7 20 0 q10 -7 20 0" stroke="rgba(30,42,58,0.62)" stroke-width="3" fill="none"/>
+          <line x1="216" y1="218" x2="262" y2="218" stroke="#1E2A3A" stroke-width="3"/>
+          <path d="M36 256 q10 -7 20 0 q10 7 20 0 q10 -7 20 0" stroke="rgba(30,42,58,0.62)" stroke-width="3" fill="none"/>
+          <line x1="216" y1="256" x2="262" y2="256" stroke="#1E2A3A" stroke-width="3"/>
+          <line x1="30" y1="288" x2="270" y2="288" stroke="#1E2A3A" stroke-width="3"/>
+          <text x="34" y="336" font-family="Georgia, serif" font-size="21" font-weight="bold" fill="#1E2A3A">TOTAL</text>
+          <text x="198" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="33" font-weight="bold" fill="#1E2A3A">$47.60</text>
+          <ellipse cx="198" cy="327" rx="62" ry="29" fill="none" stroke="#FF6B6B" stroke-width="5" transform="rotate(-4 198 327)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="quote-block">
+      <span class="qmark open">&ldquo;</span>
+      <div class="quote-text">打败爱迪生的，<br>不是特斯拉，<br>是<span class="hl">一张电费账单</span></div>
+      <div class="quote-divider"></div>
+      <div class="quote-sub">市场从不奖励先发明的人，只奖励单位成本低的人</div>
+      <span class="qmark close">&rdquo;</span>
+    </div>
+    <div class="stamps">
+      <span class="stamp">一张电费账单</span>
+      <span class="stamp accent">单位成本</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>05</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

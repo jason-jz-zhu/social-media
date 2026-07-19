@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 05</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2600px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2600" height="1080" viewBox="0 0 2600 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- desk surface (flat-lay), slightly darker than paper so the bill pops -->
+  <rect x="0" y="0" width="2600" height="1080" fill="rgba(30,42,58,0.06)"/>
+  <g filter="url(#rough)" stroke="rgba(30,42,58,0.12)" stroke-width="4">
+    <line x1="0" y1="150" x2="2600" y2="150"/>
+    <line x1="0" y1="480" x2="2600" y2="480"/>
+    <line x1="0" y1="800" x2="2600" y2="800"/>
+  </g>
+
+  <!-- coffee cup, top view (left) -->
+  <g filter="url(#rough)">
+    <ellipse cx="600" cy="590" rx="112" ry="104" fill="rgba(30,42,58,0.10)"/>
+    <circle cx="600" cy="580" r="98" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+    <circle cx="600" cy="580" r="72" fill="rgba(30,42,58,0.72)"/>
+    <path d="M694 560 C 748 550, 754 616, 700 610" fill="none" stroke="#1E2A3A" stroke-width="8"/>
+  </g>
+  <!-- steam wisps (loop) -->
+  <g id="steam">
+    <ellipse id="st1" cx="0" cy="0" rx="26" ry="13" fill="rgba(30,42,58,0.20)"/>
+    <ellipse id="st2" cx="0" cy="0" rx="20" ry="10" fill="rgba(30,42,58,0.17)"/>
+    <ellipse id="st3" cx="0" cy="0" rx="32" ry="15" fill="rgba(30,42,58,0.14)"/>
+  </g>
+
+  <!-- fountain pen (lower left) -->
+  <g filter="url(#rough)">
+    <line x1="820" y1="880" x2="1020" y2="960" stroke="#1E2A3A" stroke-width="13" stroke-linecap="round"/>
+    <path d="M1020 960 L1058 976 L1040 948 Z" fill="#1E2A3A"/>
+    <line x1="850" y1="892" x2="874" y2="902" stroke="#FAF3E7" stroke-width="4"/>
+  </g>
+
+  <!-- torn envelope (upper right of bill) -->
+  <g filter="url(#rough)" transform="rotate(9 1740 470)">
+    <rect x="1620" y="410" width="240" height="140" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+    <path d="M1620 410 L1740 486 L1860 410" fill="none" stroke="#1E2A3A" stroke-width="5"/>
+    <path d="M1620 418 L1648 406 L1676 420 L1706 405 L1736 419 L1766 406 L1796 420 L1826 406 L1860 418" fill="none" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+  </g>
+
+  <!-- open ledger book (right side) -->
+  <g filter="url(#rough)">
+    <rect x="1980" y="470" width="440" height="330" rx="8" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+    <line x1="2200" y1="470" x2="2200" y2="800" stroke="#1E2A3A" stroke-width="6"/>
+    <g stroke="rgba(30,42,58,0.35)" stroke-width="3">
+      <line x1="2010" y1="530" x2="2170" y2="530"/><line x1="2010" y1="575" x2="2170" y2="575"/>
+      <line x1="2010" y1="620" x2="2170" y2="620"/><line x1="2010" y1="665" x2="2170" y2="665"/>
+      <line x1="2010" y1="710" x2="2170" y2="710"/>
+      <line x1="2230" y1="530" x2="2390" y2="530"/><line x1="2230" y1="575" x2="2390" y2="575"/>
+      <line x1="2230" y1="620" x2="2390" y2="620"/><line x1="2230" y1="665" x2="2390" y2="665"/>
+      <line x1="2230" y1="710" x2="2390" y2="710"/>
+    </g>
+    <text x="2262" y="762" font-size="30" font-weight="700" fill="rgba(30,42,58,0.55)" font-family="Georgia, serif">LEDGER · 1892</text>
+  </g>
+
+  <!-- bill shadow on desk -->
+  <ellipse id="billShadow" cx="1300" cy="1000" rx="300" ry="26" fill="rgba(30,42,58,0.55)" opacity="0"/>
+
+  <!-- THE BILL (drops in, then floats; coral circle lives inside so it floats too) -->
+  <g id="billG">
+    <g filter="url(#rough)">
+      <path d="M1040 420 H1560 V985 L1540 1000 L1500 986 L1460 1000 L1420 987 L1380 1000 L1340 986 L1300 1000 L1260 987 L1220 1000 L1180 986 L1140 1000 L1100 987 L1060 1000 L1040 988 Z"
+            fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+      <line x1="1078" y1="558" x2="1522" y2="558" stroke="#1E2A3A" stroke-width="5"/>
+      <line x1="1078" y1="806" x2="1522" y2="806" stroke="#1E2A3A" stroke-width="5"/>
+      <line x1="1078" y1="816" x2="1522" y2="816" stroke="#1E2A3A" stroke-width="3"/>
+    </g>
+    <g font-family="Georgia, serif" fill="#1E2A3A">
+      <text x="1300" y="497" text-anchor="middle" font-size="38" font-weight="900" letter-spacing="2">ELECTRIC LIGHT CO.</text>
+      <text x="1300" y="538" text-anchor="middle" font-size="24" letter-spacing="4" fill="rgba(30,42,58,0.6)">NEW YORK · 1892</text>
+      <text x="1090" y="628" font-size="27">ELECTRIC SERVICE</text><text x="1512" y="628" text-anchor="end" font-size="27">$38.90</text>
+      <text x="1090" y="690" font-size="27">LAMP RENTAL</text><text x="1512" y="690" text-anchor="end" font-size="27">$5.45</text>
+      <text x="1090" y="752" font-size="27">METER FEE</text><text x="1512" y="752" text-anchor="end" font-size="27">$3.25</text>
+      <text x="1088" y="896" font-size="40" font-weight="900" letter-spacing="2">TOTAL</text>
+      <text x="1516" y="899" text-anchor="end" font-size="58" font-weight="900">$47.60</text>
+    </g>
+    <!-- hand-drawn coral circle around the total -->
+    <path id="circ" d="M1523 856 C 1543 892, 1462 930, 1305 933 C 1148 936, 1060 906, 1066 872 C 1072 836, 1170 816, 1308 818 C 1446 820, 1522 834, 1538 868"
+          fill="none" stroke="#FF6B6B" stroke-width="9" stroke-linecap="round" filter="url(#rough)"/>
+  </g>
+
+  <!-- coins (drop late, aligned to "单位成本" beat) -->
+  <g id="coins">
+    <g id="coin0"><circle r="46" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/><circle r="33" fill="none" stroke="rgba(30,42,58,0.35)" stroke-width="4"/><text y="16" text-anchor="middle" font-size="44" font-weight="900" fill="#1E2A3A" font-family="Georgia, serif">¢</text><line class="glint" x1="-26" y1="-22" x2="-8" y2="-34" stroke="rgba(30,42,58,0.5)" stroke-width="5" stroke-linecap="round"/></g>
+    <g id="coin1"><circle r="46" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/><circle r="33" fill="none" stroke="rgba(30,42,58,0.35)" stroke-width="4"/><text y="16" text-anchor="middle" font-size="44" font-weight="900" fill="#1E2A3A" font-family="Georgia, serif">¢</text><line class="glint" x1="-26" y1="-22" x2="-8" y2="-34" stroke="rgba(30,42,58,0.5)" stroke-width="5" stroke-linecap="round"/></g>
+    <g id="coin2"><circle r="46" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/><circle r="33" fill="none" stroke="rgba(30,42,58,0.35)" stroke-width="4"/><text y="16" text-anchor="middle" font-size="44" font-weight="900" fill="#1E2A3A" font-family="Georgia, serif">¢</text><line class="glint" x1="-26" y1="-22" x2="-8" y2="-34" stroke="rgba(30,42,58,0.5)" stroke-width="5" stroke-linecap="round"/></g>
+  </g>
+
+  <!-- big poster words (painted onto the scene above the bill) -->
+  <g id="w1" opacity="0"><text x="1250" y="212" text-anchor="end" font-size="92" font-weight="900" fill="#1E2A3A">打败爱迪生的</text></g>
+  <g id="w2" opacity="0"><text x="1350" y="212" font-size="92" font-weight="900" fill="#1E2A3A">不是特斯拉</text></g>
+  <g id="w3" opacity="0"><text x="1300" y="372" text-anchor="middle" font-size="124" font-weight="900" fill="#FF6B6B" letter-spacing="4">是一张电费账单</text></g>
+
+  <!-- dust motes -->
+  <g id="dust" fill="rgba(30,42,58,0.22)">
+    <circle id="d0" r="5"/><circle id="d1" r="4"/><circle id="d2" r="6"/>
+    <circle id="d3" r="4"/><circle id="d4" r="5"/><circle id="d5" r="4"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [
+  { t: 0.0,   x: 752, y: 390, z: 1.75 },  // tight on the bill
+  { t: 4.6,   x: 710, y: 350, z: 1.58 },  // hold close for the coral circle
+  { t: 7.0,   x: 500, y: 100, z: 1.22 },  // rise to reveal the poster words
+  { t: 14.22, x: 340, y: 0,   z: 1.00 },  // full desk
+];
+
+const billG = document.getElementById('billG');
+const billShadow = document.getElementById('billShadow');
+const circ = document.getElementById('circ');
+const words = [
+  { g: document.getElementById('w1'), st: 6.6 },
+  { g: document.getElementById('w2'), st: 7.4 },
+  { g: document.getElementById('w3'), st: 8.3 },
+];
+const coins = [
+  { g: document.getElementById('coin0'), x: 1706, y: 690, st: 9.9,  spin: -140 },
+  { g: document.getElementById('coin1'), x: 1798, y: 752, st: 10.25, spin: 120 },
+  { g: document.getElementById('coin2'), x: 1728, y: 816, st: 10.6, spin: -100 },
+];
+const steam = ['st1','st2','st3'].map(id => document.getElementById(id));
+const dust = ['d0','d1','d2','d3','d4','d5'].map(id => document.getElementById(id));
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // beat 1: bill drops from off-frame (0-0.5s), then floats forever
+  const dp = A.easeOut(A.once(t, 0.05, 0.5));
+  const fOn = A.once(t, 0.55, 0.8);
+  const offY = -900 * (1 - dp) + A.sin(t, 3.2, 0.1) * 6 * fOn;
+  const rot = A.lerp(-13, -2, dp) + A.sin(t, 4.3, 0.5) * 0.8 * fOn;
+  billG.setAttribute('transform', `translate(0 ${offY}) rotate(${rot} 1300 700)`);
+  billShadow.style.opacity = dp * (0.16 + 0.04 * A.sin(t, 3.2, 0.6));
+
+  // beat 2: coral circle drawn around TOTAL $47.60 (~4s)
+  A.draw(circ, A.ease(A.once(t, 4.0, 0.9)));
+
+  // beat 3: poster words surface one group at a time (~6.6 / 7.4 / 8.3)
+  words.forEach(w => {
+    const p = A.easeOut(A.once(t, w.st, 0.6));
+    w.g.style.opacity = p;
+    w.g.setAttribute('transform', `translate(0 ${(1 - p) * 42})`);
+  });
+
+  // beat 4: cents drop onto the desk (~9.9s, "单位成本" beat), then glint forever
+  coins.forEach((c, i) => {
+    const p = A.easeOut(A.once(t, c.st, 0.5));
+    c.g.style.opacity = t < c.st ? 0 : 1;
+    c.g.setAttribute('transform', `translate(${c.x} ${c.y - 820 * (1 - p)}) rotate(${(1 - p) * c.spin})`);
+    const gl = c.g.querySelector('.glint');
+    gl.style.opacity = Math.max(0, A.sin(t, 2.7, i * 0.33)) * 0.9;
+  });
+
+  // ambient: coffee steam curls up forever
+  steam.forEach((s, i) => {
+    const ph = A.loop(t, 3.0, i * 0.34);
+    s.setAttribute('transform', `translate(${600 + A.sin(t, 2.0, i * 0.4) * 24} ${A.lerp(500, 250, ph)})`);
+    s.style.opacity = Math.sin(ph * Math.PI) * 0.8;
+  });
+
+  // ambient: dust motes drifting across the desk
+  dust.forEach((d, i) => {
+    const ph = A.loop(t, 8.5 + i * 1.1, i * 0.37);
+    const dx = 260 + ((i * 397) % 2100) + A.sin(t, 6 + i, i * 0.3) * 46;
+    d.setAttribute('transform', `translate(${dx} ${A.lerp(1050, 30, ph)})`);
+    d.style.opacity = Math.sin(ph * Math.PI) * 0.55;
+  });
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

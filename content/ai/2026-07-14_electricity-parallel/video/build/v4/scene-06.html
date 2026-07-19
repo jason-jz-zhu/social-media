@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 06</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 3000px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="3000" height="1080" viewBox="0 0 3000 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- ======== ACT 1 (left, 0..1500): the $60K patent sale ======== -->
+  <!-- back wall: giant painted year -->
+  <text x="260" y="620" font-size="400" font-weight="900" fill="rgba(30,42,58,0.10)" letter-spacing="16">1888</text>
+
+  <!-- ceiling beam across the whole world -->
+  <path d="M60 120 L2940 120" stroke="#1E2A3A" stroke-width="9" fill="none" filter="url(#rough)"/>
+  <!-- floor across the whole world -->
+  <path d="M60 900 L2940 900" stroke="#1E2A3A" stroke-width="7" fill="none" filter="url(#rough)"/>
+
+  <!-- WESTINGHOUSE sign hanging over the buyer -->
+  <g filter="url(#rough)">
+    <line x1="1130" y1="120" x2="1130" y2="185" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="1420" y1="120" x2="1420" y2="185" stroke="#1E2A3A" stroke-width="5"/>
+    <rect x="1050" y="185" width="450" height="82" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+    <text x="1082" y="242" font-size="38" font-weight="900" fill="#1E2A3A" letter-spacing="3" font-family="Georgia, serif">WESTINGHOUSE</text>
+  </g>
+
+  <!-- string of bulbs: posts + sagging wire -->
+  <g filter="url(#rough)">
+    <line x1="240" y1="120" x2="240" y2="318" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="1360" y1="120" x2="1360" y2="318" stroke="#1E2A3A" stroke-width="6"/>
+    <path d="M240 318 Q800 425 1360 318" stroke="#1E2A3A" stroke-width="5" fill="none"/>
+  </g>
+  <g id="bulbString"></g>
+
+  <!-- table between the two men -->
+  <g filter="url(#rough)">
+    <rect x="620" y="778" width="440" height="16" fill="#1E2A3A"/>
+    <line x1="655" y1="794" x2="645" y2="900" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="1025" y1="794" x2="1035" y2="900" stroke="#1E2A3A" stroke-width="8"/>
+  </g>
+
+  <!-- patent scroll (slides Tesla -> buyer) -->
+  <g id="scroll">
+    <g filter="url(#rough)">
+      <rect x="-78" y="-17" width="156" height="34" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+      <circle cx="-78" cy="0" r="17" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+      <circle cx="78" cy="0" r="17" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+      <circle cx="-78" cy="0" r="6" fill="#1E2A3A"/>
+      <circle cx="78" cy="0" r="6" fill="#1E2A3A"/>
+    </g>
+    <text x="-52" y="8" font-size="24" font-weight="900" fill="#1E2A3A" letter-spacing="2" font-family="Georgia, serif">PATENT</text>
+  </g>
+
+  <!-- money bag (flies buyer -> Tesla, bounces) -->
+  <g id="bag">
+    <g filter="url(#rough)">
+      <path d="M-36 34 Q-46 -4 -14 -22 L-10 -34 L10 -34 L14 -22 Q46 -4 36 34 Q0 50 -36 34 Z" fill="#1E2A3A"/>
+      <line x1="-12" y1="-30" x2="12" y2="-30" stroke="#FAF3E7" stroke-width="4"/>
+    </g>
+    <text x="-27" y="20" font-size="24" font-weight="900" fill="#FAF3E7" font-family="Georgia, serif">$60K</text>
+  </g>
+
+  <!-- Tesla (act 1) + buyer with top hat -->
+  <g id="tesla1Wrap"></g>
+  <g id="buyerWrap"></g>
+
+  <!-- ======== divider column between acts ======== -->
+  <g filter="url(#rough)">
+    <line x1="1650" y1="120" x2="1650" y2="900" stroke="#1E2A3A" stroke-width="9"/>
+    <line x1="1618" y1="220" x2="1682" y2="252" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="1618" y1="470" x2="1682" y2="502" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="1618" y1="720" x2="1682" y2="752" stroke="#1E2A3A" stroke-width="5"/>
+  </g>
+
+  <!-- ======== ACT 2 (right, 1500..3000): tearing the royalty contract ======== -->
+  <text x="2340" y="330" font-size="92" font-weight="900" fill="rgba(30,42,58,0.13)" letter-spacing="8">财务危机</text>
+
+  <!-- swinging pendant lamp -->
+  <g id="lamp">
+    <line x1="2680" y1="128" x2="2680" y2="330" stroke="#1E2A3A" stroke-width="5"/>
+    <path d="M2648 330 L2712 330 L2696 296 L2664 296 Z" fill="#1E2A3A"/>
+    <circle id="lampBulb" cx="2680" cy="342" r="11" fill="#FF6B6B"/>
+  </g>
+
+  <!-- Tesla (act 2), arms raised -->
+  <g id="tesla2Wrap"></g>
+
+  <!-- royalty contract held overhead: two halves with a shared jagged edge -->
+  <g id="contract">
+    <g id="halfL">
+      <path d="M-130 -85 L8 -85 L-7 -56 L10 -28 L-8 0 L7 28 L-10 56 L8 85 L-130 85 Z"
+            fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6" filter="url(#rough)"/>
+      <text x="-104" y="-32" font-size="34" font-weight="900" fill="#1E2A3A">版税</text>
+      <line x1="-106" y1="8" x2="-24" y2="8" stroke="#1E2A3A" stroke-width="4"/>
+      <line x1="-106" y1="32" x2="-30" y2="32" stroke="#1E2A3A" stroke-width="4"/>
+      <circle cx="-84" cy="60" r="15" fill="none" stroke="#FF6B6B" stroke-width="5"/>
+    </g>
+    <g id="halfR">
+      <path d="M130 -85 L8 -85 L-7 -56 L10 -28 L-8 0 L7 28 L-10 56 L8 85 L130 85 Z"
+            fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6" filter="url(#rough)"/>
+      <text x="36" y="-32" font-size="34" font-weight="900" fill="#1E2A3A">合同</text>
+      <line x1="30" y1="8" x2="106" y2="8" stroke="#1E2A3A" stroke-width="4"/>
+      <line x1="26" y1="32" x2="100" y2="32" stroke="#1E2A3A" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- torn shreds looping down -->
+  <g id="shreds">
+    <path id="sh1" d="M-16 -12 L14 -16 L18 10 L-12 14 Z" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <path id="sh2" d="M-12 -14 L12 -10 L14 12 L-14 10 Z" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <path id="sh3" d="M-18 -10 L12 -14 L16 12 L-10 16 Z" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <path id="sh4" d="M-12 -16 L14 -12 L10 14 L-16 10 Z" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <path id="sh5" d="M-14 -12 L16 -14 L12 14 L-12 12 Z" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <path id="sh6" d="M-16 -14 L10 -12 L16 12 L-14 14 Z" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+// --- build characters ---
+document.getElementById('tesla1Wrap').innerHTML = A.walkerSVG('tesla1');
+document.getElementById('buyerWrap').innerHTML = A.walkerSVG('buyer');
+document.getElementById('tesla2Wrap').innerHTML = A.walkerSVG('tesla2');
+// mustache for both Teslas
+['tesla1', 'tesla2'].forEach(id => {
+  document.getElementById(id).innerHTML +=
+    '<path d="M-11 -85 Q0 -78 11 -85" stroke="#FAF3E7" stroke-width="4" fill="none"/>';
+});
+// top hat for the buyer
+document.getElementById('buyer').innerHTML +=
+  '<rect x="-16" y="-148" width="32" height="42" fill="#1E2A3A"/>' +
+  '<rect x="-27" y="-110" width="54" height="7" fill="#1E2A3A"/>';
+
+// --- build bulb string along the sagging wire ---
+const bulbNS = 'http://www.w3.org/2000/svg';
+const bsg = document.getElementById('bulbString');
+const NB = 7;
+const bulbs = [];
+for (let i = 0; i < NB; i++) {
+  const u = (i + 0.5) / NB;
+  const bx = (1 - u) * (1 - u) * 240 + 2 * u * (1 - u) * 800 + u * u * 1360;
+  const by = (1 - u) * (1 - u) * 318 + 2 * u * (1 - u) * 425 + u * u * 318;
+  const g = document.createElementNS(bulbNS, 'g');
+  g.innerHTML = `<line x1="${bx}" y1="${by}" x2="${bx}" y2="${by + 22}" stroke="#1E2A3A" stroke-width="4"/>
+    <circle class="b-halo" cx="${bx}" cy="${by + 38}" r="30" fill="#FF6B6B"/>
+    <circle class="b-core" cx="${bx}" cy="${by + 38}" r="13" fill="#FF6B6B" stroke="#1E2A3A" stroke-width="3"/>`;
+  bsg.appendChild(g);
+  bulbs.push(g);
+}
+
+const CAM = [
+  { t: 0.0,   x: 40,   y: 60,  z: 1.25 },  // act 1: the deal table
+  { t: 3.2,   x: 0,    y: 40,  z: 1.18 },  // drift wide, reveal 1888 + bulbs
+  { t: 8.8,   x: 60,   y: 60,  z: 1.25 },
+  { t: 11.2,  x: 1400, y: 60,  z: 1.25 },  // pan to act 2
+  { t: 12.9,  x: 1480, y: 170, z: 1.34 },  // push in on the tear
+  { t: 16.5,  x: 1350, y: 40,  z: 1.20 },  // pull back for the closing line
+  { t: 20.63, x: 1320, y: 40,  z: 1.18 },
+];
+
+const scroll = document.getElementById('scroll');
+const bag = document.getElementById('bag');
+const contract = document.getElementById('contract');
+const halfL = document.getElementById('halfL');
+const halfR = document.getElementById('halfR');
+const lamp = document.getElementById('lamp');
+const lampBulb = document.getElementById('lampBulb');
+const shreds = ['sh1','sh2','sh3','sh4','sh5','sh6'].map(id => document.getElementById(id));
+const setLimb = (gid, cls, x2, y2) => {
+  const e = document.getElementById(gid).querySelector('.' + cls);
+  e.setAttribute('x2', x2); e.setAttribute('y2', y2);
+};
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // ---- ACT 1 ----
+  // the two men stand facing each other, idle bob
+  A.walk('tesla1', t, 450, 900, { face: 1, scale: 2.1, still: true });
+  A.walk('buyer', t, 1250, 900, { face: -1, scale: 2.1, still: true });
+  // Tesla reaches toward the scroll while it slides
+  const push = A.ease(A.once(t, 3.0, 0.8)) - A.ease(A.once(t, 6.4, 0.8));
+  setLimb('tesla1', 'w-armR', A.lerp(12, 30, push), A.lerp(-40, -58, push));
+  // buyer reaches out to receive, then hands the bag over
+  const reach = A.ease(A.once(t, 4.6, 0.8)) - A.ease(A.once(t, 8.0, 0.8));
+  setLimb('buyer', 'w-armR', A.lerp(12, 30, reach), A.lerp(-40, -58, reach));
+
+  // patent scroll slides Tesla -> buyer (3.2s..5.6s), wobbles while rolling
+  const sp = A.ease(A.once(t, 3.2, 2.4));
+  const sx = A.lerp(700, 980, sp);
+  const wob = sp > 0 && sp < 1 ? A.sin(t, 0.5) * 4 : 0;
+  scroll.setAttribute('transform', `translate(${sx} 760) rotate(${wob})`);
+
+  // money bag: appears in buyer's hand, arcs back to Tesla (6.2..7.8), bounces on landing
+  const bp = A.ease(A.once(t, 6.2, 1.6));
+  const bx = A.lerp(1150, 580, bp);
+  let by = A.lerp(772, 862, bp) - 160 * Math.sin(Math.PI * bp);
+  if (t > 7.8) by = 862 - 55 * Math.exp(-2.6 * (t - 7.8)) * Math.abs(Math.sin((t - 7.8) * Math.PI / 0.42));
+  bag.setAttribute('transform', `translate(${bx} ${by}) rotate(${bp > 0 && bp < 1 ? A.sin(t, 0.9) * 10 : 0})`);
+  bag.style.opacity = A.once(t, 5.8, 0.4);
+
+  // string of bulbs: light up one by one, then keep flickering forever
+  bulbs.forEach((g, i) => {
+    const lit = A.easeOut(A.once(t, 1.0 + i * 0.38, 0.35));
+    const fl = 0.62 + 0.38 * Math.max(A.sin(t, 0.8, i * 0.21), A.sin(t, 0.27, i * 0.4) * 0.5);
+    g.querySelector('.b-core').style.opacity = lit * fl;
+    g.querySelector('.b-halo').style.opacity = lit * fl * 0.20;
+  });
+
+  // ---- ACT 2 ----
+  // Tesla with both arms raised, holding the contract overhead
+  A.walk('tesla2', t, 2200, 900, { face: 1, scale: 2.2, still: true });
+  setLimb('tesla2', 'w-armL', -22, -98);
+  setLimb('tesla2', 'w-armR', 22, -98);
+
+  // contract overhead: trembles, then tears at ~12s
+  const bob = Math.abs(A.sin(t, 0.275)) * 2.5;
+  const cy = 599 - bob * 2.2;
+  const trem = t < 12 ? A.sin(t, 0.34) * 1.6 : 0;
+  contract.setAttribute('transform', `translate(2200 ${cy}) rotate(${trem})`);
+  const tear = A.ease(A.once(t, 12.0, 0.7));
+  const sway = tear > 0 ? A.sin(t, 1.7) * 2.5 : 0;
+  halfL.setAttribute('transform',
+    `translate(${-34 * tear} ${26 * tear}) rotate(${-40 * tear + sway} -120 85)`);
+  halfR.setAttribute('transform',
+    `translate(${34 * tear} ${26 * tear}) rotate(${40 * tear - sway} 120 85)`);
+
+  // shreds rain down forever after the tear
+  shreds.forEach((s, i) => {
+    const ph = A.loop(t, 2.9, i * 0.37);
+    const px = 2090 + i * 46 + A.sin(t, 1.5, i * 0.29) * 24;
+    const py = A.lerp(660, 892, ph);
+    s.setAttribute('transform', `translate(${px} ${py}) rotate(${ph * 300 + i * 55})`);
+    s.style.opacity = t < 12.35 ? 0 : (ph > 0.9 ? (1 - ph) * 8.5 : 0.85);
+  });
+
+  // pendant lamp swings forever, bulb flickers softly
+  const la = A.sin(t, 2.7) * 6;
+  lamp.setAttribute('transform', `rotate(${la} 2680 128)`);
+  lampBulb.style.opacity = 0.55 + 0.3 * A.sin(t, 0.7, 0.3);
+};
+seek(0);
+</script>
+</body>
+</html>

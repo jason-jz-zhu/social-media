@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Vertical BG</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; background: #1E2A3A; overflow: hidden; position: relative; }
+  body::before { content: ''; position: absolute; inset: 0; z-index: 40; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.98 0 0 0 0 0.95 0 0 0 0 0.90 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .top-line { position: absolute; top: 46px; left: 50px; right: 50px; height: 2px;
+    background: repeating-linear-gradient(90deg, #C89860 0 18px, transparent 18px 30px); }
+  .bot-line { position: absolute; bottom: 46px; left: 50px; right: 50px; height: 2px;
+    background: repeating-linear-gradient(90deg, #C89860 0 18px, transparent 18px 30px); }
+  .header { position: absolute; top: 120px; left: 60px; right: 60px; text-align: center; }
+  .kicker { font-family: 'Noto Sans SC', sans-serif; font-size: 26px; font-weight: 700;
+    letter-spacing: 10px; color: #C89860; margin-bottom: 36px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 82px; font-weight: 900;
+    color: #FDF6E8; line-height: 1.45; letter-spacing: 3px; }
+  .title .hl { color: #FF6B6B; }
+  .sub { margin-top: 30px; font-family: 'Noto Serif SC', serif; font-size: 34px;
+    color: rgba(253,246,232,0.65); letter-spacing: 4px; }
+  /* video window: y 656..1264 (1080x608) — leave empty */
+  .quote { position: absolute; top: 1330px; left: 70px; right: 70px; text-align: center;
+    font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 700;
+    color: #FDF6E8; line-height: 1.7; letter-spacing: 2px; }
+  .quote .hl { color: #FF6B6B; }
+  .quote .mark { font-size: 90px; color: #FF6B6B; opacity: 0.4; display: block; line-height: 0.6; margin-bottom: 18px; }
+  .brand { position: absolute; bottom: 100px; left: 0; right: 0; text-align: center;
+    font-family: 'Noto Serif SC', serif; font-size: 22px; letter-spacing: 7px; color: #C89860; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="header">
+    <div class="kicker">AI 观察 · 历史照进现实</div>
+    <div class="title">打败爱迪生的<br>是一张<span class="hl">电费账单</span></div>
+    <div class="sub">电力革命 100 年前就写好了 AI 的剧本</div>
+  </div>
+  <div class="quote">
+    <span class="mark">"</span>
+    你不是在等 AI 变强<br>是 AI 在等你<span class="hl">重建工厂</span>
+  </div>
+  <div class="brand">THE ELECTRIC PARALLEL · AI SERIES VOL.10</div>
+  <div class="bot-line"></div>
+</body>
+</html>

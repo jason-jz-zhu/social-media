@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 11</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 14px; padding-top: 10px; }
+  .head-row { flex: 0 0 auto; }
+  .head-row .headline { font-size: 70px; }
+  .compare-row { flex: 1; min-height: 0; display: flex; align-items: stretch; }
+  .panel {
+    flex: 1;
+    min-width: 0;
+    border: 3px solid var(--ink);
+    padding: 16px 20px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: var(--paper);
+  }
+  .panel-label {
+    align-self: flex-start;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    border: 2.5px solid var(--ink);
+    padding: 7px 16px;
+  }
+  .panel .art { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .panel .caption { font-size: 24px; letter-spacing: 3px; }
+  .divider {
+    flex: 0 0 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .divider .vrule { flex: 1; width: 0; border-left: 2px dashed var(--ink-faint); }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="head-row">
+      <div class="headline">推倒，重来</div>
+    </div>
+    <div class="compare-row">
+      <div class="panel">
+        <span class="panel-label">旧工厂 · 围着轴挤</span>
+        <div class="art">
+        <svg width="660" height="476" viewBox="0 0 720 520">
+          <defs><filter id="roughL"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+          <!-- two-storey frame + central shaft -->
+          <g filter="url(#roughL)" stroke="#1E2A3A" fill="none">
+            <rect x="60" y="26" width="600" height="464" stroke-width="6"/>
+            <line x1="60" y1="258" x2="660" y2="258" stroke-width="5"/>
+            <line x1="360" y1="26" x2="360" y2="490" stroke-width="11"/>
+            <circle cx="360" cy="96" r="16" stroke-width="5"/>
+            <circle cx="360" cy="330" r="16" stroke-width="5"/>
+            <line x1="92" y1="96" x2="628" y2="96" stroke-width="6"/>
+            <line x1="92" y1="330" x2="628" y2="330" stroke-width="6"/>
+            <circle cx="176" cy="96" r="9" stroke-width="4"/><circle cx="272" cy="96" r="9" stroke-width="4"/>
+            <circle cx="446" cy="96" r="9" stroke-width="4"/><circle cx="556" cy="96" r="9" stroke-width="4"/>
+            <circle cx="160" cy="330" r="9" stroke-width="4"/><circle cx="286" cy="330" r="9" stroke-width="4"/>
+            <circle cx="438" cy="330" r="9" stroke-width="4"/><circle cx="566" cy="330" r="9" stroke-width="4"/>
+          </g>
+          <!-- tangled belts, crossing each other -->
+          <g filter="url(#roughL)" stroke="#1E2A3A" stroke-width="3.5" fill="none">
+            <path d="M168 102 L214 178 M184 102 L188 180"/>
+            <path d="M264 102 L246 192 M280 102 L320 184"/>
+            <path d="M352 108 L306 182 M368 108 L396 190"/>
+            <path d="M438 102 L400 190 M454 102 L470 178"/>
+            <path d="M548 102 L524 194 M564 102 L544 186"/>
+            <path d="M200 100 L470 182"/>
+            <path d="M540 100 L260 186"/>
+            <path d="M152 336 L200 412 M168 336 L176 414"/>
+            <path d="M278 336 L252 420 M294 336 L330 416"/>
+            <path d="M352 342 L308 416 M368 342 L398 422"/>
+            <path d="M430 336 L404 420 M446 336 L472 412"/>
+            <path d="M558 336 L522 424 M574 336 L556 416"/>
+            <path d="M180 334 L468 414"/>
+            <path d="M540 334 L250 420"/>
+          </g>
+          <!-- machines crowding the shaft, jumbled -->
+          <g filter="url(#roughL)" stroke="#1E2A3A" stroke-width="5" fill="rgba(30,42,58,0.08)">
+            <rect x="164" y="174" width="84" height="62" transform="rotate(-13 206 205)"/>
+            <rect x="238" y="190" width="72" height="56" transform="rotate(9 274 218)"/>
+            <rect x="306" y="176" width="60" height="50" transform="rotate(-4 336 201)"/>
+            <rect x="372" y="188" width="78" height="58" transform="rotate(12 411 217)"/>
+            <rect x="452" y="174" width="66" height="54" transform="rotate(-9 485 201)"/>
+            <rect x="518" y="192" width="52" height="44" transform="rotate(15 544 214)"/>
+            <rect x="158" y="406" width="82" height="62" transform="rotate(11 199 437)"/>
+            <rect x="240" y="418" width="70" height="54" transform="rotate(-12 275 445)"/>
+            <rect x="308" y="408" width="58" height="48" transform="rotate(6 337 432)"/>
+            <rect x="374" y="416" width="80" height="58" transform="rotate(-8 414 445)"/>
+            <rect x="456" y="406" width="64" height="54" transform="rotate(13 488 433)"/>
+            <rect x="520" y="420" width="52" height="44" transform="rotate(-15 546 442)"/>
+          </g>
+          <!-- clutter on the floor -->
+          <g filter="url(#roughL)" stroke="#1E2A3A" stroke-width="3" fill="none">
+            <rect x="98" y="222" width="36" height="26" transform="rotate(12 116 235)"/>
+            <rect x="590" y="218" width="34" height="26" transform="rotate(-14 607 231)"/>
+            <rect x="336" y="228" width="30" height="22" transform="rotate(-18 351 239)"/>
+            <rect x="96" y="452" width="38" height="26" transform="rotate(-10 115 465)"/>
+            <rect x="592" y="450" width="36" height="26" transform="rotate(9 610 463)"/>
+          </g>
+        </svg>
+        </div>
+        <div class="caption ink-note">全厂吊在一根中央轴上</div>
+      </div>
+      <div class="divider">
+        <div class="vrule"></div>
+        <svg width="56" height="44" viewBox="0 0 56 44">
+          <path d="M4 22 H34" stroke="#1E2A3A" stroke-width="6" fill="none"/>
+          <path d="M28 8 L48 22 L28 36" stroke="#1E2A3A" stroke-width="6" fill="none"/>
+        </svg>
+        <div class="vrule"></div>
+      </div>
+      <div class="panel">
+        <span class="panel-label">新厂房 · 一字排开</span>
+        <div class="art">
+        <svg width="660" height="476" viewBox="0 0 720 520">
+          <defs><filter id="roughR"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+          <!-- single-storey shed with sawtooth roof -->
+          <g filter="url(#roughR)" stroke="#1E2A3A" fill="none">
+            <path d="M40 148 L128 98 L128 148 L168 148 L256 98 L256 148 L296 148 L384 98 L384 148 L424 148 L512 98 L512 148 L552 148 L640 98 L640 148 L680 148" stroke-width="5"/>
+            <rect x="40" y="148" width="640" height="272" stroke-width="6"/>
+          </g>
+          <!-- five machines in a line -->
+          <g filter="url(#roughR)" stroke="#1E2A3A" stroke-width="5" fill="rgba(30,42,58,0.08)">
+            <rect x="65" y="300" width="78" height="100"/>
+            <rect x="193" y="300" width="78" height="100"/>
+            <rect x="321" y="300" width="78" height="100"/>
+            <rect x="449" y="300" width="78" height="100"/>
+            <rect x="577" y="300" width="78" height="100"/>
+            <circle cx="104" cy="352" r="14" fill="none"/>
+            <circle cx="232" cy="352" r="14" fill="none"/>
+            <circle cx="360" cy="352" r="14" fill="none"/>
+            <circle cx="488" cy="352" r="14" fill="none"/>
+            <circle cx="616" cy="352" r="14" fill="none"/>
+          </g>
+          <!-- one small motor per machine : ACCENT focal -->
+          <g filter="url(#roughR)">
+            <rect x="88" y="284" width="32" height="16" fill="#FF6B6B"/><circle cx="104" cy="266" r="16" fill="#FF6B6B"/>
+            <rect x="216" y="284" width="32" height="16" fill="#FF6B6B"/><circle cx="232" cy="266" r="16" fill="#FF6B6B"/>
+            <rect x="344" y="284" width="32" height="16" fill="#FF6B6B"/><circle cx="360" cy="266" r="16" fill="#FF6B6B"/>
+            <rect x="472" y="284" width="32" height="16" fill="#FF6B6B"/><circle cx="488" cy="266" r="16" fill="#FF6B6B"/>
+            <rect x="600" y="284" width="32" height="16" fill="#FF6B6B"/><circle cx="616" cy="266" r="16" fill="#FF6B6B"/>
+          </g>
+          <!-- straight material flow arrow -->
+          <g filter="url(#roughR)">
+            <line x1="24" y1="460" x2="662" y2="460" stroke="#1E2A3A" stroke-width="7"/>
+            <path d="M650 438 L698 460 L650 482 Z" fill="#1E2A3A"/>
+            <text x="26" y="510" font-size="26" font-weight="700" fill="#1E2A3A" font-family="'Noto Sans SC', sans-serif" letter-spacing="6">物料动线</text>
+          </g>
+        </svg>
+        </div>
+        <div class="caption ink-note">每台机器自带动力，顺动线排</div>
+      </div>
+    </div>
+    <div class="stamps">
+      <span class="stamp accent">单元驱动</span>
+      <span class="stamp">物料走直线</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>11</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 02</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2800px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2800" height="1080" viewBox="0 0 2800 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- ======== background scenery: distant blocks on the right ======== -->
+  <g stroke="rgba(30,42,58,0.20)" stroke-width="5" fill="none" filter="url(#rough)">
+    <rect x="2060" y="560" width="200" height="360"/>
+    <rect x="2090" y="600" width="40" height="40"/><rect x="2170" y="600" width="40" height="40"/>
+    <rect x="2090" y="690" width="40" height="40"/><rect x="2170" y="690" width="40" height="40"/>
+    <rect x="2600" y="620" width="170" height="300"/>
+    <rect x="2630" y="660" width="36" height="36"/><rect x="2700" y="660" width="36" height="36"/>
+  </g>
+
+  <!-- ======== left street billboard: the merger ======== -->
+  <g filter="url(#rough)">
+    <line x1="270" y1="920" x2="270" y2="620" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="540" y1="920" x2="540" y2="620" stroke="#1E2A3A" stroke-width="8"/>
+    <rect x="220" y="470" width="370" height="200" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+  </g>
+  <text x="258" y="530" font-size="40" font-weight="900" fill="#1E2A3A" letter-spacing="6">MORGAN 主导合并</text>
+  <path id="mergeA" d="M258 570 C 330 570 350 610 420 612" stroke="#1E2A3A" stroke-width="6" fill="none"/>
+  <path id="mergeB" d="M258 646 C 330 646 350 614 420 612" stroke="#1E2A3A" stroke-width="6" fill="none"/>
+  <path id="mergeC" d="M420 612 L 552 612 M 526 596 L 552 612 L 526 628" stroke="#1E2A3A" stroke-width="6" fill="none"/>
+
+  <!-- ======== the building ======== -->
+  <g filter="url(#rough)">
+    <rect x="700" y="300" width="1200" height="620" fill="rgba(30,42,58,0.05)" stroke="#1E2A3A" stroke-width="9"/>
+    <line x1="680" y1="300" x2="1920" y2="300" stroke="#1E2A3A" stroke-width="9"/>
+    <!-- chimney -->
+    <rect x="735" y="235" width="58" height="65" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+    <!-- windows row 1 -->
+    <g stroke="#1E2A3A" stroke-width="5" fill="rgba(30,42,58,0.10)">
+      <rect x="760" y="380" width="90" height="110"/><rect x="900" y="380" width="90" height="110"/>
+      <rect x="1040" y="380" width="90" height="110"/><rect x="1180" y="380" width="90" height="110"/>
+      <rect x="1320" y="380" width="90" height="110"/><rect x="1460" y="380" width="90" height="110"/>
+      <rect x="1600" y="380" width="90" height="110"/><rect x="1740" y="380" width="90" height="110"/>
+      <rect x="760" y="540" width="90" height="110"/><rect x="900" y="540" width="90" height="110"/>
+      <rect x="1040" y="540" width="90" height="110"/><rect x="1180" y="540" width="90" height="110"/>
+      <rect x="1320" y="540" width="90" height="110"/><rect x="1460" y="540" width="90" height="110"/>
+      <rect x="1600" y="540" width="90" height="110"/><rect x="1740" y="540" width="90" height="110"/>
+    </g>
+    <!-- door frame -->
+    <rect x="1240" y="640" width="190" height="280" fill="rgba(30,42,58,0.28)" stroke="#1E2A3A" stroke-width="9"/>
+    <path d="M1240 640 Q1335 590 1430 640" stroke="#1E2A3A" stroke-width="8" fill="none"/>
+    <!-- steps -->
+    <line x1="1210" y1="920" x2="1460" y2="920" stroke="#1E2A3A" stroke-width="7"/>
+  </g>
+  <!-- swinging door panel (hinge at x=1246) -->
+  <g id="door">
+    <rect x="1248" y="646" width="176" height="272" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+    <circle cx="1400" cy="790" r="8" fill="#1E2A3A"/>
+  </g>
+
+  <!-- ======== rooftop sign ======== -->
+  <g filter="url(#rough)">
+    <line x1="900" y1="300" x2="900" y2="150" stroke="#1E2A3A" stroke-width="9"/>
+    <line x1="1700" y1="300" x2="1700" y2="150" stroke="#1E2A3A" stroke-width="9"/>
+    <rect x="840" y="140" width="920" height="150" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="9"/>
+  </g>
+  <!-- sign bulbs (flicker loop) -->
+  <g id="bulbs"></g>
+  <!-- fixed half of the sign -->
+  <text x="1290" y="245" font-size="58" font-weight="900" fill="#1E2A3A" letter-spacing="3" font-family="Georgia, serif">GENERAL ELECTRIC</text>
+  <!-- coral glow behind GE plank (lights when AC arrives) -->
+  <rect id="geHalo" x="860" y="145" width="400" height="140" rx="14" fill="#FF6B6B" opacity="0"/>
+  <!-- GE plank slides in from above -->
+  <g id="gePlank">
+    <rect x="880" y="163" width="360" height="104" rx="8" fill="#FF6B6B" stroke="#1E2A3A" stroke-width="7"/>
+    <text x="990" y="248" font-size="76" font-weight="900" fill="#FAF3E7" letter-spacing="8" font-family="Georgia, serif">GE</text>
+  </g>
+  <!-- EDISON plank (falls at ~2s) -->
+  <g id="edisonPlank">
+    <rect x="880" y="163" width="360" height="104" rx="6" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="8"/>
+    <text x="912" y="238" font-size="62" font-weight="900" fill="#1E2A3A" letter-spacing="4" font-family="Georgia, serif">EDISON</text>
+    <circle cx="905" cy="188" r="7" fill="#1E2A3A"/><circle cx="1215" cy="188" r="7" fill="#1E2A3A"/>
+  </g>
+
+  <!-- ======== 1894 notice on the wall ======== -->
+  <g id="notice">
+    <g transform="rotate(-7 1580 780)">
+      <rect x="1490" y="700" width="180" height="164" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+      <line x1="1502" y1="726" x2="1658" y2="726" stroke="rgba(30,42,58,0.4)" stroke-width="3"/>
+      <text x="1512" y="784" font-size="52" font-weight="900" fill="#1E2A3A" font-family="Georgia, serif">1894</text>
+      <text x="1518" y="846" font-size="54" font-weight="900" fill="#FF6B6B" letter-spacing="8">清仓</text>
+      <circle cx="1580" cy="712" r="6" fill="#1E2A3A"/>
+    </g>
+  </g>
+
+  <!-- ======== wires: DC dashes -> AC sine ======== -->
+  <g filter="url(#rough)">
+    <line x1="2480" y1="920" x2="2480" y2="360" stroke="#1E2A3A" stroke-width="9"/>
+    <line x1="2400" y1="408" x2="2560" y2="408" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="2430" y1="408" x2="2430" y2="430" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="2530" y1="408" x2="2530" y2="430" stroke="#1E2A3A" stroke-width="6"/>
+  </g>
+  <path id="dcWire" d="M1900 430 L2790 430" stroke="#1E2A3A" stroke-width="6" fill="none" stroke-dasharray="30 20"/>
+  <path id="acWire" d="" stroke="#FF6B6B" stroke-width="7" fill="none" stroke-dasharray="22 16" opacity="0"/>
+  <circle id="spark" cx="1902" cy="430" r="10" fill="none" stroke="#FF6B6B" stroke-width="8" opacity="0"/>
+
+  <!-- chimney smoke (loop) -->
+  <g id="smoke">
+    <ellipse id="s1" cx="0" cy="0" rx="30" ry="18" fill="rgba(30,42,58,0.12)"/>
+    <ellipse id="s2" cx="0" cy="0" rx="24" ry="14" fill="rgba(30,42,58,0.10)"/>
+    <ellipse id="s3" cx="0" cy="0" rx="38" ry="22" fill="rgba(30,42,58,0.08)"/>
+  </g>
+
+  <!-- ======== ground ======== -->
+  <path d="M60 920 L2740 920" stroke="#1E2A3A" stroke-width="7" fill="none" filter="url(#rough)"/>
+  <g stroke="rgba(30,42,58,0.30)" stroke-width="4">
+    <line x1="300" y1="955" x2="380" y2="955"/><line x1="960" y1="962" x2="1030" y2="962"/>
+    <line x1="1700" y1="958" x2="1790" y2="958"/><line x1="2280" y1="960" x2="2350" y2="960"/>
+  </g>
+
+  <!-- falling papers (loop, behind edison) -->
+  <g id="papers">
+    <rect id="p1" x="-30" y="-24" width="60" height="42" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <rect id="p2" x="-26" y="-19" width="52" height="38" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+    <rect id="p3" x="-28" y="-21" width="56" height="40" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+  </g>
+
+  <!-- edison walker -->
+  <g id="edisonTilt"><g id="edisonWrap"></g></g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+document.getElementById('edisonWrap').innerHTML = A.walkerSVG('edison');
+
+// sign bulbs along the frame top
+const bulbsG = document.getElementById('bulbs');
+const bulbEls = [];
+for (let i = 0; i < 11; i++) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const c = document.createElementNS(ns, 'circle');
+  c.setAttribute('cx', 870 + i * 86); c.setAttribute('cy', 128); c.setAttribute('r', 8);
+  c.setAttribute('fill', '#1E2A3A');
+  bulbsG.appendChild(c); bulbEls.push(c);
+}
+
+// AC sine path along the wire (deterministic, built once)
+(function () {
+  let d = 'M1900 430';
+  for (let x = 1908; x <= 2790; x += 8) {
+    const y = 430 + 16 * Math.sin(((x - 1900) / 80) * Math.PI * 2);
+    d += ` L${x} ${y.toFixed(1)}`;
+  }
+  document.getElementById('acWire').setAttribute('d', d);
+})();
+
+const CAM = [
+  { t: 0.0,   x: 640, y: 0,  z: 1.45 },  // tight on the rooftop sign
+  { t: 3.5,   x: 430, y: 0,  z: 1.15 },
+  { t: 7.0,   x: 100, y: 0,  z: 1.00 },  // wide: billboard + building + street
+  { t: 12.0,  x: 690, y: 0,  z: 1.00 },  // pan right: wire, pole, edison walking off
+  { t: 17.13, x: 760, y: 20, z: 1.08 },  // gentle push
+];
+
+const edisonPlank = document.getElementById('edisonPlank');
+const gePlank = document.getElementById('gePlank');
+const geHalo = document.getElementById('geHalo');
+const notice = document.getElementById('notice');
+const doorEl = document.getElementById('door');
+const dcWire = document.getElementById('dcWire');
+const acWire = document.getElementById('acWire');
+const spark = document.getElementById('spark');
+const mergeA = document.getElementById('mergeA');
+const mergeB = document.getElementById('mergeB');
+const mergeC = document.getElementById('mergeC');
+const smoke = ['s1', 's2', 's3'].map(id => document.getElementById(id));
+const papers = ['p1', 'p2', 'p3'].map(id => document.getElementById(id));
+const edisonTilt = document.getElementById('edisonTilt');
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // --- merger arrows draw in during the Morgan beat (0.4s - 2.6s) ---
+  A.draw(mergeA, A.ease(A.once(t, 0.4, 1.0)));
+  A.draw(mergeB, A.ease(A.once(t, 0.7, 1.0)));
+  A.draw(mergeC, A.ease(A.once(t, 1.5, 0.8)));
+
+  // --- EDISON plank: hinge tilt at 2.0s then tear off and crash down ---
+  const tilt = A.ease(A.once(t, 2.0, 0.5)) * 20;
+  const fall = A.once(t, 2.5, 0.95);
+  const fy = fall * fall * 610;
+  const fx = fall * 55;
+  const frot = fall * 68;
+  edisonPlank.setAttribute('transform',
+    `translate(${fx} ${fy}) rotate(${tilt + frot} 1240 267)`);
+
+  // --- GE plank slides down into the gap (3.8s), then sways gently forever ---
+  const gp = A.easeOut(A.once(t, 3.8, 0.8));
+  const gy = -340 * (1 - gp);
+  const sway = gp >= 1 ? A.sin(t, 2.6) * 0.9 : 0;
+  gePlank.setAttribute('transform', `translate(0 ${gy}) rotate(${sway} 1060 165)`);
+
+  // --- door swings open, edison walks out and away, head down ---
+  const sw = A.ease(A.once(t, 4.2, 0.5)) - A.ease(A.once(t, 6.6, 0.4));
+  const sx = 1 - 0.84 * sw;
+  doorEl.setAttribute('transform', `translate(1246 0) scale(${sx} 1) translate(-1246 0)`);
+
+  const w = A.once(t, 4.6, 11.6);          // constant stride until 16.2s
+  const ex = A.lerp(1330, 2330, w);
+  edisonTilt.setAttribute('transform', `rotate(7 ${ex} 920)`);
+  A.walk('edison', t, ex, 920, { face: 1, scale: 2, still: t < 4.6 || w >= 1 });
+  document.getElementById('edison').style.opacity = t < 4.5 ? 0 : 1;
+
+  // --- papers spiral down behind him (loop) ---
+  papers.forEach((p, i) => {
+    const ph = A.loop(t, 2.7, i * 0.34);
+    const px = ex - 150 - i * 65 + A.sin(t, 1.5, i * 0.3) * 24;
+    const py = A.lerp(660, 906, ph);
+    p.setAttribute('transform', `translate(${px} ${py}) rotate(${ph * 260 + i * 70})`);
+    p.style.opacity = t < 5.2 ? 0 : (ph > 0.92 ? (1 - ph) * 12 : 0.9);
+  });
+
+  // --- 1894 notice slaps onto the wall at 7.5s ---
+  const np = A.easeOut(A.once(t, 7.5, 0.45));
+  notice.setAttribute('transform', `translate(1580 780) scale(${0.2 + 0.8 * np}) translate(-1580 -780)`);
+  notice.style.opacity = np;
+
+  // --- 11s: DC dashes die, coral AC sine takes the wire ---
+  A.flow(dcWire, t, 40);                       // slow DC drift (ambient)
+  const ac = A.once(t, 11.0, 0.9);
+  dcWire.style.opacity = 1 - ac;
+  acWire.style.opacity = ac;
+  A.flow(acWire, t, 150);                      // AC keeps flowing to the end
+  const sp = A.once(t, 11.0, 0.7);
+  spark.setAttribute('r', 10 + sp * 55);
+  spark.style.opacity = sp > 0 && sp < 1 ? (1 - sp) * 0.9 : 0;
+
+  // GE plank glows once AC is on — the irony beat
+  geHalo.style.opacity = ac > 0 ? ac * (0.14 + 0.08 * A.sin(t, 1.2)) : 0;
+
+  // --- ambient loops running the whole scene ---
+  // sign bulbs flicker
+  bulbEls.forEach((b, i) => {
+    b.style.opacity = 0.30 + 0.55 * Math.max(0, A.sin(t, 0.9, i * 0.13)) *
+      (A.sin(t, 3.7, i * 0.05) > -0.9 ? 1 : 0.2);
+  });
+  // chimney smoke rises forever
+  smoke.forEach((s, i) => {
+    const ph = A.loop(t, 3.2, i * 0.33);
+    s.setAttribute('transform',
+      `translate(${764 + A.sin(t, 2.1, i * 0.4) * 16} ${A.lerp(230, 70, ph)})`);
+    s.style.opacity = (1 - ph) * 0.5;
+  });
+};
+seek(0);
+</script>
+</body>
+</html>

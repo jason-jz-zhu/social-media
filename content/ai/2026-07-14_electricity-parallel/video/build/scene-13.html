@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 13</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; justify-content: center; gap: 46px; }
+  .illus-top { flex: 0 0 auto; display: flex; justify-content: center; }
+  .quote-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+  }
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .ornament .bar { width: 150px; border-top: 3px double var(--ink); }
+  .ornament .diamond {
+    width: 12px; height: 12px;
+    background: var(--ink);
+    transform: rotate(45deg);
+  }
+  .quote {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 74px;
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: 6px;
+    text-align: center;
+  }
+  .quote .hl { color: var(--accent); }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="illus-top">
+      <svg width="560" height="280" viewBox="0 0 560 280">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+        <!-- ceiling with hatch -->
+        <g filter="url(#rough)" stroke="#1E2A3A" stroke-width="5" fill="none">
+          <line x1="40" y1="20" x2="520" y2="20" stroke-width="6"/>
+          <line x1="70" y1="20" x2="56" y2="6"/>
+          <line x1="130" y1="20" x2="116" y2="6"/>
+          <line x1="190" y1="20" x2="176" y2="6"/>
+          <line x1="250" y1="20" x2="236" y2="6"/>
+          <line x1="310" y1="20" x2="296" y2="6"/>
+          <line x1="370" y1="20" x2="356" y2="6"/>
+          <line x1="430" y1="20" x2="416" y2="6"/>
+          <line x1="490" y1="20" x2="476" y2="6"/>
+        </g>
+        <!-- hangers + old line shaft -->
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <line x1="120" y1="20" x2="120" y2="86" stroke-width="7"/>
+          <line x1="440" y1="20" x2="440" y2="86" stroke-width="7"/>
+          <line x1="42" y1="92" x2="518" y2="92" stroke-width="9"/>
+          <circle cx="120" cy="92" r="20" stroke-width="5" fill="#FAF3E7"/>
+          <circle cx="440" cy="92" r="20" stroke-width="5" fill="#FAF3E7"/>
+          <!-- big pulley in the middle -->
+          <circle cx="280" cy="92" r="30" stroke-width="6" fill="#FAF3E7"/>
+          <circle cx="280" cy="92" r="6" fill="#1E2A3A" stroke="none"/>
+        </g>
+        <!-- belt from pulley down to chip -->
+        <g filter="url(#rough)" stroke="#1E2A3A" stroke-width="5" fill="none">
+          <line x1="256" y1="110" x2="248" y2="172"/>
+          <line x1="304" y1="110" x2="312" y2="172"/>
+        </g>
+        <!-- AI chip on the old shaft : accent focal -->
+        <g filter="url(#rough)">
+          <rect x="234" y="172" width="92" height="92" fill="#FAF3E7" stroke="#FF6B6B" stroke-width="6"/>
+          <!-- pins -->
+          <g stroke="#FF6B6B" stroke-width="5">
+            <line x1="216" y1="192" x2="234" y2="192"/>
+            <line x1="216" y1="218" x2="234" y2="218"/>
+            <line x1="216" y1="244" x2="234" y2="244"/>
+            <line x1="326" y1="192" x2="344" y2="192"/>
+            <line x1="326" y1="218" x2="344" y2="218"/>
+            <line x1="326" y1="244" x2="344" y2="244"/>
+          </g>
+          <text x="280" y="234" text-anchor="middle" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#FF6B6B">AI</text>
+        </g>
+      </svg>
+    </div>
+    <div class="quote-block">
+      <div class="ornament"><span class="bar"></span><span class="diamond"></span><span class="bar"></span></div>
+      <div class="quote">你不是在等 AI 变强<br>是 AI 在等你<span class="hl">重建工厂</span></div>
+      <div class="ornament"><span class="bar"></span><span class="diamond"></span><span class="bar"></span></div>
+    </div>
+    <div class="stamps">
+      <span class="stamp">旧轴+电动机</span>
+      <span class="stamp accent">重建工厂</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>13</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 07</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 22px; padding-top: 10px; }
+  .head-row { display: flex; flex-direction: column; gap: 22px; }
+  .head-row .headline { font-size: 66px; }
+  .illus-wrap { width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="head-row">
+      <span class="kicker">1900s → 2020s</span>
+      <div class="headline">这个剧本，眼熟吗</div>
+    </div>
+    <div class="illus-wrap">
+      <svg width="1560" height="540" viewBox="0 0 1560 540">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+        <!-- ===== LEFT · 1900s factory silhouette ===== -->
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <line x1="30" y1="480" x2="600" y2="480" stroke-width="6"/>
+          <path d="M70 480 V300 L165 235 V300 L260 235 V300 L355 235 V300 L450 235 V480 Z" fill="rgba(30,42,58,0.08)" stroke-width="5"/>
+          <rect x="110" y="110" width="46" height="170" fill="rgba(30,42,58,0.08)" stroke-width="5"/>
+          <rect x="102" y="96" width="62" height="16" fill="rgba(30,42,58,0.08)" stroke-width="4"/>
+          <rect x="300" y="70" width="46" height="200" fill="rgba(30,42,58,0.08)" stroke-width="5"/>
+          <rect x="292" y="56" width="62" height="16" fill="rgba(30,42,58,0.08)" stroke-width="4"/>
+          <path d="M133 88 q-24 -26 2 -42 q26 -16 8 -38" stroke-width="5" stroke-linecap="round"/>
+          <path d="M323 48 q-20 -22 2 -34 q22 -12 6 -26" stroke-width="5" stroke-linecap="round"/>
+          <rect x="100" y="340" width="44" height="44" stroke-width="4"/>
+          <rect x="190" y="340" width="44" height="44" stroke-width="4"/>
+          <rect x="280" y="340" width="44" height="44" stroke-width="4"/>
+          <rect x="370" y="340" width="44" height="44" stroke-width="4"/>
+        </g>
+        <text x="260" y="526" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="26" font-weight="700" letter-spacing="4" fill="rgba(30,42,58,0.62)">1900s</text>
+
+        <!-- ===== MIDDLE · dashed arrow + label ===== -->
+        <g filter="url(#rough)">
+          <line x1="620" y1="330" x2="938" y2="330" stroke="#1E2A3A" stroke-width="6" stroke-dasharray="28 16"/>
+          <path d="M938 308 L986 330 L938 352 Z" fill="#1E2A3A"/>
+          <rect x="661" y="231" width="250" height="64" fill="rgba(30,42,58,0.28)"/>
+          <rect x="655" y="225" width="250" height="64" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+        </g>
+        <text x="780" y="269" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="34" font-weight="900" letter-spacing="4" fill="#1E2A3A">同一个剧本</text>
+
+        <!-- ===== RIGHT · modern desk + monitor ===== -->
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <line x1="990" y1="480" x2="1540" y2="480" stroke-width="6"/>
+          <line x1="1020" y1="430" x2="1530" y2="430" stroke-width="9"/>
+          <line x1="1060" y1="434" x2="1060" y2="478" stroke-width="7"/>
+          <line x1="1490" y1="434" x2="1490" y2="478" stroke-width="7"/>
+          <rect x="1130" y="140" width="330" height="210" fill="rgba(30,42,58,0.06)" stroke-width="6"/>
+          <rect x="1276" y="350" width="16" height="66" stroke-width="5"/>
+          <rect x="1230" y="414" width="110" height="16" stroke-width="5"/>
+        </g>
+        <!-- bills scattered on the desk -->
+        <g filter="url(#rough)" stroke="#1E2A3A" stroke-width="3.5" fill="none">
+          <g transform="rotate(-8 1078 420)">
+            <rect x="1040" y="396" width="76" height="48" fill="#FAF3E7"/>
+            <path d="M1050 410 h56 M1050 422 h40 M1050 434 h48"/>
+          </g>
+          <g transform="rotate(6 1398 422)">
+            <rect x="1360" y="398" width="76" height="48" fill="#FAF3E7"/>
+            <path d="M1396 410 h34 M1370 424 h56 M1370 436 h44"/>
+          </g>
+          <g transform="rotate(-14 1188 458)">
+            <rect x="1150" y="438" width="76" height="40" fill="#FAF3E7"/>
+            <path d="M1160 452 h56 M1160 464 h40"/>
+          </g>
+        </g>
+        <text x="1372" y="424" transform="rotate(6 1398 422)" font-family="'Noto Sans SC', sans-serif" font-size="24" font-weight="900" fill="#1E2A3A">$</text>
+        <!-- warning popup (the single accent focal) -->
+        <g filter="url(#rough)">
+          <rect x="1218" y="208" width="300" height="150" fill="rgba(30,42,58,0.28)"/>
+          <rect x="1210" y="200" width="300" height="150" fill="#FAF3E7" stroke="#FF6B6B" stroke-width="6"/>
+          <path d="M1246 306 L1270 256 L1294 306 Z" stroke="#FF6B6B" stroke-width="5" fill="none"/>
+        </g>
+        <text x="1270" y="298" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="30" font-weight="900" fill="#FF6B6B">!</text>
+        <text x="1316" y="262" font-family="'Noto Sans SC', sans-serif" font-size="30" font-weight="700" fill="#1E2A3A">token 额度</text>
+        <text x="1316" y="306" font-family="'Noto Sans SC', sans-serif" font-size="30" font-weight="700" fill="#1E2A3A">已达上限</text>
+        <text x="1270" y="526" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="26" font-weight="700" letter-spacing="4" fill="rgba(30,42,58,0.62)">2020s</text>
+      </svg>
+    </div>
+    <div class="stamps">
+      <span class="stamp">限token</span>
+      <span class="stamp">AI ROI?</span>
+      <span class="stamp accent">$450/月</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>07</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

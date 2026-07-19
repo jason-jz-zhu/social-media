@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 01</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: row; align-items: center; gap: 40px; padding: 0 10px; }
+  .copy-col { flex: 1.5; display: flex; flex-direction: column; gap: 30px; }
+  .year-mark {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 180px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 10px;
+    position: relative;
+  }
+  .year-mark .shadow {
+    position: absolute;
+    left: 8px; top: 8px;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ink-faint);
+    z-index: -1;
+  }
+  .title-line {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 74px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1.3;
+  }
+  .title-line .hl { color: var(--accent); }
+  .sub-line { font-size: 30px; letter-spacing: 7px; color: var(--ink-soft); font-weight: 700; }
+  .illus-col { flex: 0 0 400px; display: flex; align-items: flex-end; justify-content: center; }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="copy-col">
+      <div class="year-mark">1892<span class="shadow">1892</span></div>
+      <div class="title-line">爱迪生，被<br><span class="hl">自己的公司</span>赶了出去</div>
+      <div class="sub-line">— 对，就是那个发明电灯的爱迪生 —</div>
+    </div>
+    <div class="illus-col">
+    <svg width="360" height="420" viewBox="0 0 360 420">
+      <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+      <g filter="url(#rough)" stroke="#1E2A3A" stroke-width="5" fill="none">
+        <rect x="180" y="40" width="150" height="360" />
+        <rect x="205" y="70" width="100" height="150" fill="rgba(30,42,58,0.08)" />
+        <line x1="180" y1="40" x2="180" y2="400" stroke-width="8"/>
+      </g>
+      <g filter="url(#rough)">
+        <circle cx="98" cy="150" r="26" fill="#1E2A3A"/>
+        <path d="M98 176 L92 260 L74 350 M98 176 L108 260 L120 350 M98 200 L60 240 M98 200 L140 230" stroke="#1E2A3A" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <circle cx="148" cy="222" r="17" fill="none" stroke="#FF6B6B" stroke-width="5"/>
+        <path d="M141 236 L155 236 L152 246 L144 246 Z" fill="#FF6B6B"/>
+        <path d="M148 205 L148 196 M162 210 L168 203 M134 210 L128 203" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    </svg>
+    </div>
+    <div class="stamps">
+      <span class="stamp">1892年</span>
+      <span class="stamp accent">爱迪生出局</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>01</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

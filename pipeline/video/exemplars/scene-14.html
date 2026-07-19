@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 14</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2200px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2200" height="1080" viewBox="0 0 2200 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <path d="M100 950 L2100 950" stroke="#1E2A3A" stroke-width="7" fill="none" filter="url(#rough)"/>
+  <text x="330" y="1020" font-size="44" font-weight="900" fill="rgba(30,42,58,0.65)" letter-spacing="6">85家公司 · 层层叠叠</text>
+
+  <!-- the teetering tower (swings around its base) -->
+  <g id="tower">
+    <g id="plaques" filter="url(#rough)"></g>
+    <!-- coiled wire -->
+    <path d="M1010 900 q80 -60 -20 -120 q-90 -55 20 -115 q95 -50 -15 -110 q-85 -52 18 -108 q90 -48 -12 -104 q-80 -45 15 -95"
+          stroke="rgba(30,42,58,0.5)" stroke-width="5" fill="none" id="wire"/>
+    <!-- $40亿 tag hanging from the top -->
+    <g id="tag">
+      <line x1="0" y1="0" x2="0" y2="54" stroke="#1E2A3A" stroke-width="4"/>
+      <rect x="-92" y="54" width="184" height="72" fill="#FAF3E7" stroke="#FF6B6B" stroke-width="6"/>
+      <text x="-70" y="106" font-size="48" font-weight="900" fill="#FF6B6B">$40亿</text>
+    </g>
+    <g id="insullWrap"></g>
+  </g>
+
+  <!-- falling plaques (loop) -->
+  <g id="fallers">
+    <rect id="fp1" x="-70" y="-22" width="140" height="44" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+    <rect id="fp2" x="-70" y="-22" width="140" height="44" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const ns = 'http://www.w3.org/2000/svg';
+document.getElementById('insullWrap').innerHTML = A.walkerSVG('insull');
+
+// stack of company plaques
+const pg = document.getElementById('plaques');
+const NAMES = ['MWU','CES','PSC','IUI','CWS','MID','NIP','GAS','ELC','PWR','LTC','UTL','HLD','TRS','CO&amp;'];
+let py = 900;
+const rows = [];
+for (let r = 0; r < 15; r++) {
+  const w = 320 - (r % 4) * 26 + ((r * 37) % 3) * 18;
+  const off = ((r * 53) % 5 - 2) * 22;
+  const g = document.createElementNS(ns, 'g');
+  g.innerHTML = `<rect x="${1100 - w / 2 + off}" y="${py - 46}" width="${w}" height="46" fill="${r % 3 === 0 ? 'rgba(30,42,58,0.07)' : '#FAF3E7'}" stroke="#1E2A3A" stroke-width="5"/>
+    <text x="${1100 - 40 + off}" y="${py - 12}" font-size="26" font-weight="700" fill="rgba(30,42,58,0.6)" font-family="Georgia, serif">${NAMES[r]}</text>`;
+  pg.appendChild(g);
+  rows.push(g);
+  py -= 46;
+}
+// tower top now at py=900-15*46=210
+
+const CAM = [
+  { t: 0.0,  x: 560, z: 1.45, y: 30 },  // tight on Insull at the top
+  { t: 4.0,  x: 460, z: 1.25, y: 20 },
+  { t: 9.0,  x: 140, z: 1.00, y: 0 },   // zoom out: reveal the whole teetering tower
+  { t: 15.4, x: 160, z: 1.02, y: 0 },
+];
+
+const tower = document.getElementById('tower');
+const tag = document.getElementById('tag');
+const f1 = document.getElementById('fp1'), f2 = document.getElementById('fp2');
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // whole tower sways slowly around its base — permanent unease
+  const lean = A.sin(t, 5.2) * 0.9 + A.sin(t, 1.7) * 0.15;
+  A.rot(tower, lean, 1100, 950);
+
+  // insull balances on top, arms out
+  A.walk('insull', t, 1100, 212, { scale: 1.9, still: true });
+  // top hat: draw via arm swap — arms sway for balance
+  const g = document.getElementById('insull');
+  const aL = g.querySelector('.w-armL'), aR = g.querySelector('.w-armR');
+  aL.setAttribute('x2', -26 - A.sin(t, 1.3) * 6); aL.setAttribute('y2', -58);
+  aR.setAttribute('x2', 26 + A.sin(t, 1.3) * 6); aR.setAttribute('y2', -58);
+
+  // $40亿 tag hangs off the top, swinging
+  tag.setAttribute('transform', `translate(1310 240) rotate(${A.sin(t, 2.6, 0.2) * 7} 0 0)`);
+
+  // plaques break off and fall, two loops offset
+  [f1, f2].forEach((f, i) => {
+    const ph = A.loop(t, 4.6, i * 0.5);
+    const fx = 1100 + (i ? -260 : 240) + ph * (i ? -90 : 70);
+    const fy = A.lerp(400 + i * 160, 926, A.ease(Math.min(1, ph * 1.15)));
+    f.setAttribute('transform', `translate(${fx} ${fy}) rotate(${ph * (i ? -160 : 200)})`);
+    f.style.opacity = ph > 0.9 ? (1 - ph) * 10 : 0.95;
+  });
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

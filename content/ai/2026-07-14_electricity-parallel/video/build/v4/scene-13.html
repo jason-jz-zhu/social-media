@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 13</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2200px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2200" height="1080" viewBox="0 0 2200 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- old shaft up top, still spinning -->
+  <g filter="url(#rough)">
+    <rect x="200" y="120" width="1800" height="14" fill="#1E2A3A"/>
+    <line x1="420" y1="60" x2="420" y2="120" stroke="#1E2A3A" stroke-width="7"/>
+    <line x1="1780" y1="60" x2="1780" y2="120" stroke="#1E2A3A" stroke-width="7"/>
+  </g>
+  <g id="pulley13">
+    <circle cx="1100" cy="127" r="36" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+    <line class="spk" x1="1068" y1="127" x2="1132" y2="127" stroke="#1E2A3A" stroke-width="6"/>
+    <line class="spk" x1="1100" y1="95" x2="1100" y2="159" stroke="#1E2A3A" stroke-width="6"/>
+  </g>
+  <!-- belt down to the AI chip -->
+  <line id="belt13" x1="1100" y1="163" x2="1100" y2="400" stroke="#1E2A3A" stroke-width="5" stroke-dasharray="16 12"/>
+  <g id="chip">
+    <rect x="-70" y="0" width="140" height="140" rx="14" fill="none" stroke="#FF6B6B" stroke-width="9" filter="url(#rough)"/>
+    <text x="-34" y="92" font-size="64" font-weight="900" fill="#FF6B6B" font-family="Georgia, serif">AI</text>
+    <circle id="chipHalo" cx="0" cy="70" r="120" fill="#FF6B6B" opacity="0.08"/>
+  </g>
+
+  <!-- dust motes -->
+  <g id="dust"></g>
+
+  <!-- the quote -->
+  <g id="q1"><text x="380" y="700" font-size="92" font-weight="900" fill="#1E2A3A" letter-spacing="6">你不是在等 AI 变强</text></g>
+  <g id="q2"><text x="380" y="840" font-size="92" font-weight="900" fill="#1E2A3A" letter-spacing="6">是 AI 在等你<tspan fill="#FF6B6B">重建工厂</tspan></text></g>
+  <g id="orn">
+    <line x1="380" y1="900" x2="520" y2="900" stroke="#FF6B6B" stroke-width="6"/>
+    <circle cx="560" cy="900" r="7" fill="#FF6B6B"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const ns = 'http://www.w3.org/2000/svg';
+const dg = document.getElementById('dust');
+const motes = [];
+for (let i = 0; i < 8; i++) {
+  const c = document.createElementNS(ns, 'circle');
+  c.setAttribute('r', 3 + (i % 3) * 1.5);
+  c.setAttribute('fill', 'rgba(30,42,58,0.22)');
+  dg.appendChild(c);
+  motes.push({ el: c, x: 300 + i * 240, period: 7 + (i % 4) * 1.7, phase: i * 0.13, drift: 30 + (i % 3) * 18 });
+}
+
+const CAM = [
+  { t: 0.0,  x: 140, z: 1.0 },
+  { t: 17.2, x: 210, z: 1.12 },  // one slow push-in, nothing else
+];
+
+const spks = [...document.querySelectorAll('#pulley13 .spk')];
+const chip = document.getElementById('chip');
+const halo = document.getElementById('chipHalo');
+const belt = document.getElementById('belt13');
+const q1 = document.getElementById('q1'), q2 = document.getElementById('q2'), orn = document.getElementById('orn');
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // shaft pulley never stops turning; belt keeps running
+  spks.forEach(s => s.setAttribute('transform', `rotate(${(t * 140) % 360} 1100 127)`));
+  A.flow(belt, t, 60);
+
+  // chip sways on the belt like a pendulum, halo breathes
+  const sway = A.sin(t, 3.1) * 4;
+  chip.setAttribute('transform', `translate(${1100 + sway * 3} 400) rotate(${sway})`);
+  halo.style.opacity = 0.05 + 0.06 * A.sin(t, 1.9);
+
+  // dust drifts upward forever
+  motes.forEach(m => {
+    const ph = A.loop(t, m.period, m.phase);
+    m.el.setAttribute('cx', m.x + A.sin(t, 4.3, m.phase) * m.drift);
+    m.el.setAttribute('cy', A.lerp(1020, 80, ph));
+    m.el.style.opacity = Math.sin(ph * Math.PI) * 0.5;
+  });
+
+  // quote lands in two beats
+  const a = A.ease(A.once(t, 5.2, 0.9));
+  q1.style.opacity = a; q1.setAttribute('transform', `translate(0 ${(1 - a) * 30})`);
+  const b = A.ease(A.once(t, 8.4, 0.9));
+  q2.style.opacity = b; q2.setAttribute('transform', `translate(0 ${(1 - b) * 30})`);
+  orn.style.opacity = A.once(t, 9.6, 0.6);
+};
+seek(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 03</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  .head-block { align-self: flex-start; display: flex; flex-direction: column; gap: 12px; padding-left: 6px; }
+  .head-block .headline { font-size: 68px; }
+  .head-block .sub-line { font-size: 26px; letter-spacing: 6px; color: var(--ink-soft); font-weight: 700; }
+  .card-row { display: flex; gap: 56px; align-items: stretch; }
+  .card {
+    position: relative;
+    width: 430px;
+    height: 520px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 7px 7px 0 var(--ink-faint);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head {
+    flex: 0 0 auto;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 12px 0 10px;
+    border-bottom: 2px dashed var(--ink-faint);
+  }
+  .card-art { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+  .card-name {
+    flex: 0 0 auto;
+    border-top: 3px double var(--ink);
+    text-align: center;
+    padding: 14px 0 18px;
+  }
+  .card-name .zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 6px;
+  }
+  .card-name .en {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 6px;
+    color: var(--ink-soft);
+    font-weight: 700;
+    margin-top: 6px;
+  }
+  /* mystery card veil + big question mark */
+  .veil {
+    position: absolute;
+    inset: 0;
+    background: rgba(250, 243, 231, 0.72);
+    z-index: 5;
+  }
+  .veil-dots {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+    z-index: 6;
+  }
+  .qmark {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 320px;
+    font-weight: 900;
+    color: var(--accent);
+    transform: rotate(-5deg);
+    line-height: 1;
+  }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="head-block">
+      <div class="headline">三个人的命运</div>
+      <div class="sub-line">— 同一场电力革命 · 三种结局 —</div>
+    </div>
+    <div class="card-row">
+      <!-- Edison card -->
+      <div class="card">
+        <div class="card-head">PORTRAIT · No.1</div>
+        <div class="card-art">
+          <svg width="340" height="290" viewBox="0 0 340 290">
+            <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+            <g filter="url(#rough)">
+              <circle cx="150" cy="96" r="40" fill="#1E2A3A"/>
+              <path d="M150 140 L150 172" stroke="#1E2A3A" stroke-width="12" stroke-linecap="round" fill="none"/>
+              <path d="M74 262 Q80 184 150 176 Q220 184 226 262" stroke="#1E2A3A" stroke-width="11" stroke-linecap="round" fill="none"/>
+              <path d="M136 170 L150 184 L164 170" stroke="#1E2A3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+            </g>
+            <!-- lightbulb icon -->
+            <g filter="url(#rough)" stroke="#1E2A3A" fill="none" stroke-linecap="round">
+              <circle cx="272" cy="88" r="24" stroke-width="5"/>
+              <path d="M263 108 L281 108 L277 122 L267 122 Z" fill="#1E2A3A" stroke="none"/>
+              <path d="M272 52 L272 40 M292 62 L301 53 M252 62 L243 53 M300 88 L312 88 M244 88 L232 88" stroke-width="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-name"><span class="zh">爱迪生</span><span class="en">THOMAS EDISON</span></div>
+      </div>
+      <!-- Tesla card -->
+      <div class="card">
+        <div class="card-head">PORTRAIT · No.2</div>
+        <div class="card-art">
+          <svg width="340" height="290" viewBox="0 0 340 290">
+            <g filter="url(#rough)">
+              <circle cx="150" cy="96" r="40" fill="#1E2A3A"/>
+              <path d="M150 140 L150 172" stroke="#1E2A3A" stroke-width="12" stroke-linecap="round" fill="none"/>
+              <path d="M74 262 Q80 184 150 176 Q220 184 226 262" stroke="#1E2A3A" stroke-width="11" stroke-linecap="round" fill="none"/>
+            </g>
+            <!-- AC wave icon -->
+            <g filter="url(#rough)" stroke="#1E2A3A" fill="none" stroke-linecap="round">
+              <path d="M228 88 q11 -26 22 0 q11 26 22 0 q11 -26 22 0 q11 26 22 0" stroke-width="5"/>
+              <path d="M228 122 H316" stroke-width="3" stroke-dasharray="10 8"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-name"><span class="zh">特斯拉</span><span class="en">NIKOLA TESLA</span></div>
+      </div>
+      <!-- Ford card, hidden by big question mark -->
+      <div class="card">
+        <div class="card-head">PORTRAIT · No.3</div>
+        <div class="card-art">
+          <svg width="340" height="290" viewBox="0 0 340 290">
+            <g filter="url(#rough)">
+              <circle cx="150" cy="96" r="40" fill="rgba(30,42,58,0.22)"/>
+              <path d="M150 140 L150 172" stroke="rgba(30,42,58,0.22)" stroke-width="12" stroke-linecap="round" fill="none"/>
+              <path d="M74 262 Q80 184 150 176 Q220 184 226 262" stroke="rgba(30,42,58,0.22)" stroke-width="11" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-name"><span class="zh">？？？</span><span class="en">CLASSIFIED</span></div>
+        <div class="veil"></div>
+        <div class="veil-dots halftone"></div>
+        <div class="qmark">?</div>
+      </div>
+    </div>
+    <div class="stamps">
+      <span class="stamp">爱迪生</span>
+      <span class="stamp">特斯拉</span>
+      <span class="stamp accent">福特?</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>03</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

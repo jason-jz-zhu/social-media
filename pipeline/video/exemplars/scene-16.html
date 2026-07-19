@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 16</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2800px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2800" height="1080" viewBox="0 0 2800 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <text x="220" y="240" font-size="72" font-weight="900" fill="rgba(30,42,58,0.14)" letter-spacing="12">三十年的剧本 · 进度核对</text>
+
+  <!-- film-strip progress bar -->
+  <g id="strip" filter="url(#rough)">
+    <rect x="200" y="480" width="2400" height="160" fill="none" stroke="#1E2A3A" stroke-width="9"/>
+    <g id="holes"></g>
+  </g>
+  <!-- coral fill: only the first sliver -->
+  <rect id="fill" x="209" y="489" width="0" height="142" fill="#FF6B6B" opacity="0.85"/>
+  <rect id="cursor" x="0" y="480" width="10" height="160" fill="#FF6B6B"/>
+  <!-- ticks -->
+  <g id="tickLabels" font-size="34" fill="rgba(30,42,58,0.6)">
+    <text x="420" y="700">3年</text>
+    <text x="980" y="700">10年</text>
+    <text x="1750" y="700">20年</text>
+    <text x="2480" y="700">30年</text>
+  </g>
+  <text id="hereLbl" x="300" y="770" font-size="46" font-weight="900" fill="#FF6B6B">我们在这</text>
+  <text x="2280" y="430" font-size="42" font-weight="700" fill="rgba(30,42,58,0.55)">30年剧本</text>
+
+  <!-- newspapers -->
+  <g id="news">
+    <g id="n1" filter="url(#rough)">
+      <rect x="-130" y="-85" width="260" height="170" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+      <text x="-105" y="-30" font-size="36" font-weight="900" fill="#1E2A3A">AI 没有 ROI</text>
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+      <line x1="-100" y1="24" x2="100" y2="24" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+      <line x1="-100" y1="48" x2="60" y2="48" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+    </g>
+    <g id="n2" filter="url(#rough)">
+      <rect x="-120" y="-80" width="240" height="160" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+      <text x="-95" y="-26" font-size="34" font-weight="900" fill="#1E2A3A">又是泡沫？</text>
+      <line x1="-90" y1="4" x2="90" y2="4" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+      <line x1="-90" y1="28" x2="90" y2="28" stroke="rgba(30,42,58,0.5)" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- the hand that pushes them away -->
+  <g id="hand" filter="url(#rough)">
+    <path d="M-260 40 L-40 40 Q10 40 10 0 Q10 -40 -40 -40 L-120 -40 M-40 -40 Q-20 -70 -60 -74 L-110 -74"
+          stroke="#1E2A3A" stroke-width="9" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const ns = 'http://www.w3.org/2000/svg';
+// sprocket holes
+const hg = document.getElementById('holes');
+for (let x = 240; x <= 2560; x += 120) {
+  [446, 674].forEach(y => {
+    const r = document.createElementNS(ns, 'rect');
+    r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', 40); r.setAttribute('height', 24);
+    r.setAttribute('fill', 'none'); r.setAttribute('stroke', '#1E2A3A'); r.setAttribute('stroke-width', 4);
+    hg.appendChild(r);
+  });
+}
+
+const CAM = [
+  { t: 0.0,  x: 880, z: 1.06 },  // start at the empty end: 30年 side
+  { t: 5.0,  x: 340, z: 1.06 },
+  { t: 9.0,  x: 0,   z: 1.02 },  // arrive at the tiny filled sliver
+  { t: 12.6, x: 40,  z: 1.06 },
+];
+
+const fill = document.getElementById('fill');
+const cursor = document.getElementById('cursor');
+const here = document.getElementById('hereLbl');
+const n1 = document.getElementById('n1'), n2 = document.getElementById('n2');
+const hand = document.getElementById('hand');
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // fill grows early to its tiny 3-year width and the cursor blinks there forever
+  const f = A.ease(A.once(t, 1.0, 1.6));
+  const w = f * 230;
+  fill.setAttribute('width', `${w}`);
+  cursor.setAttribute('x', `${209 + w}`);
+  cursor.style.opacity = f >= 1 ? (A.sin(t, 0.9) > 0 ? 1 : 0.15) : 0;
+  here.style.opacity = A.once(t, 2.8, 0.6);
+
+  // newspapers hover in, sway, then get pushed off (7.4s)
+  const in1 = A.ease(A.once(t, 2.2, 0.8));
+  const in2 = A.ease(A.once(t, 2.8, 0.8));
+  const push = A.ease(A.once(t, 7.4, 1.2));
+  const sway1 = A.sin(t, 2.7) * 3, sway2 = A.sin(t, 3.3, 0.4) * 3;
+  n1.setAttribute('transform', `translate(${A.lerp(2600, 1560, in1) + push * 1500} ${300 + sway1 * 4}) rotate(${-6 + sway1 + push * 30})`);
+  n2.setAttribute('transform', `translate(${A.lerp(2800, 1900, in2) + push * 1600} ${260 + sway2 * 4}) rotate(${8 + sway2 + push * 40})`);
+  n1.style.opacity = in1 * (1 - push);
+  n2.style.opacity = in2 * (1 - push);
+
+  // hand slides in for the push, then retreats
+  const hIn = A.ease(A.once(t, 6.8, 0.6)) - A.ease(A.once(t, 8.8, 0.8));
+  hand.setAttribute('transform', `translate(${A.lerp(600, 1400, hIn)} 300)`);
+  hand.style.opacity = hIn > 0.02 ? 1 : 0;
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

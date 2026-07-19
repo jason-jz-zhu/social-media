@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 12</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; }
+  .head-block { margin: 16px 0 0 6px; flex: 0 0 auto; }
+  .head-block .headline { font-size: 62px; }
+  .timeline-wrap { flex: 1; width: 100%; display: flex; align-items: center; justify-content: center; min-height: 0; }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="head-block">
+      <div class="headline">他什么都没发明<br>只是把工厂重画了一遍</div>
+    </div>
+    <div class="timeline-wrap">
+      <svg width="1680" height="560" viewBox="0 0 1680 560">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+        <!-- 31年 : visual center above the brace -->
+        <text x="840" y="128" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="132" font-weight="900" letter-spacing="8" fill="#1E2A3A">31年</text>
+
+        <!-- big brace spanning the axis -->
+        <path filter="url(#rough)" d="M340 215 Q340 185 380 185 L795 185 Q828 185 840 158 Q852 185 885 185 L1300 185 Q1340 185 1340 215" stroke="#1E2A3A" stroke-width="6" fill="none"/>
+
+        <!-- timeline axis -->
+        <g filter="url(#rough)">
+          <line x1="110" y1="420" x2="1638" y2="420" stroke="#1E2A3A" stroke-width="7"/>
+          <path d="M1630 404 L1662 420 L1630 436 Z" fill="#1E2A3A"/>
+          <!-- decade ticks -->
+          <line x1="511" y1="410" x2="511" y2="430" stroke="rgba(30,42,58,0.28)" stroke-width="4"/>
+          <line x1="950" y1="410" x2="950" y2="430" stroke="rgba(30,42,58,0.28)" stroke-width="4"/>
+          <line x1="1389" y1="410" x2="1389" y2="430" stroke="rgba(30,42,58,0.28)" stroke-width="4"/>
+          <!-- nodes -->
+          <circle cx="160" cy="420" r="14" fill="#1E2A3A"/>
+          <circle cx="1520" cy="420" r="14" fill="#1E2A3A"/>
+        </g>
+
+        <!-- left icon: Pearl Street power station -->
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none" stroke-width="5">
+          <path d="M55 305 L165 258 L275 305 Z"/>
+          <rect x="88" y="212" width="28" height="66"/>
+          <path d="M102 198 q-12 -12 0 -24 q14 -10 4 -22" stroke-width="4"/>
+          <rect x="70" y="305" width="190" height="110" fill="rgba(30,42,58,0.06)"/>
+          <rect x="140" y="352" width="44" height="52"/>
+          <rect x="92" y="325" width="32" height="28"/>
+          <rect x="205" y="325" width="32" height="28"/>
+          <path d="M168 272 L158 292 L169 290 L159 312" stroke-width="4" stroke-linecap="round"/>
+        </g>
+
+        <!-- Ford stick figure with unrolled blueprint (next to 1913 node) -->
+        <g filter="url(#rough)" transform="translate(-28,0)">
+          <circle cx="1315" cy="258" r="17" fill="#1E2A3A"/>
+          <path d="M1315 275 L1311 350 M1315 286 L1276 314 M1315 286 L1356 314 M1312 356 L1298 418 M1312 356 L1330 418" stroke="#1E2A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <!-- scroll rolls + sheet -->
+          <rect x="1246" y="306" width="14" height="70" rx="7" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+          <rect x="1372" y="306" width="14" height="70" rx="7" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+          <rect x="1260" y="310" width="112" height="62" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="4"/>
+          <!-- factory floor-plan marks on the blueprint -->
+          <g stroke="#1E2A3A" stroke-width="3" fill="none">
+            <rect x="1272" y="320" width="26" height="16"/>
+            <rect x="1308" y="320" width="42" height="10"/>
+            <path d="M1272 348 H1356 M1272 360 H1336"/>
+          </g>
+        </g>
+
+        <!-- right icon: assembly-line car (the ONE accent focal element) -->
+        <g filter="url(#rough)" stroke="#FF6B6B" fill="none" stroke-width="6">
+          <circle cx="1455" cy="392" r="26"/>
+          <circle cx="1583" cy="392" r="26"/>
+          <circle cx="1455" cy="392" r="5" fill="#FF6B6B" stroke="none"/>
+          <circle cx="1583" cy="392" r="5" fill="#FF6B6B" stroke="none"/>
+          <path d="M1408 380 L1415 344 Q1416 340 1424 340 L1512 340 L1512 296 Q1512 288 1521 288 L1598 288 Q1607 288 1607 296 L1607 380"/>
+          <path d="M1404 380 H1622"/>
+          <rect x="1524" y="300" width="48" height="32" stroke-width="4"/>
+          <circle cx="1404" cy="354" r="8" stroke-width="4"/>
+        </g>
+
+        <!-- axis labels -->
+        <text x="160" y="482" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="46" font-weight="900" fill="#1E2A3A">1882</text>
+        <text x="160" y="522" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="rgba(30,42,58,0.62)">PEARL STREET 发电站</text>
+        <text x="1520" y="482" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="46" font-weight="900" fill="#1E2A3A">1913</text>
+        <text x="1520" y="522" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="rgba(30,42,58,0.62)">福特 · 流水线</text>
+      </svg>
+    </div>
+    <div class="stamps">
+      <span class="stamp">1882→1913</span>
+      <span class="stamp accent">31年</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>12</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

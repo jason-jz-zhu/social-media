@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 17</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2200px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2200" height="1080" viewBox="0 0 2200 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <path d="M100 920 L2100 920" stroke="#1E2A3A" stroke-width="7" fill="none" filter="url(#rough)"/>
+
+  <!-- big question up top -->
+  <g id="q">
+    <text x="520" y="220" font-size="110" font-weight="900" fill="#1E2A3A" letter-spacing="8">这一轮，你站<tspan fill="#FF6B6B">哪边</tspan>？</text>
+  </g>
+
+  <!-- left door: Edison -->
+  <g filter="url(#rough)">
+    <path d="M420 920 L420 480 Q420 340 560 340 Q700 340 700 480 L700 920" fill="rgba(30,42,58,0.05)" stroke="#1E2A3A" stroke-width="9"/>
+    <text x="470" y="1000" font-size="40" font-weight="900" fill="rgba(30,42,58,0.65)" font-family="Georgia, serif" letter-spacing="4">EDISON</text>
+  </g>
+  <circle id="glowL" cx="560" cy="640" r="150" fill="#1E2A3A" opacity="0.05"/>
+  <g filter="url(#rough)">
+    <circle cx="560" cy="560" r="24" fill="#1E2A3A"/>
+    <path d="M560 584 L552 700 M560 584 L570 700 M560 610 L516 580 M560 610 L604 566" stroke="#1E2A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M552 700 L544 826 M570 700 L582 826" stroke="#1E2A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <circle id="bulb17" cx="626" cy="540" r="20" fill="none" stroke="#1E2A3A" stroke-width="5"/>
+  </g>
+
+  <!-- right door: Ford -->
+  <g filter="url(#rough)">
+    <path d="M1500 920 L1500 480 Q1500 340 1640 340 Q1780 340 1780 480 L1780 920" fill="rgba(255,107,107,0.06)" stroke="#FF6B6B" stroke-width="9"/>
+    <text x="1568" y="1000" font-size="40" font-weight="900" fill="#FF6B6B" font-family="Georgia, serif" letter-spacing="6">FORD</text>
+  </g>
+  <circle id="glowR" cx="1640" cy="640" r="150" fill="#FF6B6B" opacity="0.05"/>
+  <g filter="url(#rough)" stroke="#FF6B6B">
+    <circle cx="1610" cy="580" r="22" fill="#FF6B6B" stroke="none"/>
+    <path d="M1610 602 L1604 700 M1610 602 L1618 700 M1610 624 L1572 660 M1610 624 L1650 640" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M1604 700 L1596 800 M1618 700 L1628 800" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <!-- little assembly car -->
+    <path d="M1660 830 L1690 800 L1740 800 L1760 830 L1770 830 L1770 856 L1650 856 Z" fill="none" stroke-width="6"/>
+    <circle id="cwh1" cx="1680" cy="856" r="16" fill="none" stroke-width="5"/>
+    <circle id="cwh2" cx="1744" cy="856" r="16" fill="none" stroke-width="5"/>
+    <line id="csp1" x1="1680" y1="846" x2="1680" y2="866" stroke-width="3.5"/>
+    <line id="csp2" x1="1744" y1="846" x2="1744" y2="866" stroke-width="3.5"/>
+  </g>
+
+  <!-- the chooser: back view figure center -->
+  <g id="chooser" filter="url(#rough)">
+    <circle cx="0" cy="-206" r="34" fill="#1E2A3A"/>
+    <path d="M0 -172 L0 -60 M0 -140 L-44 -80 M0 -140 L44 -80 M0 -60 L-22 60 M0 -60 L22 60"
+          stroke="#1E2A3A" stroke-width="14" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <text id="cta" x="800" y="1044" font-size="36" font-weight="700" fill="rgba(30,42,58,0.55)" letter-spacing="8">评论区见 · AI SERIES VOL.10</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [
+  { t: 0.0,  x: 140, z: 1.00 },
+  { t: 16.9, x: 232, z: 1.14 },  // one slow, committed push-in
+];
+
+const gl = document.getElementById('glowL');
+const gr = document.getElementById('glowR');
+const bulb = document.getElementById('bulb17');
+const ch = document.getElementById('chooser');
+const q = document.getElementById('q');
+const cta = document.getElementById('cta');
+const csp1 = document.getElementById('csp1'), csp2 = document.getElementById('csp2');
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // the two doors breathe in alternate phase — the whole scene is a held question
+  const pl = 0.05 + 0.07 * Math.max(0, A.sin(t, 4.0));
+  const pr = 0.05 + 0.09 * Math.max(0, A.sin(t, 4.0, 0.5));
+  gl.style.opacity = pl;
+  gr.style.opacity = pr;
+
+  // edison's bulb flickers; ford's car wheels never stop
+  bulb.style.opacity = 0.4 + 0.6 * Math.max(0, A.sin(t, 1.6, 0.2));
+  const rot = (t * 220) % 360;
+  csp1.setAttribute('transform', `rotate(${rot} 1680 856)`);
+  csp2.setAttribute('transform', `rotate(${rot} 1744 856)`);
+
+  // chooser shifts weight, slowly leaning toward the ford door
+  const lean = A.sin(t, 5.4) * 26 + A.once(t, 10, 6) * 30;
+  ch.setAttribute('transform', `translate(${1100 + lean} 860)`);
+
+  // question lands early, cta late
+  const qi = A.ease(A.once(t, 1.2, 0.9));
+  q.style.opacity = qi;
+  q.setAttribute('transform', `translate(0 ${(1 - qi) * 30})`);
+  cta.style.opacity = A.once(t, 12.5, 0.9);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

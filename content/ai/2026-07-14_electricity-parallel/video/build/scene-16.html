@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 16</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 18px 6px 0; }
+  .head-col { display: flex; flex-direction: column; gap: 22px; flex: 0 0 auto; }
+  .head-col .headline { font-size: 70px; }
+  .timeline-zone { flex: 1; position: relative; min-height: 0; margin-top: 10px; }
+
+  /* tilted newspaper mini-cards */
+  .news-card {
+    position: absolute;
+    width: 244px;
+    padding: 14px 16px 16px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 5px 5px 0 var(--ink-faint);
+  }
+  .news-card .paper-name {
+    font-size: 20px; letter-spacing: 4px; font-weight: 700;
+    color: var(--ink-soft);
+    border-bottom: 2px solid var(--ink-faint);
+    padding-bottom: 6px; margin-bottom: 10px;
+  }
+  .news-card .head {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 30px; font-weight: 900; letter-spacing: 2px;
+  }
+  .news-card .fill-line { border-top: 3px solid var(--ink-faint); margin-top: 12px; }
+
+  /* the 30-year bar */
+  .bar {
+    position: absolute; left: 6px; right: 6px; bottom: 96px; height: 62px;
+    border: 3px dashed rgba(30, 42, 58, 0.4);
+  }
+  .bar-fill {
+    position: absolute; left: -3px; top: -3px; bottom: -3px; width: 10%;
+    background: var(--accent);
+    border: 3px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink-faint);
+  }
+  .bar-note {
+    position: absolute; left: 32%; right: 12%; top: 0; height: 56px;
+    line-height: 56px; text-align: center;
+    font-size: 26px; letter-spacing: 4px;
+  }
+  .bar .tick { position: absolute; top: 100%; height: 14px; border-left: 3px solid var(--ink-faint); }
+  .bar .tick-label {
+    position: absolute; top: calc(100% + 18px); transform: translateX(-50%);
+    font-size: 22px; font-weight: 700; letter-spacing: 3px; color: var(--ink-soft);
+  }
+  .here-arrow {
+    position: absolute; left: 74px; bottom: 64px; width: 0; height: 0;
+    border-left: 16px solid transparent; border-right: 16px solid transparent;
+    border-bottom: 26px solid var(--accent);
+  }
+  .here-label {
+    position: absolute; left: 6px; bottom: 14px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px; font-weight: 900; letter-spacing: 3px;
+    color: var(--accent);
+  }
+  .end-label {
+    position: absolute; right: 6px; bottom: 14px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px; font-weight: 900; letter-spacing: 3px;
+  }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="head-col">
+      <span class="kicker">三十年剧本 · 进度核对</span>
+      <div class="headline">你想看大结局<br>有点早</div>
+    </div>
+    <div class="timeline-zone">
+      <!-- hand pushing headlines aside -->
+      <svg style="position:absolute; left:90px; top:30px;" width="250" height="210" viewBox="0 0 250 210">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none" stroke-linecap="round">
+          <path d="M14 196 L82 138" stroke-width="7"/>
+          <path d="M48 206 L106 158" stroke-width="7"/>
+          <rect x="100" y="82" width="56" height="82" rx="24" stroke-width="6"/>
+          <path d="M120 80 Q130 48 156 44" stroke-width="11"/>
+          <path d="M152 94 L218 92" stroke-width="11"/>
+          <path d="M154 114 L226 113" stroke-width="11"/>
+          <path d="M154 134 L222 134" stroke-width="11"/>
+          <path d="M152 154 L210 155" stroke-width="11"/>
+        </g>
+      </svg>
+      <!-- motion arcs -->
+      <svg style="position:absolute; left:352px; top:52px;" width="100" height="160" viewBox="0 0 100 160">
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none" stroke-width="5" stroke-linecap="round" opacity="0.45">
+          <path d="M16 30 q20 48 0 96"/>
+          <path d="M46 18 q24 60 0 120"/>
+          <path d="M78 8 q28 70 0 140"/>
+        </g>
+      </svg>
+      <!-- tilted old headlines -->
+      <div class="news-card" style="left:470px; top:26px; transform:rotate(7deg);">
+        <div class="paper-name">都市晚报</div>
+        <div class="head">AI 没有 ROI</div>
+        <div class="fill-line"></div>
+        <div class="fill-line"></div>
+      </div>
+      <div class="news-card" style="left:772px; top:76px; transform:rotate(-6deg);">
+        <div class="paper-name">商业周评</div>
+        <div class="head">AI 没有 ROI</div>
+        <div class="fill-line"></div>
+        <div class="fill-line"></div>
+      </div>
+      <div class="news-card" style="left:1058px; top:14px; transform:rotate(12deg);">
+        <div class="paper-name">财经快讯</div>
+        <div class="head">AI 没有 ROI</div>
+        <div class="fill-line"></div>
+        <div class="fill-line"></div>
+      </div>
+      <!-- 30-year progress bar -->
+      <div class="bar">
+        <div class="bar-fill"></div>
+        <span class="bar-note ink-note">…… 剩下 27 年 · 还没开演 ……</span>
+        <span class="tick" style="left:33.33%;"></span>
+        <span class="tick" style="left:66.66%;"></span>
+        <span class="tick-label" style="left:33.33%;">10年</span>
+        <span class="tick-label" style="left:66.66%;">20年</span>
+      </div>
+      <!-- end flag -->
+      <svg style="position:absolute; right:2px; bottom:160px;" width="120" height="96" viewBox="0 0 120 96">
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <line x1="104" y1="92" x2="104" y2="6" stroke-width="5"/>
+          <path d="M104 10 L34 28 L104 46 Z" stroke-width="4" fill="rgba(30,42,58,0.08)"/>
+        </g>
+      </svg>
+      <span class="here-arrow"></span>
+      <span class="here-label">3年 · 我们在这</span>
+      <span class="end-label">30年剧本</span>
+    </div>
+    <div class="stamps">
+      <span class="stamp">3年 vs 30年</span>
+      <span class="stamp accent">刚演完开场</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>16</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

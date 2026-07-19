@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 09</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { gap: 56px; }
+  .copy-wrap { flex: 0.9; display: flex; flex-direction: column; gap: 28px; }
+  .copy-wrap .headline { font-size: 68px; }
+  .fact-row { display: flex; align-items: center; gap: 18px; font-size: 28px; font-weight: 700; }
+  .fact-row .tick { width: 30px; border-top: 4px solid var(--accent); }
+  .fact-row .muted { color: var(--ink-soft); }
+  .chart-wrap { flex: 1.4; position: relative; height: 640px; border-left: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+  .axis-label { position: absolute; font-size: 22px; font-weight: 700; letter-spacing: 3px; color: var(--ink-soft); }
+  .curve {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+  }
+  .callout {
+    position: absolute;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+  }
+  .inset {
+    position: absolute; right: 14px; bottom: 14px;
+    width: 180px;
+    border: 2.5px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 5px 5px 0 var(--ink-faint);
+    padding: 10px 12px 12px;
+    z-index: 5;
+  }
+  .inset .inset-title { font-size: 20px; font-weight: 700; letter-spacing: 1px; color: var(--ink-soft); text-align: center; }
+  .inset .bars { display: flex; align-items: flex-end; justify-content: center; gap: 18px; margin-top: 8px; }
+  .inset .bar-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .inset .bar-val { font-family: 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; }
+  .inset .bar { width: 48px; border: 3px solid var(--ink); }
+  .inset .bar-year { font-size: 20px; font-weight: 700; color: var(--ink-soft); letter-spacing: 1px; }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="copy-wrap">
+      <span class="kicker">同一条曲线 · 第二幕</span>
+      <div class="headline">然后，<br><span class="hl">十年爆发</span></div>
+      <div class="ink-note" style="font-size:30px;">— 把上一张图，往后再画十年 —</div>
+      <div class="fact-row muted"><span class="tick"></span>前三十年 · 年增速 &lt;1%</div>
+      <div class="fact-row"><span class="tick"></span>1919-1929 · 跳到 5% 以上</div>
+    </div>
+    <div class="chart-wrap">
+      <span class="axis-label" style="left:-10px; top:-36px;">制造业 TFP 年增速</span>
+      <span class="axis-label" style="left:6px; bottom:-40px;">1880s</span>
+      <span class="axis-label" style="left:66%; bottom:-40px;">1919</span>
+      <span class="axis-label" style="right:6px; bottom:-40px;">1929</span>
+      <svg class="curve" viewBox="0 0 1000 640" preserveAspectRatio="none">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+        <path filter="url(#rough)" d="M0 558 Q90 546 170 556 T340 552 T510 560 T700 554" stroke="#1E2A3A" stroke-width="7" fill="none"/>
+        <path filter="url(#rough)" d="M695 555 C768 548 796 330 852 78" stroke="#FF6B6B" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path filter="url(#rough)" d="M830 110 L854 58 L878 106" stroke="#FF6B6B" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="halftone" style="position:absolute; left:0; bottom:0; width:66%; height:56px; opacity:0.25;"></div>
+      <div class="callout" style="left:38%; top:130px; font-size:116px; color:var(--accent);">5%+</div>
+      <div class="callout" style="left:38.5%; top:280px; font-size:28px; letter-spacing:6px;">每年 · 仅仅十年</div>
+      <svg style="position:absolute; left:58%; top:200px;" width="150" height="130" viewBox="0 0 150 130">
+        <path d="M12 40 Q92 10 122 96" stroke="#1E2A3A" stroke-width="4" fill="none"/>
+        <path d="M104 88 L124 104 L130 78" stroke="#1E2A3A" stroke-width="4" fill="none"/>
+      </svg>
+      <div class="inset">
+        <div class="inset-title">电力占工厂动力</div>
+        <div class="bars">
+          <div class="bar-col">
+            <span class="bar-val">50%</span>
+            <div class="bar halftone" style="height:55px;"></div>
+            <span class="bar-year">1919</span>
+          </div>
+          <div class="bar-col">
+            <span class="bar-val" style="color:var(--accent);">80%</span>
+            <div class="bar" style="height:88px; background:var(--accent);"></div>
+            <span class="bar-year">1929</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stamps">
+      <span class="stamp">1919-1929</span>
+      <span class="stamp accent">5%+</span>
+      <span class="stamp">50%→80%</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>09</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

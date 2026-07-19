@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 04</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 3000px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="3000" height="1080" viewBox="0 0 3000 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- faint painted band words (in-world wall paint) -->
+  <text x="70" y="160" font-size="92" font-weight="900" fill="rgba(30,42,58,0.10)" letter-spacing="10">DC · 直流</text>
+  <text x="2470" y="640" font-size="80" font-weight="900" fill="rgba(30,42,58,0.10)" letter-spacing="8">AC · 交流</text>
+
+  <!-- upper ridge (DC line) ground -->
+  <path d="M40 460 L2960 460" stroke="#1E2A3A" stroke-width="6" fill="none" filter="url(#rough)"/>
+  <!-- valley floor (AC) ground -->
+  <path d="M40 980 L2960 980" stroke="#1E2A3A" stroke-width="7" fill="none" filter="url(#rough)"/>
+
+  <!-- DC stations + inter-station dashed feeders (built by script) -->
+  <g id="dcWires"></g>
+  <g id="stations"></g>
+  <!-- DC smoke rings -->
+  <g id="dcSmoke"></g>
+
+  <!-- DC road sign -->
+  <g id="dcSign" filter="url(#rough)">
+    <line x1="800" y1="460" x2="800" y2="368" stroke="#1E2A3A" stroke-width="8"/>
+    <rect x="640" y="278" width="320" height="96" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+    <text x="800" y="314" font-size="26" font-weight="700" fill="rgba(30,42,58,0.55)" text-anchor="middle">DC · 直流干线</text>
+    <text x="800" y="358" font-size="42" font-weight="900" fill="#1E2A3A" text-anchor="middle" letter-spacing="4">1英里 1站</text>
+  </g>
+
+  <!-- ================= AC valley ================= -->
+  <!-- mountains -->
+  <path d="M640 980 L900 760 L1080 820 L1300 690 L1520 850 L1750 720 L1980 870 L2150 800 L2330 980"
+        fill="none" stroke="#1E2A3A" stroke-width="7" filter="url(#rough)"/>
+
+  <!-- Westinghouse AC plant -->
+  <g filter="url(#rough)">
+    <rect x="140" y="780" width="280" height="200" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="8"/>
+    <path d="M130 780 L280 716 L430 780 Z" fill="rgba(30,42,58,0.10)" stroke="#1E2A3A" stroke-width="7"/>
+    <rect x="350" y="700" width="44" height="82" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+    <circle id="turbine" cx="230" cy="895" r="42" fill="none" stroke="#1E2A3A" stroke-width="7"/>
+    <line id="tsp1" x1="188" y1="895" x2="272" y2="895" stroke="#1E2A3A" stroke-width="6"/>
+    <line id="tsp2" x1="230" y1="853" x2="230" y2="937" stroke="#1E2A3A" stroke-width="6"/>
+    <text x="160" y="1022" font-size="32" font-weight="700" fill="rgba(30,42,58,0.60)">西屋 · AC 电站</text>
+  </g>
+  <!-- plant smoke -->
+  <g id="acSmoke"></g>
+
+  <!-- step-up transformer -->
+  <g id="upT" filter="url(#rough)">
+    <rect x="462" y="850" width="118" height="130" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="7"/>
+    <circle cx="521" cy="898" r="23" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <circle cx="521" cy="936" r="23" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="521" y1="850" x2="540" y2="800" stroke="#1E2A3A" stroke-width="6"/>
+  </g>
+  <text x="478" y="1022" font-size="32" font-weight="700" fill="rgba(30,42,58,0.60)" filter="url(#rough)">升压</text>
+
+  <!-- pylons -->
+  <g id="pylons" filter="url(#rough)"></g>
+
+  <!-- the long AC wire (drawn in at ~7s) -->
+  <path id="acwire" d="M540 800 Q700 790 900 715 Q1100 760 1300 655 Q1500 710 1700 675 Q1900 760 2100 725 Q2300 810 2460 830"
+        fill="none" stroke="#1E2A3A" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- AC road sign -->
+  <g id="acSign" filter="url(#rough)">
+    <line x1="1560" y1="980" x2="1560" y2="882" stroke="#1E2A3A" stroke-width="8"/>
+    <rect x="1390" y="788" width="340" height="100" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+    <text x="1560" y="826" font-size="26" font-weight="700" fill="rgba(30,42,58,0.55)" text-anchor="middle">AC · 高压输电</text>
+    <text x="1560" y="872" font-size="46" font-weight="900" fill="#FF6B6B" text-anchor="middle" letter-spacing="4">几百公里</text>
+  </g>
+
+  <!-- step-down transformer -->
+  <g id="downT" filter="url(#rough)">
+    <rect x="2402" y="862" width="112" height="118" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="7"/>
+    <circle cx="2458" cy="906" r="21" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <circle cx="2458" cy="942" r="21" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="2458" y1="862" x2="2460" y2="830" stroke="#1E2A3A" stroke-width="6"/>
+  </g>
+  <text x="2420" y="1022" font-size="32" font-weight="700" fill="rgba(30,42,58,0.60)" filter="url(#rough)">降压</text>
+
+  <!-- house -->
+  <g filter="url(#rough)">
+    <rect x="2620" y="850" width="220" height="130" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="8"/>
+    <path d="M2600 850 L2730 762 L2860 850 Z" fill="rgba(30,42,58,0.10)" stroke="#1E2A3A" stroke-width="7"/>
+    <rect id="winGlow" x="2695" y="890" width="70" height="60" fill="#FF6B6B" opacity="0"/>
+    <rect x="2695" y="890" width="70" height="60" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="2730" y1="890" x2="2730" y2="950" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="2695" y1="920" x2="2765" y2="920" stroke="#1E2A3A" stroke-width="5"/>
+    <text x="2620" y="1022" font-size="32" font-weight="700" fill="rgba(30,42,58,0.60)">你家</text>
+    <line x1="2514" y1="920" x2="2620" y2="920" stroke="#1E2A3A" stroke-width="6"/>
+  </g>
+
+  <!-- current dot + trail (coral focus) -->
+  <g id="dotG">
+    <circle id="dotHalo" r="26" fill="#FF6B6B" opacity="0"/>
+    <circle id="trail2" r="6" fill="#FF6B6B" opacity="0"/>
+    <circle id="trail1" r="8" fill="#FF6B6B" opacity="0"/>
+    <circle id="dot" r="12" fill="#FF6B6B" opacity="0"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const ns = 'http://www.w3.org/2000/svg';
+const SX = [200, 600, 1000, 1400, 1800, 2200, 2600];
+
+// --- build DC stations, feeders, smoke ---
+const sg = document.getElementById('stations');
+const wg = document.getElementById('dcWires');
+const smokeG = document.getElementById('dcSmoke');
+const dcLines = [];
+const smokes = [];
+SX.forEach((x, i) => {
+  const g = document.createElementNS(ns, 'g');
+  g.setAttribute('filter', 'url(#rough)');
+  g.innerHTML = `
+    <rect x="${x-75}" y="340" width="150" height="120" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="6"/>
+    <path d="M${x-85} 340 L${x} 292 L${x+85} 340 Z" fill="rgba(30,42,58,0.10)" stroke="#1E2A3A" stroke-width="6"/>
+    <rect x="${x+26}" y="248" width="26" height="92" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="5"/>
+    <rect x="${x-22}" y="398" width="44" height="62" fill="rgba(30,42,58,0.18)"/>
+    <circle cx="${x-46}" cy="380" r="13" fill="none" stroke="#1E2A3A" stroke-width="4"/>`;
+  sg.appendChild(g);
+
+  if (i < SX.length - 1) {
+    const l = document.createElementNS(ns, 'line');
+    l.setAttribute('x1', x + 85); l.setAttribute('y1', 372);
+    l.setAttribute('x2', x + 315); l.setAttribute('y2', 372);
+    l.setAttribute('stroke', '#1E2A3A'); l.setAttribute('stroke-width', 5);
+    l.setAttribute('stroke-dasharray', '16 12');
+    wg.appendChild(l);
+    dcLines.push(l);
+  }
+
+  for (let j = 0; j < 3; j++) {
+    const e = document.createElementNS(ns, 'ellipse');
+    e.setAttribute('fill', 'rgba(30,42,58,0.11)');
+    smokeG.appendChild(e);
+    smokes.push({ el: e, i, j });
+  }
+});
+
+// --- plant smoke ---
+const acSmokeG = document.getElementById('acSmoke');
+const acSmokes = [];
+for (let j = 0; j < 3; j++) {
+  const e = document.createElementNS(ns, 'ellipse');
+  e.setAttribute('fill', 'rgba(30,42,58,0.11)');
+  acSmokeG.appendChild(e);
+  acSmokes.push(e);
+}
+
+// --- pylons under the wire ---
+const PY = [[900, 715, 760], [1300, 655, 690], [1700, 675, 745], [2100, 725, 815]];
+const pyG = document.getElementById('pylons');
+PY.forEach(([x, top, ground]) => {
+  const g = document.createElementNS(ns, 'g');
+  g.innerHTML = `
+    <line x1="${x}" y1="${top}" x2="${x-34}" y2="${ground+8}" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="${x}" y1="${top}" x2="${x+34}" y2="${ground+8}" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="${x-20}" y1="${top+38}" x2="${x+20}" y2="${top+38}" stroke="#1E2A3A" stroke-width="5"/>`;
+  pyG.appendChild(g);
+});
+
+// --- camera ---
+const CAM = [
+  { t: 0.0,   x: 0,    y: 30,  z: 1.5 },   // DC row, left end
+  { t: 6.0,   x: 1700, y: 30,  z: 1.5 },   // pan past all 7 stations
+  { t: 7.0,   x: 0,    y: 330, z: 1.45 },  // swoop down to AC plant
+  { t: 10.2,  x: 60,   y: 330, z: 1.45 },  // hold while wire is strung
+  { t: 13.5,  x: 1620, y: 330, z: 1.45 },  // pan along wire toward the house
+  { t: 15.6,  x: 1080, y: 0,   z: 1.0 },   // pull wide: both worlds
+  { t: 17.46, x: 1040, y: 0,   z: 1.0 },
+];
+
+const wire = document.getElementById('acwire');
+const wireL = wire.getTotalLength();
+const dot = document.getElementById('dot');
+const dotHalo = document.getElementById('dotHalo');
+const trail1 = document.getElementById('trail1');
+const trail2 = document.getElementById('trail2');
+const upT = document.getElementById('upT');
+const downT = document.getElementById('downT');
+const winGlow = document.getElementById('winGlow');
+const tsp1 = document.getElementById('tsp1');
+const tsp2 = document.getElementById('tsp2');
+
+function placeOnWire(el, len, op) {
+  const p = wire.getPointAtLength(Math.max(0, Math.min(wireL, len)));
+  el.setAttribute('cx', p.x); el.setAttribute('cy', p.y);
+  el.style.opacity = op;
+}
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // --- ambient: DC feeders trickle (weak, DC is struggling) ---
+  dcLines.forEach((l, i) => A.flow(l, t, 36));
+
+  // --- DC smoke: each station starts puffing as the camera passes, loops forever ---
+  smokes.forEach(s => {
+    const onset = A.once(t, s.i * 0.8, 0.6);
+    const ph = A.loop(t, 3.2, s.j * 0.33 + s.i * 0.13);
+    const cx = SX[s.i] + 39 + A.sin(t, 2.6, s.j * 0.4 + s.i * 0.2) * 16;
+    const cy = A.lerp(242, 70, ph);
+    s.el.setAttribute('cx', cx); s.el.setAttribute('cy', cy);
+    s.el.setAttribute('rx', 12 + ph * 26); s.el.setAttribute('ry', 8 + ph * 14);
+    s.el.style.opacity = onset * (1 - ph) * 0.55;
+  });
+
+  // --- plant smoke + turbine spin: the AC plant runs the whole time ---
+  acSmokes.forEach((e, j) => {
+    const ph = A.loop(t, 3.6, j * 0.33);
+    e.setAttribute('cx', 372 + A.sin(t, 2.8, j * 0.4) * 14);
+    e.setAttribute('cy', A.lerp(692, 556, ph));
+    e.setAttribute('rx', 13 + ph * 24); e.setAttribute('ry', 9 + ph * 13);
+    e.style.opacity = (1 - ph) * 0.5;
+  });
+  const a = (t * 120) % 360;
+  tsp1.setAttribute('transform', `rotate(${a} 230 895)`);
+  tsp2.setAttribute('transform', `rotate(${a} 230 895)`);
+
+  // --- beat: at ~7s the long AC wire gets strung across the mountains ---
+  A.draw(wire, A.ease(A.once(t, 7.0, 3.0)));
+
+  // --- beat: coral current pulse loops down the wire from 10s on ---
+  const on = A.once(t, 10.0, 0.4);
+  if (t >= 10.0) {
+    const len = A.loop(t - 10.0, 2.4) * wireL;
+    placeOnWire(dot, len, on);
+    placeOnWire(dotHalo, len, on * (0.18 + 0.08 * A.sin(t, 0.8)));
+    placeOnWire(trail1, len - 55, on * 0.55);
+    placeOnWire(trail2, len - 110, on * 0.3);
+  } else {
+    [dot, dotHalo, trail1, trail2].forEach(e => e.style.opacity = 0);
+  }
+
+  // --- transformers pulse once the line is live ---
+  const upOn = A.once(t, 9.6, 0.6);
+  const dnOn = A.once(t, 10.8, 0.6);
+  const su = 1 + 0.045 * A.sin(t, 0.9) * upOn;
+  const sd = 1 + 0.045 * A.sin(t, 0.9, 0.5) * dnOn;
+  upT.setAttribute('transform', `translate(${521 - 521 * su} ${915 - 915 * su}) scale(${su})`);
+  downT.setAttribute('transform', `translate(${2458 - 2458 * sd} ${921 - 921 * sd}) scale(${sd})`);
+
+  // --- beat: the house window lights up when current first arrives (~12.4s) ---
+  const wOn = A.once(t, 12.4, 0.8);
+  winGlow.style.opacity = wOn * (0.55 + 0.25 * A.sin(t, 1.3));
+};
+seek(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 17</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { flex-direction: column; justify-content: center; gap: 16px; }
+  .illus-wrap { flex: 0 0 auto; display: flex; justify-content: center; margin-top: 84px; }
+  .headline-wrap {
+    text-align: center;
+    font-size: 66px;
+  }
+  .cta-line {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 7px;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="illus-wrap">
+      <svg width="1090" height="418" viewBox="0 0 1240 475">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+        <!-- ground line -->
+        <g filter="url(#rough)" stroke="#1E2A3A" fill="none">
+          <line x1="110" y1="440" x2="490" y2="440" stroke-width="6"/>
+          <line x1="750" y1="440" x2="1130" y2="440" stroke-width="6"/>
+        </g>
+
+        <!-- LEFT DOOR : Edison + bulb (ink) -->
+        <g filter="url(#rough)">
+          <path d="M150 440 V190 Q150 62 300 62 Q450 62 450 190 V440"
+                stroke="#1E2A3A" stroke-width="7" fill="rgba(30,42,58,0.05)"/>
+          <text x="300" y="40" text-anchor="middle" font-family="Georgia, serif"
+                font-size="27" font-weight="bold" letter-spacing="5" fill="#1E2A3A">EDISON</text>
+          <!-- Edison figure -->
+          <circle cx="266" cy="188" r="20" fill="#1E2A3A"/>
+          <path d="M266 208 L260 300 L246 420 M266 208 L274 300 L290 420 M266 232 L322 176 M266 232 L232 296"
+                stroke="#1E2A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <!-- bulb held up -->
+          <circle cx="342" cy="158" r="17" fill="none" stroke="#1E2A3A" stroke-width="5"/>
+          <path d="M335 172 L349 172 L346 182 L338 182 Z" fill="#1E2A3A"/>
+          <path d="M342 134 L342 125 M357 141 L364 134 M327 141 L320 134" stroke="#1E2A3A" stroke-width="4" stroke-linecap="round"/>
+        </g>
+
+        <!-- RIGHT DOOR : Ford + assembly-line car (accent stroke) -->
+        <g filter="url(#rough)">
+          <path d="M790 440 V190 Q790 62 940 62 Q1090 62 1090 190 V440"
+                stroke="#1E2A3A" stroke-width="7" fill="rgba(30,42,58,0.05)"/>
+          <text x="940" y="40" text-anchor="middle" font-family="Georgia, serif"
+                font-size="27" font-weight="bold" letter-spacing="5" fill="#1E2A3A">FORD</text>
+          <!-- Ford figure (accent outline) -->
+          <circle cx="866" cy="190" r="20" fill="none" stroke="#FF6B6B" stroke-width="6"/>
+          <path d="M866 210 L860 300 L846 420 M866 210 L874 300 L890 420 M866 234 L916 268 M866 234 L832 298"
+                stroke="#FF6B6B" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <!-- conveyor + small car -->
+          <line x1="928" y1="404" x2="1072" y2="404" stroke="#FF6B6B" stroke-width="5"/>
+          <circle cx="952" cy="418" r="9" fill="none" stroke="#FF6B6B" stroke-width="4"/>
+          <circle cx="1000" cy="418" r="9" fill="none" stroke="#FF6B6B" stroke-width="4"/>
+          <circle cx="1048" cy="418" r="9" fill="none" stroke="#FF6B6B" stroke-width="4"/>
+          <path d="M938 388 V360 H1010 L1030 388 Z M956 360 V336 H996 V360"
+                stroke="#FF6B6B" stroke-width="5" fill="none" stroke-linejoin="round"/>
+          <circle cx="962" cy="388" r="12" fill="none" stroke="#FF6B6B" stroke-width="5"/>
+          <circle cx="1010" cy="388" r="12" fill="none" stroke="#FF6B6B" stroke-width="5"/>
+        </g>
+
+        <!-- MODERN FIGURE (back view, foreground, facing the doors) -->
+        <g filter="url(#rough)">
+          <ellipse cx="620" cy="462" rx="66" ry="7" fill="rgba(30,42,58,0.28)"/>
+          <circle cx="620" cy="252" r="23" fill="#1E2A3A"/>
+          <path d="M620 275 L612 360 L600 456 M620 275 L628 360 L640 456 M620 300 L586 366 M620 300 L654 366"
+                stroke="#1E2A3A" stroke-width="11" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- dashed choice paths -->
+        <g stroke="rgba(30,42,58,0.28)" stroke-width="4" fill="none" stroke-dasharray="14 12">
+          <path d="M556 400 Q440 384 366 428"/>
+          <path d="M684 400 Q800 384 874 428"/>
+        </g>
+      </svg>
+    </div>
+    <div class="headline headline-wrap">这一轮<br>你站哪边？</div>
+    <div class="cta-line">评论区见 · AI SERIES VOL.10</div>
+    <div class="stamps">
+      <span class="stamp">爱迪生 or 福特</span>
+      <span class="stamp accent">评论区见</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>17</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>

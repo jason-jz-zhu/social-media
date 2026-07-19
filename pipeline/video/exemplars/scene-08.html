@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 08</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2600px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2600" height="1080" viewBox="0 0 2600 1080" font-family="'Noto Serif SC', serif">
+  <defs>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter>
+    <clipPath id="curveClip"><rect id="clipRect" x="760" y="220" width="0" height="660"/></clipPath>
+  </defs>
+
+  <!-- pinned paper (left) -->
+  <g id="paper">
+    <g filter="url(#rough)" transform="rotate(-2 420 480)">
+      <rect x="200" y="300" width="440" height="380" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="7"/>
+      <text x="240" y="370" font-size="30" font-weight="700" fill="#FF6B6B" letter-spacing="4">1990 · PAUL DAVID</text>
+      <text x="240" y="440" font-size="38" font-weight="900" fill="#1E2A3A">The Dynamo</text>
+      <text x="240" y="492" font-size="38" font-weight="900" fill="#1E2A3A">and the Computer</text>
+      <line x1="240" y1="530" x2="600" y2="530" stroke="#1E2A3A" stroke-width="3"/>
+      <text x="240" y="590" font-size="26" fill="rgba(30,42,58,0.6)">发电机与计算机</text>
+      <text x="240" y="640" font-size="24" fill="rgba(30,42,58,0.45)">American Economic Review</text>
+    </g>
+    <circle cx="420" cy="315" r="10" fill="#1E2A3A"/>
+  </g>
+
+  <!-- big chart on the wall -->
+  <g filter="url(#rough)">
+    <line x1="760" y1="880" x2="2520" y2="880" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="760" y1="880" x2="760" y2="220" stroke="#1E2A3A" stroke-width="8"/>
+  </g>
+  <text x="770" y="180" font-size="40" font-weight="700" fill="rgba(30,42,58,0.55)" letter-spacing="6">制造业 TFP 年增速</text>
+  <text x="790" y="950" font-size="36" fill="rgba(30,42,58,0.6)">1880s</text>
+  <text x="1580" y="950" font-size="36" fill="rgba(30,42,58,0.6)">1900</text>
+  <text x="2400" y="950" font-size="36" fill="rgba(30,42,58,0.6)">1919</text>
+
+  <!-- the flat 30-year curve, revealed by clip -->
+  <g clip-path="url(#curveClip)">
+    <path id="flat" d="M780 830 Q950 812 1120 828 T1460 824 T1800 832 T2140 820 T2480 828" stroke="#1E2A3A" stroke-width="9" fill="none" filter="url(#rough)"/>
+    <rect x="780" y="836" width="1700" height="44" fill="none" style="background:none"/>
+  </g>
+  <!-- halftone under curve, also clipped -->
+  <g clip-path="url(#curveClip)">
+    <rect x="780" y="838" width="1700" height="42" fill="url(#ht)"/>
+  </g>
+  <defs>
+    <pattern id="ht" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.35" fill="rgba(30,42,58,0.5)"/></pattern>
+  </defs>
+
+  <!-- <1% callout -->
+  <g id="callout">
+    <text x="1500" y="560" font-size="170" font-weight="900" fill="#FF6B6B">&lt;1%</text>
+    <text x="1520" y="640" font-size="42" font-weight="700" fill="#1E2A3A" letter-spacing="8">每年 · 持续三十年</text>
+    <path id="arrow" d="M1640 680 Q1600 740 1620 800" stroke="#1E2A3A" stroke-width="5" fill="none"/>
+    <path d="M1600 780 L1622 806 L1642 782" stroke="#1E2A3A" stroke-width="5" fill="none"/>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [
+  { t: 0.0,  x: 0,   z: 1.10 },   // on the pinned paper
+  { t: 4.0,  x: 120, z: 1.02 },
+  { t: 10.0, x: 560, z: 1.06 },   // follow the crawling curve
+  { t: 16.9, x: 480, z: 1.02 },
+];
+
+const clipR = document.getElementById('clipRect');
+const paper = document.getElementById('paper');
+const co = document.getElementById('callout');
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  // paper pins in with a little drop-settle
+  const pin = A.ease(A.once(t, 0.5, 0.7));
+  paper.setAttribute('transform', `translate(0 ${(1 - pin) * -160})`);
+  paper.style.opacity = pin;
+  // paper keeps a tiny idle sway
+  const sway = A.sin(t, 4.2) * 0.5;
+  paper.setAttribute('transform', `translate(0 ${(1 - pin) * -160}) rotate(${sway} 420 315)`);
+
+  // the flat curve crawls for 8 long seconds — the "30年" feel
+  const reveal = A.once(t, 3.8, 8.2);
+  clipR.setAttribute('width', `${reveal * 1760}`);
+
+  // callout fades up late, then breathes
+  const on = A.ease(A.once(t, 12.2, 0.8));
+  co.style.opacity = on;
+  co.setAttribute('transform', `translate(0 ${(1 - on) * 30}) scale(${1 + 0.012 * A.sin(t, 2.1) * on})`);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

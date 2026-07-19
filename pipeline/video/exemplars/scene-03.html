@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>v4 Scene 03</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 3000px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="3000" height="1080" viewBox="0 0 3000 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+
+  <!-- gallery wall: picture rail, baseboard, floor -->
+  <g filter="url(#rough)">
+    <path d="M40 148 L2960 148" stroke="#1E2A3A" stroke-width="7" fill="none"/>
+    <path d="M40 940 L2960 940" stroke="#1E2A3A" stroke-width="5" fill="none" opacity="0.55"/>
+    <path d="M40 985 L2960 985" stroke="#1E2A3A" stroke-width="8" fill="none"/>
+  </g>
+
+  <!-- three big portrait frames (built in JS) -->
+  <g id="frames"></g>
+
+  <!-- two tiny filler frames between the big ones -->
+  <g id="minis"></g>
+
+  <!-- dust motes floating in the gallery air -->
+  <g id="dust"></g>
+
+  <!-- hanging paper tag on frame 3: "最后揭晓" (drops in at ~10.3s) -->
+  <g id="tagG">
+    <line x1="2450" y1="236" x2="2450" y2="300" stroke="#1E2A3A" stroke-width="5"/>
+    <g filter="url(#rough)">
+      <rect x="2378" y="300" width="150" height="86" fill="#FAF3E7" stroke="#FF6B6B" stroke-width="7"/>
+    </g>
+    <circle cx="2450" cy="300" r="7" fill="#1E2A3A"/>
+    <text x="2453" y="342" font-size="34" font-weight="900" fill="#FF6B6B" text-anchor="middle">最后</text>
+    <text x="2453" y="376" font-size="34" font-weight="900" fill="#FF6B6B" text-anchor="middle">揭晓</text>
+  </g>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<script src="lib/anim-v4.js"></script>
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+
+// ---- build the three portrait frames ----
+const FR = [
+  { cx: 800,  name: '爱迪生', type: 'bulb', per: 3.4, ph: 0.00 },
+  { cx: 1500, name: '特斯拉', type: 'wave', per: 4.2, ph: 0.37 },
+  { cx: 2200, name: '？？？', type: 'q',    per: 3.8, ph: 0.71 },
+];
+const framesG = document.getElementById('frames');
+const frameEls = [];
+FR.forEach((f, i) => {
+  const g = document.createElementNS(NS, 'g');
+  const cx = f.cx;
+  let emblem = '';
+  if (f.type === 'bulb') {
+    emblem = `
+      <circle id="bulbHalo" cx="${cx + 128}" cy="352" r="52" fill="#FF6B6B" opacity="0.14"/>
+      <circle id="bulb" cx="${cx + 128}" cy="352" r="26" fill="none" stroke="#FF6B6B" stroke-width="6"/>
+      <path id="bulbBase" d="M${cx + 120} 372 L${cx + 136} 372 L${cx + 132} 388 L${cx + 124} 388 Z" fill="#FF6B6B"/>`;
+  } else if (f.type === 'wave') {
+    emblem = `
+      <path id="wave" d="M${cx - 160} 356 q 40 -72 80 0 q 40 72 80 0 q 40 -72 80 0 q 40 72 80 0"
+        fill="none" stroke="#1E2A3A" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round"/>`;
+  }
+  const headFill = f.type === 'q' ? 'none' : '#1E2A3A';
+  const headDash = f.type === 'q' ? 'stroke-dasharray="10 10"' : '';
+  g.innerHTML = `
+    <circle cx="${cx}" cy="150" r="8" fill="#1E2A3A"/>
+    <line x1="${cx - 190}" y1="234" x2="${cx}" y2="152" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="${cx + 190}" y1="234" x2="${cx}" y2="152" stroke="#1E2A3A" stroke-width="5"/>
+    <g filter="url(#rough)">
+      <rect x="${cx - 250}" y="230" width="500" height="600" fill="rgba(30,42,58,0.05)" stroke="#1E2A3A" stroke-width="10"/>
+      <rect x="${cx - 210}" y="270" width="420" height="520" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+    </g>
+    ${emblem}
+    <g filter="url(#rough)">
+      <circle cx="${cx}" cy="470" r="55" fill="${headFill}" stroke="#1E2A3A" stroke-width="8" ${headDash}/>
+      <line x1="${cx}" y1="524" x2="${cx}" y2="566" stroke="#1E2A3A" stroke-width="9" ${headDash}/>
+      <path d="M${cx - 120} 700 Q ${cx - 108} 572 ${cx} 566 Q ${cx + 108} 572 ${cx + 120} 700" fill="none" stroke="#1E2A3A" stroke-width="9" ${headDash}/>
+    </g>
+    ${f.type === 'q' ? `<g id="qWrap"><text id="qmark" x="${cx}" y="660" font-size="300" font-weight="900" fill="#FF6B6B" text-anchor="middle" font-family="Georgia, serif">?</text></g>` : ''}
+    <g filter="url(#rough)">
+      <rect x="${cx - 132}" y="852" width="264" height="70" fill="#1E2A3A"/>
+    </g>
+    <text x="${cx}" y="902" font-size="42" font-weight="900" fill="#FAF3E7" text-anchor="middle" letter-spacing="6">${f.name}</text>`;
+  framesG.appendChild(g);
+  frameEls.push(g);
+});
+
+// ---- tiny filler frames between the big ones ----
+const minisG = document.getElementById('minis');
+const miniEls = [];
+[{ x: 1150, y: 400 }, { x: 1850, y: 400 }].forEach(m => {
+  const g = document.createElementNS(NS, 'g');
+  g.innerHTML = `
+    <circle cx="${m.x}" cy="${m.y - 60}" r="5" fill="#1E2A3A"/>
+    <line x1="${m.x}" y1="${m.y - 58}" x2="${m.x}" y2="${m.y}" stroke="#1E2A3A" stroke-width="4"/>
+    <g filter="url(#rough)">
+      <rect x="${m.x - 60}" y="${m.y}" width="120" height="150" fill="rgba(30,42,58,0.06)" stroke="#1E2A3A" stroke-width="6"/>
+      <path d="M${m.x - 34} ${m.y + 110} L${m.x - 6} ${m.y + 62} L${m.x + 18} ${m.y + 96} L${m.x + 34} ${m.y + 74}" fill="none" stroke="#1E2A3A" stroke-width="5"/>
+    </g>`;
+  minisG.appendChild(g);
+  miniEls.push({ g, x: m.x, y: m.y - 60 });
+});
+
+// ---- dust motes ----
+const dustG = document.getElementById('dust');
+const motes = [];
+for (let i = 0; i < 7; i++) {
+  const c = document.createElementNS(NS, 'circle');
+  c.setAttribute('r', 3 + (i % 3));
+  c.setAttribute('fill', 'rgba(30,42,58,0.18)');
+  dustG.appendChild(c);
+  motes.push({ c, bx: 320 + i * 390, by: 260 + (i * 137) % 560, ph: i * 0.41 });
+}
+
+// ---- camera: dwell on Edison, pan to Tesla, land on ??? ----
+const CAM = [
+  { t: 0.00,  x: 62,   y: 110, z: 1.30 },  // frame 1: Edison
+  { t: 2.30,  x: 105,  y: 108, z: 1.27 },  // slow drift while narration names him
+  { t: 4.30,  x: 750,  y: 105, z: 1.28 },  // pan to frame 2: Tesla
+  { t: 5.90,  x: 765,  y: 105, z: 1.26 },  // breathe
+  { t: 7.40,  x: 1462, y: 118, z: 1.30 },  // arrive on frame 3: ???
+  { t: 12.23, x: 1494, y: 140, z: 1.36 },  // slow push into the question
+];
+
+const bulb = document.getElementById('bulb');
+const bulbHalo = document.getElementById('bulbHalo');
+const bulbBase = document.getElementById('bulbBase');
+const wave = document.getElementById('wave');
+const qWrap = document.getElementById('qWrap');
+const tagG = document.getElementById('tagG');
+const QX = 2200, QY = 560; // question-mark pulse center
+
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+
+  // frames sway gently on their nails, each with its own phase (ambient loop 1)
+  FR.forEach((f, i) => {
+    const a = 1.2 * A.sin(t, f.per, f.ph);
+    frameEls[i].setAttribute('transform', `rotate(${a} ${f.cx} 150)`);
+  });
+  miniEls.forEach((m, i) => {
+    const a = 1.6 * A.sin(t, 2.9, 0.2 + i * 0.45);
+    m.g.setAttribute('transform', `rotate(${a} ${m.x} ${m.y})`);
+  });
+
+  // Edison's bulb flickers irregularly (ambient loop 2)
+  const fl = 0.5 + 0.5 * Math.max(A.sin(t, 1.1), A.sin(t, 0.27) * 0.5) * (A.sin(t, 3.3) > -0.8 ? 1 : 0.12);
+  bulb.style.opacity = fl;
+  bulbBase.style.opacity = fl;
+  bulbHalo.style.opacity = fl * 0.3;
+
+  // Tesla's AC wave: current flows through the dashes (ambient loop 3)
+  A.flow(wave, t, 55);
+
+  // dust motes drift (ambient loop 4)
+  motes.forEach(m => {
+    const x = m.bx + A.sin(t, 7.5, m.ph) * 46;
+    const y = m.by + A.sin(t, 5.2, m.ph + 0.3) * 34;
+    m.c.setAttribute('transform', `translate(${x} ${y})`);
+    m.c.style.opacity = 0.35 + 0.3 * A.sin(t, 3.1, m.ph);
+  });
+
+  // beat: the big coral ? pops when the camera lands on frame 3 (~7.2s), then keeps breathing
+  const pop = A.easeOut(A.once(t, 7.15, 0.45)) * (1 - A.ease(A.once(t, 7.75, 0.7))) * 0.38;
+  const breathe = 0.05 * A.sin(t, 1.6) * (0.4 + 0.6 * A.once(t, 7.15, 0.5));
+  const qs = 1 + pop + breathe;
+  qWrap.setAttribute('transform', `translate(${QX} ${QY}) scale(${qs}) translate(${-QX} ${-QY})`);
+  qWrap.style.opacity = 0.72 + 0.28 * A.once(t, 7.15, 0.45);
+
+  // beat: "这件事放到最后说" — a paper tag drops onto frame 3 at ~10.3s and swings out
+  const drop = A.easeOut(A.once(t, 10.3, 0.5));
+  const decay = Math.max(0, 1 - A.once(t, 10.3, 1.9));
+  const swing = 20 * A.sin(t, 0.9) * decay + 2.5 * A.sin(t, 2.3) * A.once(t, 10.3, 0.5);
+  tagG.style.opacity = drop;
+  tagG.setAttribute('transform', `translate(0 ${(drop - 1) * 130}) rotate(${swing} 2450 236)`);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

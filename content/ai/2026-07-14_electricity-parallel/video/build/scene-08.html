@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Scene 08</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .stage { gap: 56px; }
+  .copy-wrap { flex: 0.9; display: flex; flex-direction: column; gap: 28px; }
+  .copy-wrap .headline { font-size: 58px; }
+  .paper-cite {
+    border: 2.5px solid var(--ink);
+    padding: 22px 28px;
+    box-shadow: 6px 6px 0 var(--ink-faint);
+    background: var(--paper);
+  }
+  .paper-cite .label { font-size: 20px; letter-spacing: 5px; color: var(--accent); font-weight: 900; margin-bottom: 8px; }
+  .paper-cite .name { font-family: 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; }
+  .paper-cite .work { font-family: 'Noto Serif SC', serif; font-size: 26px; font-style: italic; color: var(--ink-soft); margin-top: 6px; }
+  .chart-wrap { flex: 1.4; position: relative; height: 640px; border-left: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+  .axis-label { position: absolute; font-size: 22px; font-weight: 700; letter-spacing: 3px; color: var(--ink-soft); }
+  .flatline {
+    position: absolute; left: 0; bottom: 68px; width: 86%; height: 60px;
+  }
+  .callout {
+    position: absolute;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+  }
+  .stamps { right: 12px; top: 10px; }
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="masthead">
+    <span class="brand">电力革命 × AI<span class="en">THE ELECTRIC PARALLEL</span></span>
+    <span class="issue">AI SERIES · <span class="no">VOL.10</span></span>
+  </header>
+  <main class="stage">
+    <div class="copy-wrap">
+      <span class="kicker accent">1990 · 经济学论文</span>
+      <div class="paper-cite">
+        <div class="label">PAUL DAVID</div>
+        <div class="name">保罗 · 大卫</div>
+        <div class="work">《The Dynamo and the Computer》</div>
+      </div>
+      <div class="headline">电力商业化后<br>生产率<span class="hl">趴了三十年</span></div>
+    </div>
+    <div class="chart-wrap">
+      <span class="axis-label" style="left:-10px; top:-36px;">制造业 TFP 年增速</span>
+      <span class="axis-label" style="left:6px; bottom:-40px;">1880s</span>
+      <span class="axis-label" style="left:44%; bottom:-40px;">1900</span>
+      <span class="axis-label" style="right:6px; bottom:-40px;">1919</span>
+      <svg class="flatline" viewBox="0 0 900 60" preserveAspectRatio="none">
+        <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter></defs>
+        <path filter="url(#rough)" d="M0 42 Q80 30 160 40 T340 38 T520 44 T700 36 T900 40" stroke="#1E2A3A" stroke-width="7" fill="none"/>
+      </svg>
+      <div class="halftone" style="position:absolute; left:0; bottom:0; width:86%; height:64px; opacity:0.25;"></div>
+      <div class="callout" style="left:30%; bottom:170px; font-size:120px; color:var(--accent);">&lt;1%</div>
+      <div class="callout" style="left:30.5%; bottom:140px; font-size:30px; letter-spacing:6px;">每年 · 持续三十年</div>
+      <svg style="position:absolute; left:20%; bottom:120px;" width="90" height="120" viewBox="0 0 90 120">
+        <path d="M70 10 Q30 40 42 105" stroke="#1E2A3A" stroke-width="4" fill="none"/>
+        <path d="M34 92 L42 112 L54 96" stroke="#1E2A3A" stroke-width="4" fill="none"/>
+      </svg>
+    </div>
+    <div class="stamps">
+      <span class="stamp">1990</span>
+      <span class="stamp accent">30年 &lt;1%</span>
+    </div>
+  </main>
+  <footer class="colophon">
+    <span>PAUL DAVID · THE DYNAMO AND THE COMPUTER · 1990</span>
+    <span class="page">SCENE <b>08</b> / 17</span>
+  </footer>
+</div>
+</body>
+</html>
