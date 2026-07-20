@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S13-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2100px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2100" height="1080" viewBox="0 0 2100 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <path d="M100 900 L2000 900" stroke="#1E2A3A" stroke-width="7" fill="none" filter="url(#rough)"/>
+  <text x="490" y="240" text-anchor="middle" font-size="0" fill="none"> </text>
+  <g text-anchor="middle">
+    <text id="t13" x="1050" y="240" font-size="86" font-weight="900" fill="#1E2A3A">你公司的 AI，是<tspan fill="#5FA46F">眼睛</tspan>还是<tspan fill="#FF6B6B">法官</tspan>？</text>
+  </g>
+  <!-- two doors -->
+  <g filter="url(#rough)">
+    <path d="M500 900 L500 520 Q500 400 640 400 Q780 400 780 520 L780 900" fill="rgba(95,164,111,0.10)" stroke="#5FA46F" stroke-width="9"/>
+    <circle cx="640" cy="560" r="60" fill="none" stroke="#5FA46F" stroke-width="8"/>
+    <circle id="pup13" cx="640" cy="560" r="22" fill="#5FA46F"/>
+    <text x="580" y="980" font-size="34" font-weight="900" fill="#3E7A4E">眼睛</text>
+  </g>
+  <g filter="url(#rough)">
+    <path d="M1320 900 L1320 520 Q1320 400 1460 400 Q1600 400 1600 520 L1600 900" fill="rgba(255,107,107,0.08)" stroke="#FF6B6B" stroke-width="9"/>
+    <g id="gv13">
+      <rect x="-70" y="-24" width="140" height="48" rx="8" fill="none" stroke="#FF6B6B" stroke-width="7"/>
+      <line x1="55" y1="30" x2="120" y2="80" stroke="#FF6B6B" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <text x="1400" y="980" font-size="34" font-weight="900" fill="#C0392B">法官</text>
+  </g>
+  <g id="chooserWrap"></g>
+  <text id="cta13" x="1050" y="1050" text-anchor="middle" font-size="32" font-weight="700" fill="rgba(30,42,58,0.55)" letter-spacing="6">评论区见 · AI SERIES VOL.11</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+document.getElementById('chooserWrap').innerHTML = A.walkerSVG('chooser');
+const CAM = [ { t: 0, x: 50, z: 1.0 }, { t: 6.5, x: 95, z: 1.05 } ];
+const pup = document.getElementById('pup13');
+const gv = document.getElementById('gv13');
+const t13 = document.getElementById('t13');
+const cta = document.getElementById('cta13');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  const a = A.ease(A.once(t, 0.4, 0.8));
+  t13.style.opacity = a;
+  pup.setAttribute('cx', 640 + A.sin(t, 2.8) * 18);
+  const g = A.loop(t, 2.6);
+  const ang = g < 0.12 ? A.lerp(0, 24, g / 0.12) : g < 0.24 ? A.lerp(24, 0, (g - 0.12) / 0.12) : 0;
+  gv.setAttribute('transform', `translate(1460 560) rotate(${-ang})`);
+  A.walk('chooser', t, 1050 + A.sin(t, 5.2) * 30, 900, { scale: 2.2, still: true });
+  cta.style.opacity = A.once(t, 2.5, 0.8);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

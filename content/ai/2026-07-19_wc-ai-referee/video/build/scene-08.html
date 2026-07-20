@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S8-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2200px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2200" height="1080" viewBox="0 0 2200 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <!-- desk -->
+  <g filter="url(#rough)">
+    <line x1="160" y1="700" x2="1080" y2="700" stroke="#1E2A3A" stroke-width="9"/>
+    <line x1="240" y1="700" x2="240" y2="950" stroke="#1E2A3A" stroke-width="10"/>
+    <line x1="1000" y1="700" x2="1000" y2="950" stroke="#1E2A3A" stroke-width="10"/>
+  </g>
+  <!-- the notice letter slides in -->
+  <g id="letter" filter="url(#rough)">
+    <rect x="-170" y="-110" width="340" height="220" fill="#FAF3E7" stroke="#FF6B6B" stroke-width="7"/>
+    <line x1="-130" y1="-50" x2="130" y2="-50" stroke="rgba(30,42,58,0.5)" stroke-width="5"/>
+    <line x1="-130" y1="-5" x2="130" y2="-5" stroke="rgba(30,42,58,0.5)" stroke-width="5"/>
+    <line x1="-130" y1="40" x2="60" y2="40" stroke="rgba(30,42,58,0.5)" stroke-width="5"/>
+    <text x="-130" y="95" font-size="34" font-weight="900" fill="#FF6B6B">裁员通知</text>
+  </g>
+  <text id="cap1" x="230" y="1020" font-size="38" font-weight="900" fill="rgba(30,42,58,0.65)">诉状案例：距预产期仅 2 天</text>
+  <!-- denial speech bubble -->
+  <g id="deny" filter="url(#rough)">
+    <rect x="1310" y="300" width="720" height="220" rx="18" fill="#FFF" stroke="#1E2A3A" stroke-width="7"/>
+    <path d="M1420 520 L1390 600 L1500 520" fill="#FFF" stroke="#1E2A3A" stroke-width="7"/>
+    <text x="1360" y="390" font-size="40" font-weight="900" fill="#1E2A3A">"决策由人做出，</text>
+    <text x="1360" y="460" font-size="40" font-weight="900" fill="#1E2A3A">不是 AI。" <tspan font-size="30" fill="rgba(30,42,58,0.5)">— Meta 官方否认</tspan></text>
+  </g>
+  <!-- the two plain questions -->
+  <g id="q1">
+    <text x="1340" y="780" font-size="66" font-weight="900" fill="#FF6B6B">证据在哪？</text>
+  </g>
+  <g id="q2">
+    <text x="1340" y="890" font-size="66" font-weight="900" fill="#FF6B6B">回放在哪？</text>
+  </g>
+  <text x="1340" y="985" font-size="32" font-weight="700" fill="rgba(30,42,58,0.5)">谁对谁错，法院会裁——员工的问题很朴素</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [ { t: 0, x: 20, z: 1.04 }, { t: 12.0, x: 270, z: 1.04 }, { t: 19.6, x: 280, z: 1.04 } ];
+const letter = document.getElementById('letter');
+const deny = document.getElementById('deny');
+const q1 = document.getElementById('q1'), q2 = document.getElementById('q2');
+const cap1 = document.getElementById('cap1');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  const s = A.ease(A.once(t, 1.0, 1.2));
+  letter.setAttribute('transform', `translate(${A.lerp(-260, 620, s)} 580) rotate(${A.lerp(-16, -4, s)})`);
+  cap1.style.opacity = A.once(t, 2.6, 0.7);
+  const d = A.ease(A.once(t, 5.5, 0.7));
+  deny.style.opacity = d; deny.setAttribute('transform', `translate(0 ${(1 - d) * 40})`);
+  const p1 = A.ease(A.once(t, 13.5, 0.6));
+  q1.style.opacity = p1; q1.setAttribute('transform', `translate(0 ${(1 - p1) * 30}) scale(${1 + 0.02 * A.sin(t, 1.6) * p1})`);
+  const p2 = A.ease(A.once(t, 15.0, 0.6));
+  q2.style.opacity = p2; q2.setAttribute('transform', `translate(0 ${(1 - p2) * 30}) scale(${1 + 0.02 * A.sin(t, 1.6, 0.3) * p2})`);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

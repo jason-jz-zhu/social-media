@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S7-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2800px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2800" height="1080" viewBox="0 0 2800 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <text x="140" y="170" font-size="64" font-weight="900" fill="rgba(30,42,58,0.13)" letter-spacing="8">诉状里描述的考核链</text>
+  <!-- three stations above the belt -->
+  <g filter="url(#rough)">
+    <rect x="360" y="260" width="360" height="230" rx="12" fill="#FFF" stroke="#1E2A3A" stroke-width="7"/>
+    <rect x="420" y="330" width="240" height="80" rx="8" fill="none" stroke="#1E2A3A" stroke-width="5"/>
+    <line x1="450" y1="360" x2="640" y2="360" stroke="rgba(30,42,58,0.4)" stroke-width="4"/>
+    <line x1="450" y1="385" x2="600" y2="385" stroke="rgba(30,42,58,0.4)" stroke-width="4"/>
+    <text x="420" y="545" font-size="34" font-weight="900" fill="#1E2A3A">键盘敲击监控</text>
+  </g>
+  <g filter="url(#rough)">
+    <rect x="1120" y="260" width="360" height="230" rx="12" fill="#FFF" stroke="#1E2A3A" stroke-width="7"/>
+    <circle cx="1300" cy="360" r="60" fill="none" stroke="#1E2A3A" stroke-width="6"/>
+    <circle id="eyeDot" cx="1300" cy="360" r="20" fill="#1E2A3A"/>
+    <text x="1180" y="545" font-size="34" font-weight="900" fill="#1E2A3A">内部 AI 工具监测</text>
+  </g>
+  <g filter="url(#rough)">
+    <rect x="1880" y="260" width="360" height="230" rx="12" fill="#FFF" stroke="#1E2A3A" stroke-width="7"/>
+    <rect x="1930" y="330" width="50" height="90" fill="rgba(30,42,58,0.4)"/>
+    <rect x="2000" y="360" width="50" height="60" fill="rgba(30,42,58,0.4)"/>
+    <rect id="gaugeBar" x="2070" y="310" width="50" height="110" fill="#FF6B6B"/>
+    <text x="1905" y="545" font-size="34" font-weight="900" fill="#1E2A3A">大模型用量看板</text>
+  </g>
+  <!-- conveyor belt -->
+  <g filter="url(#rough)">
+    <line x1="200" y1="760" x2="2600" y2="760" stroke="#1E2A3A" stroke-width="9"/>
+    <line x1="200" y1="860" x2="2600" y2="860" stroke="#1E2A3A" stroke-width="9"/>
+  </g>
+  <line id="beltDash" x1="200" y1="810" x2="2600" y2="810" stroke="rgba(30,42,58,0.35)" stroke-width="5" stroke-dasharray="30 22"/>
+  <!-- folders on belt -->
+  <g id="folders"></g>
+  <!-- stamp arm -->
+  <g id="stampArm" filter="url(#rough)">
+    <rect x="2280" y="520" width="34" height="140" fill="#1E2A3A"/>
+    <rect x="2230" y="650" width="134" height="60" rx="8" fill="#FF6B6B"/>
+  </g>
+  <text x="2380" y="700" font-size="34" font-weight="900" fill="#FF6B6B">低投入产出比</text>
+  <text x="700" y="1030" font-size="40" font-weight="900" fill="rgba(30,42,58,0.65)">休假 = 数据断档 = 更容易进名单（原告指控）</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const ns = 'http://www.w3.org/2000/svg';
+const fg = document.getElementById('folders');
+const folders = [];
+for (let i = 0; i < 4; i++) {
+  const g = document.createElementNS(ns, 'g');
+  g.innerHTML = `<rect x="-90" y="-64" width="180" height="64" rx="6" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6" filter="url(#rough)"/>
+    <path d="M-90 -64 L-50 -84 L10 -84 L20 -64" fill="none" stroke="#1E2A3A" stroke-width="5"/>
+    <text class="lbl" x="-56" y="-18" font-size="30" font-weight="900" fill="#FF6B6B" opacity="0">低投入产出比</text>`;
+  fg.appendChild(g); folders.push(g);
+}
+const CAM = [ { t: 0, x: 60, z: 1.05 }, { t: 8.0, x: 620, z: 1.05 }, { t: 20.2, x: 800, z: 1.05 } ];
+const belt = document.getElementById('beltDash');
+const eye = document.getElementById('eyeDot');
+const gauge = document.getElementById('gaugeBar');
+const arm = document.getElementById('stampArm');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  A.flow(belt, t, 80);
+  eye.setAttribute('cx', 1300 + A.sin(t, 2.4) * 22);
+  const gh = 60 + Math.abs(A.sin(t, 1.8)) * 70;
+  gauge.setAttribute('height', gh); gauge.setAttribute('y', 420 - gh);
+  const P = 5.0;
+  folders.forEach((g, i) => {
+    const ph = A.loop(t, P, i / 4);
+    const x = A.lerp(140, 2660, ph);
+    g.setAttribute('transform', `translate(${x} 760)`);
+    g.style.opacity = ph > 0.96 ? 0 : 1;
+    g.querySelector('.lbl').setAttribute('opacity', x > 2310 ? 1 : 0);
+  });
+  const near = folders.some(g => { const m = /translate\(([\d.]+)/.exec(g.getAttribute('transform')); return m && +m[1] > 2180 && +m[1] < 2340; });
+  arm.setAttribute('transform', `translate(0 ${near ? 46 : A.sin(t, 0.9) * 4})`);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S3-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2600px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2600" height="1080" viewBox="0 0 2600 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <!-- big stadium screen -->
+  <g filter="url(#rough)">
+    <rect x="1280" y="120" width="1080" height="560" fill="rgba(30,42,58,0.92)" stroke="#1E2A3A" stroke-width="10"/>
+    <line x1="1400" y1="680" x2="1400" y2="780" stroke="#1E2A3A" stroke-width="10"/>
+    <line x1="2240" y1="680" x2="2240" y2="780" stroke="#1E2A3A" stroke-width="10"/>
+  </g>
+  <g id="screenContent">
+    <rect x="1360" y="200" width="920" height="400" fill="rgba(95,164,111,0.20)" stroke="#5FA46F" stroke-width="4"/>
+    <line id="scrLine" x1="1900" y1="200" x2="1900" y2="600" stroke="#FF6B6B" stroke-width="7" stroke-dasharray="18 12"/>
+    <circle cx="1700" cy="430" r="16" fill="#7FC48F"/>
+    <circle cx="1960" cy="360" r="16" fill="#FF8A8A"/>
+    <text x="1380" y="248" font-size="30" fill="#7FC48F" letter-spacing="6" font-family="'Noto Sans SC',sans-serif" font-weight="700">3D REPLAY</text>
+  </g>
+  <circle id="scrGlow" cx="1820" cy="400" r="420" fill="rgba(95,164,111,0.07)"/>
+  <!-- skeleton figure with joint annotations -->
+  <g id="skel" filter="url(#rough)">
+    <circle cx="560" cy="330" r="56" fill="none" stroke="#1E2A3A" stroke-width="9"/>
+    <path d="M560 386 L560 640 M560 450 L420 560 M560 450 L710 520 M560 640 L470 880 M560 640 L660 880"
+          stroke="#1E2A3A" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="joints"></g>
+  <path id="arc1" d="M470 500 A100 100 0 0 1 520 430" stroke="#FF6B6B" stroke-width="6" fill="none"/>
+  <text x="380" y="470" font-size="30" font-weight="900" fill="#FF6B6B">手臂角度</text>
+  <path id="arc2" d="M610 860 A80 80 0 0 0 700 840" stroke="#FF6B6B" stroke-width="6" fill="none"/>
+  <text x="700" y="910" font-size="30" font-weight="900" fill="#FF6B6B">脚尖朝向</text>
+  <!-- crowd looking up -->
+  <g id="crowd" fill="rgba(30,42,58,0.35)"></g>
+  <path d="M80 960 L2520 960" stroke="#1E2A3A" stroke-width="6" fill="none" filter="url(#rough)"/>
+  <text x="150" y="1035" font-size="42" font-weight="900" fill="#1E2A3A"><tspan fill="#5FA46F">3 秒</tspan> · 姿态重建 · 毫米级</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const ns = 'http://www.w3.org/2000/svg';
+const jg = document.getElementById('joints');
+const JP = [[560,386],[560,450],[420,560],[710,520],[560,640],[470,880],[660,880]];
+const joints = JP.map(([x,y]) => {
+  const c = document.createElementNS(ns, 'circle');
+  c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+  c.setAttribute('fill', '#5FA46F'); jg.appendChild(c); return c;
+});
+const cg = document.getElementById('crowd');
+for (let x = 1320; x < 2400; x += 70) {
+  const c = document.createElementNS(ns, 'circle');
+  c.setAttribute('cx', x + (x % 3) * 8); c.setAttribute('cy', 905); c.setAttribute('r', 20);
+  cg.appendChild(c);
+}
+const CAM = [ { t: 0, x: 40, z: 1.02 }, { t: 8.0, x: 440, z: 1.02 }, { t: 16.5, x: 470, z: 1.02 } ];
+const scrLine = document.getElementById('scrLine');
+const glow = document.getElementById('scrGlow');
+const a1 = document.getElementById('arc1'), a2 = document.getElementById('arc2');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  joints.forEach((c, i) => { c.style.opacity = 0.3 + 0.7 * Math.max(0, A.sin(t, 1.4, i * 0.14)); });
+  A.draw(a1, A.ease(A.once(t, 2.0, 1.0)));
+  A.draw(a2, A.ease(A.once(t, 3.2, 1.0)));
+  A.flow(scrLine, t, 36);
+  glow.style.opacity = 0.5 + 0.5 * A.sin(t, 2.6);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

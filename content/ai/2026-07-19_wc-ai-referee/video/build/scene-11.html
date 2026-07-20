@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S11-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2200px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2200" height="1080" viewBox="0 0 2200 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <!-- balance scale -->
+  <g id="scale">
+    <g filter="url(#rough)">
+      <line x1="620" y1="240" x2="620" y2="560" stroke="#1E2A3A" stroke-width="12"/>
+      <path d="M540 560 L700 560 L680 620 L560 620 Z" fill="none" stroke="#1E2A3A" stroke-width="8"/>
+    </g>
+    <g id="beam">
+      <line x1="-300" y1="0" x2="300" y2="0" stroke="#1E2A3A" stroke-width="10"/>
+      <g id="panL">
+        <line x1="-300" y1="0" x2="-300" y2="90" stroke="#1E2A3A" stroke-width="5"/>
+        <path d="M-380 90 Q-300 170 -220 90" fill="none" stroke="#5FA46F" stroke-width="8"/>
+        <circle cx="-300" cy="112" r="34" fill="none" stroke="#5FA46F" stroke-width="7"/>
+        <circle cx="-300" cy="112" r="13" fill="#5FA46F"/>
+      </g>
+      <g id="panR">
+        <line x1="300" y1="0" x2="300" y2="90" stroke="#1E2A3A" stroke-width="5"/>
+        <path d="M220 90 Q300 170 380 90" fill="none" stroke="#FF6B6B" stroke-width="8"/>
+        <rect x="262" y="86" width="76" height="30" rx="6" fill="none" stroke="#FF6B6B" stroke-width="6"/>
+        <line x1="330" y1="120" x2="368" y2="150" stroke="#FF6B6B" stroke-width="8" stroke-linecap="round"/>
+      </g>
+    </g>
+    <text x="230" y="800" font-size="36" font-weight="900" fill="#3E7A4E">两个都过 → 眼睛</text>
+    <text x="720" y="800" font-size="36" font-weight="900" fill="#C0392B">两个都不过 → 法官</text>
+  </g>
+  <!-- referee still on the pitch -->
+  <g filter="url(#rough)">
+    <rect x="1240" y="360" width="800" height="480" fill="rgba(95,164,111,0.13)" stroke="#5FA46F" stroke-width="7"/>
+    <line x1="1640" y1="360" x2="1640" y2="840" stroke="rgba(95,164,111,0.6)" stroke-width="4"/>
+    <circle cx="1640" cy="600" r="80" fill="none" stroke="rgba(95,164,111,0.6)" stroke-width="4"/>
+    <circle cx="1640" cy="500" r="40" fill="#1E2A3A"/>
+    <path d="M1640 540 L1640 680 M1640 575 L1580 640 M1640 575 L1700 640 M1640 680 L1600 790 M1640 680 L1680 790"
+          stroke="#1E2A3A" stroke-width="11" fill="none" stroke-linecap="round"/>
+  </g>
+  <text id="four" x="1330" y="300" font-size="46" font-weight="900" fill="#1E2A3A">四年了，裁判还站在场上</text>
+  <text id="tail11" x="1250" y="960" font-size="40" font-weight="900" fill="#1E2A3A">AI 换掉的是<tspan fill="#FF6B6B">"看不清"</tspan>，不是"人"</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [ { t: 0, x: 30, z: 1.06 }, { t: 8.0, x: 250, z: 1.00 }, { t: 14.2, x: 255, z: 1.00 } ];
+const beam = document.getElementById('beam');
+const four = document.getElementById('four');
+const tail = document.getElementById('tail11');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  beam.setAttribute('transform', `translate(620 250) rotate(${A.sin(t, 4.6) * 6})`);
+  four.style.opacity = A.ease(A.once(t, 6.5, 0.8));
+  tail.style.opacity = A.ease(A.once(t, 9.5, 0.8));
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

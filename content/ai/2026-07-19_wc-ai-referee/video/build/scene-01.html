@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S1-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2400px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2400" height="1080" viewBox="0 0 2400 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <!-- stands silhouette + floodlights -->
+  <g filter="url(#rough)">
+    <path d="M100 430 L360 300 L2040 300 L2300 430" fill="rgba(30,42,58,0.10)" stroke="#1E2A3A" stroke-width="6"/>
+    <line x1="330" y1="300" x2="330" y2="150" stroke="#1E2A3A" stroke-width="8"/>
+    <line x1="2070" y1="300" x2="2070" y2="150" stroke="#1E2A3A" stroke-width="8"/>
+  </g>
+  <circle id="fl1" cx="330" cy="130" r="34" fill="#C89860" opacity="0.6"/>
+  <circle id="fl2" cx="2070" cy="130" r="34" fill="#C89860" opacity="0.6"/>
+  <circle id="fh1" cx="330" cy="130" r="90" fill="rgba(200,152,96,0.14)"/>
+  <circle id="fh2" cx="2070" cy="130" r="90" fill="rgba(200,152,96,0.14)"/>
+  <!-- pitch -->
+  <g filter="url(#rough)">
+    <rect x="160" y="470" width="2080" height="470" fill="rgba(95,164,111,0.15)" stroke="#5FA46F" stroke-width="8"/>
+    <line x1="1200" y1="470" x2="1200" y2="940" stroke="rgba(95,164,111,0.6)" stroke-width="4"/>
+    <circle cx="1200" cy="705" r="110" fill="none" stroke="rgba(95,164,111,0.6)" stroke-width="4"/>
+  </g>
+  <!-- the offside line -->
+  <line id="off" x1="1560" y1="470" x2="1560" y2="940" stroke="#FF6B6B" stroke-width="9" stroke-dasharray="26 16"/>
+  <circle id="offGlow" cx="1560" cy="705" r="150" fill="rgba(255,107,107,0.10)"/>
+  <!-- ball -->
+  <g id="ball" filter="url(#rough)">
+    <circle cx="0" cy="0" r="34" fill="#FAF3E7" stroke="#1E2A3A" stroke-width="6"/>
+    <path d="M-12 -10 L12 -10 L18 8 L0 20 L-18 8 Z" fill="none" stroke="#1E2A3A" stroke-width="4"/>
+  </g>
+  <text x="240" y="1020" font-size="42" font-weight="700" fill="rgba(30,42,58,0.5)" letter-spacing="8">今晚 · 决赛</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [ { t: 0, x: 180, z: 1.04 }, { t: 7.5, x: 260, z: 1.06 } ];
+const off = document.getElementById('off');
+const glow = document.getElementById('offGlow');
+const ball = document.getElementById('ball');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  A.flow(off, t, 40);
+  glow.style.opacity = 0.5 + 0.5 * A.sin(t, 2.2);
+  document.getElementById('fl1').style.opacity = 0.45 + 0.3 * Math.max(0, A.sin(t, 1.5));
+  document.getElementById('fl2').style.opacity = 0.45 + 0.3 * Math.max(0, A.sin(t, 1.5, 0.4));
+  const r = A.ease(A.once(t, 0.5, 3.0));
+  ball.setAttribute('transform', `translate(${A.lerp(300, 1120, r)} 900) rotate(${r * 720})`);
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

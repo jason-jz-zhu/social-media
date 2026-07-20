@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Open Card</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #1E2A3A; overflow: hidden; position: relative;
+         display: flex; align-items: center; justify-content: center; }
+  body::before { content: ''; position: absolute; inset: 0; z-index: 40; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.98 0 0 0 0 0.95 0 0 0 0 0.90 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .top-line, .bot-line { position: absolute; left: 70px; right: 70px; height: 2px;
+    background: repeating-linear-gradient(90deg, #C89860 0 20px, transparent 20px 34px); }
+  .top-line { top: 60px; } .bot-line { bottom: 60px; }
+  .wrap { text-align: center; }
+  .kicker { font-size: 30px; font-weight: 700; letter-spacing: 14px; color: #C89860; margin-bottom: 54px; font-family: 'Noto Sans SC', sans-serif; }
+  .big { font-family: 'Noto Serif SC', serif; font-size: 108px; font-weight: 900; color: #FDF6E8; line-height: 1.42; letter-spacing: 6px; }
+  .big .eye { color: #7FC48F; }
+  .big .judge { color: #FF6B6B; }
+  .brand { position: absolute; bottom: 96px; left: 0; right: 0; text-align: center;
+    font-family: 'Noto Serif SC', serif; font-size: 24px; letter-spacing: 8px; color: #C89860; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="wrap">
+    <div class="kicker">世界杯决赛之夜 · 一个对照</div>
+    <div class="big">世界杯的 AI 当<span class="eye">眼睛</span><br>Meta 的 AI 被指当<span class="judge">法官</span></div>
+  </div>
+  <div class="brand">THE REFEREE'S WHISTLE · AI SERIES VOL.11</div>
+  <div class="bot-line"></div>
+</body>
+</html>

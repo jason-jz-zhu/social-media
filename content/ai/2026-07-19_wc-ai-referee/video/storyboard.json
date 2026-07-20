@@ -1,0 +1,44 @@
+{
+  "title": "世界杯的AI当眼睛，Meta的AI被指当法官",
+  "scenes": [
+    { "id": 1, "narration": "今晚世界杯决赛，我想聊的不是比分，是那条越位线。", "visualType": "title_card", "visualDesc": "夜色球场，一条发光的越位虚线横贯画面，看台剪影", "motion": "zoom_in" },
+    { "id": 2, "narration": "这届世界杯被叫作首届AI世界杯。比赛用球里装了一枚芯片，每秒采集五百次数据；一千二百多名球员，赛前做了全身3D扫描。", "visualType": "scene_illustration", "visualDesc": "大足球剖面露出芯片，数据刻度环绕；旁边球员轮廓被扫描线扫过", "motion": "pan_right" },
+    { "id": 3, "narration": "越位发生后三秒，系统重建每个人的骨骼姿态，手臂的角度、脚尖的朝向，自动生成一段3D动画，投到全场大屏上。毫米级，看得清清楚楚。", "visualType": "scene_illustration", "visualDesc": "骨骼小人姿态重建+大屏展示3D动画，看台人群仰头", "motion": "zoom_out" },
+    { "id": 4, "narration": "但这套系统最贵的设计，藏在最后一步：警报直接进裁判的耳麦，可吹不吹，由人决定。", "visualType": "scene_illustration", "visualDesc": "裁判特写：耳麦收到信号波，手握哨子悬停，聚光", "motion": "zoom_in" },
+    { "id": 5, "narration": "AI给证据，人做判决。这个架构有个名字，叫人在决策环内。输球的人可以不甘心，但没法不服气——因为证据就摆在那里，全场都看得见。", "visualType": "quote_card", "visualDesc": "架构金句台：证据箭头流向人，人举旗判决，全场目光", "motion": "static" },
+    { "id": 6, "narration": "同一周，地球另一边，加州法院收到一份七十一页的诉状。二十六名Meta员工起诉公司：今年裁掉八千人的那轮裁员，用AI给员工打分排序。", "visualType": "scene_illustration", "visualDesc": "转场：法院大楼+厚厚一摞诉状文件落在台阶上，71页标签", "motion": "pan_left" },
+    { "id": 7, "narration": "诉状里描述的考核链是这样的：内部AI工具，加键盘敲击监控，加大模型用量看板。原告说，休产假、病假的人，数据一断档，就被贴上低投入产出比的标签，更容易进裁员名单。", "visualType": "scene_illustration", "visualDesc": "传送带流水线：键盘/监控屏/看板依次经过，档案被盖上红色标签", "motion": "pan_right" },
+    { "id": 8, "narration": "有一位员工，距离预产期只有两天，收到了裁员通知。Meta官方否认，说决策由人做出，不是AI。谁对谁错，法院会裁。但员工的问题其实很朴素：证据在哪？回放在哪？", "visualType": "scene_illustration", "visualDesc": "一封通知信滑到桌面；对面否认声明的对话框；中间悬着两个大问号", "motion": "zoom_in" },
+    { "id": 9, "narration": "同一个技术，两种用法。一边，AI当眼睛：它负责看得比人清，判决权留在人手里，证据全场可见。另一边，被指控的用法是AI当法官：证据看不见，申诉没有门，一个分数决定去留，连回放都没有。", "visualType": "comparison", "visualDesc": "左右分屏：左绿球场眼睛+可见证据；右深红法槌+黑箱分数条", "motion": "zoom_out" },
+    { "id": 10, "narration": "所以，判断一家公司AI用得对不对，不用看它买了多贵的模型，就问两个问题。第一，证据和判决分开了吗——AI是给材料，还是直接出结果？第二，被影响的人有没有回放——能不能看到依据，有没有地方申诉？", "visualType": "scene_illustration", "visualDesc": "两张大问题卡依次立起，配对勾对叉图标", "motion": "pan_left" },
+    { "id": 11, "narration": "两个都过，它是眼睛；两个都不过，它就是法官。半自动越位上场四年了，裁判还站在场上。AI换掉的是看不清，不是人。", "visualType": "scene_illustration", "visualDesc": "天平：左盘眼睛右盘法槌；裁判剪影依然站在球场中央", "motion": "zoom_in" },
+    { "id": 12, "narration": "AI该当眼睛，不该当法官。今晚看球的时候，留意那条越位线——那是AI用对了的样子。", "visualType": "quote_card", "visualDesc": "金句大字+球场越位线在句子下方发光", "motion": "static" },
+    { "id": 13, "narration": "你公司的AI，是眼睛还是法官？评论区见。", "visualType": "cta_card", "visualDesc": "两扇门：绿门眼睛/红门法槌，中间现代人背影", "motion": "static" }
+  ],
+  "video": {
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "-5%",
+    "buildDir": "build",
+    "framesDir": "out/frames",
+    "bgmVol": 0.13,
+    "opencard": "build/opencard.html",
+    "openDur": 2.8,
+    "beats": [
+      [1, 0.4, "whoosh", 0.9],
+      [2, 1.8, "pop", 0.8], [2, 8.5, "whoosh", 0.7],
+      [3, 2.0, "riser", 0.8], [3, 8.0, "ding", 0.8],
+      [4, 4.5, "ding", 0.9],
+      [5, 1.0, "pop", 0.7], [5, 8.0, "ding", 0.7],
+      [6, 1.5, "whoosh", 1.0], [6, 5.5, "thud", 1.0],
+      [7, 2.0, "pop", 0.7], [7, 4.0, "pop", 0.7], [7, 6.0, "pop", 0.7], [7, 12.0, "thud", 0.9],
+      [8, 1.2, "whoosh", 0.8], [8, 13.0, "pop", 0.9],
+      [9, 1.0, "whoosh", 0.9], [9, 9.0, "thud", 0.8],
+      [10, 2.5, "pop", 0.8], [10, 10.0, "pop", 0.8],
+      [11, 1.0, "ding", 0.7], [11, 7.0, "ding", 0.9],
+      [12, 0.8, "ding", 1.0],
+      [13, 1.0, "pop", 0.8]
+    ],
+    "transitions": { "1": "fade", "6": "smoothleft", "9": "smoothup", "12": "fadeblack" },
+    "subtitleKeywords": ["眼睛", "法官", "回放", "证据", "低投入产出比", "看不清", "越位线", "由人决定"]
+  }
+}

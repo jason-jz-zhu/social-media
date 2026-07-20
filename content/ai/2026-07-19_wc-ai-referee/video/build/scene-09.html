@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S9-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #FAF3E7; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2200px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.23 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 240px rgba(30,42,58,0.18); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2200" height="1080" viewBox="0 0 2200 1080" font-family="'Noto Serif SC', serif">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+  <!-- left: the eye way -->
+  <g filter="url(#rough)">
+    <rect x="120" y="180" width="880" height="700" fill="rgba(95,164,111,0.10)" stroke="#5FA46F" stroke-width="9"/>
+    <text x="180" y="140" font-size="52" font-weight="900" fill="#3E7A4E">AI 当眼睛</text>
+  </g>
+  <g filter="url(#rough)">
+    <circle cx="420" cy="420" r="90" fill="none" stroke="#5FA46F" stroke-width="8"/>
+    <circle id="pupil" cx="420" cy="420" r="34" fill="#5FA46F"/>
+    <rect x="620" y="340" width="300" height="180" fill="#FFF" stroke="#5FA46F" stroke-width="6"/>
+    <line x1="660" y1="395" x2="880" y2="395" stroke="rgba(62,122,78,0.6)" stroke-width="6"/>
+    <line x1="660" y1="445" x2="850" y2="445" stroke="rgba(62,122,78,0.6)" stroke-width="6"/>
+    <text x="640" y="570" font-size="30" font-weight="700" fill="#3E7A4E">证据全场可见</text>
+  </g>
+  <text x="200" y="720" font-size="34" font-weight="700" fill="#3E7A4E">判决权在人手里</text>
+  <text x="200" y="800" font-size="34" font-weight="700" fill="#3E7A4E">输球，也服气</text>
+  <!-- right: the judge way -->
+  <g filter="url(#rough)">
+    <rect x="1200" y="180" width="880" height="700" fill="rgba(255,107,107,0.08)" stroke="#FF6B6B" stroke-width="9"/>
+    <text x="1260" y="140" font-size="52" font-weight="900" fill="#C0392B">被指控：AI 当法官</text>
+  </g>
+  <g id="gavel" filter="url(#rough)">
+    <rect x="-90" y="-30" width="180" height="60" rx="10" fill="none" stroke="#FF6B6B" stroke-width="8"/>
+    <line x1="70" y1="40" x2="170" y2="110" stroke="#FF6B6B" stroke-width="11" stroke-linecap="round"/>
+  </g>
+  <!-- black box with hidden score -->
+  <g filter="url(#rough)">
+    <rect x="1620" y="330" width="330" height="230" fill="rgba(30,42,58,0.85)" stroke="#1E2A3A" stroke-width="7"/>
+    <text id="qm9" x="1740" y="490" font-size="110" font-weight="900" fill="#FF6B6B">?</text>
+    <text x="1640" y="620" font-size="30" font-weight="700" fill="#C0392B">分数看不见</text>
+  </g>
+  <text x="1280" y="720" font-size="34" font-weight="700" fill="#C0392B">申诉没有门</text>
+  <text x="1280" y="800" font-size="34" font-weight="700" fill="#C0392B">连回放都没有</text>
+  <line x1="1100" y1="120" x2="1100" y2="940" stroke="#C89860" stroke-width="5" stroke-dasharray="20 16"/>
+  <text x="740" y="1030" font-size="44" font-weight="900" fill="#1E2A3A">同一个技术 · <tspan fill="#5FA46F">两种</tspan><tspan fill="#FF6B6B">用法</tspan></text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [ { t: 0, x: 40, z: 1.14 }, { t: 7.0, x: 560, z: 1.14 }, { t: 13.0, x: 140, z: 1.00 }, { t: 21.2, x: 145, z: 1.00 } ];
+const pupil = document.getElementById('pupil');
+const gavel = document.getElementById('gavel');
+const qm = document.getElementById('qm9');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  pupil.setAttribute('cx', 420 + A.sin(t, 3.2) * 26);
+  const g = A.loop(t, 2.4);
+  const ang = g < 0.15 ? A.lerp(0, 28, g / 0.15) : g < 0.3 ? A.lerp(28, 0, (g - 0.15) / 0.15) : 0;
+  gavel.setAttribute('transform', `translate(1420 430) rotate(${-ang} 0 0)`);
+  qm.style.opacity = 0.4 + 0.6 * Math.max(0, A.sin(t, 1.8));
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>

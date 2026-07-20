@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>S12-wc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; background: #1E2A3A; overflow: hidden; position: relative; }
+  #camera { position: absolute; width: 2100px; height: 1080px; }
+  .grain { position: absolute; inset: 0; z-index: 50; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.98 0 0 0 0 0.95 0 0 0 0 0.90 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .vignette { position: absolute; inset: 0; z-index: 51; pointer-events: none; box-shadow: inset 0 0 260px rgba(0,0,0,0.35); }
+</style>
+</head>
+<body>
+<div id="camera">
+<svg width="2100" height="1080" viewBox="0 0 2100 1080" font-family="'Noto Serif SC', serif">
+  <g id="q12" text-anchor="middle">
+    <text x="1050" y="360" font-size="120" font-weight="900" fill="#FDF6E8">AI 该当<tspan fill="#7FC48F">眼睛</tspan></text>
+    <text x="1050" y="560" font-size="120" font-weight="900" fill="#FDF6E8">不该当<tspan fill="#FF6B6B">法官</tspan></text>
+  </g>
+  <line id="off12" x1="450" y1="700" x2="1650" y2="700" stroke="#7FC48F" stroke-width="9" stroke-dasharray="30 20"/>
+  <circle id="offG12" cx="1050" cy="700" r="200" fill="rgba(127,196,143,0.08)"/>
+  <text id="sub12" x="1050" y="850" text-anchor="middle" font-size="42" font-weight="700" fill="#C89860">今晚看球，留意那条越位线 —— 那是 AI 用对了的样子</text>
+</svg>
+</div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<script src="lib/anim-v4.js"></script>
+<script>
+const CAM = [ { t: 0, x: 95, z: 1.0 }, { t: 10.4, x: 120, z: 1.05 } ];
+const q = document.getElementById('q12');
+const off = document.getElementById('off12');
+const g = document.getElementById('offG12');
+const sub = document.getElementById('sub12');
+window.seek = function (t) {
+  applyCam(A.kf(CAM, t));
+  const a = A.ease(A.once(t, 0.6, 0.9));
+  q.style.opacity = a; q.setAttribute('transform', `translate(0 ${(1 - a) * 40})`);
+  A.flow(off, t, 46);
+  g.style.opacity = 0.5 + 0.5 * A.sin(t, 2.4);
+  sub.style.opacity = A.ease(A.once(t, 4.5, 0.9));
+};
+seek(0);
+</script>
+<script src="lib/v5-atmo.js"></script>
+</body>
+</html>
