@@ -27,3 +27,4 @@
 - [x] 是AI慢了，还是我习惯了？ → content/ai/2026-04-14_ai-progress-feeling/
 - [x] AI 抬的是地板不是天花板，中间层工程师最危险 → content/ai/2026-07-03_fde-eng-future/
 - [x] AI 竟然和 100 年前电力革命一模一样 → content/ai/2026-07-14_electricity-parallel/
+- [x] 世界杯的AI当眼睛，Meta的AI被指当法官 → content/ai/2026-07-19_wc-ai-referee/

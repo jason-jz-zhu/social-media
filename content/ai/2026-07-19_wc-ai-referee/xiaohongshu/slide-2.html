@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #1E2A3A; color: #C89860; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 40px; border-radius: 4px; }
+  .hook { font-family: 'Noto Serif SC', serif; font-size: 58px; font-weight: 900; color: #1E2A3A; line-height: 1.4; margin-bottom: 46px; }
+  .hook::after { content: ''; display: block; width: 80px; height: 4px; background: #FF6B6B; margin-top: 26px; border-radius: 2px; }
+  .news { border-radius: 14px; padding: 34px 36px; margin-bottom: 26px; background: #FFF; box-shadow: 0 4px 20px rgba(30,42,58,0.06); border-left: 8px solid #5FA46F; }
+  .news.b { border-left-color: #FF6B6B; }
+  .news .date { font-size: 24px; letter-spacing: 3px; font-weight: 900; color: #5FA46F; margin-bottom: 12px; }
+  .news.b .date { color: #FF6B6B; }
+  .news .h { font-family: 'Noto Serif SC', serif; font-size: 40px; font-weight: 900; color: #1E2A3A; line-height: 1.45; margin-bottom: 10px; }
+  .news .s { font-size: 28px; color: #666; line-height: 1.55; }
+  .kicker { font-family: 'Noto Serif SC', serif; font-size: 44px; color: #1E2A3A; font-weight: 900; margin-top: auto; text-align: center; line-height: 1.55; padding: 20px 0; }
+  .kicker .hl { color: #FF6B6B; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">今日拆解</span>
+  <h1 class="hook">同一周<br>两条 AI 新闻打了个照面</h1>
+  <div class="news">
+    <div class="date">7/20 · 世界杯决赛之夜</div>
+    <div class="h">全世界看着 AI 三秒画出越位 3D 动画</div>
+    <div class="s">争议判罚，大屏幕直接放"证据"，输的人也服气</div>
+  </div>
+  <div class="news b">
+    <div class="date">7/13 · 加州北区联邦法院</div>
+    <div class="h">26 名员工起诉 Meta：裁员用 AI 打分排序</div>
+    <div class="s">71 页诉状 · 涉及 8000 人的大裁员（Meta 否认）</div>
+  </div>
+  <div class="kicker">同一个技术<br>为什么一个被<span class="hl">鼓掌</span>，一个被<span class="hl">起诉</span>？</div>
+  <span class="page-number">2 / 8</span>
+</div>
+</body>
+</html>

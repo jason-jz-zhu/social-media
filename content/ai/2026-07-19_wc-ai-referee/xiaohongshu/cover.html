@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #1E2A3A; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  body::before { content: ''; position: absolute; inset: 0; z-index: 40; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.98 0 0 0 0 0.95 0 0 0 0 0.90 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .top-line, .bot-line { position: absolute; left: 50px; right: 50px; height: 2px; z-index: 5;
+    background: repeating-linear-gradient(90deg, #C89860 0 18px, transparent 18px 30px); }
+  .top-line { top: 44px; } .bot-line { bottom: 44px; }
+  .badges { position: absolute; top: 92px; left: 64px; display: flex; gap: 14px; z-index: 5; }
+  .badge { font-size: 24px; font-weight: 700; letter-spacing: 3px; padding: 9px 20px; border: 1.5px solid #C89860; color: #C89860; }
+  .badge.g { border-color: #5FA46F; color: #7FC48F; }
+  .title { position: absolute; top: 210px; left: 64px; right: 64px; z-index: 5;
+    font-family: 'Noto Serif SC', serif; font-size: 96px; font-weight: 900; color: #FDF6E8; line-height: 1.38; letter-spacing: 2px; }
+  .title .eye { color: #7FC48F; }
+  .title .judge { color: #FF6B6B; }
+  .sub { position: absolute; top: 780px; left: 64px; z-index: 5;
+    font-family: 'Noto Serif SC', serif; font-size: 38px; color: #C89860; letter-spacing: 4px; }
+  .illus { position: absolute; bottom: 170px; left: 40px; z-index: 5; }
+  .brand { position: absolute; bottom: 88px; left: 64px; font-size: 24px; letter-spacing: 4px; color: rgba(253,246,232,0.55); font-weight: 700; z-index: 5; }
+  .vol { position: absolute; bottom: 88px; right: 64px; font-family: 'Noto Serif SC', serif; font-size: 24px; letter-spacing: 4px; color: #C89860; font-weight: 700; z-index: 5; }
+</style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="badges"><span class="badge g">世界杯之夜</span><span class="badge">AI 观察</span></div>
+  <div class="title">世界杯的 AI<br>当<span class="eye">眼睛</span><br>Meta 的 AI<br>被指当<span class="judge">法官</span></div>
+  <div class="sub">—— 同一周 · 两种用法 · 两种命运</div>
+  <svg class="illus" width="1000" height="360" viewBox="0 0 1000 360">
+    <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></defs>
+    <!-- left: pitch with offside line + eye -->
+    <g filter="url(#rough)">
+      <rect x="30" y="60" width="400" height="250" fill="rgba(95,164,111,0.16)" stroke="#5FA46F" stroke-width="5"/>
+      <line x1="30" y1="185" x2="430" y2="185" stroke="rgba(95,164,111,0.5)" stroke-width="3"/>
+      <line x1="250" y1="60" x2="250" y2="310" stroke="#7FC48F" stroke-width="6" stroke-dasharray="18 12"/>
+      <circle cx="160" cy="185" r="46" fill="none" stroke="#FDF6E8" stroke-width="5"/>
+      <circle cx="160" cy="185" r="18" fill="#7FC48F"/>
+      <text x="80" y="350" font-size="26" fill="#7FC48F" letter-spacing="4" font-weight="700">证据可见 · 人来判</text>
+    </g>
+    <!-- VS -->
+    <text x="465" y="205" font-family="Georgia, serif" font-size="58" font-weight="bold" fill="#C89860">VS</text>
+    <!-- right: gavel + hidden score bars -->
+    <g filter="url(#rough)">
+      <rect x="570" y="60" width="400" height="250" fill="rgba(255,107,107,0.10)" stroke="#FF6B6B" stroke-width="5"/>
+      <rect x="620" y="120" width="150" height="46" rx="8" fill="none" stroke="#FF6B6B" stroke-width="6" transform="rotate(-24 695 143)"/>
+      <line x1="760" y1="196" x2="850" y2="256" stroke="#FF6B6B" stroke-width="10" stroke-linecap="round"/>
+      <rect x="640" y="238" width="180" height="14" fill="#FF6B6B" opacity="0.85"/>
+      <rect x="640" y="216" width="120" height="10" fill="rgba(255,107,107,0.5)"/>
+      <text x="618" y="350" font-size="26" fill="#FF6B6B" letter-spacing="4" font-weight="700">证据不可见 · 分数说了算？</text>
+    </g>
+  </svg>
+  <div class="brand">@jason · 一个观察</div>
+  <div class="vol">AI SERIES · 11</div>
+  <div class="bot-line"></div>
+</body>
+</html>

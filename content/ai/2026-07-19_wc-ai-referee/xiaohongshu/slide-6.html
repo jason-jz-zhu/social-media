@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 6</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #1E2A3A; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; text-align: center; }
+  .top-line, .bot-line { position: absolute; left: 50px; right: 50px; height: 2px;
+    background: repeating-linear-gradient(90deg, #C89860 0 18px, transparent 18px 30px); }
+  .top-line { top: 44px; } .bot-line { bottom: 44px; }
+  .pair { margin-bottom: 70px; }
+  .line1 { font-family: 'Noto Serif SC', serif; font-size: 52px; font-weight: 700; color: #7FC48F; line-height: 1.7; }
+  .line2 { font-family: 'Noto Serif SC', serif; font-size: 52px; font-weight: 700; color: #FF8A8A; line-height: 1.7; }
+  .divider { width: 90px; height: 3px; background: #C89860; margin: 0 auto 60px; border-radius: 2px; }
+  .big { font-family: 'Noto Serif SC', serif; font-size: 84px; font-weight: 900; color: #FDF6E8; line-height: 1.5; letter-spacing: 3px; }
+  .big .eye { color: #7FC48F; }
+  .big .judge { color: #FF6B6B; }
+  .series { position: absolute; bottom: 86px; font-family: 'Noto Serif SC', serif; font-size: 22px; color: #C89860; letter-spacing: 5px; font-weight: 700; }
+  .page-number { position: absolute; bottom: 86px; right: 80px; font-size: 22px; color: #C89860; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-line"></div>
+  <div class="pair">
+    <div class="line1">眼睛式的 AI，全场看得见证据</div>
+    <div class="line2">法官式的 AI，你连回放都没有</div>
+  </div>
+  <div class="divider"></div>
+  <div class="big">AI 该当<span class="eye">眼睛</span><br>不该当<span class="judge">法官</span></div>
+  <div class="series">AI SERIES · 11</div>
+  <span class="page-number">6 / 8</span>
+  <div class="bot-line"></div>
+</div>
+</body>
+</html>

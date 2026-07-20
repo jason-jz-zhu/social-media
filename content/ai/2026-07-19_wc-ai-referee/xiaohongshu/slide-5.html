@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #FF6B6B; color: #FFF; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 36px; border-radius: 4px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 54px; font-weight: 900; color: #1E2A3A; line-height: 1.35; margin-bottom: 40px; }
+  .title .hl { color: #FF6B6B; }
+  .title::after { content: ''; display: block; width: 70px; height: 4px; background: #FF6B6B; margin-top: 22px; border-radius: 2px; }
+  .chain { background: #FFF; border-radius: 14px; padding: 30px 34px; margin-bottom: 24px; box-shadow: 0 4px 18px rgba(30,42,58,0.06); }
+  .chain .lbl { font-size: 22px; color: #FF6B6B; letter-spacing: 3px; font-weight: 900; margin-bottom: 16px; }
+  .chain .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .tag { background: #FFF0EC; color: #C0392B; font-size: 27px; font-weight: 700; padding: 12px 22px; border-radius: 24px; border: 2px solid #FF6B6B; }
+  .arrow-line { text-align: center; font-size: 30px; color: #C89860; padding: 4px 0 16px; font-weight: 900; }
+  .result { font-size: 30px; color: #333; line-height: 1.6; }
+  .result b { color: #C0392B; }
+  .case { border-left: 6px solid #FF6B6B; background: #FFF; border-radius: 8px; padding: 24px 30px; margin-bottom: 22px; }
+  .case p { font-size: 29px; color: #333; line-height: 1.6; }
+  .case .hl { color: #FF6B6B; font-weight: 900; }
+  .deny { background: rgba(30,42,58,0.06); border-radius: 10px; padding: 22px 28px; margin-top: auto; }
+  .deny p { font-size: 26px; color: #666; line-height: 1.6; }
+  .deny b { color: #1E2A3A; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">对照 · 71页诉状</span>
+  <h1 class="title">另一边<br>被指控的<span class="hl">考核链</span></h1>
+  <div class="chain">
+    <div class="lbl">原告描述的评分流水线 ↓</div>
+    <div class="row">
+      <span class="tag">内部AI工具</span>
+      <span class="tag">键盘敲击监控</span>
+      <span class="tag">token 消耗看板</span>
+    </div>
+    <div class="arrow-line">↓</div>
+    <div class="result">休产假/病假 = 数据断档 = 被贴<b>"低 ROI"标签</b> = 更容易进裁员名单</div>
+  </div>
+  <div class="case">
+    <p>诉状案例：一名员工<span class="hl">距预产期仅 2 天</span>，收到裁员通知</p>
+  </div>
+  <div class="deny">
+    <p><b>Meta 官方否认</b>："劳动力决策由人做出，而非 AI。"<br>—— 谁对谁错法院会裁，但员工的问题很朴素：<b>证据在哪，回放在哪？</b></p>
+  </div>
+  <span class="page-number">5 / 8</span>
+</div>
+</body>
+</html>

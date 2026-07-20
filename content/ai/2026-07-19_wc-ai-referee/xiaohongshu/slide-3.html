@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #5FA46F; color: #FFF; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 36px; border-radius: 4px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: #1E2A3A; line-height: 1.35; margin-bottom: 44px; }
+  .title .hl { color: #5FA46F; }
+  .title::after { content: ''; display: block; width: 70px; height: 4px; background: #5FA46F; margin-top: 22px; border-radius: 2px; }
+  .stat { display: flex; align-items: center; gap: 30px; background: #FFF; border-radius: 14px; padding: 30px 34px; margin-bottom: 24px; box-shadow: 0 4px 18px rgba(30,42,58,0.06); }
+  .stat .num { font-family: 'Noto Serif SC', serif; font-size: 62px; font-weight: 900; color: #5FA46F; flex: 0 0 240px; line-height: 1.1; }
+  .stat .num small { font-size: 30px; }
+  .stat .txt { font-size: 30px; color: #333; line-height: 1.55; }
+  .stat .txt b { color: #1E2A3A; }
+  .note { font-size: 26px; color: #999; text-align: center; margin-top: auto; padding: 16px 0; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">知识点 · 01</span>
+  <h1 class="title">毫米级越位<br>是<span class="hl">这样判出来的</span></h1>
+  <div class="stat">
+    <div class="num">500<small>Hz</small></div>
+    <div class="txt">比赛用球内置芯片<br><b>每秒采集 500 次</b>触球/旋转/轨迹</div>
+  </div>
+  <div class="stat">
+    <div class="num">1200<small>+</small></div>
+    <div class="txt">球员赛前<b>全身 3D 扫描</b><br>骨骼级追踪：手臂角度、脚尖朝向</div>
+  </div>
+  <div class="stat">
+    <div class="num">3<small>秒</small></div>
+    <div class="txt">越位发生后，系统重建姿态<br><b>自动生成 3D 动画</b>投上大屏</div>
+  </div>
+  <div class="note">这套系统叫 SAOT（半自动越位技术），本届和 3D 数字人首次深度整合</div>
+  <span class="page-number">3 / 8</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 4</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #5FA46F; color: #FFF; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 36px; border-radius: 4px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: #1E2A3A; line-height: 1.35; margin-bottom: 46px; }
+  .title .hl { color: #FF6B6B; }
+  .title::after { content: ''; display: block; width: 70px; height: 4px; background: #5FA46F; margin-top: 22px; border-radius: 2px; }
+  .flow { display: flex; flex-direction: column; gap: 0; margin-bottom: 34px; }
+  .step { display: flex; align-items: center; gap: 26px; background: #FFF; border-radius: 14px; padding: 28px 32px; box-shadow: 0 4px 18px rgba(30,42,58,0.06); }
+  .step .ic { font-size: 44px; flex: 0 0 60px; text-align: center; }
+  .step .t { font-size: 31px; color: #333; line-height: 1.5; }
+  .step .t b { color: #1E2A3A; }
+  .arrow { text-align: center; font-size: 34px; color: #C89860; padding: 8px 0; font-weight: 900; }
+  .hitl { background: #1E2A3A; border-radius: 14px; padding: 30px 34px; margin-top: auto; }
+  .hitl .lbl { font-size: 22px; color: #C89860; letter-spacing: 4px; font-weight: 700; margin-bottom: 10px; }
+  .hitl .t { font-family: 'Noto Serif SC', serif; font-size: 38px; color: #FDF6E8; font-weight: 900; line-height: 1.5; }
+  .hitl .t .hl { color: #7FC48F; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">知识点 · 02</span>
+  <h1 class="title">最贵的设计<br>藏在<span class="hl">最后一步</span></h1>
+  <div class="flow">
+    <div class="step"><div class="ic">📡</div><div class="t"><b>AI 采集证据</b>：芯片球 + 骨骼追踪，毫米级还原</div></div>
+    <div class="arrow">↓</div>
+    <div class="step"><div class="ic">🎧</div><div class="t"><b>警报直达裁判耳麦</b>，不需要 VAR 中转</div></div>
+    <div class="arrow">↓</div>
+    <div class="step"><div class="ic">✋</div><div class="t"><b>吹不吹，由人决定</b>——哨子始终在裁判手里</div></div>
+  </div>
+  <div class="hitl">
+    <div class="lbl">HUMAN-IN-THE-LOOP · 人在决策环内</div>
+    <div class="t">AI 负责<span class="hl">"看得比人清"</span><br>人负责"判"——证据全场可见，输球也服气</div>
+  </div>
+  <span class="page-number">4 / 8</span>
+</div>
+</body>
+</html>

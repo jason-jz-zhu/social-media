@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Slide 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1440px; background: #FAF3E7; font-family: 'Noto Sans SC', sans-serif; position: relative; overflow: hidden; }
+  .slide { width: 1080px; height: 1440px; padding: 100px 80px; display: flex; flex-direction: column; position: relative; }
+  .badge { align-self: flex-start; background: #1E2A3A; color: #FFD447; font-size: 24px; font-weight: 700; padding: 8px 22px; letter-spacing: 3px; margin-bottom: 36px; border-radius: 4px; }
+  .title { font-family: 'Noto Serif SC', serif; font-size: 54px; font-weight: 900; color: #1E2A3A; line-height: 1.35; margin-bottom: 44px; }
+  .title::after { content: ''; display: block; width: 70px; height: 4px; background: #FF6B6B; margin-top: 22px; border-radius: 2px; }
+  .q { background: #FFF; border-radius: 14px; padding: 32px 34px; margin-bottom: 26px; display: flex; gap: 26px; box-shadow: 0 4px 18px rgba(30,42,58,0.06); }
+  .q .num { font-family: 'Noto Serif SC', serif; font-size: 52px; font-weight: 900; color: #FF6B6B; flex: 0 0 64px; line-height: 1.1; }
+  .q .h { font-size: 35px; font-weight: 900; color: #1E2A3A; line-height: 1.45; margin-bottom: 10px; }
+  .q .s { font-size: 27px; color: #666; line-height: 1.55; }
+  .q .s b.g { color: #5FA46F; } .q .s b.r { color: #FF6B6B; }
+  .verdict { display: flex; gap: 22px; margin-bottom: 30px; }
+  .v { flex: 1; text-align: center; border-radius: 12px; padding: 24px 16px; font-weight: 900; font-size: 30px; }
+  .v.eye { background: rgba(95,164,111,0.14); color: #3E7A4E; border: 2px solid #5FA46F; }
+  .v.judge { background: rgba(255,107,107,0.12); color: #C0392B; border: 2px solid #FF6B6B; }
+  .closer { font-family: 'Noto Serif SC', serif; font-size: 36px; color: #1E2A3A; font-weight: 700; text-align: center; margin-top: auto; line-height: 1.6; padding: 16px 0; }
+  .closer .hl { color: #FF6B6B; }
+  .page-number { position: absolute; bottom: 60px; right: 80px; font-size: 26px; color: #C89860; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <span class="badge">⭐ 可收藏 · 自检</span>
+  <h1 class="title">你公司的 AI<br>是眼睛还是法官？两问便知</h1>
+  <div class="q">
+    <div class="num">01</div>
+    <div>
+      <div class="h">证据和判决，分开了吗？</div>
+      <div class="s">AI <b class="g">给材料、人拍板</b>，还是 AI <b class="r">直接出结果</b>？</div>
+    </div>
+  </div>
+  <div class="q">
+    <div class="num">02</div>
+    <div>
+      <div class="h">被影响的人，有没有"回放"？</div>
+      <div class="s">能<b class="g">看到依据、有得申诉</b>，还是<b class="r">一个分数定生死</b>？</div>
+    </div>
+  </div>
+  <div class="verdict">
+    <div class="v eye">两个都过 → 眼睛 ✅</div>
+    <div class="v judge">两个都不过 → 法官 ⚠️</div>
+  </div>
+  <div class="closer">四年过去，裁判还站在场上——<br>AI 换掉的是<span class="hl">"看不清"</span>，不是"人"</div>
+  <span class="page-number">7 / 8</span>
+</div>
+</body>
+</html>
